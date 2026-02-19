@@ -74,15 +74,23 @@
 
         .barra-nav li:hover .lista-suspensa { display: block; }
 
-        /* CABEÇALHO E VITRINE */
+        /* =========================================
+           CABEÇALHO NOVO: ESTILO BANNER 100%
+           ========================================= */
         header { 
             background: white; 
-            padding: 100px 20px 30px 20px; 
-            text-align: center; 
-            border-bottom: 1px solid #eee;
+            padding-top: 55px; /* Deixa o espaço exato pro menu preto não cobrir a foto */
+            width: 100%; 
         }
-        .logo-img { max-width: 220px; }
+        .logo-img { 
+            width: 100%; /* Estica para preencher de fora a fora */
+            height: 350px; /* Define uma altura agradável para o banner */
+            object-fit: cover; /* Faz o recorte inteligente sem deformar a cesta */
+            object-position: center; /* Garante que a cesta fique sempre no centro da tela */
+            display: block; 
+        }
 
+        /* VITRINE */
         .vitrine {
             max-width: 1000px; margin: 40px auto; display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
