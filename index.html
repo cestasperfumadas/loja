@@ -75,19 +75,61 @@
         .barra-nav li:hover .lista-suspensa { display: block; }
 
         /* =========================================
-           CABEÇALHO NOVO: ESTILO BANNER 100%
+           NOVO CABEÇALHO: BANNER COMPOSTO
            ========================================= */
         header { 
-            background: white; 
-            padding-top: 55px; /* Deixa o espaço exato pro menu preto não cobrir a foto */
-            width: 100%; 
+            background: white;
+            /* Adiciona um fundo suave para unificar o banner */
+            background-image: linear-gradient(to right, #fdf2f5, #ffffff);
+            padding-top: 55px; /* Espaço para o menu fixo não cobrir */
+            width: 100%;
+            display: flex; /* Habilita o layout flexível */
+            flex-wrap: wrap; /* Permite que os elementos se ajustem em telas menores */
+            align-items: center; /* Centraliza verticalmente */
+            border-bottom: 1px solid #eee;
         }
+
+        /* Lado Esquerdo: A Cesta Original */
+        .header-logo-container {
+            flex: 1; /* Ocupa uma parte do espaço */
+            min-width: 300px; /* Largura mínima para não ficar muito pequeno */
+            padding: 20px;
+            text-align: center; /* Centraliza a imagem no seu espaço */
+        }
+
         .logo-img { 
-            width: 100%; /* Estica para preencher de fora a fora */
-            height: 350px; /* Define uma altura agradável para o banner */
-            object-fit: cover; /* Faz o recorte inteligente sem deformar a cesta */
-            object-position: center; /* Garante que a cesta fique sempre no centro da tela */
-            display: block; 
+            max-width: 100%; /* Garante que a imagem não ultrapasse o container */
+            height: auto; /* Mantém a proporção original da imagem */
+            /* Define uma altura máxima para telas grandes, evitando que fique gigante */
+            max-height: 400px; 
+            display: block; /* Remove espaços extras abaixo da imagem */
+            margin: 0 auto; /* Centraliza horizontalmente */
+        }
+
+        /* Lado Direito: Galeria de Produtos */
+        .header-products-container {
+            flex: 1.5; /* Ocupa um pouco mais de espaço que o lado da logo */
+            min-width: 300px;
+            padding: 20px;
+            display: flex; /* Cria uma galeria flexível */
+            flex-wrap: wrap; /* Permite que as imagens quebrem linha */
+            justify-content: center; /* Centraliza as imagens horizontalmente */
+            gap: 15px; /* Espaço entre as imagens */
+        }
+
+        .header-product-img {
+            width: 100px; /* Largura fixa para as miniaturas */
+            height: 100px; /* Altura fixa para as miniaturas */
+            object-fit: contain; /* Garante que a imagem caiba sem distorcer */
+            background: white; /* Fundo branco para destacar */
+            border-radius: 10px; /* Bordas arredondadas suaves */
+            padding: 5px; /* Espaço interno */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra leve para dar profundidade */
+            transition: transform 0.3s ease; /* Suaviza a animação do hover */
+        }
+
+        .header-product-img:hover {
+            transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
         }
 
         /* VITRINE */
@@ -144,7 +186,19 @@
     </nav>
 
     <header>
-        <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img">
+        <div class="header-logo-container">
+            <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img">
+        </div>
+        
+        <div class="header-products-container">
+            <img src="KAIAK%20Masculino.png" alt="Kaiak Masculino" class="header-product-img">
+            <img src="Una%20Brilho.png" alt="Una Brilho" class="header-product-img">
+            <img src="Una.png" alt="Una Clássico" class="header-product-img">
+            <img src="Una%20Blush.png" alt="Una Blush" class="header-product-img">
+            <img src="Una%20Somos.png" alt="Una Somos" class="header-product-img">
+            <img src="Una%20Artisan.png" alt="Una Artisan" class="header-product-img">
+            <img src="Una%20Senses.png" alt="Una Senses" class="header-product-img">
+            </div>
     </header>
 
     <div class="vitrine">
