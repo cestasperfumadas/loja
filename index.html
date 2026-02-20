@@ -6,179 +6,61 @@
     <title>Cestas Perfumadas - Loja Oficial</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: #fdf2f5; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fdf2f5; padding-bottom: 80px; }
 
-        /* MENU DE CATEGORIAS PROFISSIONAL (DROPDOWN) */
-        .barra-nav {
-            background-color: #333;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .barra-nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-
+        /* MENU DE CATEGORIAS */
+        .barra-nav { background-color: #333; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .barra-nav ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; flex-wrap: wrap; }
         .barra-nav > ul > li { position: relative; }
-
-        .barra-nav a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            padding: 18px 20px;
-            transition: background-color 0.3s;
-            cursor: pointer;
-        }
-
+        .barra-nav a { display: block; color: white; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; padding: 18px 20px; transition: background-color 0.3s; cursor: pointer; }
         .barra-nav a:hover { background-color: #d81b60; color: white; }
 
         /* LISTA SUSPENSA */
-        .lista-suspensa {
-            display: none;
-            position: absolute;
-            background-color: #ffffff;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
-            z-index: 1;
-            border-radius: 0 0 8px 8px;
-            overflow: hidden;
-            top: 100%;
-            left: 0;
-        }
-
-        .lista-suspensa a {
-            color: #333;
-            padding: 12px 20px;
-            text-transform: none;
-            font-weight: 500;
-            font-size: 14px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .lista-suspensa a:hover {
-            background-color: #fdf2f5;
-            color: #d81b60;
-            padding-left: 25px;
-            transition: 0.2s;
-        }
-
+        .lista-suspensa { display: none; position: absolute; background-color: #ffffff; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15); z-index: 1; border-radius: 0 0 8px 8px; overflow: hidden; top: 100%; left: 0; }
+        .lista-suspensa a { color: #333; padding: 12px 20px; text-transform: none; font-weight: 500; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+        .lista-suspensa a:hover { background-color: #fdf2f5; color: #d81b60; padding-left: 25px; transition: 0.2s; }
         .barra-nav li:hover .lista-suspensa { display: block; }
 
-        /* CABEÇALHO COM AVISOS DE PAGAMENTO */
-        header { 
-            background: white;
-            background-image: linear-gradient(to right, #fdf2f5, #ffffff);
-            padding-top: 55px; 
-            width: 100%;
-            display: flex; 
-            flex-wrap: wrap; 
-            align-items: center; 
-            border-bottom: 1px solid #eee;
-        }
+        /* CABEÇALHO */
+        header { background: white; background-image: linear-gradient(to right, #fdf2f5, #ffffff); padding-top: 55px; width: 100%; display: flex; flex-wrap: wrap; align-items: center; border-bottom: 1px solid #eee; }
+        .header-logo-container { flex: 1; min-width: 300px; padding: 20px; text-align: center; }
+        .logo-img { max-width: 100%; height: auto; max-height: 400px; display: block; margin: 0 auto; cursor: pointer; }
+        .header-info-container { flex: 1.5; min-width: 300px; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; }
+        .info-caixa { background: white; border: 2px solid #d81b60; border-radius: 12px; padding: 15px 20px; text-align: center; width: 100%; max-width: 380px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .info-caixa h3 { color: #d81b60; font-size: 1.2rem; margin-bottom: 5px; }
+        .info-caixa.destaque { background: #d81b60; color: white; }
+        .info-caixa.destaque h3 { color: white; }
+        .info-caixa.destaque p { font-weight: bold; font-size: 1.1rem; }
 
-        .header-logo-container {
-            flex: 1; 
-            min-width: 300px; 
-            padding: 20px;
-            text-align: center; 
-        }
-
-        .logo-img { 
-            max-width: 100%; 
-            height: auto; 
-            max-height: 400px; 
-            display: block; 
-            margin: 0 auto; 
-            cursor: pointer;
-        }
-
-        .header-info-container {
-            flex: 1.5; 
-            min-width: 300px;
-            padding: 20px;
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center;
-            gap: 15px; 
-        }
-
-        .info-caixa {
-            background: white;
-            border: 2px solid #d81b60;
-            border-radius: 12px;
-            padding: 15px 20px;
-            text-align: center;
-            width: 100%;
-            max-width: 380px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-
-        .info-caixa h3 {
-            color: #d81b60;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .info-caixa.destaque {
-            background: #d81b60;
-            color: white;
-        }
-
-        .info-caixa.destaque h3 {
-            color: white;
-        }
-
-        .info-caixa.destaque p {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* TÍTULO DA VITRINE */
-        .titulo-secao {
-            text-align: center;
-            color: #d81b60;
-            margin-top: 40px;
-            font-size: 2rem;
-            text-transform: uppercase;
-        }
-
-        /* VITRINE E CARDS */
-        .vitrine {
-            max-width: 1000px; margin: 20px auto 40px auto; display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px; padding: 20px;
-        }
-        .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: center; }
+        /* VITRINE */
+        .titulo-secao { text-align: center; color: #d81b60; margin-top: 40px; font-size: 2rem; text-transform: uppercase; }
+        .vitrine { max-width: 1000px; margin: 20px auto 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 20px; }
+        .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: center; position: relative; }
         .card img { width: 100%; height: 280px; object-fit: contain; margin-bottom: 15px; }
         .preco-de { text-decoration: line-through; color: #999; font-size: 0.9em; }
         .preco-por { color: #d81b60; font-size: 1.8rem; font-weight: bold; margin: 5px 0; }
-        
-        /* ESTILO DA ETIQUETA DE ESTOQUE */
-        .estoque {
-            color: #e65100;
-            font-size: 0.9rem;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            background-color: #fff3e0;
-            padding: 4px 10px;
-            border-radius: 5px;
-            display: inline-block;
-        }
+        .estoque { color: #e65100; font-size: 0.9rem; margin-top: 5px; margin-bottom: 10px; background-color: #fff3e0; padding: 4px 10px; border-radius: 5px; display: inline-block; }
         .estoque strong { font-size: 1.1rem; }
+        
+        /* BOTÃO DE ADICIONAR */
+        .btn-whats { display: block; background-color: #d81b60; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 10px; width: 100%; cursor: pointer; transition: 0.3s; font-size: 1rem; }
+        .btn-whats:hover { background-color: #b0154d; }
 
-        .btn-whats { display: block; background-color: #25d366; color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 10px; }
+        /* CARRINHO DE COMPRAS FLUTUANTE */
+        .carrinho-flutuante { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1001; transition: transform 0.3s; }
+        .carrinho-flutuante:hover { transform: scale(1.1); }
+        .contador-carrinho { position: absolute; top: -5px; right: -5px; background-color: red; color: white; border-radius: 50%; width: 22px; height: 22px; font-size: 12px; font-weight: bold; display: flex; justify-content: center; align-items: center; }
+
+        /* MODAL DO CARRINHO */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1002; justify-content: center; align-items: center; }
+        .modal-carrinho { background: white; width: 90%; max-width: 400px; border-radius: 12px; padding: 20px; max-height: 80vh; overflow-y: auto; position: relative; }
+        .modal-carrinho h2 { color: #333; margin-bottom: 15px; border-bottom: 2px solid #fdf2f5; padding-bottom: 10px; text-align: center; }
+        .item-carrinho { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .item-detalhe { flex: 1; }
+        .item-remover { color: red; cursor: pointer; font-weight: bold; font-size: 1.2rem; margin-left: 10px; }
+        .carrinho-total { font-size: 1.5rem; font-weight: bold; text-align: right; margin-top: 20px; color: #d81b60; }
+        .btn-finalizar { background-color: #25d366; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; margin-top: 15px; font-size: 1.1rem; }
+        .btn-fechar { background-color: #ccc; color: #333; border: none; padding: 10px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -220,7 +102,6 @@
         <div class="header-logo-container">
             <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('todas', 'Todos os Produtos')">
         </div>
-        
         <div class="header-info-container">
             <div class="info-caixa">
                 <h3>💳 Aceitamos Cartões e Pix</h3>
@@ -242,7 +123,7 @@
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Kaiak+Masculino" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Kaiak Masculino', 120.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -251,7 +132,7 @@
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Kaiak+Oceano+Masculino" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Kaiak Oceano Masculino', 120.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -260,7 +141,7 @@
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Kaiak+Aventura+Masculino" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Kaiak Aventura Masculino', 120.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -269,7 +150,7 @@
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Kaiak+Pulso+Masculino" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Kaiak Pulso Masculino', 120.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -278,7 +159,7 @@
             <p class="preco-de">De: R$ 209,90</p>
             <p class="preco-por">Por: R$ 146,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Biografia+Masculino" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Biografia Masculino', 146.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -287,7 +168,7 @@
             <p class="preco-de">De: R$ 209,90</p>
             <p class="preco-por">Por: R$ 146,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Biografia+Inspire+Masculino" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Biografia Inspire Masc', 146.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -296,7 +177,7 @@
             <p class="preco-de">De: R$ 228,90</p>
             <p class="preco-por">Por: R$ 148,70</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Refil+do+Essencial+Único+Masculino" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Essencial Único Refil Masc', 148.70)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -305,7 +186,7 @@
             <p class="preco-de">De: R$ 279,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Essencial+Masculino" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Essencial Masculino', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -314,7 +195,7 @@
             <p class="preco-de">De: R$ 239,90</p>
             <p class="preco-por">Por: R$ 167,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Natura+Homem+Essence" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Essence', 167.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="feminina promocoes">
@@ -323,7 +204,7 @@
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Brilho" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Una Brilho', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="feminina promocoes">
@@ -332,7 +213,7 @@
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Clássico" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Una Clássico', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="feminina promocoes">
@@ -341,7 +222,7 @@
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Blush" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Una Blush', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="feminina promocoes">
@@ -350,7 +231,7 @@
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Somos" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Una Somos', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="feminina promocoes">
@@ -359,7 +240,7 @@
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Artisan" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Una Artisan', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="feminina promocoes">
@@ -368,7 +249,7 @@
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Senses" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Una Senses', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="feminina promocoes">
@@ -377,7 +258,7 @@
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Celebrar" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Una Celebrar', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -386,7 +267,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Amora+e+Flor+de+Pêssego" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Amora e Pêssego', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -395,7 +276,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Acerola+e+Hibisco" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Acerola e Hibisco', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -404,7 +285,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Jambo+Rosa+e+Caju" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Jambo Rosa e Caju', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -413,7 +294,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Romã+e+Amêndoas+Glaceadas" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Romã e Amêndoas', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -422,7 +303,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Flores+de+Pêssego+e+Jasmim" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Flores de Pêssego', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -431,7 +312,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Chá+de+Camomila" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Chá de Camomila', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -440,7 +321,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Limão+Siciliano" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Limão Siciliano', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -449,7 +330,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Maçã+Caramelada" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Maçã Caramelada', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -458,7 +339,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Macadâmia" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Macadâmia', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -467,7 +348,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Uva+Rosa+e+Romã" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Uva Rosa e Romã', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -476,7 +357,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Ameixa+e+Gengibre+Rosa" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Ameixa e Gengibre', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -485,7 +366,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Flor+de+Gengibre+e+Tangerina" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Flor Gengibre e Tangerina', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -494,7 +375,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>6</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Ameixa+e+Flor+de+Baunilha" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Ameixa e Flor de Baunilha', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -503,7 +384,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Flor+de+Maçã" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Flor de Maçã', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -512,7 +393,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Cereja+e+Avelã" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Cereja e Avelã', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -521,7 +402,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Amora+e+Jabuticaba" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Body Amora e Jabuticaba', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
@@ -530,7 +411,7 @@
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
             <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Framboesa+e+Pimenta+Vermelha" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Framboesa e Pimenta Vermelha', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="sabonetes corpo-banho promocoes">
@@ -539,7 +420,7 @@
             <p class="preco-de">De: R$ 34,90</p>
             <p class="preco-por">Por: R$ 25,00</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Sabonete+Algodão" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Sabonete Algodão', 25.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="sabonetes corpo-banho promocoes">
@@ -548,11 +429,30 @@
             <p class="preco-de">De: R$ 34,90</p>
             <p class="preco-por">Por: R$ 25,00</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Sabonete+Todanoite" class="btn-whats">Pedir no WhatsApp</a>
+            <button class="btn-whats" onclick="adicionarCarrinho('Sabonete Todanoite', 25.00)">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+    <div class="carrinho-flutuante" onclick="abrirCarrinho()">
+        🛒
+        <div class="contador-carrinho" id="contador">0</div>
+    </div>
+
+    <div class="modal-overlay" id="modalCarrinho">
+        <div class="modal-carrinho">
+            <h2>🛒 O seu Carrinho</h2>
+            <div id="lista-itens">
+                </div>
+            <div class="carrinho-total">
+                Total: R$ <span id="valor-total">0,00</span>
+            </div>
+            <button class="btn-finalizar" onclick="finalizarCompra()">📲 Enviar Pedido no WhatsApp</button>
+            <button class="btn-fechar" onclick="fecharCarrinho()">Continuar a Comprar</button>
         </div>
     </div>
 
     <script>
+        // Função de filtrar categorias
         function filtrar(categoriaSelecionada, nomeTitulo) {
             document.getElementById('titulo-vitrine').innerText = nomeTitulo;
             const todosOsProdutos = document.querySelectorAll('.card');
@@ -565,6 +465,82 @@
                     produto.style.display = 'none'; 
                 }
             });
+        }
+
+        // LÓGICA DO CARRINHO DE COMPRAS
+        let carrinho = [];
+
+        function adicionarCarrinho(nome, preco) {
+            // Adiciona o produto à lista
+            carrinho.push({ nome: nome, preco: preco });
+            atualizarCarrinho();
+            
+            // Dá um feedback visual rápido abrindo o carrinho
+            abrirCarrinho();
+        }
+
+        function removerCarrinho(index) {
+            // Remove o item específico
+            carrinho.splice(index, 1);
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            // Atualiza a bolinha vermelha
+            document.getElementById('contador').innerText = carrinho.length;
+
+            let listaHtml = "";
+            let total = 0;
+
+            // Cria o HTML para cada item e soma o total
+            carrinho.forEach((item, index) => {
+                listaHtml += `
+                    <div class="item-carrinho">
+                        <div class="item-detalhe">1x ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}</div>
+                        <div class="item-remover" onclick="removerCarrinho(${index})">🗑️</div>
+                    </div>
+                `;
+                total += item.preco;
+            });
+
+            // Se estiver vazio
+            if (carrinho.length === 0) {
+                listaHtml = "<p style='text-align:center; color:#999;'>O seu carrinho está vazio.</p>";
+            }
+
+            document.getElementById('lista-itens').innerHTML = listaHtml;
+            document.getElementById('valor-total').innerText = total.toFixed(2).replace('.', ',');
+        }
+
+        function abrirCarrinho() {
+            document.getElementById('modalCarrinho').style.display = 'flex';
+        }
+
+        function fecharCarrinho() {
+            document.getElementById('modalCarrinho').style.display = 'none';
+        }
+
+        function finalizarCompra() {
+            if (carrinho.length === 0) {
+                alert("O seu carrinho está vazio! Adicione produtos antes de finalizar.");
+                return;
+            }
+
+            let textoWhatsApp = "Olá! Gostaria de fazer o seguinte pedido:\n\n";
+            let total = 0;
+
+            carrinho.forEach(item => {
+                textoWhatsApp += `✅ 1x ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}\n`;
+                total += item.preco;
+            });
+
+            textoWhatsApp += `\n*Total a pagar: R$ ${total.toFixed(2).replace('.', ',')}*\n\nComo faço para realizar o pagamento por Pix ou Cartão?`;
+
+            // Codifica o texto para o link do WhatsApp
+            let link = "https://api.whatsapp.com/send?phone=5511962983022&text=" + encodeURIComponent(textoWhatsApp);
+            
+            // Abre o WhatsApp numa nova aba
+            window.open(link, "_blank");
         }
     </script>
 
