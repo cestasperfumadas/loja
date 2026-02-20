@@ -38,7 +38,7 @@
             text-transform: uppercase;
             padding: 18px 20px;
             transition: background-color 0.3s;
-            cursor: pointer; /* Deixa o mouse com a mãozinha de clique */
+            cursor: pointer;
         }
 
         .barra-nav a:hover { background-color: #d81b60; color: white; }
@@ -100,7 +100,7 @@
             max-height: 400px; 
             display: block; 
             margin: 0 auto; 
-            cursor: pointer; /* Indica que a logo é clicável para voltar ao início */
+            cursor: pointer;
         }
 
         .header-products-container {
@@ -126,7 +126,7 @@
 
         .header-product-img:hover { transform: scale(1.05); }
 
-        /* TÍTULO DA VITRINE (Muda dinamicamente) */
+        /* TÍTULO DA VITRINE */
         .titulo-secao {
             text-align: center;
             color: #d81b60;
@@ -196,8 +196,8 @@
             <img src="Una%20Artisan.png" alt="Una Artisan" class="header-product-img">
             <img src="Una%20Senses.png" alt="Una Senses" class="header-product-img">
             <img src="Una%20Celebrar.png" alt="Una Celebrar" class="header-product-img">
-            <img src="Essencial%20Unico%20Masculino%20Refil.png" alt="Essencial Único Masculino Refil" class="header-product-img">
-            <img src="Body%20Splash%20Amora.png" alt="Body Splash Amora e Flor de Pêssego" class="header-product-img">
+            <img src="Único%20Refil%20Masc.png" alt="Essencial Único Masculino Refil" class="header-product-img">
+            <img src="Body%20Amora%20Flor%20de%20Pessego.png" alt="Body Splash Amora e Flor de Pêssego" class="header-product-img">
         </div>
     </header>
 
@@ -270,7 +270,7 @@
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
-            <img src="Essencial%20Unico%20Masculino%20Refil.png" alt="Essencial Único Masculino Refil">
+            <img src="Único%20Refil%20Masc.png" alt="Essencial Único Masculino Refil">
             <h3>Essencial Único Masc. Refil</h3>
             <p class="preco-de">De: R$ 228,90</p>
             <p class="preco-por">Por: R$ 148,70</p>
@@ -278,7 +278,7 @@
         </div>
 
         <div class="card" data-categoria="corpo-banho promocoes">
-            <img src="Body%20Splash%20Amora.png" alt="Body Splash Amora e Flor de Pêssego">
+            <img src="Body%20Amora%20Flor%20de%20Pessego.png" alt="Body Splash Amora e Flor de Pêssego">
             <h3>Body Splash Amora e Pêssego</h3>
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
@@ -288,20 +288,15 @@
 
     <script>
         function filtrar(categoriaSelecionada, nomeTitulo) {
-            // Muda o título da página
             document.getElementById('titulo-vitrine').innerText = nomeTitulo;
-            
-            // Pega todos os produtos
             const todosOsProdutos = document.querySelectorAll('.card');
 
-            // Passa por cada produto escondendo ou mostrando
             todosOsProdutos.forEach(produto => {
                 const categoriasDoProduto = produto.getAttribute('data-categoria');
-                
                 if (categoriaSelecionada === 'todas' || categoriasDoProduto.includes(categoriaSelecionada)) {
-                    produto.style.display = 'block'; // Mostra o produto
+                    produto.style.display = 'block'; 
                 } else {
-                    produto.style.display = 'none'; // Esconde o produto
+                    produto.style.display = 'none'; 
                 }
             });
         }
