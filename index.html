@@ -74,63 +74,55 @@
 
         .barra-nav li:hover .lista-suspensa { display: block; }
 
-        /* =========================================
-           NOVO CABEÇALHO: BANNER COMPOSTO
-           ========================================= */
+        /* BANNER COMPOSTO */
         header { 
             background: white;
-            /* Adiciona um fundo suave para unificar o banner */
             background-image: linear-gradient(to right, #fdf2f5, #ffffff);
-            padding-top: 55px; /* Espaço para o menu fixo não cobrir */
+            padding-top: 55px; 
             width: 100%;
-            display: flex; /* Habilita o layout flexível */
-            flex-wrap: wrap; /* Permite que os elementos se ajustem em telas menores */
-            align-items: center; /* Centraliza verticalmente */
+            display: flex; 
+            flex-wrap: wrap; 
+            align-items: center; 
             border-bottom: 1px solid #eee;
         }
 
-        /* Lado Esquerdo: A Cesta Original */
         .header-logo-container {
-            flex: 1; /* Ocupa uma parte do espaço */
-            min-width: 300px; /* Largura mínima para não ficar muito pequeno */
+            flex: 1; 
+            min-width: 300px; 
             padding: 20px;
-            text-align: center; /* Centraliza a imagem no seu espaço */
+            text-align: center; 
         }
 
         .logo-img { 
-            max-width: 100%; /* Garante que a imagem não ultrapasse o container */
-            height: auto; /* Mantém a proporção original da imagem */
-            /* Define uma altura máxima para telas grandes, evitando que fique gigante */
+            max-width: 100%; 
+            height: auto; 
             max-height: 400px; 
-            display: block; /* Remove espaços extras abaixo da imagem */
-            margin: 0 auto; /* Centraliza horizontalmente */
+            display: block; 
+            margin: 0 auto; 
         }
 
-        /* Lado Direito: Galeria de Produtos */
         .header-products-container {
-            flex: 1.5; /* Ocupa um pouco mais de espaço que o lado da logo */
+            flex: 1.5; 
             min-width: 300px;
             padding: 20px;
-            display: flex; /* Cria uma galeria flexível */
-            flex-wrap: wrap; /* Permite que as imagens quebrem linha */
-            justify-content: center; /* Centraliza as imagens horizontalmente */
-            gap: 15px; /* Espaço entre as imagens */
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px; 
         }
 
         .header-product-img {
-            width: 100px; /* Largura fixa para as miniaturas */
-            height: 100px; /* Altura fixa para as miniaturas */
-            object-fit: contain; /* Garante que a imagem caiba sem distorcer */
-            background: white; /* Fundo branco para destacar */
-            border-radius: 10px; /* Bordas arredondadas suaves */
-            padding: 5px; /* Espaço interno */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra leve para dar profundidade */
-            transition: transform 0.3s ease; /* Suaviza a animação do hover */
+            width: 100px; 
+            height: 100px; 
+            object-fit: contain; 
+            background: white; 
+            border-radius: 10px; 
+            padding: 5px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+            transition: transform 0.3s ease; 
         }
 
-        .header-product-img:hover {
-            transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
-        }
+        .header-product-img:hover { transform: scale(1.05); }
 
         /* VITRINE */
         .vitrine {
@@ -198,7 +190,8 @@
             <img src="Una%20Somos.png" alt="Una Somos" class="header-product-img">
             <img src="Una%20Artisan.png" alt="Una Artisan" class="header-product-img">
             <img src="Una%20Senses.png" alt="Una Senses" class="header-product-img">
-            </div>
+            <img src="Una%20Celebrar.png" alt="Una Celebrar" class="header-product-img">
+        </div>
     </header>
 
     <div class="vitrine">
@@ -256,6 +249,14 @@
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Senses" class="btn-whats">Pedir no WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="Una%20Celebrar.png" alt="Una Celebrar">
+            <h3>Una Celebrar 75 ml</h3>
+            <p class="preco-de">De: R$ 319,90</p>
+            <p class="preco-por">Por: R$ 219,90</p>
+            <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Celebrar" class="btn-whats">Pedir no WhatsApp</a>
         </div>
     </div>
 
