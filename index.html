@@ -75,7 +75,7 @@
 
         .barra-nav li:hover .lista-suspensa { display: block; }
 
-        /* BANNER COMPOSTO */
+        /* CABEÇALHO COM AVISOS DE PAGAMENTO */
         header { 
             background: white;
             background-image: linear-gradient(to right, #fdf2f5, #ffffff);
@@ -103,28 +103,48 @@
             cursor: pointer;
         }
 
-        .header-products-container {
+        /* Novas caixas de aviso */
+        .header-info-container {
             flex: 1.5; 
             min-width: 300px;
             padding: 20px;
             display: flex; 
-            flex-wrap: wrap; 
+            flex-direction: column; 
             justify-content: center; 
+            align-items: center;
             gap: 15px; 
         }
 
-        .header-product-img {
-            width: 100px; 
-            height: 100px; 
-            object-fit: contain; 
-            background: white; 
-            border-radius: 10px; 
-            padding: 5px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-            transition: transform 0.3s ease; 
+        .info-caixa {
+            background: white;
+            border: 2px solid #d81b60;
+            border-radius: 12px;
+            padding: 15px 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
 
-        .header-product-img:hover { transform: scale(1.05); }
+        .info-caixa h3 {
+            color: #d81b60;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .info-caixa.destaque {
+            background: #d81b60;
+            color: white;
+        }
+
+        .info-caixa.destaque h3 {
+            color: white;
+        }
+
+        .info-caixa.destaque p {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
 
         /* TÍTULO DA VITRINE */
         .titulo-secao {
@@ -188,26 +208,14 @@
             <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('todas', 'Todos os Produtos')">
         </div>
         
-        <div class="header-products-container">
-            <img src="KAIAK%20Masculino.png" alt="Kaiak Masculino" class="header-product-img">
-            <img src="Kaiak%20Oceano%20masc.png" alt="Kaiak Oceano Masculino" class="header-product-img">
-            <img src="Kaiak%20Aventura%20Masc.png" alt="Kaiak Aventura Masculino" class="header-product-img">
-            <img src="Kaiak%20Pulso%20Masc.png" alt="Kaiak Pulso Masculino" class="header-product-img">
-            
-            <img src="Biografia%20Masc.png" alt="Biografia Masculino" class="header-product-img">
-            <img src="Biografia%20Inspire%20Masc.png" alt="Biografia Inspire Masculino" class="header-product-img">
-
-            <img src="Una%20Brilho.png" alt="Una Brilho" class="header-product-img">
-            <img src="Una.png" alt="Una Clássico" class="header-product-img">
-            <img src="Una%20Blush.png" alt="Una Blush" class="header-product-img">
-            <img src="Una%20Somos.png" alt="Una Somos" class="header-product-img">
-            <img src="Una%20Artisan.png" alt="Una Artisan" class="header-product-img">
-            <img src="Una%20Senses.png" alt="Una Senses" class="header-product-img">
-            <img src="Una%20Celebrar.png" alt="Una Celebrar" class="header-product-img">
-            <img src="Único%20Refil%20Masc.png" alt="Essencial Único Masculino Refil" class="header-product-img">
-            <img src="Body%20Amora%20Flor%20de%20Pessego.png" alt="Body Splash Amora e Flor de Pêssego" class="header-product-img">
-            <img src="Sabonete%20Algodão.png" alt="Sabonete Algodão" class="header-product-img">
-            <img src="Sabonete%20Todanoite.png" alt="Sabonete Todanoite" class="header-product-img">
+        <div class="header-info-container">
+            <div class="info-caixa">
+                <h3>💳 Aceitamos Cartões e Pix</h3>
+            </div>
+            <div class="info-caixa destaque">
+                <h3>🛍️ Compras acima de R$ 300,00</h3>
+                <p>Parcelamos em até 3x</p>
+            </div>
         </div>
     </header>
 
