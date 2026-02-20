@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br"> 
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -154,7 +154,7 @@
             text-transform: uppercase;
         }
 
-        /* VITRINE */
+        /* VITRINE E CARDS */
         .vitrine {
             max-width: 1000px; margin: 20px auto 40px auto; display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -164,7 +164,21 @@
         .card img { width: 100%; height: 280px; object-fit: contain; margin-bottom: 15px; }
         .preco-de { text-decoration: line-through; color: #999; font-size: 0.9em; }
         .preco-por { color: #d81b60; font-size: 1.8rem; font-weight: bold; margin: 5px 0; }
-        .btn-whats { display: block; background-color: #25d366; color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 15px; }
+        
+        /* ESTILO DA ETIQUETA DE ESTOQUE */
+        .estoque {
+            color: #e65100;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: #fff3e0;
+            padding: 4px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .estoque strong { font-size: 1.1rem; }
+
+        .btn-whats { display: block; background-color: #25d366; color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -227,6 +241,7 @@
             <h3>Kaiak Masculino</h3>
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Kaiak+Masculino" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -235,6 +250,7 @@
             <h3>Kaiak Oceano Masc.</h3>
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Kaiak+Oceano+Masculino" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -243,6 +259,7 @@
             <h3>Kaiak Aventura Masc.</h3>
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Kaiak+Aventura+Masculino" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -251,6 +268,7 @@
             <h3>Kaiak Pulso Masc.</h3>
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Kaiak+Pulso+Masculino" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -259,6 +277,7 @@
             <h3>Biografia Masculino</h3>
             <p class="preco-de">De: R$ 209,90</p>
             <p class="preco-por">Por: R$ 146,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Biografia+Masculino" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -267,6 +286,7 @@
             <h3>Biografia Inspire Masc.</h3>
             <p class="preco-de">De: R$ 209,90</p>
             <p class="preco-por">Por: R$ 146,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Biografia+Inspire+Masculino" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -275,6 +295,7 @@
             <h3>Essencial Único Masc. Refil</h3>
             <p class="preco-de">De: R$ 228,90</p>
             <p class="preco-por">Por: R$ 148,70</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Refil+do+Essencial+Único+Masculino" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -283,6 +304,7 @@
             <h3>Essencial Masculino</h3>
             <p class="preco-de">De: R$ 279,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Essencial+Masculino" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -291,6 +313,7 @@
             <h3>Natura Homem Essence</h3>
             <p class="preco-de">De: R$ 239,90</p>
             <p class="preco-por">Por: R$ 167,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Natura+Homem+Essence" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -299,6 +322,7 @@
             <h3>Una Brilho 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Brilho" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -307,6 +331,7 @@
             <h3>Una 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Clássico" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -315,6 +340,7 @@
             <h3>Una Blush 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Blush" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -323,6 +349,7 @@
             <h3>Una Somos 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Somos" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -331,6 +358,7 @@
             <h3>Una Artisan 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Artisan" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -339,6 +367,7 @@
             <h3>Una Senses 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Senses" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -347,6 +376,7 @@
             <h3>Una Celebrar 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Celebrar" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -355,6 +385,7 @@
             <h3>Body Splash Amora e Pêssego</h3>
             <p class="preco-de">De: R$ 93,90</p>
             <p class="preco-por">Por: R$ 65,00</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Amora+e+Flor+de+Pêssego" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -363,6 +394,7 @@
             <h3>Sabonete Algodão</h3>
             <p class="preco-de">De: R$ 34,90</p>
             <p class="preco-por">Por: R$ 25,00</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Sabonete+Algodão" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
@@ -371,6 +403,7 @@
             <h3>Sabonete Todanoite</h3>
             <p class="preco-de">De: R$ 34,90</p>
             <p class="preco-por">Por: R$ 25,00</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Sabonete+Todanoite" class="btn-whats">Pedir no WhatsApp</a>
         </div>
     </div>
@@ -393,4 +426,3 @@
 
 </body>
 </html>
-
