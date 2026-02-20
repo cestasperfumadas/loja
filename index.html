@@ -38,6 +38,7 @@
             text-transform: uppercase;
             padding: 18px 20px;
             transition: background-color 0.3s;
+            cursor: pointer; /* Deixa o mouse com a mãozinha de clique */
         }
 
         .barra-nav a:hover { background-color: #d81b60; color: white; }
@@ -99,6 +100,7 @@
             max-height: 400px; 
             display: block; 
             margin: 0 auto; 
+            cursor: pointer; /* Indica que a logo é clicável para voltar ao início */
         }
 
         .header-products-container {
@@ -124,9 +126,18 @@
 
         .header-product-img:hover { transform: scale(1.05); }
 
+        /* TÍTULO DA VITRINE (Muda dinamicamente) */
+        .titulo-secao {
+            text-align: center;
+            color: #d81b60;
+            margin-top: 40px;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
         /* VITRINE */
         .vitrine {
-            max-width: 1000px; margin: 40px auto; display: grid;
+            max-width: 1000px; margin: 20px auto 40px auto; display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px; padding: 20px;
         }
@@ -141,37 +152,31 @@
 
     <nav class="barra-nav">
         <ul>
-            <li><a href="#">Promoções</a></li>
+            <li><a onclick="filtrar('todas', 'Todos os Produtos')">Início</a></li>
+            <li><a onclick="filtrar('promocoes', 'Promoções Especiais')">Promoções</a></li>
             <li>
-                <a href="#">Perfumaria ▾</a>
+                <a>Perfumaria ▾</a>
                 <div class="lista-suspensa">
-                    <a href="#">Masculina</a>
-                    <a href="#">Feminina</a>
-                    <a href="#">Infantil</a>
+                    <a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a>
+                    <a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a>
                 </div>
             </li>
             <li>
-                <a href="#">Corpo e Banho ▾</a>
+                <a>Corpo e Banho ▾</a>
                 <div class="lista-suspensa">
-                    <a href="#">Sabonetes</a>
-                    <a href="#">Hidratantes</a>
-                    <a href="#">Desodorantes</a>
+                    <a onclick="filtrar('corpo-banho', 'Corpo e Banho')">Hidratantes & Body Splash</a>
                 </div>
             </li>
             <li>
-                <a href="#">Maquiagens ▾</a>
+                <a>Maquiagens ▾</a>
                 <div class="lista-suspensa">
-                    <a href="#">Rosto</a>
-                    <a href="#">Olhos</a>
-                    <a href="#">Boca</a>
+                    <a onclick="filtrar('maquiagem', 'Maquiagens')">Ver Tudo</a>
                 </div>
             </li>
             <li>
-                <a href="#">Cabelos ▾</a>
+                <a>Cabelos ▾</a>
                 <div class="lista-suspensa">
-                    <a href="#">Shampoos</a>
-                    <a href="#">Condicionadores</a>
-                    <a href="#">Tratamentos</a>
+                    <a onclick="filtrar('cabelos', 'Cabelos')">Ver Tudo</a>
                 </div>
             </li>
         </ul>
@@ -179,7 +184,7 @@
 
     <header>
         <div class="header-logo-container">
-            <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img">
+            <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('todas', 'Todos os Produtos')">
         </div>
         
         <div class="header-products-container">
@@ -192,12 +197,15 @@
             <img src="Una%20Senses.png" alt="Una Senses" class="header-product-img">
             <img src="Una%20Celebrar.png" alt="Una Celebrar" class="header-product-img">
             <img src="Essencial%20Unico%20Masculino%20Refil.png" alt="Essencial Único Masculino Refil" class="header-product-img">
-            <img src="Body%20Splash%20Amora.png" alt="Body Splash Amora" class="header-product-img">
+            <img src="Body%20Splash%20Amora.png" alt="Body Splash Amora e Flor de Pêssego" class="header-product-img">
         </div>
     </header>
 
-    <div class="vitrine">
-        <div class="card">
+    <h2 id="titulo-vitrine" class="titulo-secao">Todos os Produtos</h2>
+
+    <div class="vitrine" id="lista-produtos">
+        
+        <div class="card" data-categoria="masculina promocoes">
             <img src="KAIAK%20Masculino.png" alt="Kaiak Masculino">
             <h3>Kaiak Masculino</h3>
             <p class="preco-de">De: R$ 189,90</p>
@@ -205,7 +213,7 @@
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Kaiak+Masculino" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-categoria="feminina promocoes">
             <img src="Una%20Brilho.png" alt="Una Brilho">
             <h3>Una Brilho 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
@@ -213,7 +221,7 @@
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Brilho" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-categoria="feminina promocoes">
             <img src="Una.png" alt="Una Clássico">
             <h3>Una 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
@@ -221,7 +229,7 @@
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Clássico" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-categoria="feminina promocoes">
             <img src="Una%20Blush.png" alt="Una Blush">
             <h3>Una Blush 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
@@ -229,7 +237,7 @@
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Blush" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-categoria="feminina promocoes">
             <img src="Una%20Somos.png" alt="Una Somos">
             <h3>Una Somos 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
@@ -237,7 +245,7 @@
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Somos" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-categoria="feminina promocoes">
             <img src="Una%20Artisan.png" alt="Una Artisan">
             <h3>Una Artisan 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
@@ -245,7 +253,7 @@
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Artisan" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-categoria="feminina promocoes">
             <img src="Una%20Senses.png" alt="Una Senses">
             <h3>Una Senses 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
@@ -253,7 +261,7 @@
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Senses" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-categoria="feminina promocoes">
             <img src="Una%20Celebrar.png" alt="Una Celebrar">
             <h3>Una Celebrar 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
@@ -261,7 +269,7 @@
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Una+Celebrar" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-categoria="masculina promocoes">
             <img src="Essencial%20Unico%20Masculino%20Refil.png" alt="Essencial Único Masculino Refil">
             <h3>Essencial Único Masc. Refil</h3>
             <p class="preco-de">De: R$ 228,90</p>
@@ -269,7 +277,7 @@
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Refil+do+Essencial+Único+Masculino" class="btn-whats">Pedir no WhatsApp</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-categoria="corpo-banho promocoes">
             <img src="Body%20Splash%20Amora.png" alt="Body Splash Amora e Flor de Pêssego">
             <h3>Body Splash Amora e Pêssego</h3>
             <p class="preco-de">De: R$ 93,90</p>
@@ -277,6 +285,27 @@
             <a href="https://api.whatsapp.com/send?phone=5511962983022&text=Olá!+Quero+pedir+o+Body+Splash+Amora+e+Flor+de+Pêssego" class="btn-whats">Pedir no WhatsApp</a>
         </div>
     </div>
+
+    <script>
+        function filtrar(categoriaSelecionada, nomeTitulo) {
+            // Muda o título da página
+            document.getElementById('titulo-vitrine').innerText = nomeTitulo;
+            
+            // Pega todos os produtos
+            const todosOsProdutos = document.querySelectorAll('.card');
+
+            // Passa por cada produto escondendo ou mostrando
+            todosOsProdutos.forEach(produto => {
+                const categoriasDoProduto = produto.getAttribute('data-categoria');
+                
+                if (categoriaSelecionada === 'todas' || categoriasDoProduto.includes(categoriaSelecionada)) {
+                    produto.style.display = 'block'; // Mostra o produto
+                } else {
+                    produto.style.display = 'none'; // Esconde o produto
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
