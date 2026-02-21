@@ -73,21 +73,12 @@
         <ul>
             <li><a onclick="filtrar('todas', 'Todos os Produtos')">Início</a></li>
             <li><a onclick="filtrar('promocoes', 'Promoções Especiais')">Promoções</a></li>
-            
             <li>
                 <a>Outlet ▾</a>
                 <div class="lista-suspensa">
                     <a onclick="filtrar('outlet', 'Outlet - Últimas Unidades')">Ver Produtos</a>
                 </div>
             </li>
-
-            <li>
-                <a>Cestas ▾</a>
-                <div class="lista-suspensa">
-                    <a onclick="filtrar('cestas', 'Cestas Presentes')">Cestas Presentes</a>
-                </div>
-            </li>
-
             <li>
                 <a>Perfumaria ▾</a>
                 <div class="lista-suspensa">
@@ -135,16 +126,6 @@
     <h2 id="titulo-vitrine" class="titulo-secao">Todos os Produtos</h2>
 
     <div class="vitrine" id="lista-produtos">
-
-        <div class="card" data-categoria="cestas promocoes">
-            <img src="Cesta%20Homem%20Sagaz.png" alt="Cesta Natura Homem Sagaz">
-            <h3>Cesta Homem Sagaz</h3>
-            <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">(Acompanha Urso e Coração)</p>
-            <p class="preco-de">De: R$ 320,00</p>
-            <p class="preco-por">Por: R$ 250,00</p>
-            <p class="estoque destaque-combo">⏳ <strong>Apenas 1 em estoque!</strong></p>
-            <button class="btn-whats" onclick="adicionarCarrinho('Cesta Homem Sagaz', 250.00)">Adicionar ao Carrinho</button>
-        </div>
         
         <div class="card" data-categoria="promocoes corpo-banho outlet">
             <img src="Combo%20Body%20Splash.png" alt="Combo 3 Body Splashes Diferentes">
@@ -155,12 +136,13 @@
             <p class="estoque destaque-combo">⏳ <strong>Promoção Especial!</strong></p>
             <button class="btn-whats" onclick="adicionarCarrinho('Combo 3 Body Splashes (Avisar fragrâncias no Whats)', 150.00)">Adicionar ao Carrinho</button>
         </div>
+
         <div class="card" data-categoria="masculina promocoes">
             <img src="KAIAK%20Masculino.png" alt="Kaiak Masculino">
             <h3>Kaiak Masculino</h3>
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
-            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
+            <p class="estoque">⏳ Apenas <strong>9</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Kaiak Masculino', 120.00)">Adicionar ao Carrinho</button>
         </div>
 
@@ -169,7 +151,7 @@
             <h3>Kaiak Oceano Masc.</h3>
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
-            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Kaiak Oceano Masculino', 120.00)">Adicionar ao Carrinho</button>
         </div>
 
@@ -187,7 +169,7 @@
             <h3>Kaiak Pulso Masc.</h3>
             <p class="preco-de">De: R$ 189,90</p>
             <p class="preco-por">Por: R$ 120,00</p>
-            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Kaiak Pulso Masculino', 120.00)">Adicionar ao Carrinho</button>
         </div>
 
@@ -196,7 +178,7 @@
             <h3>Biografia Masculino</h3>
             <p class="preco-de">De: R$ 209,90</p>
             <p class="preco-por">Por: R$ 146,90</p>
-            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
+            <p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Biografia Masculino', 146.90)">Adicionar ao Carrinho</button>
         </div>
 
@@ -236,6 +218,32 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Essence', 167.90)">Adicionar ao Carrinho</button>
         </div>
 
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Ilia.png" alt="Ilía Clássico">
+            <h3>Ilía Clássico</h3>
+            <p class="preco-de">De: R$ 199,90</p>
+            <p class="preco-por">Por: R$ 149,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Ilía Clássico', 149.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Ilia%20Secreto.png" alt="Ilía Secreto">
+            <h3>Ilía Secreto</h3>
+            <p class="preco-de">De: R$ 199,90</p>
+            <p class="preco-por">Por: R$ 149,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Ilía Secreto', 149.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Luna%20Intensa.png" alt="Luna Intensa">
+            <h3>Luna Intensa</h3>
+            <p class="preco-de">De: R$ 219,90</p>
+            <p class="preco-por">Por: R$ 159,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Luna Intensa', 159.90)">Adicionar ao Carrinho</button>
+        </div>
         <div class="card" data-categoria="feminina promocoes">
             <img src="Una%20Brilho.png" alt="Una Brilho">
             <h3>Una Brilho 75 ml</h3>
@@ -277,7 +285,7 @@
             <h3>Una Artisan 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
-            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Una Artisan', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
@@ -295,7 +303,7 @@
             <h3>Una Celebrar 75 ml</h3>
             <p class="preco-de">De: R$ 319,90</p>
             <p class="preco-por">Por: R$ 219,90</p>
-            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Una Celebrar', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
