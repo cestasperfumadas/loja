@@ -87,6 +87,14 @@
         <ul>
             <li><a onclick="filtrar('todas', 'Todos os Produtos')">Início</a></li>
             <li><a onclick="filtrar('promocoes', 'Promoções Especiais')">Promoções</a></li>
+            
+            <li>
+                <a>Cestas Perfumadas ▾</a>
+                <div class="lista-suspensa">
+                    <a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a>
+                </div>
+            </li>
+
             <li>
                 <a>Outlet ▾</a>
                 <div class="lista-suspensa">
@@ -145,6 +153,15 @@
 
     <div class="vitrine" id="lista-produtos">
         
+        <div class="card" data-categoria="cestas promocoes">
+            <img src="Cesta%20Exemplo.png" alt="Cesta Presente Especial">
+            <h3>Cesta Presente Especial</h3>
+            <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">(Contém: 1 Perfume + 1 Sabonete)</p>
+            <p class="preco-de">De: R$ 180,00</p>
+            <p class="preco-por">Por: R$ 120,00</p>
+            <p class="estoque destaque-combo">🎁 <strong>Pronta Entrega!</strong></p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Cesta Presente Especial', 120.00)">Adicionar ao Carrinho</button>
+        </div>
         <div class="card" data-categoria="promocoes corpo-banho outlet">
             <img src="Combo%20Body%20Splash.png" alt="Combo 3 Body Splashes Diferentes">
             <h3>Combo 3 Body Splashes</h3>
