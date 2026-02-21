@@ -82,6 +82,13 @@
             </li>
 
             <li>
+                <a>Cestas ▾</a>
+                <div class="lista-suspensa">
+                    <a onclick="filtrar('cestas', 'Cestas Presentes')">Cestas Presentes</a>
+                </div>
+            </li>
+
+            <li>
                 <a>Perfumaria ▾</a>
                 <div class="lista-suspensa">
                     <a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a>
@@ -128,6 +135,16 @@
     <h2 id="titulo-vitrine" class="titulo-secao">Todos os Produtos</h2>
 
     <div class="vitrine" id="lista-produtos">
+
+        <div class="card" data-categoria="cestas promocoes">
+            <img src="Cesta%20Homem%20Sagaz.png" alt="Cesta Natura Homem Sagaz">
+            <h3>Cesta Homem Sagaz</h3>
+            <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">(Acompanha Urso e Coração)</p>
+            <p class="preco-de">De: R$ 320,00</p>
+            <p class="preco-por">Por: R$ 250,00</p>
+            <p class="estoque destaque-combo">⏳ <strong>Apenas 1 em estoque!</strong></p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Cesta Homem Sagaz', 250.00)">Adicionar ao Carrinho</button>
+        </div>
         
         <div class="card" data-categoria="promocoes corpo-banho outlet">
             <img src="Combo%20Body%20Splash.png" alt="Combo 3 Body Splashes Diferentes">
