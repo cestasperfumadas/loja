@@ -32,8 +32,22 @@
         .info-caixa.destaque h3 { color: white; }
         .info-caixa.destaque p { font-weight: bold; font-size: 1.1rem; }
 
+        /* AVISO DE ESTOQUE E ERROS */
+        .alerta-loja {
+            background-color: #fff9c4;
+            color: #e65100;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            margin: 15px auto;
+            max-width: 960px;
+            border-radius: 8px;
+            border: 1px dashed #fbc02d;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
         /* TÍTULO DA VITRINE */
-        .titulo-secao { text-align: center; color: #d81b60; margin-top: 40px; font-size: 2rem; text-transform: uppercase; }
+        .titulo-secao { text-align: center; color: #d81b60; margin-top: 20px; font-size: 2rem; text-transform: uppercase; }
 
         /* VITRINE E CARDS */
         .vitrine { max-width: 1000px; margin: 20px auto 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 20px; }
@@ -122,6 +136,10 @@
             </div>
         </div>
     </header>
+
+    <div class="alerta-loja">
+        ⚠️ <strong>Aviso Importante:</strong> Nossas promoções são válidas <strong>enquanto durarem os estoques</strong>. Reservamo-nos o direito de corrigir eventuais erros de digitação em valores ou quantidades.
+    </div>
 
     <h2 id="titulo-vitrine" class="titulo-secao">Todos os Produtos</h2>
 
@@ -223,7 +241,7 @@
             <h3>Natura Homem Essence</h3>
             <p class="preco-de">De: R$ 239,90</p>
             <p class="preco-por">Por: R$ 167,90</p>
-            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
+            <p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Essence', 167.90)">Adicionar ao Carrinho</button>
         </div>
 
