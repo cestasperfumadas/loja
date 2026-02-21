@@ -8,14 +8,13 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; background-color: #fdf2f5; padding-bottom: 80px; }
 
-        /* MENU DE CATEGORIAS PROFISSIONAL (DROPDOWN) */
+        /* MENU DE CATEGORIAS PROFISSIONAL */
         .barra-nav { background-color: #333; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .barra-nav ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; flex-wrap: wrap; }
         .barra-nav > ul > li { position: relative; }
         .barra-nav a { display: block; color: white; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; padding: 18px 20px; transition: background-color 0.3s; cursor: pointer; }
         .barra-nav a:hover { background-color: #d81b60; color: white; }
 
-        /* LISTA SUSPENSA */
         .lista-suspensa { display: none; position: absolute; background-color: #ffffff; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15); z-index: 1; border-radius: 0 0 8px 8px; overflow: hidden; top: 100%; left: 0; }
         .lista-suspensa a { color: #333; padding: 12px 20px; text-transform: none; font-weight: 500; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
         .lista-suspensa a:hover { background-color: #fdf2f5; color: #d81b60; padding-left: 25px; transition: 0.2s; }
@@ -32,19 +31,21 @@
         .info-caixa.destaque h3 { color: white; }
         .info-caixa.destaque p { font-weight: bold; font-size: 1.1rem; }
 
-        /* NOVO BANNER: SLOGAN E PRONTA ENTREGA */
+        /* BANNER E BARRA DE BUSCA */
         .hero-banner { background: linear-gradient(135deg, #d81b60, #b0154d); color: white; text-align: center; padding: 25px 15px; margin: 0 auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .hero-banner h1 { font-size: 2rem; margin-bottom: 8px; letter-spacing: 1px; }
         .hero-banner .frase-efeito { font-size: 1.1rem; margin-bottom: 15px; font-weight: 300; font-style: italic; }
         .hero-banner .pronta-entrega { background-color: #ffeb3b; color: #333; display: inline-block; padding: 8px 20px; border-radius: 25px; font-weight: bold; font-size: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
 
-        /* AVISO DE ESTOQUE E ERROS */
+        .busca-container { text-align: center; margin: -20px auto 20px auto; max-width: 90%; width: 600px; position: relative; z-index: 10; }
+        .busca-container input { width: 100%; padding: 15px 20px; border-radius: 30px; border: 2px solid #d81b60; font-size: 1rem; outline: none; box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: 0.3s; }
+        .busca-container input:focus { border-color: #b0154d; box-shadow: 0 6px 15px rgba(216, 27, 96, 0.3); }
+
         .alerta-loja { background-color: #fff9c4; color: #e65100; text-align: center; padding: 12px 20px; font-size: 0.95rem; margin: 15px auto; max-width: 960px; border-radius: 8px; border: 1px dashed #fbc02d; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 
-        /* TÍTULO DA VITRINE */
-        .titulo-secao { text-align: center; color: #d81b60; margin-top: 20px; font-size: 2rem; text-transform: uppercase; }
+        /* TÍTULO E VITRINE */
+        .titulo-secao { text-align: center; color: #d81b60; margin-top: 10px; font-size: 2rem; text-transform: uppercase; }
 
-        /* VITRINE E CARDS - ATUALIZADOS PARA MELHORAR NO CELULAR */
         .vitrine { max-width: 1200px; margin: 20px auto 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; padding: 15px; }
         .card { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center; position: relative; display: flex; flex-direction: column; justify-content: space-between;}
         .card img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 10px; }
@@ -59,7 +60,7 @@
         .btn-whats { display: block; background-color: #d81b60; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; margin-top: 5px; width: 100%; cursor: pointer; transition: 0.3s; font-size: 0.95rem; }
         .btn-whats:hover { background-color: #b0154d; }
 
-        /* CONFIGURAÇÃO EXCLUSIVA PARA CELULAR (2 PRODUTOS POR LINHA) */
+        /* CONFIGURAÇÃO CELULAR */
         @media (max-width: 600px) {
             .hero-banner h1 { font-size: 1.6rem; }
             .hero-banner .frase-efeito { font-size: 0.95rem; }
@@ -75,12 +76,11 @@
             .btn-whats { font-size: 0.85rem; padding: 8px 5px; }
         }
 
-        /* CARRINHO DE COMPRAS FLUTUANTE */
+        /* CARRINHO DE COMPRAS */
         .carrinho-flutuante { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1001; transition: transform 0.3s; }
         .carrinho-flutuante:hover { transform: scale(1.1); }
         .contador-carrinho { position: absolute; top: -5px; right: -5px; background-color: red; color: white; border-radius: 50%; width: 22px; height: 22px; font-size: 12px; font-weight: bold; display: flex; justify-content: center; align-items: center; }
 
-        /* MODAL DO CARRINHO */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1002; justify-content: center; align-items: center; }
         .modal-carrinho { background: white; width: 90%; max-width: 400px; border-radius: 12px; padding: 20px; max-height: 80vh; overflow-y: auto; position: relative; }
         .modal-carrinho h2 { color: #333; margin-bottom: 15px; border-bottom: 2px solid #fdf2f5; padding-bottom: 10px; text-align: center; }
@@ -96,18 +96,20 @@
 
     <nav class="barra-nav">
         <ul>
-            <li><a onclick="filtrar('todas', 'Todos os Produtos')">Início</a></li>
-            <li><a onclick="filtrar('promocoes', 'Promoções Especiais')">Promoções</a></li>
+            <li><a onclick="filtrar('destaque', 'Destaques da Loja')">Início</a></li>
+            
             <li>
-                <a>Cestas Perfumadas ▾</a>
+                <a>Ver Tudo ▾</a>
                 <div class="lista-suspensa">
-                    <a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a>
+                    <a onclick="filtrar('todas', 'Todos os Produtos')">Catálogo Completo</a>
                 </div>
             </li>
+
+            <li><a onclick="filtrar('promocoes', 'Promoções Especiais')">Promoções</a></li>
             <li>
-                <a>Outlet ▾</a>
+                <a>Cestas ▾</a>
                 <div class="lista-suspensa">
-                    <a onclick="filtrar('outlet', 'Outlet - Últimas Unidades')">Ver Produtos</a>
+                    <a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a>
                 </div>
             </li>
             <li>
@@ -124,24 +126,12 @@
                     <a onclick="filtrar('corpo-banho', 'Hidratantes & Body Splash')">Hidratantes & Body Splash</a>
                 </div>
             </li>
-            <li>
-                <a>Maquiagens ▾</a>
-                <div class="lista-suspensa">
-                    <a onclick="filtrar('maquiagem', 'Maquiagens')">Ver Tudo</a>
-                </div>
-            </li>
-            <li>
-                <a>Cabelos ▾</a>
-                <div class="lista-suspensa">
-                    <a onclick="filtrar('cabelos', 'Cabelos')">Ver Tudo</a>
-                </div>
-            </li>
         </ul>
     </nav>
 
     <header>
         <div class="header-logo-container">
-            <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('todas', 'Todos os Produtos')">
+            <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('destaque', 'Destaques da Loja')">
         </div>
         <div class="header-info-container">
             <div class="info-caixa">
@@ -160,24 +150,29 @@
         <p class="pronta-entrega">📦 Todos os produtos anunciados a Pronta Entrega!</p>
     </div>
 
+    <div class="busca-container">
+        <input type="text" id="inputBusca" placeholder="🔍 Procure por perfumes, sabonetes, cestas..." onkeyup="buscarProdutos()">
+    </div>
+
     <div class="alerta-loja">
         ⚠️ <strong>Aviso Importante:</strong> Nossas promoções são válidas <strong>enquanto durarem os estoques</strong>. Reservamo-nos o direito de corrigir eventuais erros de digitação em valores ou quantidades.
     </div>
 
-    <h2 id="titulo-vitrine" class="titulo-secao">Todos os Produtos</h2>
+    <h2 id="titulo-vitrine" class="titulo-secao">Destaques da Loja</h2>
 
     <div class="vitrine" id="lista-produtos">
         
-        <div class="card" data-categoria="cestas promocoes">
+        <div class="card" data-categoria="cestas promocoes destaque">
             <img src="cestaluna.png" alt="Kit Presente Luna">
             <h3>Kit Presente Luna</h3>
-            <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">(1 colônia 100ml, 1 hidratante 300ml, 1 body splash 200ml e 1 coração pelúcia)</p>
+            <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">(1 colônia 100ml, 1 hidratante 300ml, 1 body splash e pelúcia)</p>
             <p class="preco-de">De: R$ 349,90</p>
             <p class="preco-por">Por: R$ 260,00</p>
             <p class="estoque destaque-combo">🎁 <strong>Apenas 1 em estoque!</strong></p>
             <button class="btn-whats" onclick="adicionarCarrinho('Kit Presente Luna', 260.00)">Adicionar ao Carrinho</button>
         </div>
-        <div class="card" data-categoria="promocoes corpo-banho outlet">
+
+        <div class="card" data-categoria="promocoes corpo-banho outlet destaque">
             <img src="Combo%20Body%20Splash.png" alt="Combo 3 Body Splashes Diferentes">
             <h3>Combo 3 Body Splashes</h3>
             <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">(Escolha 3 fragrâncias diferentes)</p>
@@ -187,6 +182,78 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Combo 3 Body Splashes (Avisar fragrâncias no Whats)', 150.00)">Adicionar ao Carrinho</button>
         </div>
 
+        <div class="card" data-categoria="feminina promocoes destaque">
+            <img src="Luna%201un.png" alt="Luna Tradicional">
+            <h3>Luna Tradicional</h3>
+            <p class="preco-de">De: R$ 185,90</p>
+            <p class="preco-por">Por: R$ 119,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Luna Tradicional', 119.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Luna%20Liberdade%202un.png" alt="Luna Liberdade">
+            <h3>Luna Liberdade</h3>
+            <p class="preco-de">De: R$ 185,90</p>
+            <p class="preco-por">Por: R$ 119,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Luna Liberdade', 119.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Luna%20Radiante%202un.png" alt="Luna Radiante">
+            <h3>Luna Radiante</h3>
+            <p class="preco-de">De: R$ 185,90</p>
+            <p class="preco-por">Por: R$ 119,90</p>
+            <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Luna Radiante', 119.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Luna%20Confiante%203un.png" alt="Luna Confiante">
+            <h3>Luna Confiante</h3>
+            <p class="preco-de">De: R$ 185,90</p>
+            <p class="preco-por">Por: R$ 119,90</p>
+            <p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Luna Confiante', 119.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Luna%20Marcante%201un.png" alt="Luna Marcante">
+            <h3>Luna Marcante</h3>
+            <p class="preco-de">De: R$ 185,90</p>
+            <p class="preco-por">Por: R$ 119,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Luna Marcante', 119.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Luna%20Fascinante%201un.png" alt="Luna Fascinante">
+            <h3>Luna Fascinante</h3>
+            <p class="preco-de">De: R$ 185,90</p>
+            <p class="preco-por">Por: R$ 119,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Luna Fascinante', 119.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Luna%20Rosé%201un.png" alt="Luna Rosé">
+            <h3>Luna Rosé</h3>
+            <p class="preco-de">De: R$ 185,90</p>
+            <p class="preco-por">Por: R$ 119,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Luna Rosé', 119.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="masculina feminina promocoes destaque">
+            <img src="Festival%20de%20Humor%201%20un.png" alt="Festival de Humor">
+            <h3>Festival de Humor</h3>
+            <p class="preco-de">De: R$ 164,90</p>
+            <p class="preco-por">Por: R$ 89,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Festival de Humor', 89.90)">Adicionar ao Carrinho</button>
+        </div>
+
         <div class="card" data-categoria="masculina feminina promocoes">
             <img src="Humor%20Liberta.png" alt="Humor Liberta">
             <h3>Humor Liberta</h3>
@@ -194,6 +261,42 @@
             <p class="preco-por">Por: R$ 119,90</p>
             <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Humor Liberta', 119.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes destaque">
+            <img src="Meu%20Primeiro%20Humor%204un.png" alt="Meu Primeiro Humor">
+            <h3>Meu Primeiro Humor</h3>
+            <p class="preco-de">De: R$ 164,90</p>
+            <p class="preco-por">Por: R$ 99,90</p>
+            <p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Meu Primeiro Humor', 99.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Humor%20Próprio%201un.png" alt="Humor Próprio">
+            <h3>Humor Próprio</h3>
+            <p class="preco-de">De: R$ 164,90</p>
+            <p class="preco-por">Por: R$ 99,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Humor Próprio', 99.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="masculina promocoes destaque">
+            <img src="Essencial%20Masc.png" alt="Essencial Masculino">
+            <h3>Essencial Masculino</h3>
+            <p class="preco-de">De: R$ 279,90</p>
+            <p class="preco-por">Por: R$ 199,90</p>
+            <p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Essencial Masculino', 199.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="masculina promocoes destaque">
+            <img src="KAIAK%20Masculino.png" alt="Kaiak Masculino">
+            <h3>Kaiak Masculino</h3>
+            <p class="preco-de">De: R$ 189,90</p>
+            <p class="preco-por">Por: R$ 120,00</p>
+            <p class="estoque">⏳ Apenas <strong>9</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Kaiak Masculino', 120.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -287,15 +390,6 @@
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
-            <img src="KAIAK%20Masculino.png" alt="Kaiak Masculino">
-            <h3>Kaiak Masculino</h3>
-            <p class="preco-de">De: R$ 189,90</p>
-            <p class="preco-por">Por: R$ 120,00</p>
-            <p class="estoque">⏳ Apenas <strong>9</strong> em estoque!</p>
-            <button class="btn-whats" onclick="adicionarCarrinho('Kaiak Masculino', 120.00)">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="card" data-categoria="masculina promocoes">
             <img src="Kaiak%20Urbe.png" alt="Kaiak Urbe">
             <h3>Kaiak Urbe</h3>
             <p class="preco-de">De: R$ 189,90</p>
@@ -359,15 +453,6 @@
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
-            <img src="Essencial%20Masc.png" alt="Essencial Masculino">
-            <h3>Essencial Masculino</h3>
-            <p class="preco-de">De: R$ 279,90</p>
-            <p class="preco-por">Por: R$ 199,90</p>
-            <p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p>
-            <button class="btn-whats" onclick="adicionarCarrinho('Essencial Masculino', 199.90)">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="card" data-categoria="masculina promocoes">
             <img src="Essencial%20Ato%20Masc.png" alt="Essencial Ato">
             <h3>Essencial Ato</h3>
             <p class="preco-de">De: R$ 279,90</p>
@@ -428,6 +513,24 @@
             <p class="preco-por">Por: R$ 139,00</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Essencial Exclusivo Refil', 139.00)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes destaque">
+            <img src="Ilia.png" alt="Ilía Clássico">
+            <h3>Ilía Clássico</h3>
+            <p class="preco-de">De: R$ 199,90</p>
+            <p class="preco-por">Por: R$ 149,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Ilía Clássico', 149.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card" data-categoria="feminina promocoes">
+            <img src="Essencial%20Ato%20Fem%201un.png" alt="Essencial Ato Feminino">
+            <h3>Essencial Ato Feminino</h3>
+            <p class="preco-de">De: R$ 279,90</p>
+            <p class="preco-por">Por: R$ 219,90</p>
+            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
+            <button class="btn-whats" onclick="adicionarCarrinho('Essencial Ato Feminino', 219.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="feminina promocoes">
@@ -521,39 +624,12 @@
         </div>
 
         <div class="card" data-categoria="feminina promocoes">
-            <img src="Meu%20Primeiro%20Humor%204un.png" alt="Meu Primeiro Humor">
-            <h3>Meu Primeiro Humor</h3>
-            <p class="preco-de">De: R$ 164,90</p>
-            <p class="preco-por">Por: R$ 99,90</p>
-            <p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p>
-            <button class="btn-whats" onclick="adicionarCarrinho('Meu Primeiro Humor', 99.90)">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="card" data-categoria="feminina promocoes">
-            <img src="Humor%20Próprio%201un.png" alt="Humor Próprio">
-            <h3>Humor Próprio</h3>
-            <p class="preco-de">De: R$ 164,90</p>
-            <p class="preco-por">Por: R$ 99,90</p>
-            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
-            <button class="btn-whats" onclick="adicionarCarrinho('Humor Próprio', 99.90)">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="card" data-categoria="feminina promocoes">
             <img src="Kriska%20Drama%202un.png" alt="Kriska Drama">
             <h3>Kriska Drama</h3>
             <p class="preco-de">De: R$ 169,90</p>
             <p class="preco-por">Por: R$ 109,90</p>
             <p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Kriska Drama', 109.90)">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="card" data-categoria="feminina promocoes">
-            <img src="Ilia.png" alt="Ilía Clássico">
-            <h3>Ilía Clássico</h3>
-            <p class="preco-de">De: R$ 199,90</p>
-            <p class="preco-por">Por: R$ 149,90</p>
-            <p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p>
-            <button class="btn-whats" onclick="adicionarCarrinho('Ilía Clássico', 149.90)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="feminina promocoes">
@@ -790,7 +866,7 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Framboesa e Pimenta Vermelha', 65.00)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="sabonetes corpo-banho promocoes">
+        <div class="card" data-categoria="sabonetes corpo-banho promocoes destaque">
             <img src="Sabonete%20Algodão.png" alt="Sabonete Algodão">
             <h3>Sabonete Algodão</h3>
             <p class="preco-de">De: R$ 34,90</p>
@@ -828,9 +904,16 @@
     </div>
 
     <script>
-        // Função de filtrar categorias
+        // Função para mostrar Destaques quando o site abre
+        window.onload = function() {
+            filtrar('destaque', 'Destaques da Loja');
+        };
+
+        // Função de filtrar categorias no menu
         function filtrar(categoriaSelecionada, nomeTitulo) {
             document.getElementById('titulo-vitrine').innerText = nomeTitulo;
+            document.getElementById('inputBusca').value = ""; // Limpa a busca ao clicar no menu
+
             const todosOsProdutos = document.querySelectorAll('.card');
 
             todosOsProdutos.forEach(produto => {
@@ -843,32 +926,47 @@
             });
         }
 
+        // Função da Barra de Pesquisa
+        function buscarProdutos() {
+            let termo = document.getElementById('inputBusca').value.toLowerCase();
+            let produtos = document.querySelectorAll('.card');
+            let titulo = document.getElementById('titulo-vitrine');
+            
+            if(termo.length > 0) {
+                titulo.innerText = "Resultados da Pesquisa";
+            } else {
+                titulo.innerText = "Catálogo da Loja";
+            }
+
+            produtos.forEach(produto => {
+                let nomeProduto = produto.querySelector('h3').innerText.toLowerCase();
+                if (nomeProduto.includes(termo)) {
+                    produto.style.display = 'flex';
+                } else {
+                    produto.style.display = 'none';
+                }
+            });
+        }
+
         // LÓGICA DO CARRINHO DE COMPRAS
         let carrinho = [];
 
         function adicionarCarrinho(nome, preco) {
-            // Adiciona o produto à lista
             carrinho.push({ nome: nome, preco: preco });
             atualizarCarrinho();
-            
-            // Dá um feedback visual rápido abrindo o carrinho
             abrirCarrinho();
         }
 
         function removerCarrinho(index) {
-            // Remove o item específico
             carrinho.splice(index, 1);
             atualizarCarrinho();
         }
 
         function atualizarCarrinho() {
-            // Atualiza a bolinha vermelha
             document.getElementById('contador').innerText = carrinho.length;
-
             let listaHtml = "";
             let total = 0;
 
-            // Cria o HTML para cada item e soma o total
             carrinho.forEach((item, index) => {
                 listaHtml += `
                     <div class="item-carrinho">
@@ -879,7 +977,6 @@
                 total += item.preco;
             });
 
-            // Se estiver vazio
             if (carrinho.length === 0) {
                 listaHtml = "<p style='text-align:center; color:#999;'>O seu carrinho está vazio.</p>";
             }
@@ -912,10 +1009,7 @@
 
             textoWhatsApp += `\n*Total a pagar: R$ ${total.toFixed(2).replace('.', ',')}*\n\nComo faço para realizar o pagamento por Pix ou Cartão?`;
 
-            // Codifica o texto para o link do WhatsApp
             let link = "https://api.whatsapp.com/send?phone=5511962983022&text=" + encodeURIComponent(textoWhatsApp);
-            
-            // Abre o WhatsApp numa nova aba
             window.open(link, "_blank");
         }
     </script>
