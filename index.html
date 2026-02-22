@@ -303,13 +303,15 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Essencial Masculino', 199.90)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="masculina promocoes destaque">
+        <div class="card" data-categoria="masculina promocoes destaque" id="card-kaiak" style="border: 2px solid #ffeb3b; background-color: #fffde7;">
+            <div id="selo-kaiak" style="position: absolute; top: -10px; right: -10px; background: red; color: white; padding: 5px 10px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 2; display: none;">OFERTA 24H ⚡</div>
             <img src="KAIAK%20Masculino.png" alt="Kaiak Masculino">
             <h3>Kaiak Masculino</h3>
-            <p class="preco-de">De: R$ 189,90</p>
-            <p class="preco-por">Por: R$ 120,00</p>
+            <p class="preco-de" id="kaiak-de">De: R$ 189,90</p>
+            <p class="preco-por" id="kaiak-por">Por: R$ 120,00</p>
             <p class="estoque">⏳ Apenas <strong>9</strong> em estoque!</p>
-            <button class="btn-whats" onclick="adicionarCarrinho('Kaiak Masculino', 120.00)">Adicionar ao Carrinho</button>
+            <p id="kaiak-contador" style="color: #d81b60; font-size: 0.9rem; font-weight: bold; margin-bottom: 5px; display: none;">⏳ Termina em: <br><span id="tempo-kaiak" style="font-size: 1.2rem;"></span></p>
+            <button class="btn-whats" id="btn-kaiak" onclick="adicionarCarrinho('Kaiak Masculino', 120.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -1295,9 +1297,58 @@
     </div>
 
     <script>
+        // Função do Cronómetro da Promoção 24h
+        function verificarPromocao() {
+            // Defini o prazo para acabar na noite de 23 de Fevereiro de 2026 (amanhã)
+            let dataFim = new Date('2026-02-23T23:59:59').getTime();
+            
+            let btnKaiak = document.getElementById('btn-kaiak');
+            let precoPorKaiak = document.getElementById('kaiak-por');
+            let precoDeKaiak = document.getElementById('kaiak-de');
+            let contador = document.getElementById('kaiak-contador');
+            let selo = document.getElementById('selo-kaiak');
+            
+            let atualizarRelogio = setInterval(function() {
+                let agora = new Date().getTime();
+                let distancia = dataFim - agora;
+                
+                if (distancia > 0) {
+                    // Promoção Ativa!
+                    precoDeKaiak.innerText = "De: R$ 189,90 (Promoção 24h)";
+                    precoPorKaiak.innerHTML = "🔥 R$ 99,90";
+                    precoPorKaiak.style.fontSize = "1.8rem";
+                    precoPorKaiak.style.color = "#d81b60";
+                    btnKaiak.setAttribute('onclick', "adicionarCarrinho('Kaiak Masculino (Promo 24h)', 99.90)");
+                    
+                    contador.style.display = 'block';
+                    selo.style.display = 'block';
+                    
+                    // Calcula o tempo
+                    let horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+                    let segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+                    
+                    document.getElementById('tempo-kaiak').innerText = horas + "h " + minutos + "m " + segundos + "s";
+                } else {
+                    // Promoção Acabou! Volta tudo ao normal
+                    clearInterval(atualizarRelogio);
+                    precoDeKaiak.innerText = "De: R$ 189,90";
+                    precoPorKaiak.innerText = "Por: R$ 120,00";
+                    precoPorKaiak.style.fontSize = "1.6rem";
+                    btnKaiak.setAttribute('onclick', "adicionarCarrinho('Kaiak Masculino', 120.00)");
+                    
+                    contador.style.display = 'none';
+                    selo.style.display = 'none';
+                    document.getElementById('card-kaiak').style.border = "none";
+                    document.getElementById('card-kaiak').style.backgroundColor = "white";
+                }
+            }, 1000);
+        }
+
         // Função para mostrar Destaques quando o site abre
         window.onload = function() {
             filtrar('destaque', 'Destaques da Loja');
+            verificarPromocao(); // Inicia o relógio mágico
         };
 
         // Função de filtrar categorias no menu
@@ -1330,7 +1381,7 @@
             }
 
             produtos.forEach(produto => {
-                let nomeProduto = produto.querySelector('h3').innerText.toLowerCase();
+                let nomeProduto = document.querySelector('h3') ? produto.querySelector('h3').innerText.toLowerCase() : "";
                 if (nomeProduto.includes(termo)) {
                     produto.style.display = 'flex';
                 } else {
