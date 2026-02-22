@@ -105,7 +105,7 @@
 
     <nav class="barra-nav">
         <ul>
-            <li><a onclick="filtrar('destaque', 'Destaques da Loja')">Início</a></li>
+            <li><a onclick="filtrar('destaque', 'Promoção do Dia ⚡')">Início</a></li>
             
             <li>
                 <a href="javascript:void(0)">Ver Tudo ▾</a>
@@ -144,7 +144,7 @@
 
     <header>
         <div class="header-logo-container">
-            <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('destaque', 'Destaques da Loja')">
+            <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('destaque', 'Promoção do Dia ⚡')">
         </div>
         <div class="header-info-container">
             <div class="info-caixa">
@@ -171,11 +171,23 @@
         ⚠️ <strong>Aviso Importante:</strong> Nossas promoções são válidas <strong>enquanto durarem os estoques</strong>. Reservamo-nos o direito de corrigir eventuais erros de digitação em valores ou quantidades.
     </div>
 
-    <h2 id="titulo-vitrine" class="titulo-secao">Destaques da Loja</h2>
+    <h2 id="titulo-vitrine" class="titulo-secao">Promoção do Dia ⚡</h2>
 
     <div class="vitrine" id="lista-produtos">
         
-        <div class="card" data-categoria="cestas promocoes destaque">
+        <div class="card" data-categoria="masculina promocoes destaque" id="card-kaiak" style="border: 2px solid #ffeb3b; background-color: #fffde7; max-width: 350px; margin: 0 auto; width: 100%;">
+            <div id="selo-kaiak" style="position: absolute; top: -10px; right: -10px; background: red; color: white; padding: 5px 10px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 2; display: none;">OFERTA 24H ⚡</div>
+            <img src="KAIAK%20Masculino.png" alt="Kaiak Masculino">
+            <h3>Kaiak Masculino</h3>
+            <p class="preco-de" id="kaiak-de">De: R$ 189,90</p>
+            <p class="preco-por" id="kaiak-por">Por: R$ 120,00</p>
+            <p class="estoque">⏳ Apenas <strong>9</strong> em estoque!</p>
+            <p id="kaiak-contador" style="color: #d81b60; font-size: 0.9rem; font-weight: bold; margin-bottom: 5px; display: none;">⏳ Termina em: <br><span id="tempo-kaiak" style="font-size: 1.2rem;"></span></p>
+            <button class="btn-whats" id="btn-kaiak" onclick="adicionarCarrinho('Kaiak Masculino', 120.00)">Adicionar ao Carrinho</button>
+        </div>
+
+
+        <div class="card" data-categoria="cestas promocoes">
             <img src="cestaluna.png" alt="Kit Presente Luna">
             <h3>Kit Presente Luna</h3>
             <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">(1 colônia 100ml, 1 hidratante 300ml, 1 body splash e pelúcia)</p>
@@ -185,7 +197,7 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Kit Presente Luna', 260.00)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="promocoes corpo-banho body-splash outlet destaque">
+        <div class="card" data-categoria="promocoes corpo-banho body-splash outlet">
             <img src="Combo%20Body%20Splash.png" alt="Combo 3 Body Splashes Diferentes">
             <h3>Combo 3 Body Splashes</h3>
             <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">(Escolha 3 fragrâncias diferentes)</p>
@@ -195,7 +207,7 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Combo 3 Body Splashes (Avisar fragrâncias no Whats)', 150.00)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="feminina promocoes destaque">
+        <div class="card" data-categoria="feminina promocoes">
             <img src="Luna%201un.png" alt="Luna Tradicional">
             <h3>Luna Tradicional</h3>
             <p class="preco-de">De: R$ 185,90</p>
@@ -258,7 +270,7 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Luna Rosé', 119.90)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="masculina feminina promocoes destaque">
+        <div class="card" data-categoria="masculina feminina promocoes">
             <img src="Festival%20de%20Humor%201%20un.png" alt="Festival de Humor">
             <h3>Festival de Humor</h3>
             <p class="preco-de">De: R$ 164,90</p>
@@ -276,7 +288,7 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Humor Liberta', 119.90)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="feminina promocoes destaque">
+        <div class="card" data-categoria="feminina promocoes">
             <img src="Meu%20Primeiro%20Humor%204un.png" alt="Meu Primeiro Humor">
             <h3>Meu Primeiro Humor</h3>
             <p class="preco-de">De: R$ 164,90</p>
@@ -294,24 +306,13 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Humor Próprio', 99.90)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="masculina promocoes destaque">
+        <div class="card" data-categoria="masculina promocoes">
             <img src="Essencial%20Masc.png" alt="Essencial Masculino">
             <h3>Essencial Masculino</h3>
             <p class="preco-de">De: R$ 279,90</p>
             <p class="preco-por">Por: R$ 199,90</p>
             <p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p>
             <button class="btn-whats" onclick="adicionarCarrinho('Essencial Masculino', 199.90)">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="card" data-categoria="masculina promocoes destaque" id="card-kaiak" style="border: 2px solid #ffeb3b; background-color: #fffde7;">
-            <div id="selo-kaiak" style="position: absolute; top: -10px; right: -10px; background: red; color: white; padding: 5px 10px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 2; display: none;">OFERTA 24H ⚡</div>
-            <img src="KAIAK%20Masculino.png" alt="Kaiak Masculino">
-            <h3>Kaiak Masculino</h3>
-            <p class="preco-de" id="kaiak-de">De: R$ 189,90</p>
-            <p class="preco-por" id="kaiak-por">Por: R$ 120,00</p>
-            <p class="estoque">⏳ Apenas <strong>9</strong> em estoque!</p>
-            <p id="kaiak-contador" style="color: #d81b60; font-size: 0.9rem; font-weight: bold; margin-bottom: 5px; display: none;">⏳ Termina em: <br><span id="tempo-kaiak" style="font-size: 1.2rem;"></span></p>
-            <button class="btn-whats" id="btn-kaiak" onclick="adicionarCarrinho('Kaiak Masculino', 120.00)">Adicionar ao Carrinho</button>
         </div>
 
         <div class="card" data-categoria="masculina promocoes">
@@ -530,7 +531,7 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Essencial Exclusivo Refil', 139.00)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="feminina promocoes destaque">
+        <div class="card" data-categoria="feminina promocoes">
             <img src="novo_sentir.png" alt="Essencial Sentir Feminino">
             <h3>Essencial Sentir</h3>
             <p class="preco-de">De: R$ 279,90</p>
@@ -773,7 +774,7 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Hidratante Maçã Caramelada', 59.90)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="corpo-banho hidratantes promocoes destaque">
+        <div class="card" data-categoria="corpo-banho hidratantes promocoes">
             <img src="Hidratante%20Cereja%20e%20Avelã%208un.png" alt="Hidratante Cereja e Avelã">
             <h3>Hidratante Cereja e Avelã</h3>
             <p class="preco-de">De: R$ 78,90</p>
@@ -1106,7 +1107,7 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Sabonete Amora e Flor de Pêssego', 25.00)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="sabonetes corpo-banho promocoes destaque">
+        <div class="card" data-categoria="sabonetes corpo-banho promocoes">
             <img src="Sabonete%20Sortido%20cor%20Laranja%2020un.png" alt="Sabonete Sortido Cor Laranja">
             <h3>Sabonete Sortido (Laranja)</h3>
             <p class="preco-de">De: R$ 42,90</p>
@@ -1259,7 +1260,7 @@
             <button class="btn-whats" onclick="adicionarCarrinho('Sabonete Sortido com Carinho', 25.00)">Adicionar ao Carrinho</button>
         </div>
 
-        <div class="card" data-categoria="sabonetes corpo-banho promocoes destaque">
+        <div class="card" data-categoria="sabonetes corpo-banho promocoes">
             <img src="Sabonete%20Algodão.png" alt="Sabonete Algodão">
             <h3>Sabonete Algodão</h3>
             <p class="preco-de">De: R$ 34,90</p>
@@ -1345,9 +1346,9 @@
             }, 1000);
         }
 
-        // Função para mostrar Destaques quando o site abre
+        // Função para mostrar a Promoção do Dia quando o site abre
         window.onload = function() {
-            filtrar('destaque', 'Destaques da Loja');
+            filtrar('destaque', 'Promoção do Dia ⚡');
             verificarPromocao(); // Inicia o relógio mágico
         };
 
@@ -1381,7 +1382,7 @@
             }
 
             produtos.forEach(produto => {
-                let nomeProduto = document.querySelector('h3') ? produto.querySelector('h3').innerText.toLowerCase() : "";
+                let nomeProduto = produto.querySelector('h3').innerText.toLowerCase();
                 if (nomeProduto.includes(termo)) {
                     produto.style.display = 'flex';
                 } else {
