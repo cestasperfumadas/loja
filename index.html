@@ -135,7 +135,7 @@
         <h1>Cestas Perfumadas</h1><p class="frase-efeito">"Presenteie com carinho!" ✨</p><p class="pronta-entrega">📦 Pronta Entrega!</p>
     </div>
 
-    <div class="busca-container"><input type="text" id="inputBusca" placeholder="🔍 Procure por perfumes, sabonetes..." onkeyup="buscarProdutos()"></div>
+    <div class="busca-container"><input type="text" id="inputBusca" placeholder="🔍 Procure por perfumes, sabonetes, cestas..." onkeyup="buscarProdutos()"></div>
 
     <div id="secao-sobre" class="sobre-nos">
         <h3>🌟 Nossa Missão</h3><p>Proporcionar momentos inesquecíveis de carinho e autocuidado, transformando a excelência dos produtos Natura em presentes únicos, montados com amor e dedicação para celebrar as relações humanas.</p><br>
@@ -180,12 +180,12 @@
 
         // LISTA DE PRODUTOS COMPRIMIDA
         const produtos = [
+            // ================= VÍDEO SHOWCASE (Adicionado aqui!) =================
+            ["Vídeo cesta Flores.mp4","Vídeo Cesta Flores", 0, 0, 0, "cestas destaque promocoes", "video_vitrine"],
+
             // DESTAQUES / VIP (KITS, CESTAS E ANÚNCIOS)
             ["KAIAK Masculino.png","Kaiak Masculino",189.9,120,9,"masculina destaque promocoes","24h"],
-            
-            // AQUI ESTÁ O COMBO DE BODY SPLASH TRANSFORMADO EM ANÚNCIO (sem adicionar direto ao carrinho)
             ["Combo Body Splash.png","Combo 3 Body Splashes",281.7,150,99,"corpo-banho body-splash destaque promocoes","anuncio_combo"],
-            
             ["Cesta Coração Essencial Exc Fem.jpg","Cesta Coração Essencial",379.9,279.9,1,"cestas destaque promocoes","presente"],
             ["Kit creme tododia 100ml 1un.jpg","Kit Creme Tododia 100ml",88.5,39.9,1,"corpo-banho hidratantes destaque promocoes","presente"],
             ["cestaluna.png","Kit Presente Luna",349.9,260,1,"cestas destaque promocoes","presente"],
@@ -409,7 +409,19 @@
                 let img = p[0], nome = p[1], precoDe = p[2].toFixed(2).replace('.', ','), precoPor = p[3].toFixed(2).replace('.', ',');
                 let estoque = p[4], categoria = p[5], tag = p[6];
                 
-                // SE FOR O ANÚNCIO DO COMBO, MONTA O CARTAZ DIFERENTE:
+                // SE FOR O VÍDEO DAS CESTAS (NOVIDADE)
+                if (tag === 'video_vitrine') {
+                    html += `
+                    <div class="card" data-categoria="${categoria}" style="border: 2px solid #d81b60; background-color: #fff0f5; grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+                        <h3 style="color: #d81b60; font-size: 1.4rem; margin-bottom: 10px;">🎁 Encante com Nossas Cestas</h3>
+                        <video src="${encodeURI(img)}" controls muted loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-height: 400px; object-fit: cover;"></video>
+                        <p style="font-size: 0.95rem; color: #444; margin-top: 10px;">Montamos cestas com exclusividade e muito carinho para celebrar as relações.</p>
+                        <button class="btn-whats" onclick="window.open('https://api.whatsapp.com/send?phone=5511962983022&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20cestas%20personalizadas!', '_blank')" style="margin-top: 15px;">Fazer Encomenda</button>
+                    </div>`;
+                    return; // Sai e não cria um "produto normal"
+                }
+
+                // SE FOR O ANÚNCIO DO COMBO BODY SPLASH
                 if (tag === 'anuncio_combo') {
                     html += `
                     <div class="card" data-categoria="${categoria}" style="border: 2px solid #d81b60; background-color: #fff0f5;">
@@ -420,7 +432,7 @@
                         <p class="preco-por">R$ ${precoPor}</p>
                         <div style="background-color: #ffeb3b; color: #d81b60; padding: 10px; border-radius: 8px; font-weight: bold; font-size: 0.85rem; margin-top: auto; border: 1px dashed #d81b60;">👇 Adicione 3 individuais (Desconto aplicado no WhatsApp) 👇</div>
                     </div>`;
-                    return; // Pula a criação do card normal
+                    return; 
                 }
 
                 let divSelo = "", timerHtml = "", idAttr = "", idPrecoDe = "", idPrecoPor = "", idBtn = "";
