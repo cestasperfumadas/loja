@@ -161,33 +161,39 @@
     </div>
 
     <script>
-        // O DETETIVE AUTOMÁTICO DE FOTOS:
+        // O SUPER DETETIVE AUTOMÁTICO DE FOTOS V2.0
         function tentarFoto(imgElement, originalSrc) {
             let tentativas = imgElement.dataset.tentativas ? JSON.parse(imgElement.dataset.tentativas) : [];
             
-            // Aqui o detetive cria todas as variações possíveis para contornar os erros do Windows/GitHub
+            // Cria variações para corrigir os erros encontrados nos prints
             let alternativas = [
+                originalSrc.replace('3unjpg', '3un.jpg'), // Corrige "3unjpg"
+                originalSrc.replace('.jpg.png', '.jpg'), // Corrige duplo .jpg.png
+                originalSrc.replace('.jpg.png', '.png'),
                 originalSrc.replace('.png', '.jpg'),
                 originalSrc.replace('.jpg', '.png'),
                 originalSrc.replace('.jpg', '.jpeg'),
-                originalSrc.replace('3un.jpg.png', '3unjpg.png'),
+                originalSrc.includes('.') ? null : originalSrc + '.jpg', // Tenta adicionar .jpg se não tiver
+                originalSrc.includes('.') ? null : originalSrc + '.png', // Tenta adicionar .png se não tiver
                 originalSrc.replace('Avelã', 'Avela'),
                 originalSrc.replace('Avelã', 'avelã'),
                 originalSrc.replace('avelã', 'Avelã'),
                 originalSrc.replace('avelã', 'Avela'),
                 originalSrc.replace('Coração', 'Coracao'),
-                originalSrc + '.jpg',
                 originalSrc.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove todos os acentos
             ];
 
-            let proxima = alternativas.find(f => f !== originalSrc && !tentativas.includes(f));
+            // Filtra as alternativas válidas
+            alternativas = [...new Set(alternativas.filter(a => a !== null && a !== originalSrc))];
+
+            let proxima = alternativas.find(f => !tentativas.includes(f));
 
             if (proxima) {
                 tentativas.push(proxima);
                 imgElement.dataset.tentativas = JSON.stringify(tentativas);
-                imgElement.src = proxima; // Tenta a nova foto
+                imgElement.src = proxima; // Tenta a nova foto corrigida
             } else {
-                imgElement.src = 'https://via.placeholder.com/180x180/fdf2f5/d81b60?text=Sem+Foto';
+                imgElement.src = 'https://via.placeholder.com/180x180/fdf2f5/d81b60?text=Foto+não+encontrada';
                 imgElement.onerror = null; 
             }
         }
