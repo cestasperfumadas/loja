@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cestas Perfumadas - Loja Oficial</title>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-83DRDPBV1F"></script>
-    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-83DRDPBV1F');</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-83DRDPBV1F');
+    </script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; background-color: #fdf2f5; padding-bottom: 80px; }
+
+        /* MENU DE CATEGORIAS PROFISSIONAL */
         .barra-nav { background-color: #333; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .barra-nav ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; flex-wrap: wrap; }
         .barra-nav > ul > li { position: relative; }
         .barra-nav a { display: block; color: white; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; padding: 18px 20px; transition: 0.3s; cursor: pointer; }
         .barra-nav a:hover { background-color: #d81b60; color: white; }
-        .lista-suspensa { display: none; position: absolute; background-color: #ffffff; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.15); z-index: 1; border-radius: 0 0 8px 8px; overflow: hidden; top: 100%; left: 0; }
-        .lista-suspensa a { color: #333; padding: 12px 20px; text-transform: none; font-weight: 500; border-bottom: 1px solid #f0f0f0; }
-        .lista-suspensa a:hover { background-color: #fdf2f5; color: #d81b60; padding-left: 25px; }
+
+        .lista-suspensa { display: none; position: absolute; background-color: #ffffff; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15); z-index: 1; border-radius: 0 0 8px 8px; overflow: hidden; top: 100%; left: 0; }
+        .lista-suspensa a { color: #333; padding: 12px 20px; text-transform: none; font-weight: 500; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+        .lista-suspensa a:hover { background-color: #fdf2f5; color: #d81b60; padding-left: 25px; transition: 0.2s; }
         .barra-nav li:hover .lista-suspensa { display: block; }
-        header { background: linear-gradient(to right, #fdf2f5, #ffffff); padding-top: 55px; width: 100%; display: flex; flex-wrap: wrap; align-items: center; border-bottom: 1px solid #eee; }
+
+        /* CABEÇALHO E INFO DE PAGAMENTO */
+        header { background: white; background-image: linear-gradient(to right, #fdf2f5, #ffffff); padding-top: 55px; width: 100%; display: flex; flex-wrap: wrap; align-items: center; border-bottom: 1px solid #eee; }
         .header-logo-container { flex: 1; min-width: 300px; padding: 20px; text-align: center; }
         .logo-img { max-width: 100%; height: auto; max-height: 400px; display: block; margin: 0 auto; cursor: pointer; }
         .header-info-container { flex: 1.5; min-width: 300px; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; }
@@ -26,42 +38,76 @@
         .info-caixa h3 { color: #d81b60; font-size: 1.2rem; margin-bottom: 5px; }
         .info-caixa.destaque { background: #d81b60; color: white; }
         .info-caixa.destaque h3 { color: white; }
-        .hero-banner { background: linear-gradient(135deg, #d81b60, #b0154d); color: white; text-align: center; padding: 25px 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .hero-banner h1 { font-size: 2rem; margin-bottom: 8px; }
-        .hero-banner .frase-efeito { font-size: 1.1rem; margin-bottom: 15px; font-style: italic; }
-        .hero-banner .pronta-entrega { background-color: #ffeb3b; color: #333; display: inline-block; padding: 8px 20px; border-radius: 25px; font-weight: bold; }
+        .info-caixa.destaque p { font-weight: bold; font-size: 1.1rem; }
+
+        /* BANNER E BARRA DE BUSCA */
+        .hero-banner { background: linear-gradient(135deg, #d81b60, #b0154d); color: white; text-align: center; padding: 25px 15px; margin: 0 auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .hero-banner h1 { font-size: 2rem; margin-bottom: 8px; letter-spacing: 1px; }
+        .hero-banner .frase-efeito { font-size: 1.1rem; margin-bottom: 15px; font-weight: 300; font-style: italic; }
+        .hero-banner .pronta-entrega { background-color: #ffeb3b; color: #333; display: inline-block; padding: 8px 20px; border-radius: 25px; font-weight: bold; font-size: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+
         .busca-container { text-align: center; margin: -20px auto 20px auto; max-width: 90%; width: 600px; position: relative; z-index: 10; }
-        .busca-container input { width: 100%; padding: 15px 20px; border-radius: 30px; border: 2px solid #d81b60; font-size: 1rem; outline: none; box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
-        .alerta-loja { background-color: #fff9c4; color: #e65100; text-align: center; padding: 12px 20px; font-size: 0.95rem; margin: 15px auto; max-width: 960px; border-radius: 8px; border: 1px dashed #fbc02d; }
-        
+        .busca-container input { width: 100%; padding: 15px 20px; border-radius: 30px; border: 2px solid #d81b60; font-size: 1rem; outline: none; box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: 0.3s; }
+        .busca-container input:focus { border-color: #b0154d; box-shadow: 0 6px 15px rgba(216, 27, 96, 0.3); }
+
+        /* SEÇÃO MISSÃO E VISÃO */
         .sobre-nos { background: white; padding: 25px; margin: 20px auto; max-width: 960px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid #d81b60; display: none; }
         .sobre-nos h3 { color: #d81b60; font-size: 1.4rem; margin-bottom: 8px; text-transform: uppercase;}
         .sobre-nos p { color: #555; font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px; font-style: italic;}
         .sobre-nos p:last-child { margin-bottom: 0; }
 
+        .alerta-loja { background-color: #fff9c4; color: #e65100; text-align: center; padding: 12px 20px; font-size: 0.95rem; margin: 15px auto; max-width: 960px; border-radius: 8px; border: 1px dashed #fbc02d; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+        /* TÍTULO E VITRINE */
         .titulo-secao { text-align: center; color: #d81b60; margin-top: 10px; font-size: 2rem; text-transform: uppercase; }
+
         .vitrine { max-width: 1200px; margin: 20px auto 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; padding: 15px; }
-        .card { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center; display: flex; flex-direction: column; justify-content: space-between; position: relative;}
+        .card { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center; position: relative; display: flex; flex-direction: column; justify-content: space-between;}
         .card img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 10px; }
         .card h3 { font-size: 1.1rem; margin-bottom: 5px; color: #333; }
         .preco-de { text-decoration: line-through; color: #999; font-size: 0.85rem; }
         .preco-por { color: #d81b60; font-size: 1.6rem; font-weight: bold; margin: 5px 0; }
+        
         .estoque { color: #e65100; font-size: 0.85rem; margin-top: auto; margin-bottom: 10px; background-color: #fff3e0; padding: 4px 8px; border-radius: 5px; display: inline-block; align-self: center;}
+        .estoque strong { font-size: 1rem; }
         .destaque-combo { background-color: #ffeb3b; color: #d84315; font-weight: bold; border: 1px dashed #fbc02d; }
-        .btn-whats { background-color: #d81b60; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; transition: 0.3s; }
+
+        .btn-whats { display: block; background-color: #d81b60; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; margin-top: 5px; width: 100%; cursor: pointer; transition: 0.3s; font-size: 0.95rem; }
         .btn-whats:hover { background-color: #b0154d; }
-        .carrinho-flutuante { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1001; transition: 0.3s; }
+
+        /* CONFIGURAÇÃO CELULAR */
+        @media (max-width: 600px) {
+            .hero-banner h1 { font-size: 1.6rem; }
+            .hero-banner .frase-efeito { font-size: 0.95rem; }
+            .hero-banner .pronta-entrega { font-size: 0.85rem; padding: 6px 15px; }
+            .sobre-nos { padding: 15px; width: 90%; }
+            .sobre-nos h3 { font-size: 1.2rem; }
+            .sobre-nos p { font-size: 0.95rem; }
+            .vitrine { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; }
+            .card { padding: 10px; }
+            .card img { height: 140px; }
+            .card h3 { font-size: 0.9rem; }
+            .preco-de { font-size: 0.75rem; }
+            .preco-por { font-size: 1.3rem; }
+            .estoque { font-size: 0.75rem; padding: 3px 5px; }
+            .estoque strong { font-size: 0.85rem; }
+            .btn-whats { font-size: 0.85rem; padding: 8px 5px; }
+        }
+
+        /* CARRINHO DE COMPRAS */
+        .carrinho-flutuante { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1001; transition: transform 0.3s; }
         .carrinho-flutuante:hover { transform: scale(1.1); }
         .contador-carrinho { position: absolute; top: -5px; right: -5px; background-color: red; color: white; border-radius: 50%; width: 22px; height: 22px; font-size: 12px; font-weight: bold; display: flex; justify-content: center; align-items: center; }
+
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1002; justify-content: center; align-items: center; }
-        .modal-carrinho { background: white; width: 90%; max-width: 400px; border-radius: 12px; padding: 20px; max-height: 80vh; overflow-y: auto; }
-        .modal-carrinho h2 { text-align: center; margin-bottom: 15px; color: #333; }
+        .modal-carrinho { background: white; width: 90%; max-width: 400px; border-radius: 12px; padding: 20px; max-height: 80vh; overflow-y: auto; position: relative; }
+        .modal-carrinho h2 { color: #333; margin-bottom: 15px; border-bottom: 2px solid #fdf2f5; padding-bottom: 10px; text-align: center; }
         .item-carrinho { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .item-remover { color: red; cursor: pointer; font-weight: bold; }
+        .item-detalhe { flex: 1; font-size: 0.9rem;}
+        .item-remover { color: red; cursor: pointer; font-weight: bold; font-size: 1.2rem; margin-left: 10px; }
         .carrinho-total { font-size: 1.3rem; font-weight: bold; text-align: right; margin-top: 20px; color: #d81b60; }
-        .btn-finalizar { background-color: #25d366; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; margin-top: 15px; }
+        .btn-finalizar { background-color: #25d366; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; margin-top: 15px; font-size: 1rem; }
         .btn-fechar { background-color: #ccc; color: #333; border: none; padding: 10px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; margin-top: 10px; }
-        @media (max-width: 600px) { .vitrine { grid-template-columns: repeat(2, 1fr); padding: 10px; gap: 10px;} .card { padding: 10px; } .card img { height: 130px; } .preco-por { font-size: 1.3rem; } .sobre-nos { padding: 15px; width: 90%; } .sobre-nos h3 { font-size: 1.2rem; } .sobre-nos p { font-size: 0.95rem; } }
     </style>
 </head>
 <body>
@@ -69,29 +115,73 @@
     <nav class="barra-nav">
         <ul>
             <li><a onclick="filtrar('inicio', 'Bem-vindo(a) à Cestas Perfumadas!')">Início</a></li>
-            <li><a onclick="filtrar('destaque', 'Promoções Relâmpago e Kits')">Promoções</a></li>
-            <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
-            <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
-            <li><a href="javascript:void(0)">Infantil ▾</a><div class="lista-suspensa"><a onclick="filtrar('infantil', 'Linha Infantil')">Mamãe e Bebê</a></div></li>
-            <li><a href="javascript:void(0)">Corpo e Banho ▾</a><div class="lista-suspensa"><a onclick="filtrar('ekos', 'Natura Ekos')">Natura Ekos</a><a onclick="filtrar('hidratantes', 'Hidratantes e Óleos')">Hidratantes e Óleos</a><a onclick="filtrar('body-splash', 'Body Splash')">Body Splash</a><a onclick="filtrar('sabonetes', 'Sabonetes')">Sabonetes</a><a onclick="filtrar('desodorantes', 'Desodorantes')">Desodorantes</a></div></li>
+            <li><a onclick="filtrar('promocoes', 'Promoções e Kits Especiais')">Promoções</a></li>
+            
+            <li>
+                <a href="javascript:void(0)">Cestas ▾</a>
+                <div class="lista-suspensa">
+                    <a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a>
+                </div>
+            </li>
+            
+            <li>
+                <a href="javascript:void(0)">Perfumaria ▾</a>
+                <div class="lista-suspensa">
+                    <a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a>
+                    <a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a>
+                </div>
+            </li>
+
+            <li>
+                <a href="javascript:void(0)">Infantil ▾</a>
+                <div class="lista-suspensa">
+                    <a onclick="filtrar('infantil', 'Linha Infantil')">Mamãe e Bebê & Papai e Bebê</a>
+                </div>
+            </li>
+            
+            <li>
+                <a href="javascript:void(0)">Corpo e Banho ▾</a>
+                <div class="lista-suspensa">
+                    <a onclick="filtrar('ekos', 'Natura Ekos')">Natura Ekos</a>
+                    <a onclick="filtrar('hidratantes', 'Hidratantes e Óleos')">Hidratantes e Óleos</a>
+                    <a onclick="filtrar('body-splash', 'Body Splash')">Body Splash</a>
+                    <a onclick="filtrar('sabonetes', 'Sabonetes')">Sabonetes</a>
+                    <a onclick="filtrar('desodorantes', 'Desodorantes')">Desodorantes</a>
+                </div>
+            </li>
         </ul>
     </nav>
 
     <header>
-        <div class="header-logo-container"><img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('inicio', 'Bem-vindo(a) à Cestas Perfumadas!')"></div>
+        <div class="header-logo-container">
+            <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('inicio', 'Bem-vindo(a) à Cestas Perfumadas!')">
+        </div>
         <div class="header-info-container">
-            <div class="info-caixa"><h3>💳 Aceitamos Cartões e Pix</h3></div>
-            <div class="info-caixa destaque"><h3>🛍️ Acima de R$ 300,00</h3><p>Parcelamos em até 3x</p><p style="font-size: 0.9rem;">📍 Entregas em Cotia e região!</p></div>
+            <div class="info-caixa">
+                <h3>💳 Aceitamos Cartões e Pix</h3>
+            </div>
+            <div class="info-caixa destaque">
+                <h3>🛍️ Compras acima de R$ 300,00</h3>
+                <p>Parcelamos em até 3x</p>
+                <p style="font-size: 0.9rem; font-weight: normal; margin-top: 5px;">📍 Entregamos em Cotia, Osasco, Barueri e região!</p>
+            </div>
         </div>
     </header>
 
     <div class="hero-banner">
-        <h1>Cestas Perfumadas</h1><p class="frase-efeito">"Presenteie com carinho!" ✨</p><p class="pronta-entrega">📦 Pronta Entrega!</p>
+        <h1>Cestas Perfumadas</h1>
+        <p class="frase-efeito">"Presenteie com carinho, surpreenda com essência!" ✨</p>
+        <p class="pronta-entrega">📦 Todos os produtos anunciados a Pronta Entrega!</p>
     </div>
 
-    <div class="busca-container"><input type="text" id="inputBusca" placeholder="🔍 Procure por perfumes, sabonetes..." onkeyup="buscarProdutos()"></div>
-    <div class="alerta-loja">⚠️ Promoções válidas <strong>enquanto durarem os estoques</strong>.</div>
-    
+    <div class="busca-container">
+        <input type="text" id="inputBusca" placeholder="🔍 Procure por perfumes, sabonetes, cestas..." onkeyup="buscarProdutos()">
+    </div>
+
+    <div class="alerta-loja">
+        ⚠️ <strong>Aviso Importante:</strong> Nossas promoções são válidas <strong>enquanto durarem os estoques</strong>.
+    </div>
+
     <div id="secao-sobre" class="sobre-nos">
         <h3>🌟 Nossa Missão</h3>
         <p>Proporcionar momentos inesquecíveis de carinho e autocuidado, transformando a excelência dos produtos Natura em presentes únicos, montados com amor e dedicação para celebrar as relações humanas.</p>
@@ -102,180 +192,17 @@
 
     <h2 id="titulo-vitrine" class="titulo-secao">Bem-vindo(a) à Cestas Perfumadas!</h2>
 
-    <div class="vitrine" id="lista-produtos">
-        
-        <div class="card" data-categoria="masculina promocoes destaque" id="card-kaiak" style="border: 2px solid #ffeb3b; background-color: #fffde7; max-width: 350px; margin: 0 auto; width: 100%;">
-            <div id="selo-kaiak" style="position: absolute; top: -10px; right: -10px; background: red; color: white; padding: 5px 10px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; display: none;">OFERTA 24H ⚡</div>
-            <img loading="lazy" src="KAIAK%20Masculino.png" alt="Kaiak Masculino"><h3>Kaiak Masculino</h3><p class="preco-de" id="kaiak-de">De: R$ 189,90</p><p class="preco-por" id="kaiak-por">Por: R$ 120,00</p><p class="estoque">⏳ Apenas <strong>9</strong> em estoque!</p><p id="kaiak-contador" style="color: #d81b60; font-weight: bold; display: none;">⏳ Termina em: <br><span id="tempo-kaiak" style="font-size: 1.2rem;"></span></p><button class="btn-whats" id="btn-kaiak" onclick="adicionarCarrinho('Kaiak Masculino', 120.00)">Adicionar ao Carrinho</button>
-        </div>
+    <div class="vitrine" id="lista-produtos"></div>
 
-        <div class="card" data-categoria="cestas promocoes destaque"><img loading="lazy" src="Cesta%20Coração%20Essencial%20Exc%20Fem.jpg" alt="Cesta Coração Essencial Exc Fem"><h3>Cesta Coração Essencial Exc</h3><p class="preco-de">De: R$ 379,90</p><p class="preco-por">Por: R$ 279,90</p><p class="estoque destaque-combo">🎁 <strong>Apenas 1!</strong></p><button class="btn-whats" onclick="adicionarCarrinho('Cesta Coração Essencial Exc Fem', 279.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes promocoes destaque"><img loading="lazy" src="Kit%20creme%20tododia%20100ml%201un.jpg" alt="Kit Creme Tododia"><h3>Kit Creme Tododia 100ml</h3><p class="preco-de">De: R$ 88,50</p><p class="preco-por">Por: R$ 39,90</p><p class="estoque destaque-combo">🎁 <strong>Apenas 1!</strong></p><button class="btn-whats" onclick="adicionarCarrinho('Kit Creme Tododia 100ml', 39.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="cestas promocoes destaque"><img loading="lazy" src="cestaluna.png" alt="Kit Presente Luna"><h3>Kit Presente Luna</h3><p class="preco-de">De: R$ 349,90</p><p class="preco-por">Por: R$ 260,00</p><p class="estoque destaque-combo">🎁 <strong>Apenas 1!</strong></p><button class="btn-whats" onclick="adicionarCarrinho('Kit Presente Luna', 260.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="promocoes corpo-banho body-splash outlet destaque"><img loading="lazy" src="Combo%20Body%20Splash.png" alt="Combo 3 Body"><h3>Combo 3 Body Splashes</h3><p class="preco-de">De: R$ 281,70</p><p class="preco-por">Por: R$ 150,00</p><p class="estoque destaque-combo">⏳ <strong>Especial!</strong></p><button class="btn-whats" onclick="adicionarCarrinho('Combo 3 Body Splashes', 150.00)">Adicionar ao Carrinho</button></div>
-
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Natura%20Homem%20Essence%2025ml%201un.png"><h3>Homem Essence 25ml</h3><p class="preco-de">De: R$ 93,10</p><p class="preco-por">Por: R$ 50,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Homem Essence 25ml', 50.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Essencial%20Masc.png"><h3>Essencial Masculino</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 199,90</p><p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Masculino', 199.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Sintonia%20Maculino.png"><h3>Sintonia Masculino</h3><p class="preco-de">De: R$ 219,90</p><p class="preco-por">Por: R$ 159,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Sintonia Masculino', 159.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Natura%20Homem.png"><h3>Natura Homem</h3><p class="preco-de">De: R$ 209,90</p><p class="preco-por">Por: R$ 139,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Tradicional', 139.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Natura%20Homem%20Tato.png"><h3>Natura Homem Tato</h3><p class="preco-de">De: R$ 239,90</p><p class="preco-por">Por: R$ 144,90</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Tato', 144.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Natura%20Homem%20Sagaz.png"><h3>Natura Homem Sagaz</h3><p class="preco-de">De: R$ 239,90</p><p class="preco-por">Por: R$ 167,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Sagaz', 167.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Natura%20Homem%20Verum.png"><h3>Natura Homem Verum</h3><p class="preco-de">De: R$ 239,90</p><p class="preco-por">Por: R$ 167,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Verum', 167.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Natura%20Homem%20Elo.png"><h3>Natura Homem Elo</h3><p class="preco-de">De: R$ 239,90</p><p class="preco-por">Por: R$ 167,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Elo', 167.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Natura%20Homem%20Neo.png"><h3>Natura Homem Neo</h3><p class="preco-de">De: R$ 239,90</p><p class="preco-por">Por: R$ 167,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Neo', 167.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Natura%20Homem%20Dom.png"><h3>Natura Homem Dom</h3><p class="preco-de">De: R$ 239,90</p><p class="preco-por">Por: R$ 167,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Dom', 167.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Natura%20Homem%20Nós.png"><h3>Natura Homem Nós</h3><p class="preco-de">De: R$ 239,90</p><p class="preco-por">Por: R$ 167,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Nós', 167.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Natura%20Homem%20Essence.png"><h3>Natura Homem Essence</h3><p class="preco-de">De: R$ 239,90</p><p class="preco-por">Por: R$ 167,90</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Natura Homem Essence', 167.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Kaiak%20Urbe.png"><h3>Kaiak Urbe</h3><p class="preco-de">De: R$ 189,90</p><p class="preco-por">Por: R$ 120,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kaiak Urbe', 120.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Kaiak%20Aventura%20Masc.%20Intensa.png"><h3>Kaiak Aventura Intensa</h3><p class="preco-de">De: R$ 189,90</p><p class="preco-por">Por: R$ 120,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kaiak Aventura Intensa', 120.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Kaiak%20Oceano%20masc.png"><h3>Kaiak Oceano Masc.</h3><p class="preco-de">De: R$ 189,90</p><p class="preco-por">Por: R$ 120,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kaiak Oceano', 120.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Kaiak%20Aventura%20Masc.png"><h3>Kaiak Aventura Masc.</h3><p class="preco-de">De: R$ 189,90</p><p class="preco-por">Por: R$ 120,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kaiak Aventura', 120.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Kaiak%20Pulso%20Masc.png"><h3>Kaiak Pulso Masc.</h3><p class="preco-de">De: R$ 189,90</p><p class="preco-por">Por: R$ 120,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kaiak Pulso', 120.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Biografia%20Masc.png"><h3>Biografia Masculino</h3><p class="preco-de">De: R$ 209,90</p><p class="preco-por">Por: R$ 146,90</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Biografia Masculino', 146.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Biografia%20Inspire%20Masc.png"><h3>Biografia Inspire Masc.</h3><p class="preco-de">De: R$ 209,90</p><p class="preco-por">Por: R$ 146,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Biografia Inspire', 146.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Essencial%20Ato%20Masc.png"><h3>Essencial Ato Masc</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Ato Masc', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Essencial%20Atrai%20Masc.png"><h3>Essencial Atraí Masc</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Atraí Masc', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Essencial%20Intenso%20Masc.png"><h3>Essencial Intenso</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Intenso', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Essencial%20Mirra%20Masc.png"><h3>Essencial Mirra</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Mirra', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Essencial%20Exclusivo%20Masc..png"><h3>Essencial Exclusivo</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Exclusivo Masc', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Único%20Refil%20Masc.png"><h3>Essencial Único Refil</h3><p class="preco-de">De: R$ 228,90</p><p class="preco-por">Por: R$ 148,70</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Único Refil Masc', 148.70)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="masculina promocoes"><img loading="lazy" src="Essencial%20Exclusivo%20Masc%20Refil.png"><h3>Essencial Excl Refil</h3><p class="preco-de">De: R$ 213,90</p><p class="preco-por">Por: R$ 139,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Exclusivo Refil', 139.00)">Adicionar ao Carrinho</button></div>
-
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Luna%201un.png"><h3>Luna Tradicional</h3><p class="preco-de">De: R$ 185,90</p><p class="preco-por">Por: R$ 119,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Luna Tradicional', 119.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Luna%20Liberdade%202un.png"><h3>Luna Liberdade</h3><p class="preco-de">De: R$ 185,90</p><p class="preco-por">Por: R$ 119,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Luna Liberdade', 119.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Luna%20Radiante%202un.png"><h3>Luna Radiante</h3><p class="preco-de">De: R$ 185,90</p><p class="preco-por">Por: R$ 119,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Luna Radiante', 119.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Luna%20Confiante%203un.png"><h3>Luna Confiante</h3><p class="preco-de">De: R$ 185,90</p><p class="preco-por">Por: R$ 119,90</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Luna Confiante', 119.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Luna%20Marcante%201un.png"><h3>Luna Marcante</h3><p class="preco-de">De: R$ 185,90</p><p class="preco-por">Por: R$ 119,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Luna Marcante', 119.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Luna%20Fascinante%201un.png"><h3>Luna Fascinante</h3><p class="preco-de">De: R$ 185,90</p><p class="preco-por">Por: R$ 119,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Luna Fascinante', 119.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Luna%20Rosé%201un.png"><h3>Luna Rosé</h3><p class="preco-de">De: R$ 185,90</p><p class="preco-por">Por: R$ 119,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Luna Rosé', 119.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Luna%20Intensa.png"><h3>Luna Intensa</h3><p class="preco-de">De: R$ 219,90</p><p class="preco-por">Por: R$ 159,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Luna Intensa', 159.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Festival%20de%20Humor%201%20un.png"><h3>Festival de Humor</h3><p class="preco-de">De: R$ 164,90</p><p class="preco-por">Por: R$ 89,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Festival de Humor', 89.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Humor%20Liberta.png"><h3>Humor Liberta</h3><p class="preco-de">De: R$ 164,90</p><p class="preco-por">Por: R$ 119,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Humor Liberta', 119.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Meu%20Primeiro%20Humor%204un.png"><h3>Meu Primeiro Humor</h3><p class="preco-de">De: R$ 164,90</p><p class="preco-por">Por: R$ 99,90</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Meu 1 Humor', 99.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Humor%20Próprio%201un.png"><h3>Humor Próprio</h3><p class="preco-de">De: R$ 164,90</p><p class="preco-por">Por: R$ 99,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Humor Próprio', 99.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Kriska%20Drama%202un.png"><h3>Kriska Drama</h3><p class="preco-de">De: R$ 169,90</p><p class="preco-por">Por: R$ 109,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kriska Drama', 109.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Ilia%20Secreto.png"><h3>Ilía Secreto</h3><p class="preco-de">De: R$ 199,90</p><p class="preco-por">Por: R$ 149,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ilía Secreto', 149.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Una%20Brilho.png"><h3>Una Brilho 75ml</h3><p class="preco-de">De: R$ 319,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Una Brilho', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Una.png"><h3>Una Clássico 75ml</h3><p class="preco-de">De: R$ 319,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Una Clássico', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Una%20Blush.png"><h3>Una Blush 75ml</h3><p class="preco-de">De: R$ 319,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Una Blush', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Una%20Somos.png"><h3>Una Somos 75ml</h3><p class="preco-de">De: R$ 319,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Una Somos', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Una%20Artisan.png"><h3>Una Artisan 75ml</h3><p class="preco-de">De: R$ 319,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Una Artisan', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Una%20Senses.png"><h3>Una Senses 75ml</h3><p class="preco-de">De: R$ 319,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Una Senses', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Una%20Celebrar.png"><h3>Una Celebrar 75ml</h3><p class="preco-de">De: R$ 319,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Una Celebrar', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Essencial%20Feminino%20Sentir%201un.png"><h3>Essencial Sentir</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Sentir', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Essencial%20Ato%20Fem%201un.png"><h3>Essencial Ato Fem</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Ato Fem', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Essencial%20Feminino%202un.png"><h3>Essencial Feminino</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Feminino', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Essencial%20Exclusivo%20Fem%202un.png"><h3>Essencial Exclusivo</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Exclusivo Fem', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Essencial%20Atrai%20Fem%203un.png"><h3>Essencial Atraí Fem</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Atraí Fem', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Essencial%20Floral%201un.png"><h3>Essencial Floral</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Floral', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Essencial%20Supreme%20Fem%201un.png"><h3>Essencial Supreme</h3><p class="preco-de">De: R$ 279,90</p><p class="preco-por">Por: R$ 219,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Supreme', 219.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Esencial%20Único%20Fem.%20Refil%205un.png"><h3>Essencial Único Refil</h3><p class="preco-de">De: R$ 228,90</p><p class="preco-por">Por: R$ 148,70</p><p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Único Refil Fem', 148.70)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Essencial%20Exclusivo%20Fem%20Refil%202un.png"><h3>Essencial Excl. Refil</h3><p class="preco-de">De: R$ 213,90</p><p class="preco-por">Por: R$ 139,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Essencial Excl Refil Fem', 139.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Revelar%201un.png"><h3>Revelar</h3><p class="preco-de">De: R$ 199,90</p><p class="preco-por">Por: R$ 149,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Revelar', 149.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Kaiak%20Vital%20Fem%201un.png"><h3>Kaiak Vital Fem</h3><p class="preco-de">De: R$ 189,90</p><p class="preco-por">Por: R$ 99,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kaiak Vital Fem', 99.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Kaiak%20Feminino%204un.png"><h3>Kaiak Feminino</h3><p class="preco-de">De: R$ 189,90</p><p class="preco-por">Por: R$ 120,00</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kaiak Feminino', 120.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="feminina promocoes"><img loading="lazy" src="Kaiak%20Ultra%20Fem%202un.png"><h3>Kaiak Ultra Fem</h3><p class="preco-de">De: R$ 189,90</p><p class="preco-por">Por: R$ 120,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kaiak Ultra Fem', 120.00)">Adicionar ao Carrinho</button></div>
-
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20Colonia%2010un.jpg"><h3>Colônia Mamãe Bebê</h3><p class="preco-de">De: R$ 106,90</p><p class="preco-por">Por: R$ 85,00</p><p class="estoque">⏳ Apenas <strong>10</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Colonia MMBB', 85.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20Colonia%20Rlaxante%201un.jpg"><h3>Colônia Relaxante</h3><p class="preco-de">De: R$ 106,90</p><p class="preco-por">Por: R$ 85,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Colonia Relaxante', 85.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20Shampoo%202un.jpg"><h3>Shampoo MMBB</h3><p class="preco-de">De: R$ 45,90</p><p class="preco-por">Por: R$ 35,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Shampoo MMBB', 35.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20Condicionador%203un.jpg"><h3>Condicionador MMBB</h3><p class="preco-de">De: R$ 45,90</p><p class="preco-por">Por: R$ 35,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Condicionador MMBB', 35.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20Cachos%20Shampoo%201un.jpg"><h3>Shampoo Cachos</h3><p class="preco-de">De: R$ 45,90</p><p class="preco-por">Por: R$ 35,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Shampoo Cachos', 35.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20Cachos%20Condicionador%202un.jpg"><h3>Condic. Cachos</h3><p class="preco-de">De: R$ 45,90</p><p class="preco-por">Por: R$ 35,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Condicionador Cachos', 35.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20Cachos%20creme%20pentear%202un.jpg"><h3>Creme Pentear Cachos</h3><p class="preco-de">De: R$ 49,50</p><p class="preco-por">Por: R$ 35,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Creme Pentear', 35.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20Hidratante%203un.jpg"><h3>Hidratante MMBB</h3><p class="preco-de">De: R$ 69,90</p><p class="preco-por">Por: R$ 55,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante MMBB', 55.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20com%205%20Sabonetes%202un.jpg"><h3>Sabonete MMBB c/5</h3><p class="preco-de">De: R$ 51,90</p><p class="preco-por">Por: R$ 40,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Sab MMBB c/5', 40.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20com%202%20Sabonetes%203un.jpg"><h3>Sabonete MMBB c/2</h3><p class="preco-de">De: R$ 31,40</p><p class="preco-por">Por: R$ 20,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Sab MMBB c/2', 20.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%20Sab.%20Liq.%2050ml%202un.jpg"><h3>Sabonete Liq 50ml</h3><p class="preco-de">De: R$ 26,90</p><p class="preco-por">Por: R$ 15,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Sab Liq MMBB', 15.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="MMBB%2016%20Lenços%204un.jpg"><h3>Lenços MMBB 16un</h3><p class="preco-de">De: R$ 13,10</p><p class="preco-por">Por: R$ 9,90</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Lenços MMBB', 9.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="infantil promocoes"><img loading="lazy" src="Kit%20PPBB%20Miniaturas%203un.jpg"><h3>Kit PPBB Miniaturas</h3><p class="preco-de">De: R$ 69,90</p><p class="preco-por">Por: R$ 39,90</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kit PPBB', 39.90)">Adicionar ao Carrinho</button></div>
-
-        <div class="card" data-categoria="corpo-banho promocoes"><img loading="lazy" src="Fotoequilibrio%20Gel%20creme%20Facial%2030.10.jpg"><h3>Fotoequilíbrio Rosto</h3><p class="preco-de">De: R$ 96,90</p><p class="preco-por">Por: R$ 49,90</p><p class="estoque">⏳ <strong>Estoque Limitado!</strong></p><button class="btn-whats" onclick="adicionarCarrinho('Fotoequilibrio', 49.90)">Adicionar ao Carrinho</button></div>
-
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Cereja%20Negra%203un.jpg"><h3>Body Cereja Negra</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Cereja Negra', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Algodão%204un.jpg"><h3>Body Algodão</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Algodao', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Maça%20Caramelada%204uni.png"><h3>Body Maçã Caramelada</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>7</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Maçã Caramelada', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Amora%20Flor%20de%20Pessego.png"><h3>Body Amora e Pêssego</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>6</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Amora e Pêssego', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Acerola%20e%20Hibisco.png"><h3>Body Acerola e Hibisco</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Acerola e Hibisco', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Jambo%20Rosa%20e%20Caju.png"><h3>Body Jambo Rosa e Caju</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Jambo Rosa e Caju', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Romã%20e%20Amendoas%20Glaceadas.png"><h3>Body Romã e Amêndoas</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Roma Amendoas', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Flores%20Pessego%20e%20Jasmin.png"><h3>Body Flores de Pêssego</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Flores de Pêssego', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Chá%20de%20Camomila%204%20uni.jpg"><h3>Body Chá de Camomila</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Cha de Camomila', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Limão%20Siciliano%205uni.png"><h3>Body Limão Siciliano</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Limao Siciliano', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Macadâmia%202uni.png"><h3>Body Macadâmia</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Macadamia', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Uva%20Rosa%20E%20Romã%202un.png"><h3>Body Uva Rosa e Romã</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Uva Rosa e Roma', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Ameixa%20e%20Gengibre%20Rosa%201un.png"><h3>Body Ameixa Gengibre</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Ameixa Gengibre', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Flor%20de%20Gengibre%20e%20Tangerina%201un.png"><h3>Flor Gengibre Tangerina</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Flor Gengibre Tangerina', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Ameixa%20e%20Flor%20de%20Baunilha%206un.jpg"><h3>Body Ameixa e Baunilha</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>6</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Ameixa e Baunilha', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Flor%20de%20Maçã%203un.png"><h3>Body Flor de Maçã</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Flor de Maca', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Cereja%20e%20Avelã%203un.jpg"><h3>Body Cereja e Avelã</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Cereja Avela', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Amora%20e%20Jabuticaba%201uni.png"><h3>Body Amora Jabuticaba</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Amora Jabuticaba', 65.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho body-splash promocoes"><img loading="lazy" src="Body%20Framboesa%20e%20Pimenta%20Vermelha%201%20un.png"><h3>Body Framboesa Pimenta</h3><p class="preco-de">De: R$ 93,90</p><p class="preco-por">Por: R$ 65,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Body Framboesa Pimenta', 65.00)">Adicionar ao Carrinho</button></div>
-
-        <div class="card" data-categoria="ekos feminina promocoes"><img loading="lazy" src="Ekos%20Colonia%20150%20ml%20Cacau%201un.jpg"><h3>Ekos Frescor Cacau</h3><p class="preco-de">De: R$ 129,90</p><p class="preco-por">Por: R$ 89,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Cacau', 89.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos feminina promocoes"><img loading="lazy" src="Ekos%20Colonia%20150%20ml%20Madeira%20em%20flor%201un.jpg"><h3>Ekos Madeira em Flor</h3><p class="preco-de">De: R$ 129,90</p><p class="preco-por">Por: R$ 89,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Madeira', 89.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos feminina promocoes"><img loading="lazy" src="Ekos%20Colonia%20150%20ml%20Maracuja%201un.jpg"><h3>Ekos Frescor Maracujá</h3><p class="preco-de">De: R$ 129,90</p><p class="preco-por">Por: R$ 89,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Maracuja', 89.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos feminina promocoes"><img loading="lazy" src="Ekos%20Colonia%20150%20ml%20Maracuja%20noite%201un.jpg"><h3>Ekos Maracujá Noite</h3><p class="preco-de">De: R$ 137,90</p><p class="preco-por">Por: R$ 99,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Maracuja Noite', 99.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos feminina promocoes"><img loading="lazy" src="Ekos%20Colonia%20Rf%20150%20ml%20Maracuja%201un.jpg"><h3>Refil Ekos Maracujá</h3><p class="preco-de">De: R$ 129,90</p><p class="preco-por">Por: R$ 89,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Ekos Maracuja', 89.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos feminina promocoes"><img loading="lazy" src="Ekos%20Colonia%2075%20ml%20Maracuja%201un.jpg"><h3>Ekos Maracujá 75ml</h3><p class="preco-de">De: R$ 97,90</p><p class="preco-por">Por: R$ 69,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Maracuja 75ml', 69.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos feminina promocoes"><img loading="lazy" src="Ekos%20Ryo%20Chuva%201un.jpg"><h3>Ekos Ryos Chuva</h3><p class="preco-de">De: R$ 199,90</p><p class="preco-por">Por: R$ 99,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Ryos Chuva', 99.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos feminina promocoes"><img loading="lazy" src="Ekos%20Ryo%20Vivo%202un.jpg"><h3>Ekos Ryos Vivo</h3><p class="preco-de">De: R$ 199,90</p><p class="preco-por">Por: R$ 99,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Ryos Vivo', 99.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20Madeira%20em%20flor%201un.jpeg"><h3>Ekos Hid. Madeira</h3><p class="preco-de">De: R$ 88,90</p><p class="preco-por">Por: R$ 69,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Hidratante Madeira', 69.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20Maracujá%201un.jpg"><h3>Ekos Hid. Maracujá</h3><p class="preco-de">De: R$ 88,90</p><p class="preco-por">Por: R$ 69,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Hidratante Maracuja', 69.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20Maracujá%20noite%201un.jpg"><h3>Ekos Hid. Maracujá Noite</h3><p class="preco-de">De: R$ 88,90</p><p class="preco-por">Por: R$ 69,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Hidratante Maracuja Noite', 69.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20Ucuuba%202un.jpg"><h3>Ekos Hidratante Ucuuba</h3><p class="preco-de">De: R$ 88,90</p><p class="preco-por">Por: R$ 69,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Ekos Hidratante Ucuuba', 69.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20Rf%20Cacau%201un.jpg"><h3>Refil Ekos Cacau</h3><p class="preco-de">De: R$ 69,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Ekos Cacau', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20Rf%20Maracujá%201un.jpg"><h3>Refil Ekos Maracujá</h3><p class="preco-de">De: R$ 69,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Ekos Maracuja', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20Rf%20Maracujá%20noite%201un.jpg"><h3>Refil Ekos Maracujá Noite</h3><p class="preco-de">De: R$ 69,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Ekos Maracuja Noite', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20mãos%20açai%2040g%201un.jpg"><h3>Polpa Mãos Açaí 40g</h3><p class="preco-de">De: R$ 41,90</p><p class="preco-por">Por: R$ 29,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Polpa Maos Acai 40g', 29.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20mãos%20castanha%2040g%202un.jpg"><h3>Polpa Mãos Castanha 40g</h3><p class="preco-de">De: R$ 41,90</p><p class="preco-por">Por: R$ 29,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Polpa Maos Castanha 40g', 29.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20mãos%20maracuja%2040g%201un.jpg"><h3>Polpa Mãos Maracujá 40g</h3><p class="preco-de">De: R$ 41,90</p><p class="preco-por">Por: R$ 29,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Polpa Maos Maracuja 40g', 29.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Kit%20Ekos%20mãos%2040g%201un.jpg"><h3>Kit Polpas Mãos 40g</h3><p class="preco-de">De: R$ 41,90</p><p class="preco-por">Por: R$ 29,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Kit Polpas Maos', 29.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20mãos%20andiroba%2075g%201un.jpg"><h3>Polpa Mãos Andiroba 75g</h3><p class="preco-de">De: R$ 59,90</p><p class="preco-por">Por: R$ 44,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Polpa Maos Andiroba 75g', 44.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20mãos%20castanha%2075g%202un.jpg"><h3>Polpa Mãos Castanha 75g</h3><p class="preco-de">De: R$ 59,90</p><p class="preco-por">Por: R$ 44,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Polpa Maos Castanha 75g', 44.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="ekos corpo-banho hidratantes"><img loading="lazy" src="Ekos%20hidratante%20mãos%20maracuja%2075g%201un.jpg"><h3>Polpa Mãos Maracujá 75g</h3><p class="preco-de">De: R$ 59,90</p><p class="preco-por">Por: R$ 44,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Polpa Maos Maracuja 75g', 44.90)">Adicionar ao Carrinho</button></div>
-
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Creme%20tododia%20100ml%20algodão1un.jpg"><h3>Creme Algodão 100ml</h3><p class="preco-de">De: R$ 29,50</p><p class="preco-por">Por: R$ 12,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Creme Algodão 100ml', 12.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Creme%20Humor%20liberta.jpg"><h3>Creme Humor Liberta</h3><p class="preco-de">De: R$ 43,80</p><p class="preco-por">Por: R$ 19,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Creme Humor Liberta', 19.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Creme%20tododia%20100ml%20pessego%20melissa%204un.jpg"><h3>Creme Pêssego 100ml</h3><p class="preco-de">De: R$ 29,50</p><p class="preco-por">Por: R$ 12,90</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Creme Pêssego 100ml', 12.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Creme%20tododia%20100ml%20framboesa%20e%20pim%20ver%201un.jpg"><h3>Creme Framboesa 100ml</h3><p class="preco-de">De: R$ 29,50</p><p class="preco-por">Por: R$ 12,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Creme Framboesa 100ml', 12.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Creme%20tododia%20100ml%20tamara%20e%20canela%201un.jpg"><h3>Creme Tâmara 100ml</h3><p class="preco-de">De: R$ 29,50</p><p class="preco-por">Por: R$ 12,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Creme Tâmara 100ml', 12.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Oleo%20Bifasico%20ameixa%20e%20baunilha%202un.jpg"><h3>Óleo Bifásico Ameixa</h3><p class="preco-de">De: R$ 62,90</p><p class="preco-por">Por: R$ 44,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Oleo Bifasico', 44.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Creme%20Kaiak%20fem%20150%20ml%204un.jpg"><h3>Creme Kaiak Fem 150ml</h3><p class="preco-de">De: R$ 64,90</p><p class="preco-por">Por: R$ 37,90</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Creme Kaiak Fem 150ml', 37.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Kaiak%20Hid.%20390ml%204un.jpg"><h3>Hidratante Kaiak 390ml</h3><p class="preco-de">De: R$ 69,90</p><p class="preco-por">Por: R$ 39,90</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Kaiak 390ml', 39.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Kaiak%20Hid.%20100ml%204un.jpg"><h3>Hidratante Kaiak 100ml</h3><p class="preco-de">De: R$ 32,90</p><p class="preco-por">Por: R$ 7,90</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Kaiak 100ml', 7.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Seve%20creme%20100g%20Ame.%20Canela%203un.jpg"><h3>Creme Sève Ame/Canela</h3><p class="preco-de">De: R$ 39,90</p><p class="preco-por">Por: R$ 19,90</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Creme Seve 100g', 19.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Seve%20Hid.%20Amen.%20Fresia%201un.jpg"><h3>Hidratante Sève 300ml</h3><p class="preco-de">De: R$ 75,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Seve 300ml', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Oleo%20Seve%20Amendoas%20doces%202un.jpg"><h3>Óleo Sève Amêndoas</h3><p class="preco-de">De: R$ 116,90</p><p class="preco-por">Por: R$ 79,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Oleo Seve Amendoas', 79.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Oleo%20Seve%20Amendoas%20e%20Cereja%201un.png"><h3>Óleo Sève Ame/Cereja</h3><p class="preco-de">De: R$ 116,90</p><p class="preco-por">Por: R$ 79,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Oleo Seve Ameixa Cereja', 79.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Tamara%20e%20Canela%202un.png"><h3>Hidratante Tâmara</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Tamara', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Maçã%20Caramelada%204un.png"><h3>Hidratante Maçã Caram.</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Maca Caramelada', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Cereja%20e%20Avelã%208un.png"><h3>Hidratante Cereja e Avelã</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>8</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Cereja Avela', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Ameixa%20e%20Flor%20de%20Baunilha%205un.png"><h3>Ameixa e Baunilha</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Ameixa Baunilha', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Macadamia%2010un.png"><h3>Hidratante Macadâmia</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>10</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Macadamia', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Flor%20de%20Maçã%201un.png"><h3>Hidratante Flor de Maçã</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Flor Maca', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Chá%20de%20Camomila%201un.png"><h3>Hidratante Chá Camomila</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Cha Camomila', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Flor%20de%20Pera%20e%20Melissa%201un.png"><h3>Flor de Pera e Melissa</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Flor Pera', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Flores%204un.png"><h3>Hidratante Flores</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Flores', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Jambo%20Rosa%20e%20Flor%20de%20Caju%201un.png"><h3>Jambo Rosa e Flor de Caju</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Jambo Rosa', 59.90)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Hidratante%20Noz%20Pecã%201un.png"><h3>Hidratante Noz Pecã</h3><p class="preco-de">De: R$ 78,90</p><p class="preco-por">Por: R$ 59,90</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Hidratante Noz Peca', 59.90)">Adicionar ao Carrinho</button></div>
-
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Refil%20Hidratante%20Jambo%20Rosa%205un.png"><h3>Refil Jambo Rosa</h3><p class="preco-de">De: R$ 58,90</p><p class="preco-por">Por: R$ 42,00</p><p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Jambo Rosa', 42.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Refil%20Hidratante%20Macadamia%203un.png"><h3>Refil Macadâmia</h3><p class="preco-de">De: R$ 58,90</p><p class="preco-por">Por: R$ 42,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Macadamia', 42.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Refil%20Hidratante%20Amora%20e%20Flor%20de%20Pessego%202un.png"><h3>Refil Amora e Pêssego</h3><p class="preco-de">De: R$ 58,90</p><p class="preco-por">Por: R$ 42,00</p><p class="estoque">⏳ Apenas <strong>2</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Amora Pessego', 42.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Refil%20Hidratante%20Ameixa%20e%20Flor%20de%20Baunilha%204un.png"><h3>Refil Ameixa e Baunilha</h3><p class="preco-de">De: R$ 58,90</p><p class="preco-por">Por: R$ 42,00</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Ameixa Baunilha', 42.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Refil%20Hidratante%20Cereja%20e%20Avelã%205un.png"><h3>Refil Cereja e Avelã</h3><p class="preco-de">De: R$ 58,90</p><p class="preco-por">Por: R$ 42,00</p><p class="estoque">⏳ Apenas <strong>5</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Cereja Avela', 42.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Refil%20Hidratante%20Algodão%203un.png"><h3>Refil Algodão</h3><p class="preco-de">De: R$ 58,90</p><p class="preco-por">Por: R$ 42,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Algodao', 42.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Refil%20Hidratante%20Manga%20Rosa%201un.png"><h3>Refil Manga Rosa</h3><p class="preco-de">De: R$ 58,90</p><p class="preco-por">Por: R$ 42,00</p><p class="estoque">⏳ Apenas <strong>1</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Manga Rosa', 42.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Refil%20Hidratante%20Limão%20Siciliano%204un.png"><h3>Refil Limão Siciliano</h3><p class="preco-de">De: R$ 58,90</p><p class="preco-por">Por: R$ 42,00</p><p class="estoque">⏳ Apenas <strong>4</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Limao Siciliano', 42.00)">Adicionar ao Carrinho</button></div>
-        <div class="card" data-categoria="corpo-banho hidratantes"><img loading="lazy" src="Refil%20Hidratante%20Cereja%20Negra%203un.png"><h3>Refil Cereja Negra</h3><p class="preco-de">De: R$ 58,90</p><p class="preco-por">Por: R$ 42,00</p><p class="estoque">⏳ Apenas <strong>3</strong> em estoque!</p><button class="btn-whats" onclick="adicionarCarrinho('Refil Cereja Negra', 42.00)">Adicionar ao Carrinho</button></div>
-
+    <div class="carrinho-flutuante" onclick="abrirCarrinho()">
+        🛒
+        <div class="contador-carrinho" id="contador">0</div>
     </div>
 
-    <div class="carrinho-flutuante" onclick="abrirCarrinho()">🛒<div class="contador-carrinho" id="contador">0</div></div>
     <div class="modal-overlay" id="modalCarrinho">
         <div class="modal-carrinho">
-            <h2>🛒 O seu Carrinho</h2><div id="lista-itens"></div>
+            <h2>🛒 O seu Carrinho</h2>
+            <div id="lista-itens"></div>
             <div class="carrinho-total">Total: R$ <span id="valor-total">0,00</span></div>
             <button class="btn-finalizar" onclick="finalizarCompra()">📲 Enviar Pedido no WhatsApp</button>
             <button class="btn-fechar" onclick="fecharCarrinho()">Continuar a Comprar</button>
@@ -283,49 +210,344 @@
     </div>
 
     <script>
+        // LISTA INTELIGENTE DE PRODUTOS: AGORA A LOJA NUNCA MAIS VAI CORTAR E CARREGA NUM PISCAR DE OLHOS!
+        const produtos = [
+            // DESTAQUES / PROMOÇÕES VIP
+            ["KAIAK Masculino.png", "Kaiak Masculino", 189.90, 120.00, 9, "masculina destaque promocoes", "24h"],
+            ["Cesta Coração Essencial Exc Fem.jpg", "Cesta Coração Essencial", 379.90, 279.90, 1, "cestas destaque promocoes", "presente"],
+            ["Kit creme tododia 100ml 1un.jpg", "Kit Creme Tododia 100ml", 88.50, 39.90, 1, "corpo-banho hidratantes destaque promocoes", "presente"],
+            ["cestaluna.png", "Kit Presente Luna", 349.90, 260.00, 1, "cestas destaque promocoes", "presente"],
+            ["Combo Body Splash.png", "Combo 3 Body Splashes", 281.70, 150.00, 99, "corpo-banho body-splash destaque promocoes", "promo"],
+
+            // INFANTIL
+            ["MMBB Colonia 10un.jpg", "Colônia Mamãe e Bebê", 106.90, 85.00, 10, "infantil", ""],
+            ["MMBB Colonia Rlaxante 1un.jpg", "Colônia Relaxante", 106.90, 85.00, 1, "infantil", ""],
+            ["MMBB Shampoo 2un.jpg", "Shampoo Mamãe e Bebê", 45.90, 35.00, 2, "infantil", ""],
+            ["MMBB Condicionador 3un.jpg", "Condicionador MMBB", 45.90, 35.00, 3, "infantil", ""],
+            ["MMBB Cachos Shampoo 1un.jpg", "Shampoo MMBB Cachos", 45.90, 35.00, 1, "infantil", ""],
+            ["MMBB Cachos Condicionador 2un.jpg", "Condic. MMBB Cachos", 45.90, 35.00, 2, "infantil", ""],
+            ["MMBB Cachos creme pentear 2un.jpg", "Creme Pentear Cachos", 49.50, 35.00, 2, "infantil", ""],
+            ["MMBB Hidratante 3un.jpg", "Hidratante MMBB", 69.90, 55.00, 3, "infantil", ""],
+            ["MMBB com 5 Sabonetes 2un.jpg", "Sabonete MMBB c/ 5", 51.90, 40.00, 2, "infantil", ""],
+            ["MMBB com 2 Sabonetes 3un.jpg", "Sabonete MMBB c/ 2", 31.40, 20.00, 3, "infantil", ""],
+            ["MMBB Sab. Liq. 50ml 2un.jpg", "Sabonete Líq. 50ml", 26.90, 15.00, 2, "infantil", ""],
+            ["MMBB 16 Lenços 4un.jpg", "Lenços MMBB 16un", 13.10, 9.90, 4, "infantil", ""],
+            ["Kit PPBB Miniaturas 3un.jpg", "Kit PPBB Miniaturas", 69.90, 39.90, 3, "infantil", ""],
+
+            // ROSTO
+            ["Fotoequilibrio Gel creme Facial 30.10.jpg", "Fotoequilíbrio Gel Creme", 96.90, 49.90, 0, "corpo-banho", "limitado"],
+
+            // EKOS (Perfumes & Hidratantes)
+            ["Ekos Colonia 150 ml Cacau 1un.jpg", "Ekos Frescor Cacau", 129.90, 89.90, 1, "ekos feminina", ""],
+            ["Ekos Colonia 150 ml Madeira em flor 1un.jpg", "Ekos Madeira em Flor", 129.90, 89.90, 1, "ekos feminina", ""],
+            ["Ekos Colonia 150 ml Maracuja 1un.jpg", "Ekos Frescor Maracujá", 129.90, 89.90, 1, "ekos feminina", ""],
+            ["Ekos Colonia 150 ml Maracuja noite 1un.jpg", "Ekos Maracujá Noite", 137.90, 99.90, 1, "ekos feminina", ""],
+            ["Ekos Colonia Rf 150 ml Maracuja 1un.jpg", "Refil Ekos Maracujá", 129.90, 89.90, 1, "ekos feminina", ""],
+            ["Ekos Colonia 75 ml Maracuja 1un.jpg", "Ekos Maracujá 75ml", 97.90, 69.90, 1, "ekos feminina", ""],
+            ["Ekos Ryo Chuva 1un.jpg", "Ekos Ryos Chuva", 199.90, 99.90, 1, "ekos feminina", ""],
+            ["Ekos Ryo Vivo 2un.jpg", "Ekos Ryos Vivo", 199.90, 99.90, 2, "ekos feminina", ""],
+            ["Ekos hidratante Madeira em flor 1un.jpeg", "Ekos Hid. Madeira 400ml", 88.90, 69.90, 1, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante Maracujá 1un.jpg", "Ekos Hid. Maracujá 400ml", 88.90, 69.90, 1, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante Maracujá noite 1un.jpg", "Ekos Hid. Maracujá Noite", 88.90, 69.90, 1, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante Ucuuba 2un.jpg", "Ekos Hidratante Ucuuba", 88.90, 69.90, 2, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante Rf Cacau 1un.jpg", "Refil Ekos Cacau", 69.90, 59.90, 1, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante Rf Maracujá 1un.jpg", "Refil Ekos Maracujá", 69.90, 59.90, 1, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante Rf Maracujá noite 1un.jpg", "Refil Ekos Maracujá Noite", 69.90, 59.90, 1, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante mãos açai 40g 1un.jpg", "Polpa Mãos Açaí 40g", 41.90, 29.90, 1, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante mãos castanha 40g 2un.jpg", "Polpa Mãos Castanha 40g", 41.90, 29.90, 2, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante mãos maracuja 40g 1un.jpg", "Polpa Mãos Maracujá 40g", 41.90, 29.90, 1, "ekos corpo-banho hidratantes", ""],
+            ["Kit Ekos mãos 40g 1un.jpg", "Kit Polpas Mãos 40g", 41.90, 29.90, 1, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante mãos andiroba 75g 1un.jpg", "Polpa Mãos Andiroba 75g", 59.90, 44.90, 1, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante mãos castanha 75g 2un.jpg", "Polpa Mãos Castanha 75g", 59.90, 44.90, 2, "ekos corpo-banho hidratantes", ""],
+            ["Ekos hidratante mãos maracuja 75g 1un.jpg", "Polpa Mãos Maracujá 75g", 59.90, 44.90, 1, "ekos corpo-banho hidratantes", ""],
+
+            // HIDRATANTES E ÓLEOS DIVERSOS
+            ["Creme tododia 100ml algodão1un.jpg", "Creme Algodão 100ml", 29.50, 12.90, 1, "corpo-banho hidratantes", ""],
+            ["Creme Humor liberta.jpg", "Creme Humor Liberta", 43.80, 19.90, 1, "corpo-banho hidratantes", ""],
+            ["Creme tododia 100ml pessego melissa 4un.jpg", "Creme Pêssego 100ml", 29.50, 12.90, 4, "corpo-banho hidratantes", ""],
+            ["Creme tododia 100ml framboesa e pim ver 1un.jpg", "Creme Framboesa 100ml", 29.50, 12.90, 1, "corpo-banho hidratantes", ""],
+            ["Creme tododia 100ml tamara e canela 1un.jpg", "Creme Tâmara 100ml", 29.50, 12.90, 1, "corpo-banho hidratantes", ""],
+            ["Oleo Bifasico ameixa e baunilha 2un.jpg", "Óleo Bifásico Ameixa", 62.90, 44.90, 2, "corpo-banho hidratantes", ""],
+            ["Creme Kaiak fem 150 ml 4un.jpg", "Creme Kaiak Fem 150ml", 64.90, 37.90, 4, "corpo-banho hidratantes", ""],
+            ["Kaiak Hid. 390ml 4un.jpg", "Hidratante Kaiak 390ml", 69.90, 39.90, 4, "corpo-banho hidratantes", ""],
+            ["Kaiak Hid. 100ml 4un.jpg", "Hidratante Kaiak 100ml", 32.90, 7.90, 4, "corpo-banho hidratantes", ""],
+            ["Seve creme 100g Ame. Canela 3un.jpg", "Creme Sève Ame/Canela", 39.90, 19.90, 3, "corpo-banho hidratantes", ""],
+            ["Seve Hid. Amen. Fresia 1un.jpg", "Hidratante Sève 300ml", 75.90, 59.90, 1, "corpo-banho hidratantes", ""],
+            ["Oleo Seve Amendoas doces 2un.jpg", "Óleo Sève Amêndoas", 116.90, 79.90, 2, "corpo-banho hidratantes", ""],
+            ["Oleo Seve Amendoas e Cereja 1un.png", "Óleo Sève Ame/Cereja", 116.90, 79.90, 1, "corpo-banho hidratantes", ""],
+            ["Hidratante Tamara e Canela 2un.png", "Hidratante Tâmara", 78.90, 59.90, 2, "corpo-banho hidratantes", ""],
+            ["Hidratante Maçã Caramelada 4un.png", "Hidratante Maçã Caram.", 78.90, 59.90, 4, "corpo-banho hidratantes", ""],
+            ["Hidratante Cereja e Avelã 8un.png", "Hidratante Cereja e Avelã", 78.90, 59.90, 8, "corpo-banho hidratantes", ""],
+            ["Hidratante Ameixa e Flor de Baunilha 5un.png", "Ameixa e Baunilha", 78.90, 59.90, 5, "corpo-banho hidratantes", ""],
+            ["Hidratante Macadamia 10un.png", "Hidratante Macadâmia", 78.90, 59.90, 10, "corpo-banho hidratantes", ""],
+            ["Hidratante Flor de Maçã 1un.png", "Hidratante Flor de Maçã", 78.90, 59.90, 1, "corpo-banho hidratantes", ""],
+            ["Hidratante Chá de Camomila 1un.png", "Hidratante Chá Camomila", 78.90, 59.90, 1, "corpo-banho hidratantes", ""],
+            ["Hidratante Flor de Pera e Melissa 1un.png", "Flor de Pera e Melissa", 78.90, 59.90, 1, "corpo-banho hidratantes", ""],
+            ["Hidratante Flores 4un.png", "Hidratante Flores", 78.90, 59.90, 4, "corpo-banho hidratantes", ""],
+            ["Hidratante Jambo Rosa e Flor de Caju 1un.png", "Jambo Rosa e Caju", 78.90, 59.90, 1, "corpo-banho hidratantes", ""],
+            ["Hidratante Noz Pecã 1un.png", "Hidratante Noz Pecã", 78.90, 59.90, 1, "corpo-banho hidratantes", ""],
+
+            // REFIS DE HIDRATANTES
+            ["Refil Hidratante Jambo Rosa 5un.png", "Refil Jambo Rosa", 58.90, 42.00, 5, "corpo-banho hidratantes", ""],
+            ["Refil Hidratante Macadamia 3un.png", "Refil Macadâmia", 58.90, 42.00, 3, "corpo-banho hidratantes", ""],
+            ["Refil Hidratante Amora e Flor de Pessego 2un.png", "Refil Amora e Pêssego", 58.90, 42.00, 2, "corpo-banho hidratantes", ""],
+            ["Refil Hidratante Ameixa e Flor de Baunilha 4un.png", "Refil Ameixa e Baunilha", 58.90, 42.00, 4, "corpo-banho hidratantes", ""],
+            ["Refil Hidratante Cereja e Avelã 5un.png", "Refil Cereja e Avelã", 58.90, 42.00, 5, "corpo-banho hidratantes", ""],
+            ["Refil Hidratante Algodão 3un.png", "Refil Algodão", 58.90, 42.00, 3, "corpo-banho hidratantes", ""],
+            ["Refil Hidratante Manga Rosa 1un.png", "Refil Manga Rosa", 58.90, 42.00, 1, "corpo-banho hidratantes", ""],
+            ["Refil Hidratante Limão Siciliano 4un.png", "Refil Limão Siciliano", 58.90, 42.00, 4, "corpo-banho hidratantes", ""],
+            ["Refil Hidratante Cereja Negra 3un.png", "Refil Cereja Negra", 58.90, 42.00, 3, "corpo-banho hidratantes", ""],
+
+            // BODY SPLASH
+            ["Body Cereja Negra 3un.jpg", "Body Cereja Negra", 93.90, 65.00, 3, "corpo-banho body-splash", ""],
+            ["Body Algodão 4un.jpg", "Body Algodão", 93.90, 65.00, 4, "corpo-banho body-splash", ""],
+            ["Body Maça Caramelada 4uni.png", "Body Maçã Caramelada", 93.90, 65.00, 7, "corpo-banho body-splash", ""],
+            ["Body Amora Flor de Pessego.png", "Body Amora e Pêssego", 93.90, 65.00, 6, "corpo-banho body-splash", ""],
+            ["Body Acerola e Hibisco.png", "Body Acerola e Hibisco", 93.90, 65.00, 1, "corpo-banho body-splash", ""],
+            ["Body Jambo Rosa e Caju.png", "Body Jambo Rosa e Caju", 93.90, 65.00, 3, "corpo-banho body-splash", ""],
+            ["Body Romã e Amendoas Glaceadas.png", "Body Romã e Amêndoas", 93.90, 65.00, 3, "corpo-banho body-splash", ""],
+            ["Body Flores Pessego e Jasmin.png", "Body Flores de Pêssego", 93.90, 65.00, 2, "corpo-banho body-splash", ""],
+            ["Body Chá de Camomila 4 uni.jpg", "Body Chá de Camomila", 93.90, 65.00, 4, "corpo-banho body-splash", ""],
+            ["Body Limão Siciliano 5uni.png", "Body Limão Siciliano", 93.90, 65.00, 5, "corpo-banho body-splash", ""],
+            ["Body Macadâmia 2uni.png", "Body Macadâmia", 93.90, 65.00, 2, "corpo-banho body-splash", ""],
+            ["Body Uva Rosa E Romã 2un.png", "Body Uva Rosa e Romã", 93.90, 65.00, 2, "corpo-banho body-splash", ""],
+            ["Body Ameixa e Gengibre Rosa 1un.png", "Body Ameixa e Gengibre", 93.90, 65.00, 1, "corpo-banho body-splash", ""],
+            ["Body Flor de Gengibre e Tangerina 1un.png", "Flor Gengibre Tangerina", 93.90, 65.00, 1, "corpo-banho body-splash", ""],
+            ["Body Ameixa e Flor de Baunilha 6un.jpg", "Body Ameixa e Baunilha", 93.90, 65.00, 6, "corpo-banho body-splash", ""],
+            ["Body Flor de Maçã 3un.png", "Body Flor de Maçã", 93.90, 65.00, 3, "corpo-banho body-splash", ""],
+            ["Body Cereja e Avelã 3un.jpg", "Body Cereja e Avelã", 93.90, 65.00, 3, "corpo-banho body-splash", ""],
+            ["Body Amora e Jabuticaba 1uni.png", "Body Amora e Jabuticaba", 93.90, 65.00, 1, "corpo-banho body-splash", ""],
+            ["Body Framboesa e Pimenta Vermelha 1 un.png", "Body Framboesa Pimenta", 93.90, 65.00, 1, "corpo-banho body-splash", ""],
+
+            // SABONETES
+            ["Ekos sabonete castanha 6un.jpg", "Sabonete Ekos Castanha", 45.90, 35.90, 6, "ekos sabonetes corpo-banho", ""],
+            ["Ekos sabonete maracuja 2un.jpg", "Sabonete Ekos Maracujá", 45.90, 35.90, 2, "ekos sabonetes corpo-banho", ""],
+            ["Ekos sabonete açai 2un.jpg", "Sabonete Ekos Açaí", 45.90, 35.90, 2, "ekos sabonetes corpo-banho", ""],
+            ["Ekos sabonete ucuuba 2un.jpg", "Sabonete Ekos Ucuuba", 45.90, 35.90, 2, "ekos sabonetes corpo-banho", ""],
+            ["Ekos sabonete buriti 2un.jpg", "Sabonete Ekos Buriti", 45.90, 35.90, 2, "ekos sabonetes corpo-banho", ""],
+            ["Ekos sabonete maracuja noite 3un.jpg", "Sab. Ekos Maracujá Noite", 45.90, 35.90, 3, "ekos sabonetes corpo-banho", ""],
+            ["Ekos sabonete pitanga 1un.jpg", "Sabonete Ekos Pitanga", 49.90, 39.90, 1, "ekos sabonetes corpo-banho", ""],
+            ["Ekos sabonete breu branco 2un.jpg", "Sabonete Ekos Breu Branco", 45.90, 35.90, 2, "ekos sabonetes corpo-banho", ""],
+            ["Ekos sabonete sortido 2un.jpg", "Sabonete Ekos Sortido", 45.90, 35.90, 2, "ekos sabonetes corpo-banho", ""],
+            ["erva doce com 3 sabonete 1un.jpg", "Sabonete Erva Doce c/3", 31.90, 26.90, 1, "sabonetes corpo-banho", ""],
+            ["erva doce com 4 sabonete 4un.jpg", "Sabonete Erva Doce c/4", 40.90, 30.90, 4, "sabonetes corpo-banho", ""],
+            ["Sabonete Natura Homem 3un.png", "Sabonete Natura Homem", 37.90, 24.90, 3, "sabonetes masculina", ""],
+            ["Sabonete Natura Homem Cacau 3un.jpg.png", "Sabonete Homem Cacau", 37.90, 24.90, 3, "sabonetes masculina", ""],
+            ["Sabonete Natura Homem Emocione 4un.jpg.png", "Sabonete Homem Emocione", 37.90, 24.90, 4, "sabonetes masculina", ""],
+            ["Sabonete liq. amora e baunilha 2un.jpg", "Sab. Líq. Amora Baunilha", 58.10, 24.90, 2, "sabonetes corpo-banho", ""],
+            ["Sabonete Noz pecã 3un.png", "Sabonete Noz Pecã", 34.90, 25.00, 3, "sabonetes corpo-banho", ""],
+            ["Sabonete Amora e Flor de Pessego 10un.png", "Amora e Flor Pêssego", 34.90, 25.00, 10, "sabonetes corpo-banho", ""],
+            ["Sabonete Sortido cor Laranja 20un.png", "Sabonete Sortido Laranja", 42.90, 25.00, 20, "sabonetes corpo-banho", ""],
+            ["Sabonete Ameixa e Flor de Baunilha 5un.png", "Ameixa e Flor Baunilha", 34.90, 25.00, 5, "sabonetes corpo-banho", ""],
+            ["Sabonete Romã e Amendoas Glaceadas 1un.png", "Sab. Romã e Amêndoas", 34.90, 25.00, 1, "sabonetes corpo-banho", ""],
+            ["Sabonete Maçã Caramelada 2un.png", "Sabonete Maçã Caram.", 34.90, 25.00, 2, "sabonetes corpo-banho", ""],
+            ["Sabonete Limão Siciliano 9un.png", "Sabonete Limão Siciliano", 34.90, 25.00, 9, "sabonetes corpo-banho", ""],
+            ["Sabonete Energia Flor de Gengibre 3un.png", "Energia Flor Gengibre", 34.90, 25.00, 3, "sabonetes corpo-banho", ""],
+            ["Sabonete Manga Rosa 2un.png", "Sabonete Manga Rosa", 34.90, 25.00, 2, "sabonetes corpo-banho", ""],
+            ["Sabonete Frutas Vermelhas 3un.png", "Sab. Frutas Vermelhas", 34.90, 25.00, 3, "sabonetes corpo-banho", ""],
+            ["Sabonete Macadamia 5un.png", "Sabonete Macadâmia", 34.90, 25.00, 5, "sabonetes corpo-banho", ""],
+            ["Sabonete Alecrim 4un.png", "Sabonete Alecrim", 34.90, 25.00, 4, "sabonetes corpo-banho", ""],
+            ["Sabonete Cereja e avelã 1un.png", "Sabonete Cereja Avelã", 34.90, 25.00, 3, "sabonetes corpo-banho", ""],
+            ["Sabonete Acerola e hibisco 1un.png", "Sabonete Acerola Hibisco", 34.90, 25.00, 1, "sabonetes corpo-banho", ""],
+            ["Sabonete Amora vermelha e jabuticaba 3un.png", "Amora Verm. Jabuticaba", 34.90, 25.00, 3, "sabonetes corpo-banho", ""],
+            ["Sabonete Tamara e canela 1un.png", "Sabonete Tâmara Canela", 34.90, 25.00, 1, "sabonetes corpo-banho", ""],
+            ["Sabonete Sortido vermelho e rosa 1un.png", "Sortido Vermelho/Rosa", 42.90, 25.00, 1, "sabonetes corpo-banho", ""],
+            ["Sabonete Sortido Celebre 4un.png", "Sabonete Sortido Celebre", 42.90, 25.00, 4, "sabonetes corpo-banho", ""],
+            ["Sabonete Sortido com carinho 1un.png", "Sabonete Sortido Carinho", 42.90, 25.00, 1, "sabonetes corpo-banho", ""],
+            ["Sabonete Algodão.png", "Sabonete Algodão", 34.90, 25.00, 13, "sabonetes corpo-banho", ""],
+            ["Sabonete Todanoite.png", "Sabonete Todanoite", 34.90, 25.00, 20, "sabonetes corpo-banho", ""],
+
+            // DESODORANTES E SPRAYS (Masc/Fem)
+            ["Desodorante Essencial masc 7un.jpg", "Desod. Essencial Masc", 72.90, 34.90, 7, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Essencial excl masc 2un.jpg", "Desod. Essenc. Exclusivo", 72.90, 34.90, 2, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Essencial atrai masc 4un.jpg", "Desod. Essencial Atraí", 72.90, 34.90, 4, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Essencial elixir masc 4un.jpg", "Desod. Essencial Elixir", 72.90, 34.90, 4, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Essencial oud masc 3un.jpg", "Desod. Essencial Oud", 72.90, 34.90, 3, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Essencial Ato masc 3un.jpg", "Desod. Essencial Ato", 72.90, 34.90, 3, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Essencial Exc fem 3un.jpg", "Desod. Essenc. Exc Fem", 72.90, 34.90, 3, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Essencial Exc Floral fem 3un.jpg", "Desod. Essenc. Floral Fem", 72.90, 34.90, 3, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Essencial fem 4un.jpg", "Desod. Essencial Feminino", 72.90, 34.90, 4, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Essencial Ato fem 1un.jpg", "Desod. Essencial Ato Fem", 72.90, 34.90, 1, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Essencial Atrai fem 3un.jpg", "Desod. Essencial Atraí Fem", 72.90, 34.90, 3, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Natura Homem Especiarias 2un.jpg", "Desod. Homem Especiarias", 56.90, 29.90, 2, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Natura Homem Elo 2un.jpg", "Desod. Homem Elo", 56.90, 29.90, 2, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Natura Homem Essence 5un.jpg", "Desod. Homem Essence", 56.90, 29.90, 5, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Natura Homem 5un.jpg", "Desod. Homem Tradicional", 56.90, 29.90, 5, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Natura Homem Nos 3un.jpg", "Desod. Homem Nós", 56.90, 29.90, 3, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Natura Homem Sagaz 1un.jpg", "Desod. Homem Sagaz", 56.90, 29.90, 1, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Sintonia Instinto masc 1un.jpg", "Desod. Sintonia Instinto", 56.90, 29.90, 1, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Biografia masc 5un.jpg", "Desod. Biografia Masc", 56.90, 29.90, 5, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Biografia Assin masc 3un.jpg", "Desod. Biografia Assinat.", 56.90, 29.90, 3, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Biografia fem 2un.jpg", "Desod. Biografia Fem", 56.90, 29.90, 2, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Biografia Inspire fem 4un.jpg", "Desod. Biografia Inspire", 56.90, 29.90, 4, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Kaiak fem 1un.jpg", "Desod. Kaiak Fem", 56.90, 29.90, 1, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Kaiak Aven fem 5un.jpg", "Desod. Kaiak Aventura Fem", 56.90, 29.90, 5, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Kaiak Pulso 3un.jpg", "Desod. Kaiak Pulso", 56.90, 29.90, 3, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Kaiak Sonar masc 1un.jpg", "Desod. Kaiak Sonar Masc", 56.90, 29.90, 1, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Kaiak Avent masc 3unjpg", "Desod. Kaiak Avent Masc", 56.90, 29.90, 3, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Kaiak Urbe 1un.jpg", "Desod. Kaiak Urbe", 56.90, 29.90, 1, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Kaiak 1un.jpg", "Desod. Kaiak Tradicional", 56.90, 29.90, 1, "corpo-banho desodorantes masculina", ""],
+            ["Desodorante Meu 1º Humor 4un.jpg", "Desod. Meu 1º Humor", 56.90, 29.90, 4, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Humor Liberta 2un.jpg", "Desod. Humor Liberta", 56.90, 29.90, 2, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Humor Envolve 3un.jpg", "Desod. Humor Envolve", 56.90, 29.90, 3, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Kriska Shock 1un.png", "Desod. Kriska Shock", 56.90, 29.90, 1, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Kriska Drama 4un.jpg", "Desod. Kriska Drama", 56.90, 29.90, 4, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Luna 2un.jpg", "Desod. Luna", 56.90, 29.90, 2, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Luna Absoluta 1un.jpg", "Desod. Luna Absoluta", 56.90, 29.90, 1, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Luna Radiante 3un.jpg", "Desod. Luna Radiante", 56.90, 29.90, 3, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Luna Fascinante 2un.jpg", "Desod. Luna Fascinante", 56.90, 29.90, 2, "corpo-banho desodorantes feminina", ""],
+            ["Desodorante Revelar 1un.webp", "Desod. Revelar", 56.90, 29.90, 1, "corpo-banho desodorantes feminina", ""],
+
+            // REFIS DESODORANTE
+            ["Refil Desodorante Corporal Luna 2 un.png", "Refil Desod. Luna", 44.90, 19.90, 2, "corpo-banho desodorantes feminina", ""],
+            ["Refil Desodorante Corporal Biografia masc 1un.png", "Refil Desod. Bio Masc", 44.90, 19.90, 1, "corpo-banho desodorantes masculina", ""],
+            ["Refil Desodorante Corporal Humor Liberta 1un.png", "Refil Desod. Humor Liberta", 44.90, 19.90, 1, "corpo-banho desodorantes feminina", ""],
+            ["Refil Desodorante Corporal Biografia fem 2un.png", "Refil Desod. Biografia Fem", 44.90, 19.90, 2, "corpo-banho desodorantes feminina", ""],
+            ["Refil Desodorante Corporal Meu Primeiro humor 1un.png", "Refil Desod. Meu 1º Humor", 44.90, 19.90, 1, "corpo-banho desodorantes feminina", ""],
+            ["Refil Desodorante Corporal Luna absoluta 2 un.png", "Refil Desod. Luna Absoluta", 44.90, 19.90, 2, "corpo-banho desodorantes feminina", ""],
+            ["Refil Desodorante Corporal Essencial Exc fem 2un.png", "Refil Desod. Essenc Exc Fem", 44.90, 19.90, 2, "corpo-banho desodorantes feminina", ""],
+            ["Refil Desodorante Corporal Essencial fem 2un.png", "Refil Desod. Essencial Fem", 44.90, 19.90, 2, "corpo-banho desodorantes feminina", ""],
+            ["Refil Desodorante Corporal Kaiak Aven masc 4un.png", "Refil Desod. Kaiak Aven Masc", 44.90, 19.90, 4, "corpo-banho desodorantes masculina", ""],
+            ["Refil Desodorante Corporal Kaiak masc 6un.png", "Refil Desod. Kaiak Masc", 44.90, 19.90, 6, "corpo-banho desodorantes masculina", ""],
+
+            // DESODORANTES ROLLON E CREME
+            ["Rollon Luna 7un.png", "Roll-on Luna", 29.90, 20.00, 7, "corpo-banho desodorantes feminina", ""],
+            ["Rollon Natura Homem 2un.png", "Roll-on Natura Homem", 29.90, 20.00, 2, "corpo-banho desodorantes masculina", ""],
+            ["Rollon Macadamia 1un.png", "Roll-on Macadâmia", 29.90, 20.00, 1, "corpo-banho desodorantes", ""],
+            ["Rollon Alecrim 1un.png", "Roll-on Alecrim", 29.90, 20.00, 1, "corpo-banho desodorantes", ""],
+            ["Rollon Amora Verm Jabuticaba 2un.png", "Roll-on Amora e Jabuticaba", 29.90, 20.00, 2, "corpo-banho desodorantes", ""],
+            ["Rollon Aclarar 1un.png", "Roll-on Aclarar", 29.90, 20.00, 1, "corpo-banho desodorantes", ""],
+            ["Rollon Tamara e Canela 1un.jpg.png", "Roll-on Tâmara e Canela", 29.90, 20.00, 1, "corpo-banho desodorantes", ""],
+            ["Rollon Acerola e Hibisco1un.png", "Roll-on Acerola e Hibisco", 29.90, 20.00, 1, "corpo-banho desodorantes", ""],
+            ["Desodorante em creme Flor de Lis 1un.png", "Creme Flor de Lis", 30.90, 20.00, 1, "corpo-banho desodorantes", ""],
+            ["Desodorante em creme Macadamia 2un.png", "Creme Macadâmia", 30.90, 20.00, 2, "corpo-banho desodorantes", ""],
+            ["Desodorante em creme Cereja e Avelã 2un.png", "Creme Cereja e Avelã", 30.90, 20.00, 2, "corpo-banho desodorantes", ""],
+            ["Desodorante em creme Erva doce 2un.png", "Creme Erva Doce", 30.90, 20.00, 2, "corpo-banho desodorantes", ""],
+
+            // PERFUMARIA FEMININA (Restante)
+            ["Una Brilho.png", "Una Brilho 75ml", 319.90, 219.90, 1, "feminina", ""],
+            ["Una.png", "Una Clássico 75ml", 319.90, 219.90, 2, "feminina", ""],
+            ["Una Blush.png", "Una Blush 75ml", 319.90, 219.90, 1, "feminina", ""],
+            ["Una Somos.png", "Una Somos 75ml", 319.90, 219.90, 1, "feminina", ""],
+            ["Una Artisan.png", "Una Artisan 75ml", 319.90, 219.90, 1, "feminina", ""],
+            ["Una Senses.png", "Una Senses 75ml", 319.90, 219.90, 1, "feminina", ""],
+            ["Una Celebrar.png", "Una Celebrar 75ml", 319.90, 219.90, 1, "feminina", ""]
+        ];
+
+        // FUNÇÃO PARA RENDERIZAR OS PRODUTOS DE FORMA INTELIGENTE E SUPER RÁPIDA
+        function renderizarVitrine() {
+            let html = "";
+            produtos.forEach((p) => {
+                let img = p[0];
+                let nome = p[1];
+                let precoDe = p[2].toFixed(2).replace('.', ',');
+                let precoPor = p[3].toFixed(2).replace('.', ',');
+                let estoque = p[4];
+                let categoria = p[5];
+                let tag = p[6];
+
+                let divSelo = "";
+                let timerHtml = "";
+                let idAttr = "";
+                let idPrecoDe = "";
+                let idPrecoPor = "";
+                let idBtn = "";
+                let textoEstoque = `⏳ Apenas <strong>${estoque}</strong> em estoque!`;
+                let classeEstoque = "estoque";
+
+                if (tag === '24h') {
+                    idAttr = `id="card-kaiak" style="border: 2px solid #ffeb3b; background-color: #fffde7;"`;
+                    divSelo = `<div id="selo-kaiak" style="position: absolute; top: -10px; right: -10px; background: red; color: white; padding: 5px 10px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 2; display: none;">OFERTA 24H ⚡</div>`;
+                    timerHtml = `<p id="kaiak-contador" style="color: #d81b60; font-size: 0.9rem; font-weight: bold; margin-bottom: 5px; display: none;">⏳ Termina em: <br><span id="tempo-kaiak" style="font-size: 1.2rem;"></span></p>`;
+                    idPrecoDe = `id="kaiak-de"`;
+                    idPrecoPor = `id="kaiak-por"`;
+                    idBtn = `id="btn-kaiak"`;
+                } else if (tag === 'presente') {
+                    textoEstoque = `🎁 <strong>Apenas ${estoque} em estoque!</strong>`;
+                    classeEstoque = "estoque destaque-combo";
+                } else if (tag === 'promo') {
+                    textoEstoque = `⏳ <strong>Promoção Especial!</strong>`;
+                    classeEstoque = "estoque destaque-combo";
+                } else if (tag === 'limitado' || estoque === 0) {
+                    textoEstoque = `⏳ <strong>Estoque Limitado!</strong>`;
+                }
+
+                html += `
+                <div class="card" data-categoria="${categoria}" ${idAttr}>
+                    ${divSelo}
+                    <img loading="lazy" src="${img}" alt="${nome}">
+                    <h3>${nome}</h3>
+                    <p class="preco-de" ${idPrecoDe}>De: R$ ${precoDe}</p>
+                    <p class="preco-por" ${idPrecoPor}>Por: R$ ${precoPor}</p>
+                    <p class="${classeEstoque}">${textoEstoque}</p>
+                    ${timerHtml}
+                    <button class="btn-whats" ${idBtn} onclick="adicionarCarrinho('${nome}', ${p[3]})">Adicionar ao Carrinho</button>
+                </div>`;
+            });
+            document.getElementById('lista-produtos').innerHTML = html;
+        }
+
+        // Função do Cronómetro da Promoção 24h
         function verificarPromocao() {
-            let dataFim = new Date('2026-02-24T23:59:59').getTime();
+            let dataFim = new Date('2026-02-24T23:59:59').getTime(); // Atualizado para amanhã
             let btnKaiak = document.getElementById('btn-kaiak');
             let precoPorKaiak = document.getElementById('kaiak-por');
             let precoDeKaiak = document.getElementById('kaiak-de');
             let contador = document.getElementById('kaiak-contador');
             let selo = document.getElementById('selo-kaiak');
+            
             let atualizarRelogio = setInterval(function() {
                 let agora = new Date().getTime();
                 let distancia = dataFim - agora;
+                
                 if (distancia > 0) {
                     if(precoDeKaiak) precoDeKaiak.innerText = "De: R$ 189,90 (Promoção 24h)";
-                    if(precoPorKaiak) { precoPorKaiak.innerHTML = "🔥 R$ 99,90"; precoPorKaiak.style.fontSize = "1.8rem"; precoPorKaiak.style.color = "#d81b60"; }
+                    if(precoPorKaiak) { 
+                        precoPorKaiak.innerHTML = "🔥 R$ 99,90"; 
+                        precoPorKaiak.style.fontSize = "1.8rem"; 
+                        precoPorKaiak.style.color = "#d81b60"; 
+                    }
                     if(btnKaiak) btnKaiak.setAttribute('onclick', "adicionarCarrinho('Kaiak Masculino (Promo 24h)', 99.90)");
+                    
                     if(contador) contador.style.display = 'block';
                     if(selo) selo.style.display = 'block';
-                    let h = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    let m = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-                    let s = Math.floor((distancia % (1000 * 60)) / 1000);
+                    
+                    let horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+                    let segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+                    
                     let tempoElement = document.getElementById('tempo-kaiak');
-                    if(tempoElement) tempoElement.innerText = h + "h " + m + "m " + s + "s";
+                    if(tempoElement) tempoElement.innerText = horas + "h " + minutos + "m " + segundos + "s";
                 } else {
                     clearInterval(atualizarRelogio);
                     if(precoDeKaiak) precoDeKaiak.innerText = "De: R$ 189,90";
-                    if(precoPorKaiak) { precoPorKaiak.innerText = "Por: R$ 120,00"; precoPorKaiak.style.fontSize = "1.6rem"; }
+                    if(precoPorKaiak) { 
+                        precoPorKaiak.innerText = "Por: R$ 120,00"; 
+                        precoPorKaiak.style.fontSize = "1.6rem"; 
+                    }
                     if(btnKaiak) btnKaiak.setAttribute('onclick', "adicionarCarrinho('Kaiak Masculino', 120.00)");
                     if(contador) contador.style.display = 'none';
                     if(selo) selo.style.display = 'none';
                     let cardKaiak = document.getElementById('card-kaiak');
-                    if(cardKaiak){ cardKaiak.style.border = "none"; cardKaiak.style.backgroundColor = "white"; }
+                    if(cardKaiak){ 
+                        cardKaiak.style.border = "none"; 
+                        cardKaiak.style.backgroundColor = "white"; 
+                    }
                 }
             }, 1000);
         }
 
         window.onload = function() {
-            filtrar('inicio', 'Bem-vindo(a) à Cestas Perfumadas!');
-            verificarPromocao();
+            renderizarVitrine(); // Constrói a loja instantaneamente
+            filtrar('inicio', 'Bem-vindo(a) à Cestas Perfumadas!'); // Filtra a aba Início
+            verificarPromocao(); // Inicia o relógio
         };
 
         function filtrar(categoriaSelecionada, nomeTitulo) {
             document.getElementById('titulo-vitrine').innerText = nomeTitulo;
             document.getElementById('inputBusca').value = ""; 
 
+            // Controla a visibilidade da Missão e Visão
             let secaoSobre = document.getElementById('secao-sobre');
             if(secaoSobre) {
                 if (categoriaSelecionada === 'inicio') {
@@ -335,7 +557,8 @@
                 }
             }
 
-            let catFiltro = categoriaSelecionada === 'inicio' ? 'destaque' : categoriaSelecionada;
+            // O botão Início e Promoções puxam a tag "destaque"
+            let catFiltro = (categoriaSelecionada === 'inicio' || categoriaSelecionada === 'promocoes') ? 'destaque' : categoriaSelecionada;
 
             const todosOsProdutos = document.querySelectorAll('.card');
             todosOsProdutos.forEach(produto => {
@@ -354,7 +577,7 @@
             let titulo = document.getElementById('titulo-vitrine');
             
             if(termo.length > 0) {
-                document.getElementById('secao-sobre').style.display = 'none';
+                document.getElementById('secao-sobre').style.display = 'none'; // Esconde a missão ao pesquisar
                 titulo.innerText = "Resultados da Pesquisa";
             } else {
                 titulo.innerText = "Catálogo da Loja";
@@ -387,13 +610,16 @@
             document.getElementById('contador').innerText = carrinho.length;
             let listaHtml = "";
             let total = 0;
+
             carrinho.forEach((item, index) => {
                 listaHtml += `<div class="item-carrinho"><div class="item-detalhe">1x ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}</div><div class="item-remover" onclick="removerCarrinho(${index})">🗑️</div></div>`;
                 total += item.preco;
             });
+
             if (carrinho.length === 0) {
                 listaHtml = "<p style='text-align:center; color:#999;'>O seu carrinho está vazio.</p>";
             }
+
             document.getElementById('lista-itens').innerHTML = listaHtml;
             document.getElementById('valor-total').innerText = total.toFixed(2).replace('.', ',');
         }
@@ -406,13 +632,17 @@
                 alert("O seu carrinho está vazio! Adicione produtos antes de finalizar.");
                 return;
             }
+
             let textoWhatsApp = "Olá! Gostaria de fazer o seguinte pedido:\n\n";
             let total = 0;
+
             carrinho.forEach(item => {
                 textoWhatsApp += `✅ 1x ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}\n`;
                 total += item.preco;
             });
+
             textoWhatsApp += `\n*Total a pagar: R$ ${total.toFixed(2).replace('.', ',')}*\n\nComo faço para realizar o pagamento por Pix ou Cartão?`;
+
             let link = "https://api.whatsapp.com/send?phone=5511962983022&text=" + encodeURIComponent(textoWhatsApp);
             window.open(link, "_blank");
         }
