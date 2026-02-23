@@ -21,7 +21,7 @@
         .barra-nav { background-color: #333; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .barra-nav ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; flex-wrap: wrap; }
         .barra-nav > ul > li { position: relative; }
-        .barra-nav a { display: block; color: white; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; padding: 18px 20px; transition: 0.3s; cursor: pointer; }
+        .barra-nav a { display: block; color: white; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; padding: 18px 20px; transition: background-color 0.3s; cursor: pointer; }
         .barra-nav a:hover { background-color: #d81b60; color: white; }
 
         .lista-suspensa { display: none; position: absolute; background-color: #ffffff; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15); z-index: 1; border-radius: 0 0 8px 8px; overflow: hidden; top: 100%; left: 0; }
@@ -116,71 +116,26 @@
         <ul>
             <li><a onclick="filtrar('inicio', 'Bem-vindo(a) à Cestas Perfumadas!')">Início</a></li>
             <li><a onclick="filtrar('promocoes', 'Promoções e Kits Especiais')">Promoções</a></li>
-            
-            <li>
-                <a href="javascript:void(0)">Cestas ▾</a>
-                <div class="lista-suspensa">
-                    <a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a>
-                </div>
-            </li>
-            
-            <li>
-                <a href="javascript:void(0)">Perfumaria ▾</a>
-                <div class="lista-suspensa">
-                    <a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a>
-                    <a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a>
-                </div>
-            </li>
-
-            <li>
-                <a href="javascript:void(0)">Infantil ▾</a>
-                <div class="lista-suspensa">
-                    <a onclick="filtrar('infantil', 'Linha Infantil')">Mamãe e Bebê & Papai e Bebê</a>
-                </div>
-            </li>
-            
-            <li>
-                <a href="javascript:void(0)">Corpo e Banho ▾</a>
-                <div class="lista-suspensa">
-                    <a onclick="filtrar('ekos', 'Natura Ekos')">Natura Ekos</a>
-                    <a onclick="filtrar('hidratantes', 'Hidratantes e Óleos')">Hidratantes e Óleos</a>
-                    <a onclick="filtrar('body-splash', 'Body Splash')">Body Splash</a>
-                    <a onclick="filtrar('sabonetes', 'Sabonetes')">Sabonetes</a>
-                    <a onclick="filtrar('desodorantes', 'Desodorantes')">Desodorantes</a>
-                </div>
-            </li>
+            <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
+            <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
+            <li><a href="javascript:void(0)">Infantil ▾</a><div class="lista-suspensa"><a onclick="filtrar('infantil', 'Linha Infantil')">Mamãe e Bebê</a></div></li>
+            <li><a href="javascript:void(0)">Corpo e Banho ▾</a><div class="lista-suspensa"><a onclick="filtrar('ekos', 'Natura Ekos')">Natura Ekos</a><a onclick="filtrar('hidratantes', 'Hidratantes e Óleos')">Hidratantes e Óleos</a><a onclick="filtrar('body-splash', 'Body Splash')">Body Splash</a><a onclick="filtrar('sabonetes', 'Sabonetes')">Sabonetes</a><a onclick="filtrar('desodorantes', 'Desodorantes')">Desodorantes</a></div></li>
         </ul>
     </nav>
 
     <header>
-        <div class="header-logo-container">
-            <img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('inicio', 'Bem-vindo(a) à Cestas Perfumadas!')">
-        </div>
+        <div class="header-logo-container"><img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('inicio', 'Bem-vindo(a) à Cestas Perfumadas!')"></div>
         <div class="header-info-container">
-            <div class="info-caixa">
-                <h3>💳 Aceitamos Cartões e Pix</h3>
-            </div>
-            <div class="info-caixa destaque">
-                <h3>🛍️ Compras acima de R$ 300,00</h3>
-                <p>Parcelamos em até 3x</p>
-                <p style="font-size: 0.9rem; font-weight: normal; margin-top: 5px;">📍 Entregamos em Cotia, Osasco, Barueri e região!</p>
-            </div>
+            <div class="info-caixa"><h3>💳 Aceitamos Cartões e Pix</h3></div>
+            <div class="info-caixa destaque"><h3>🛍️ Compras acima de R$ 300,00</h3><p>Parcelamos em até 3x</p><p style="font-size: 0.9rem; font-weight: normal; margin-top: 5px;">📍 Entregamos em Cotia, Osasco e região!</p></div>
         </div>
     </header>
 
     <div class="hero-banner">
-        <h1>Cestas Perfumadas</h1>
-        <p class="frase-efeito">"Presenteie com carinho, surpreenda com essência!" ✨</p>
-        <p class="pronta-entrega">📦 Todos os produtos anunciados a Pronta Entrega!</p>
+        <h1>Cestas Perfumadas</h1><p class="frase-efeito">"Presenteie com carinho!" ✨</p><p class="pronta-entrega">📦 Pronta Entrega!</p>
     </div>
 
-    <div class="busca-container">
-        <input type="text" id="inputBusca" placeholder="🔍 Procure por perfumes, sabonetes, cestas..." onkeyup="buscarProdutos()">
-    </div>
-
-    <div class="alerta-loja">
-        ⚠️ <strong>Aviso Importante:</strong> Nossas promoções são válidas <strong>enquanto durarem os estoques</strong>.
-    </div>
+    <div class="busca-container"><input type="text" id="inputBusca" placeholder="🔍 Procure por perfumes, sabonetes, cestas..." onkeyup="buscarProdutos()"></div>
 
     <div id="secao-sobre" class="sobre-nos">
         <h3>🌟 Nossa Missão</h3>
@@ -190,19 +145,15 @@
         <p>Ser a principal referência em presentes afetivos na nossa região, reconhecida por conectar pessoas através da beleza e do bem-estar, encantando clientes a cada cesta entregue.</p>
     </div>
 
-    <h2 id="titulo-vitrine" class="titulo-secao">Bem-vindo(a) à Cestas Perfumadas!</h2>
+    <h2 id="titulo-vitrine" class="titulo-secao">Bem-vindo(a)!</h2>
 
     <div class="vitrine" id="lista-produtos"></div>
 
-    <div class="carrinho-flutuante" onclick="abrirCarrinho()">
-        🛒
-        <div class="contador-carrinho" id="contador">0</div>
-    </div>
+    <div class="carrinho-flutuante" onclick="abrirCarrinho()">🛒<div class="contador-carrinho" id="contador">0</div></div>
 
     <div class="modal-overlay" id="modalCarrinho">
         <div class="modal-carrinho">
-            <h2>🛒 O seu Carrinho</h2>
-            <div id="lista-itens"></div>
+            <h2>🛒 O seu Carrinho</h2><div id="lista-itens"></div>
             <div class="carrinho-total">Total: R$ <span id="valor-total">0,00</span></div>
             <button class="btn-finalizar" onclick="finalizarCompra()">📲 Enviar Pedido no WhatsApp</button>
             <button class="btn-fechar" onclick="fecharCarrinho()">Continuar a Comprar</button>
@@ -210,9 +161,40 @@
     </div>
 
     <script>
-        // LISTA INTELIGENTE DE PRODUTOS: AGORA A LOJA NUNCA MAIS VAI CORTAR E CARREGA NUM PISCAR DE OLHOS!
+        // O DETETIVE AUTOMÁTICO DE FOTOS:
+        function tentarFoto(imgElement, originalSrc) {
+            let tentativas = imgElement.dataset.tentativas ? JSON.parse(imgElement.dataset.tentativas) : [];
+            
+            // Aqui o detetive cria todas as variações possíveis para contornar os erros do Windows/GitHub
+            let alternativas = [
+                originalSrc.replace('.png', '.jpg'),
+                originalSrc.replace('.jpg', '.png'),
+                originalSrc.replace('.jpg', '.jpeg'),
+                originalSrc.replace('3un.jpg.png', '3unjpg.png'),
+                originalSrc.replace('Avelã', 'Avela'),
+                originalSrc.replace('Avelã', 'avelã'),
+                originalSrc.replace('avelã', 'Avelã'),
+                originalSrc.replace('avelã', 'Avela'),
+                originalSrc.replace('Coração', 'Coracao'),
+                originalSrc + '.jpg',
+                originalSrc.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove todos os acentos
+            ];
+
+            let proxima = alternativas.find(f => f !== originalSrc && !tentativas.includes(f));
+
+            if (proxima) {
+                tentativas.push(proxima);
+                imgElement.dataset.tentativas = JSON.stringify(tentativas);
+                imgElement.src = proxima; // Tenta a nova foto
+            } else {
+                imgElement.src = 'https://via.placeholder.com/180x180/fdf2f5/d81b60?text=Sem+Foto';
+                imgElement.onerror = null; 
+            }
+        }
+
+        // LISTA DE PRODUTOS COMPLETA
         const produtos = [
-            // DESTAQUES / PROMOÇÕES VIP
+            // DESTAQUES / VIP
             ["KAIAK Masculino.png", "Kaiak Masculino", 189.90, 120.00, 9, "masculina destaque promocoes", "24h"],
             ["Cesta Coração Essencial Exc Fem.jpg", "Cesta Coração Essencial", 379.90, 279.90, 1, "cestas destaque promocoes", "presente"],
             ["Kit creme tododia 100ml 1un.jpg", "Kit Creme Tododia 100ml", 88.50, 39.90, 1, "corpo-banho hidratantes destaque promocoes", "presente"],
@@ -237,7 +219,7 @@
             // ROSTO
             ["Fotoequilibrio Gel creme Facial 30.10.jpg", "Fotoequilíbrio Gel Creme", 96.90, 49.90, 0, "corpo-banho", "limitado"],
 
-            // EKOS (Perfumes & Hidratantes)
+            // EKOS 
             ["Ekos Colonia 150 ml Cacau 1un.jpg", "Ekos Frescor Cacau", 129.90, 89.90, 1, "ekos feminina", ""],
             ["Ekos Colonia 150 ml Madeira em flor 1un.jpg", "Ekos Madeira em Flor", 129.90, 89.90, 1, "ekos feminina", ""],
             ["Ekos Colonia 150 ml Maracuja 1un.jpg", "Ekos Frescor Maracujá", 129.90, 89.90, 1, "ekos feminina", ""],
@@ -357,7 +339,7 @@
             ["Sabonete Algodão.png", "Sabonete Algodão", 34.90, 25.00, 13, "sabonetes corpo-banho", ""],
             ["Sabonete Todanoite.png", "Sabonete Todanoite", 34.90, 25.00, 20, "sabonetes corpo-banho", ""],
 
-            // DESODORANTES E SPRAYS (Masc/Fem)
+            // DESODORANTES SPRAY E MASCULINOS
             ["Desodorante Essencial masc 7un.jpg", "Desod. Essencial Masc", 72.90, 34.90, 7, "corpo-banho desodorantes masculina", ""],
             ["Desodorante Essencial excl masc 2un.jpg", "Desod. Essenc. Exclusivo", 72.90, 34.90, 2, "corpo-banho desodorantes masculina", ""],
             ["Desodorante Essencial atrai masc 4un.jpg", "Desod. Essencial Atraí", 72.90, 34.90, 4, "corpo-banho desodorantes masculina", ""],
@@ -434,7 +416,6 @@
             ["Una Celebrar.png", "Una Celebrar 75ml", 319.90, 219.90, 1, "feminina", ""]
         ];
 
-        // FUNÇÃO PARA RENDERIZAR OS PRODUTOS DE FORMA INTELIGENTE E SUPER RÁPIDA
         function renderizarVitrine() {
             let html = "";
             produtos.forEach((p) => {
@@ -475,7 +456,7 @@
                 html += `
                 <div class="card" data-categoria="${categoria}" ${idAttr}>
                     ${divSelo}
-                    <img loading="lazy" src="${img}" alt="${nome}">
+                    <img loading="lazy" src="${img}" alt="${nome}" onerror="tentarFoto(this, '${img}')">
                     <h3>${nome}</h3>
                     <p class="preco-de" ${idPrecoDe}>De: R$ ${precoDe}</p>
                     <p class="preco-por" ${idPrecoPor}>Por: R$ ${precoPor}</p>
@@ -487,9 +468,8 @@
             document.getElementById('lista-produtos').innerHTML = html;
         }
 
-        // Função do Cronómetro da Promoção 24h
         function verificarPromocao() {
-            let dataFim = new Date('2026-02-24T23:59:59').getTime(); // Atualizado para amanhã
+            let dataFim = new Date('2026-02-24T23:59:59').getTime();
             let btnKaiak = document.getElementById('btn-kaiak');
             let precoPorKaiak = document.getElementById('kaiak-por');
             let precoDeKaiak = document.getElementById('kaiak-de');
@@ -499,55 +479,40 @@
             let atualizarRelogio = setInterval(function() {
                 let agora = new Date().getTime();
                 let distancia = dataFim - agora;
-                
                 if (distancia > 0) {
                     if(precoDeKaiak) precoDeKaiak.innerText = "De: R$ 189,90 (Promoção 24h)";
-                    if(precoPorKaiak) { 
-                        precoPorKaiak.innerHTML = "🔥 R$ 99,90"; 
-                        precoPorKaiak.style.fontSize = "1.8rem"; 
-                        precoPorKaiak.style.color = "#d81b60"; 
-                    }
+                    if(precoPorKaiak) { precoPorKaiak.innerHTML = "🔥 R$ 99,90"; precoPorKaiak.style.fontSize = "1.8rem"; precoPorKaiak.style.color = "#d81b60"; }
                     if(btnKaiak) btnKaiak.setAttribute('onclick', "adicionarCarrinho('Kaiak Masculino (Promo 24h)', 99.90)");
-                    
                     if(contador) contador.style.display = 'block';
                     if(selo) selo.style.display = 'block';
-                    
-                    let horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    let minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-                    let segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-                    
+                    let h = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let m = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+                    let s = Math.floor((distancia % (1000 * 60)) / 1000);
                     let tempoElement = document.getElementById('tempo-kaiak');
-                    if(tempoElement) tempoElement.innerText = horas + "h " + minutos + "m " + segundos + "s";
+                    if(tempoElement) tempoElement.innerText = h + "h " + m + "m " + s + "s";
                 } else {
                     clearInterval(atualizarRelogio);
                     if(precoDeKaiak) precoDeKaiak.innerText = "De: R$ 189,90";
-                    if(precoPorKaiak) { 
-                        precoPorKaiak.innerText = "Por: R$ 120,00"; 
-                        precoPorKaiak.style.fontSize = "1.6rem"; 
-                    }
+                    if(precoPorKaiak) { precoPorKaiak.innerText = "Por: R$ 120,00"; precoPorKaiak.style.fontSize = "1.6rem"; }
                     if(btnKaiak) btnKaiak.setAttribute('onclick', "adicionarCarrinho('Kaiak Masculino', 120.00)");
                     if(contador) contador.style.display = 'none';
                     if(selo) selo.style.display = 'none';
                     let cardKaiak = document.getElementById('card-kaiak');
-                    if(cardKaiak){ 
-                        cardKaiak.style.border = "none"; 
-                        cardKaiak.style.backgroundColor = "white"; 
-                    }
+                    if(cardKaiak){ cardKaiak.style.border = "none"; cardKaiak.style.backgroundColor = "white"; }
                 }
             }, 1000);
         }
 
         window.onload = function() {
-            renderizarVitrine(); // Constrói a loja instantaneamente
-            filtrar('inicio', 'Bem-vindo(a) à Cestas Perfumadas!'); // Filtra a aba Início
-            verificarPromocao(); // Inicia o relógio
+            renderizarVitrine(); 
+            filtrar('inicio', 'Bem-vindo(a) à Cestas Perfumadas!'); 
+            verificarPromocao(); 
         };
 
         function filtrar(categoriaSelecionada, nomeTitulo) {
             document.getElementById('titulo-vitrine').innerText = nomeTitulo;
             document.getElementById('inputBusca').value = ""; 
 
-            // Controla a visibilidade da Missão e Visão
             let secaoSobre = document.getElementById('secao-sobre');
             if(secaoSobre) {
                 if (categoriaSelecionada === 'inicio') {
@@ -557,7 +522,6 @@
                 }
             }
 
-            // O botão Início e Promoções puxam a tag "destaque"
             let catFiltro = (categoriaSelecionada === 'inicio' || categoriaSelecionada === 'promocoes') ? 'destaque' : categoriaSelecionada;
 
             const todosOsProdutos = document.querySelectorAll('.card');
@@ -577,7 +541,7 @@
             let titulo = document.getElementById('titulo-vitrine');
             
             if(termo.length > 0) {
-                document.getElementById('secao-sobre').style.display = 'none'; // Esconde a missão ao pesquisar
+                document.getElementById('secao-sobre').style.display = 'none'; 
                 titulo.innerText = "Resultados da Pesquisa";
             } else {
                 titulo.innerText = "Catálogo da Loja";
@@ -610,16 +574,13 @@
             document.getElementById('contador').innerText = carrinho.length;
             let listaHtml = "";
             let total = 0;
-
             carrinho.forEach((item, index) => {
                 listaHtml += `<div class="item-carrinho"><div class="item-detalhe">1x ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}</div><div class="item-remover" onclick="removerCarrinho(${index})">🗑️</div></div>`;
                 total += item.preco;
             });
-
             if (carrinho.length === 0) {
                 listaHtml = "<p style='text-align:center; color:#999;'>O seu carrinho está vazio.</p>";
             }
-
             document.getElementById('lista-itens').innerHTML = listaHtml;
             document.getElementById('valor-total').innerText = total.toFixed(2).replace('.', ',');
         }
@@ -632,17 +593,13 @@
                 alert("O seu carrinho está vazio! Adicione produtos antes de finalizar.");
                 return;
             }
-
             let textoWhatsApp = "Olá! Gostaria de fazer o seguinte pedido:\n\n";
             let total = 0;
-
             carrinho.forEach(item => {
                 textoWhatsApp += `✅ 1x ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}\n`;
                 total += item.preco;
             });
-
             textoWhatsApp += `\n*Total a pagar: R$ ${total.toFixed(2).replace('.', ',')}*\n\nComo faço para realizar o pagamento por Pix ou Cartão?`;
-
             let link = "https://api.whatsapp.com/send?phone=5511962983022&text=" + encodeURIComponent(textoWhatsApp);
             window.open(link, "_blank");
         }
