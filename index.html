@@ -183,6 +183,7 @@
             // ================= VÍDEOS SHOWCASE =================
             ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "cestas destaque promocoes", "video_vitrine"],
             ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "cestas destaque promocoes", "video_vitrine"],
+            ["Vídeo tigrão.mp4", "Cesta Pelúcia Tigrão", 0, 0, 0, "cestas destaque promocoes", "video_vitrine"],
 
             // DESTAQUES / VIP (KITS, CESTAS E ANÚNCIOS)
             ["KAIAK Masculino.png","Kaiak Masculino",189.9,120,9,"masculina destaque promocoes","24h"],
@@ -255,8 +256,6 @@
             ["Hidratante Flores 4un.png","Hidratante Flores",78.9,59.9,4,"corpo-banho hidratantes",""],
             ["Hidratante Jambo Rosa e Flor de Caju 1un.png","Jambo Rosa e Caju",78.9,59.9,1,"corpo-banho hidratantes",""],
             ["Hidratante Noz Pecã 1un.png","Hidratante Noz Pecã",78.9,59.9,1,"corpo-banho hidratantes",""],
-
-            // REFIS DE HIDRATANTES
             ["Refil Hidratante Jambo Rosa 5un.png","Refil Jambo Rosa",58.9,42,5,"corpo-banho hidratantes",""],
             ["Refil Hidratante Macadamia 3un.png","Refil Macadâmia",58.9,42,3,"corpo-banho hidratantes",""],
             ["Refil Hidratante Amora e Flor de Pessego 2un.png","Refil Amora e Pêssego",58.9,42,2,"corpo-banho hidratantes",""],
@@ -413,7 +412,7 @@
                 if (tag === 'video_vitrine') {
                     html += `
                     <div class="card" data-categoria="${categoria}" style="border: 2px solid #d81b60; background-color: #fff0f5; grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
-                        <h3 style="color: #d81b60; font-size: 1.4rem; margin-bottom: 10px;">🎁 ${nome}</h3>
+                        <h3 style="color: #d81b60; font-size: 1.4rem; margin-bottom: 10px;">${nome}</h3>
                         <video src="${encodeURI(img)}" controls muted loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-height: 400px; object-fit: cover;"></video>
                         <p style="font-size: 0.95rem; color: #444; margin-top: 10px;">Montamos cestas com exclusividade e muito carinho para celebrar as relações.</p>
                         <button class="btn-whats" onclick="window.open('https://api.whatsapp.com/send?phone=5511962983022&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20cestas%20personalizadas!', '_blank')" style="margin-top: 15px;">Fazer Encomenda</button>
