@@ -408,14 +408,13 @@
                 let img = p[0], nome = p[1], precoDe = p[2].toFixed(2).replace('.', ','), precoPor = p[3].toFixed(2).replace('.', ',');
                 let estoque = p[4], categoria = p[5], tag = p[6];
                 
-                // SE FOR O VÍDEO DAS CESTAS
+                // SE FOR O VÍDEO DAS CESTAS (COMO PORTFÓLIO)
                 if (tag === 'video_vitrine') {
                     html += `
                     <div class="card" data-categoria="${categoria}" style="border: 2px solid #d81b60; background-color: #fff0f5; grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
                         <h3 style="color: #d81b60; font-size: 1.4rem; margin-bottom: 10px;">${nome}</h3>
                         <video src="${encodeURI(img)}" controls muted loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-height: 400px; object-fit: cover;"></video>
-                        <p style="font-size: 0.95rem; color: #444; margin-top: 10px;">Montamos cestas com exclusividade e muito carinho para celebrar as relações.</p>
-                        <button class="btn-whats" onclick="window.open('https://api.whatsapp.com/send?phone=5511962983022&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20cestas%20personalizadas!', '_blank')" style="margin-top: 15px;">Fazer Encomenda</button>
+                        <p style="font-size: 1.1rem; font-weight: bold; color: #d81b60; margin-top: 15px;">✨ Conheça nossos trabalhos ✨</p>
                     </div>`;
                     return; 
                 }
