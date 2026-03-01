@@ -117,7 +117,7 @@
     <nav class="barra-nav">
         <ul>
             <li><a onclick="filtrar('inicio', 'Catálogo de Produtos')">Início</a></li>
-            <li><a onclick="filtrar('promocoes', 'Destaques e Kits')">Destaques</a></li>
+            <li><a onclick="filtrar('promocoes', 'Especial Dia da Mulher')">Dia da Mulher 🌹</a></li>
             <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
             <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
             <li><a href="javascript:void(0)">Infantil ▾</a><div class="lista-suspensa"><a onclick="filtrar('infantil', 'Linha Infantil')">Mamãe e Bebê</a></div></li>
@@ -184,19 +184,20 @@
         // LISTA DE PRODUTOS COMPRIMIDA
         const produtos = [
             // ================= VÍDEOS SHOWCASE =================
-            ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "cestas destaque", "video_vitrine"],
-            ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "cestas destaque", "video_vitrine"],
-            ["Vídeo tigrão.mp4", "Cesta Pelúcia Tigrão", 0, 0, 0, "cestas destaque", "video_vitrine"],
+            ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "cestas destaque promocoes", "video_vitrine"],
+            ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "cestas destaque promocoes", "video_vitrine"],
+            ["Vídeo tigrão.mp4", "Cesta Pelúcia Tigrão", 0, 0, 0, "cestas destaque promocoes", "video_vitrine"],
 
             // DESTAQUES / VIP (KITS E CESTAS)
-            ["Cestas Desodorantes.jpg","Cestas de Desodorantes",79.90,79.90,1,"cestas destaque","presente"],
-            ["Cesta Coração Essencial Exc Fem.jpg","Cesta Coração Essencial",300.00,300.00,1,"cestas destaque","presente"],
-            ["cestaluna.png","Kit Presente Luna",349.90,349.90,1,"cestas destaque","presente"],
+            ["Kit Romã Glaceadas.png","Kit Romã Glaceadas",79.90,79.90,1,"cestas destaque promocoes corpo-banho","presente"],
+            ["Cestas Desodorantes.jpg","Cestas de Desodorantes",79.90,79.90,1,"cestas destaque promocoes","presente"],
+            ["Cesta Coração Essencial Exc Fem.jpg","Cesta Coração Essencial",300.00,300.00,1,"cestas destaque promocoes","presente"],
+            ["cestaluna.png","Kit Presente Luna",349.90,349.90,1,"cestas destaque promocoes","presente"],
 
             // PERFUMARIA MASCULINA (PERFUMES/COLÔNIAS)
-            ["Essencial Masc.png","Essencial Masculino",279.90,279.90,5,"masculina destaque",""],
-            ["Natura Homem.png","Natura Homem Clássico",209.90,209.90,1,"masculina destaque",""],
-            ["KAIAK Masculino.png","Kaiak Masculino",189.90,189.90,7,"masculina destaque",""],
+            ["Essencial Masc.png","Essencial Masculino",279.90,279.90,5,"masculina",""],
+            ["Natura Homem.png","Natura Homem Clássico",209.90,209.90,1,"masculina",""],
+            ["KAIAK Masculino.png","Kaiak Masculino",189.90,189.90,7,"masculina",""],
             ["Natura Homem Sagaz.png","Homem Sagaz",239.90,239.90,1,"masculina",""],
             ["Natura Homem Essence.png","Homem Essence",239.90,239.90,1,"masculina",""],
             ["Natura Homem Dom.png","Homem Dom",239.90,239.90,1,"masculina",""],
@@ -212,7 +213,7 @@
             ["Sintonia Maculino.png","Sintonia Clássico",139.90,139.90,1,"masculina",""],
 
             // PERFUMARIA FEMININA (PERFUMES/COLÔNIAS)
-            ["Kaiak Feminino 4un.png","Kaiak Feminino",189.90,189.90,3,"feminina destaque",""],
+            ["Kaiak Feminino 4un.png","Kaiak Feminino",189.90,189.90,3,"feminina",""],
             ["Luna 1un.png","Luna Tradicional",169.90,169.90,1,"feminina",""],
             ["Luna Radiante 2un.png","Luna Radiante",169.90,169.90,2,"feminina",""],
             ["Luna Fascinante 1un.png","Luna Fascinante",169.90,169.90,1,"feminina",""],
