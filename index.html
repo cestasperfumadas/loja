@@ -174,6 +174,7 @@
                 encodeURI(originalSrc.replace('+', ' + ')).replace(/\+/g, '%2B'),
                 encodeURI(base + '.png').replace(/\+/g, '%2B'),
                 encodeURI(base + '.jpg').replace(/\+/g, '%2B'),
+                encodeURI(base + '.jpeg').replace(/\+/g, '%2B'),
                 encodeURI(base + '.PNG').replace(/\+/g, '%2B'),
                 encodeURI(base + '.JPG').replace(/\+/g, '%2B'),
                 encodeURI(base + '..png').replace(/\+/g, '%2B'),
@@ -218,7 +219,7 @@
             ["Kit Batom Faces rosa 200.png", "Kit Batom Rosa 200", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
             ["Kit Batom Faces rosa 210.png", "Kit Batom Rosa 210", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
             ["Kit Batom Faces vinho 532.png", "Kit Batom Vinho 532", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces Vermelho 145 + Pincel olhos.png", "Kit Batom Vermelho 145", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
+            ["Kit Batom Faces Vemelho145.png", "Kit Batom Vermelho 145", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
             ["Kit Batom Faces vermelho 117.png", "Kit Batom Vermelho 117", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
             ["Kit Batom Faces Hey Honey + Pincel olhos.png", "Kit Batom Hey Honey", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
             ["Kit Batom Faces Vinho in Love + Pincel olhos.png", "Kit Batom Vinho in Love", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
@@ -287,7 +288,7 @@
             ["Kit Luna Radiante.png", "Kit Luna Radiante", 150.00, 150.00, 1, "cestas destaque promocoes feminina", "presente"],
             ["Kit Kriska flores.png", "Kit Kriska Flores", 170.00, 170.00, 1, "cestas destaque promocoes feminina", "presente"],
             ["Kit Romã Glaceadas.png","Kit Romã Glaceadas",79.90,79.90,1,"cestas destaque promocoes corpo-banho","presente"],
-            ["Cesta Coração Essencial Exc Fem.jpg","Cesta Coração Essencial",300.00,300.00,1,"cestas destaque promocoes","presente"],
+            ["Cesta Coração Essencial Exc Fem.jpeg","Cesta Coração Essencial",300.00,300.00,1,"cestas destaque promocoes","presente"],
             ["cestaluna.png","Kit Presente Luna",349.90,349.90,1,"cestas destaque promocoes","presente"],
 
             // ================= PERFUMARIA MASCULINA =================
@@ -619,7 +620,7 @@
                 titulo.innerText = "";
             }
             produtos.forEach(produto => {
-                let nomeProduto = produto.querySelector('h3').innerText.toLowerCase();
+                let nomeProduto = document.querySelector('h3').innerText.toLowerCase();
                 produto.style.display = (nomeProduto.includes(termo)) ? 'flex' : 'none';
             });
         }
