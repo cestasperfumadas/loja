@@ -108,7 +108,7 @@
         .item-remover { background: #ffebee; color: #d32f2f; cursor: pointer; font-weight: bold; font-size: 1rem; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px; transition: 0.2s;}
         .carrinho-total { font-size: 1.2rem; font-weight: 700; text-align: right; margin-top: 25px; color: #333; }
         .carrinho-total-pix { font-size: 1.3rem; font-weight: 700; text-align: right; margin-top: 5px; color: #d97a56; }
-        .btn-finalizar { background-color: #25d366; color: white; border: none; padding: 16px; border-radius: 30px; font-weight: 700; width: 100%; cursor: pointer; margin-top: 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);}
+        .btn-finalizar { background-color: #25d366; color: white; border: none; padding: 16px; border-radius: 30px; font-weight: 700; width: 100%; cursor: margin-top: 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);}
         .btn-fechar { background-color: #f5f5f5; color: #666; border: none; padding: 14px; border-radius: 30px; font-weight: 600; width: 100%; cursor: pointer; margin-top: 10px; font-family: 'Montserrat', sans-serif;}
     </style>
 </head>
@@ -117,7 +117,7 @@
     <nav class="barra-nav">
         <ul>
             <li><a onclick="filtrar('inicio', 'Catálogo de Produtos')">Início</a></li>
-            <li><a onclick="filtrar('promocoes', 'Destaques e Kits')">Destaques</a></li>
+            <li><a onclick="filtrar('promocoes', 'Especial Dia da Mulher')">Dia da Mulher 🌹</a></li>
             <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
             <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
             <li><a href="javascript:void(0)">Infantil ▾</a><div class="lista-suspensa"><a onclick="filtrar('infantil', 'Linha Infantil')">Mamãe e Bebê</a></div></li>
@@ -184,19 +184,35 @@
         // LISTA DE PRODUTOS COMPRIMIDA
         const produtos = [
             // ================= VÍDEOS SHOWCASE =================
-            ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "cestas destaque", "video_vitrine"],
-            ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "cestas destaque", "video_vitrine"],
-            ["Vídeo tigrão.mp4", "Cesta Pelúcia Tigrão", 0, 0, 0, "cestas destaque", "video_vitrine"],
+            ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "cestas destaque promocoes", "video_vitrine"],
+            ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "cestas destaque promocoes", "video_vitrine"],
+            ["Vídeo tigrão.mp4", "Cesta Pelúcia Tigrão", 0, 0, 0, "cestas destaque promocoes", "video_vitrine"],
 
-            // DESTAQUES / VIP (KITS E CESTAS)
-            ["Cestas Desodorantes.jpg","Cestas de Desodorantes",79.90,79.90,1,"cestas destaque","presente"],
-            ["Cesta Coração Essencial Exc Fem.jpg","Cesta Coração Essencial",300.00,300.00,1,"cestas destaque","presente"],
-            ["cestaluna.png","Kit Presente Luna",349.90,349.90,1,"cestas destaque","presente"],
+            // ================= A NOVA MEGA COLEÇÃO DE CESTAS =================
+            ["Cesta Essencial Ato fem.jpg", "Cesta Essencial Ato", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Essencial Atrai fem.jpg", "Cesta Essencial Atraí", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Essencial fem.jpg", "Cesta Essencial", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Essencial Floral.jpg", "Cesta Essencial Floral", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Humor Liberta.jpg", "Cesta Humor Liberta", 130.00, 130.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Ilia.jpg", "Cesta Ilía", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Kaiak fem.jpg", "Cesta Kaiak Feminino", 180.00, 180.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Kriska Drama.jpg", "Cesta Kriska Drama", 170.00, 170.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Luna Fascinante.jpg", "Cesta Luna Fascinante", 185.00, 185.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Luna.jpg", "Cesta Luna", 185.00, 185.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Luninha.jpg", "Cesta Luninha", 70.00, 70.00, 1, "cestas destaque promocoes infantil", "presente"],
+            ["Cesta Meu 1º Humor.jpg", "Cesta Meu 1º Humor", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Revelar.jpg", "Cesta Revelar", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
+
+            // DESTAQUES / VIP (KITS E CESTAS MISTAS)
+            ["Kit Romã Glaceadas.png","Kit Romã Glaceadas",79.90,79.90,1,"cestas destaque promocoes corpo-banho","presente"],
+            ["Cestas Desodorantes.jpg","Cestas de Desodorantes",79.90,79.90,1,"cestas destaque promocoes","presente"],
+            ["Cesta Coração Essencial Exc Fem.jpg","Cesta Coração Essencial",300.00,300.00,1,"cestas destaque promocoes","presente"],
+            ["cestaluna.png","Kit Presente Luna",349.90,349.90,1,"cestas destaque promocoes","presente"],
 
             // PERFUMARIA MASCULINA (PERFUMES/COLÔNIAS)
-            ["Essencial Masc.png","Essencial Masculino",279.90,279.90,5,"masculina destaque",""],
-            ["Natura Homem.png","Natura Homem Clássico",209.90,209.90,1,"masculina destaque",""],
-            ["KAIAK Masculino.png","Kaiak Masculino",189.90,189.90,7,"masculina destaque",""],
+            ["Essencial Masc.png","Essencial Masculino",279.90,279.90,5,"masculina",""],
+            ["Natura Homem.png","Natura Homem Clássico",209.90,209.90,1,"masculina",""],
+            ["KAIAK Masculino.png","Kaiak Masculino",189.90,189.90,7,"masculina",""],
             ["Natura Homem Sagaz.png","Homem Sagaz",239.90,239.90,1,"masculina",""],
             ["Natura Homem Essence.png","Homem Essence",239.90,239.90,1,"masculina",""],
             ["Natura Homem Dom.png","Homem Dom",239.90,239.90,1,"masculina",""],
@@ -212,7 +228,7 @@
             ["Sintonia Maculino.png","Sintonia Clássico",139.90,139.90,1,"masculina",""],
 
             // PERFUMARIA FEMININA (PERFUMES/COLÔNIAS)
-            ["Kaiak Feminino 4un.png","Kaiak Feminino",189.90,189.90,3,"feminina destaque",""],
+            ["Kaiak Feminino 4un.png","Kaiak Feminino",189.90,189.90,3,"feminina",""],
             ["Luna 1un.png","Luna Tradicional",169.90,169.90,1,"feminina",""],
             ["Luna Radiante 2un.png","Luna Radiante",169.90,169.90,2,"feminina",""],
             ["Luna Fascinante 1un.png","Luna Fascinante",169.90,169.90,1,"feminina",""],
@@ -562,4 +578,3 @@
     </script>
 </body>
 </html>
-
