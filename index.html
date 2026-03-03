@@ -175,11 +175,15 @@
             let imgTeste = new Image();
             imgTeste.onload = function() { imgElement.src = this.src; imgElement.onerror = null; };
             imgTeste.onerror = function() {
-                // A SOLUÇÃO MÁGICA PARA O SINAL DE MAIS (+) ESTÁ AQUI
-                if(alt.length > 0) { imgTeste.src = encodeURI(alt.shift()).replace(/\+/g, '%2B'); }
-                else { imgElement.src = 'https://via.placeholder.com/180x180/fdf8f5/d97a56?text=Sem+Foto'; imgElement.onerror = null; }
+                if(alt.length > 0) { 
+                    imgTeste.src = encodeURIComponent(alt.shift()); 
+                }
+                else { 
+                    imgElement.src = 'https://via.placeholder.com/180x180/fdf8f5/d97a56?text=Sem+Foto'; 
+                    imgElement.onerror = null; 
+                }
             };
-            imgTeste.src = encodeURI(alt.shift()).replace(/\+/g, '%2B');
+            imgTeste.src = encodeURIComponent(alt.shift());
         }
 
         // LISTA DE PRODUTOS COMPRIMIDA E ATUALIZADA - MEGA PROMO 03/03
@@ -278,7 +282,6 @@
             ["Natura Homem Verum.png","Homem Verum",239.90,170.00,1,"masculina promocoes",""],
             ["Essencial Exclusivo Masc..png","Essencial Exclusivo",279.90,209.90,1,"masculina promocoes",""],
             ["Essencial Intenso Masc.png","Essencial Intenso",279.90,209.90,1,"masculina promocoes",""],
-            ["Essencial Mirra Masc.png","Essencial Mirra",279.90,209.90,1,"masculina promocoes",""],
             ["Kaiak Aventura Masc.png","Kaiak Aventura",189.90,120.00,1,"masculina promocoes",""],
             ["Kaiak Pulso Masc.png","Kaiak Pulso",189.90,120.00,1,"masculina promocoes",""],
             ["Kaiak Urbe.png","Kaiak Urbe",189.90,120.00,1,"masculina promocoes",""],
@@ -291,7 +294,7 @@
             ["Luna Radiante 2un.png","Luna Radiante",169.90,130.00,2,"feminina promocoes",""],
             ["Luna Fascinante 1un.png","Luna Fascinante",169.90,130.00,1,"feminina promocoes",""],
             ["Luna Rosé 1un.png","Luna Rosé",169.90,130.00,1,"feminina promocoes",""],
-            ["Luna Intensa.png","Luna Intensa",169.90,130.00,1,"feminina promocoes",""],
+            ["Luna Intensa.png","Luna Intensa",219.90,159.90,1,"feminina promocoes",""],
             ["Essencial Feminino 2un.png","Essencial Feminino",279.90,209.90,2,"feminina promocoes",""],
             ["Essencial Exclusivo Fem 2un.png","Essencial Exclus. Fem",279.90,209.90,2,"feminina promocoes",""],
             ["Essencial Floral 1un.png","Essencial Floral",279.90,209.90,1,"feminina promocoes",""],
@@ -527,7 +530,7 @@
                 let htmlPrecoDe = (p[2] > p[3]) ? `<p class="preco-de">R$ ${precoDe}</p>` : `<p class="preco-de" style="visibility: hidden;">-</p>`;
 
                 // A SOLUÇÃO MÁGICA PARA O SINAL DE MAIS (+) NA HORA DE MOSTRAR A IMAGEM
-                let urlImagemSegura = encodeURI(img).replace(/\+/g, '%2B');
+                let urlImagemSegura = encodeURIComponent(img);
 
                 // SE FOR O VÍDEO DAS CESTAS (COMO PORTFÓLIO)
                 if (tag === 'video_vitrine') {
