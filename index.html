@@ -175,10 +175,11 @@
             let imgTeste = new Image();
             imgTeste.onload = function() { imgElement.src = this.src; imgElement.onerror = null; };
             imgTeste.onerror = function() {
-                if(alt.length > 0) { imgTeste.src = encodeURI(alt.shift()); }
+                // A SOLUÇÃO MÁGICA PARA O SINAL DE MAIS (+) ESTÁ AQUI
+                if(alt.length > 0) { imgTeste.src = encodeURI(alt.shift()).replace(/\+/g, '%2B'); }
                 else { imgElement.src = 'https://via.placeholder.com/180x180/fdf8f5/d97a56?text=Sem+Foto'; imgElement.onerror = null; }
             };
-            imgTeste.src = encodeURI(alt.shift());
+            imgTeste.src = encodeURI(alt.shift()).replace(/\+/g, '%2B');
         }
 
         // LISTA DE PRODUTOS COMPRIMIDA E ATUALIZADA - MEGA PROMO 03/03
@@ -525,12 +526,15 @@
                 // MÁGICA DO PREÇO: Se não estiver em promoção, o preço "De" fica invisível
                 let htmlPrecoDe = (p[2] > p[3]) ? `<p class="preco-de">R$ ${precoDe}</p>` : `<p class="preco-de" style="visibility: hidden;">-</p>`;
 
+                // A SOLUÇÃO MÁGICA PARA O SINAL DE MAIS (+) NA HORA DE MOSTRAR A IMAGEM
+                let urlImagemSegura = encodeURI(img).replace(/\+/g, '%2B');
+
                 // SE FOR O VÍDEO DAS CESTAS (COMO PORTFÓLIO)
                 if (tag === 'video_vitrine') {
                     html += `
                     <div class="card" data-categoria="${categoria}" style="border: 1px solid #d97a56; background-color: #fdf8f5; grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
                         <h3 style="color: #d97a56; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">${nome}</h3>
-                        <video src="${encodeURI(img)}" controls muted loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); max-height: 400px; object-fit: cover;"></video>
+                        <video src="${urlImagemSegura}" controls muted loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); max-height: 400px; object-fit: cover;"></video>
                         <p style="font-size: 1.1rem; font-weight: 600; color: #d97a56; margin-top: 15px;">✨ Conheça nossos trabalhos ✨</p>
                     </div>`;
                     return; 
@@ -548,7 +552,7 @@
 
                 html += `
                 <div class="card" data-categoria="${categoria}">
-                    <img loading="lazy" src="${encodeURI(img)}" alt="${nome}" onerror="tentarFoto(this, '${img}')">
+                    <img loading="lazy" src="${urlImagemSegura}" alt="${nome}" onerror="tentarFoto(this, '${img}')">
                     <h3>${nome}</h3>
                     <div class="estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     ${htmlPrecoDe}
