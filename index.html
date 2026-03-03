@@ -165,25 +165,36 @@
             let base = originalSrc.substring(0, originalSrc.lastIndexOf('.'));
             if(base === "") base = originalSrc;
             
+            // SUPER MOTOR DE BUSCA DE FOTOS! Ele testa todas as variações se o nome der erro
             let alt = [
-                originalSrc.replace('3un..jpg', '3un.jpg'),
-                originalSrc.replace('3unjpg', '3un.jpg'),
-                base + '.JPG', base + '.png', base + '.PNG', base + '.jpeg',
-                originalSrc + '.jpg', originalSrc + '.png'
+                originalSrc.replace(/\+/g, ' '), // Tenta trocando o + por espaço em branco
+                originalSrc.replace(' + ', '+'), // Tenta remover os espaços à volta do +
+                base + '.PNG', // Tenta PNG maiúsculo
+                base + '.JPG', // Tenta JPG maiúsculo
+                originalSrc.replace('.png', '.png.png'), // Caso o Windows tenha duplicado a extensão
+                originalSrc.replace('vinho', 'Vinho').replace('rosa', 'Rosa') // Caso tenha a primeira letra maiúscula
             ];
             
-            let imgTeste = new Image();
-            imgTeste.onload = function() { imgElement.src = this.src; imgElement.onerror = null; };
-            imgTeste.onerror = function() {
-                if(alt.length > 0) { 
-                    imgTeste.src = encodeURIComponent(alt.shift()); 
-                }
-                else { 
+            let attempt = 0;
+            
+            function nextAttempt() {
+                if (attempt < alt.length) {
+                    let trySrc = alt[attempt++];
+                    let imgTeste = new Image();
+                    imgTeste.onload = function() { 
+                        imgElement.src = this.src; 
+                        imgElement.onerror = null; 
+                    };
+                    imgTeste.onerror = nextAttempt;
+                    // Garante que o + é sempre codificado como %2B para não quebrar no GitHub
+                    imgTeste.src = encodeURI(trySrc).replace(/\+/g, '%2B');
+                } else {
                     imgElement.src = 'https://via.placeholder.com/180x180/fdf8f5/d97a56?text=Sem+Foto'; 
-                    imgElement.onerror = null; 
+                    imgElement.onerror = null;
                 }
-            };
-            imgTeste.src = encodeURIComponent(alt.shift());
+            }
+            
+            nextAttempt();
         }
 
         // LISTA DE PRODUTOS COMPRIMIDA E ATUALIZADA - MEGA PROMO 03/03
@@ -356,7 +367,7 @@
 
             // HIDRATANTES E ÓLEOS DIVERSOS (PROMO 400ml)
             ["Creme tododia 100ml algodão1un.jpg","Creme Algodão 100ml",29.50,29.50,1,"corpo-banho hidratantes",""],
-            ["Creme Humor liberta.jpg","Creme Humor Liberta",43.80,43.80,1,"corpo-banho hidratantes",""],
+            ["Creme Humor liberta.jpg","Creme Humor liberta",43.80,43.80,1,"corpo-banho hidratantes",""],
             ["Creme tododia 100ml pessego melissa 4un.jpg","Creme Flor de Pera e Melissa",29.50,29.50,4,"corpo-banho hidratantes",""],
             ["Creme tododia 100ml framboesa e pim ver 1un.jpg","Creme Framboesa 100ml",29.50,29.50,1,"corpo-banho hidratantes",""],
             ["Creme tododia 100ml tamara e canela 1un.jpg","Creme Tâmara 100ml",29.50,29.50,1,"corpo-banho hidratantes",""],
@@ -530,7 +541,7 @@
                 let htmlPrecoDe = (p[2] > p[3]) ? `<p class="preco-de">R$ ${precoDe}</p>` : `<p class="preco-de" style="visibility: hidden;">-</p>`;
 
                 // A SOLUÇÃO MÁGICA PARA O SINAL DE MAIS (+) NA HORA DE MOSTRAR A IMAGEM
-                let urlImagemSegura = encodeURIComponent(img);
+                let urlImagemSegura = encodeURI(img).replace(/\+/g, '%2B');
 
                 // SE FOR O VÍDEO DAS CESTAS (COMO PORTFÓLIO)
                 if (tag === 'video_vitrine') {
