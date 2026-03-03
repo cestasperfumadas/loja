@@ -172,11 +172,14 @@
                 encodeURI(originalSrc.replace(/\+/g, ' ')).replace(/\+/g, '%2B'),
                 encodeURI(originalSrc.replace(' + ', '+')).replace(/\+/g, '%2B'),
                 encodeURI(originalSrc.replace('+', ' + ')).replace(/\+/g, '%2B'),
+                encodeURI(base + '.png').replace(/\+/g, '%2B'),
+                encodeURI(base + '.jpg').replace(/\+/g, '%2B'),
                 encodeURI(base + '.PNG').replace(/\+/g, '%2B'),
                 encodeURI(base + '.JPG').replace(/\+/g, '%2B'),
                 encodeURI(base + '..png').replace(/\+/g, '%2B'),
                 encodeURI(base + '..jpg').replace(/\+/g, '%2B'),
-                encodeURI(base + ext + ext).replace(/\+/g, '%2B')
+                encodeURI(originalSrc.replace('.', '') + '.png').replace(/\+/g, '%2B'),
+                encodeURI(originalSrc.replace('..', '.'))
             ];
             
             // Remove duplicatas para ser mais rápido
@@ -241,19 +244,19 @@
             ["Kit P.Stay Vermelhaço +delineador.png", "Kit P.Stay Vermelhaço", 75.90, 45.00, 1, "maquiagem destaque promocoes", "presente"],
 
             // ================= A NOVA MEGA COLEÇÃO DE CESTAS =================
-            ["Cesta Essencial Ato fem.jpg", "Cesta Essencial Ato", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Essencial Atrai fem.jpg", "Cesta Essencial Atraí", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Essencial fem.jpg", "Cesta Essencial", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Essencial Floral.jpg", "Cesta Essencial Floral", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Humor Liberta.jpg", "Cesta Humor Liberta", 130.00, 130.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Ilia.jpg", "Cesta Ilía", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Kaiak fem.jpg", "Cesta Kaiak Feminino", 180.00, 180.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Kriska Drama.jpg", "Cesta Kriska Drama", 170.00, 170.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Luna Fascinante.jpg", "Cesta Luna Fascinante", 185.00, 185.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Luna.jpg", "Cesta Luna", 185.00, 185.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Luninha.jpg", "Cesta Luninha", 70.00, 70.00, 1, "cestas destaque promocoes infantil", "presente"],
-            ["Cesta Meu 1º Humor.jpg", "Cesta Meu 1º Humor", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Revelar.jpg", "Cesta Revelar", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Essencial Ato fem.png", "Cesta Essencial Ato", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Essencial Atrai fem.png", "Cesta Essencial Atraí", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Essencial fem.png", "Cesta Essencial", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Essencial Floral.png", "Cesta Essencial Floral", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Humor Liberta.png", "Cesta Humor Liberta", 130.00, 130.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Ilia.png", "Cesta Ilía", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Kaiak fem.png", "Cesta Kaiak Feminino", 180.00, 180.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Kriska Drama.png", "Cesta Kriska Drama", 170.00, 170.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Luna Fascinante.png", "Cesta Luna Fascinante", 185.00, 185.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Luna.png", "Cesta Luna", 185.00, 185.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Luninha.png", "Cesta Luninha", 70.00, 70.00, 1, "cestas destaque promocoes infantil", "presente"],
+            ["Cesta Meu 1º Humor.png", "Cesta Meu 1º Humor", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Revelar.png", "Cesta Revelar", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
 
             // ================= KITS DE R$ 80,00 =================
             ["Kit Algodão.png", "Kit Algodão", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
@@ -615,7 +618,7 @@
                 titulo.innerText = "";
             }
             produtos.forEach(produto => {
-                let nomeProduto = document.querySelector('h3').innerText.toLowerCase();
+                let nomeProduto = produto.querySelector('h3').innerText.toLowerCase();
                 produto.style.display = (nomeProduto.includes(termo)) ? 'flex' : 'none';
             });
         }
