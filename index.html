@@ -116,7 +116,7 @@
 
     <nav class="barra-nav">
         <ul>
-            <li><a onclick="filtrar('inicio', 'Catálogo de Produtos')">Início</a></li>
+            <li><a onclick="filtrar('inicio', '')">Início</a></li>
             <li><a class="btn-mega-oferta" onclick="filtrar('promocoes', 'MEGA OFERTAS 03/03 🚨')">🚨 Ofertas 03/03</a></li>
             <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
             <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
@@ -127,7 +127,7 @@
     </nav>
 
     <header>
-        <div class="header-logo-container"><img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('inicio', 'Catálogo de Produtos')"></div>
+        <div class="header-logo-container"><img src="SLOGAN.png" alt="Cestas Perfumadas" class="logo-img" onclick="filtrar('inicio', '')"></div>
         <div class="header-info-container">
             <div class="info-caixa"><h3>💳 Aceitamos Cartões e Pix</h3></div>
             <div class="info-caixa destaque"><h3>🛍️ Compras acima de R$ 300,00</h3><p>Parcelamos em até 3x</p><p style="font-size: 0.9rem; font-weight: 400; margin-top: 5px;">📍 Entregamos em Cotia, Osasco e região!</p></div>
@@ -145,7 +145,7 @@
         <h3>Nossa Visão</h3><p>Ser a principal referência em presentes afetivos na nossa região, reconhecida por conectar pessoas através da beleza e do bem-estar.</p>
     </div>
 
-    <h2 id="titulo-vitrine" class="titulo-secao">Catálogo de Produtos</h2>
+    <h2 id="titulo-vitrine" class="titulo-secao"></h2>
 
     <div class="vitrine" id="lista-produtos"></div>
 
@@ -188,10 +188,10 @@
 
         // LISTA DE PRODUTOS COMPRIMIDA E ATUALIZADA - MEGA PROMO 03/03
         const produtos = [
-            // ================= VÍDEOS SHOWCASE =================
-            ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "cestas", "video_vitrine"],
-            ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "cestas", "video_vitrine"],
-            ["Vídeo tigrão.mp4", "Cesta Pelúcia Tigrão", 0, 0, 0, "cestas", "video_vitrine"],
+            // ================= VÍDEOS SHOWCASE (APENAS NA ABA INÍCIO) =================
+            ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "destaque", "video_vitrine"],
+            ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "destaque", "video_vitrine"],
+            ["Vídeo tigrão.mp4", "Cesta Pelúcia Tigrão", 0, 0, 0, "destaque", "video_vitrine"],
 
             // ================= MAQUIAGEM (KITS BATOM + PINCEL) =================
             // KITS FACES - R$ 25,00
@@ -301,7 +301,7 @@
             ["Essencial Supreme Fem 1un.png","Essencial Supreme",279.90,209.90,1,"feminina promocoes",""],
             ["Meu Primeiro Humor 4un.png","Meu Primeiro Humor",164.90,164.90,4,"feminina",""],
             ["Humor Próprio 1un.png","Humor Próprio",164.90,164.90,1,"feminina",""],
-            ["Ilia Secreto.png","Ilía Secreto",199.90,199.90,1,"feminina",""],
+            ["Ilia Secreto.png","Ilía Secreto",199.90,159.90,1,"feminina promocoes",""],
 
             // ================= PERFUMARIA UNA =================
             ["Una Brilho.png","Una Brilho 75ml",319.90,219.90,1,"feminina promocoes",""],
@@ -313,31 +313,31 @@
             ["Una Celebrar.png","Una Celebrar 75ml",319.90,219.90,1,"feminina promocoes",""],
 
             // INFANTIL
-            ["MMBB Colonia 10un.jpg","Colônia Mamãe e Bebê",106.90,106.90,10,"infantil",""],
-            ["MMBB Colonia Rlaxante 1un.jpg","Colônia Relaxante",106.90,106.90,1,"infantil",""],
-            ["MMBB Shampoo 2un.jpg","Shampoo Mamãe e Bebê",45.90,45.90,2,"infantil",""],
-            ["MMBB Condicionador 3un.jpg","Condicionador MMBB",45.90,45.90,3,"infantil",""],
-            ["MMBB Cachos Shampoo 1un.jpg","Shampoo MMBB Cachos",45.90,45.90,1,"infantil",""],
-            ["MMBB Cachos Condicionador 2un.jpg","Condic. MMBB Cachos",45.90,45.90,2,"infantil",""],
-            ["MMBB Cachos creme pentear 2un.jpg","Creme Pentear Cachos",49.50,49.50,2,"infantil",""],
-            ["MMBB Hidratante 3un.jpg","Hidratante MMBB",69.90,69.90,3,"infantil",""],
-            ["MMBB com 5 Sabonetes 2un.jpg","Sabonete MMBB c/ 5",51.90,51.90,2,"infantil",""],
-            ["MMBB com 2 Sabonetes 3un.jpg","Sabonete MMBB c/ 2",31.40,31.40,3,"infantil",""],
+            ["MMBB Colonia 10un.jpg","Colônia Mamãe e Bebê",106.90,74.90,10,"infantil promocoes",""],
+            ["MMBB Colonia Rlaxante 1un.jpg","Colônia Relaxante",106.90,74.90,1,"infantil promocoes",""],
+            ["MMBB Shampoo 2un.jpg","Shampoo Mamãe e Bebê",45.90,35.90,2,"infantil promocoes",""],
+            ["MMBB Condicionador 3un.jpg","Condicionador MMBB",45.90,35.90,3,"infantil promocoes",""],
+            ["MMBB Cachos Shampoo 1un.jpg","Shampoo MMBB Cachos",45.90,35.90,1,"infantil promocoes",""],
+            ["MMBB Cachos Condicionador 2un.jpg","Condic. MMBB Cachos",45.90,35.90,2,"infantil promocoes",""],
+            ["MMBB Cachos creme pentear 2un.jpg","Creme Pentear Cachos",49.50,39.90,2,"infantil promocoes",""],
+            ["MMBB Hidratante 3un.jpg","Hidratante MMBB",69.90,49.90,3,"infantil promocoes",""],
+            ["MMBB com 5 Sabonetes 2un.jpg","Sabonete MMBB c/ 5",51.90,34.90,2,"infantil promocoes",""],
+            ["MMBB com 2 Sabonetes 3un.jpg","Sabonete MMBB c/ 2",31.40,19.90,3,"infantil promocoes",""],
             ["MMBB Sab. Liq. 50ml 2un.jpg","Sabonete Líq. 50ml",26.90,26.90,2,"infantil",""],
-            ["MMBB 16 Lenços 4un.jpg","Lenços MMBB 16un",13.10,13.10,4,"infantil",""],
-            ["Kit PPBB Miniaturas 3un.jpg","Kit PPBB Miniaturas",69.90,69.90,3,"infantil",""],
+            ["MMBB 16 Lenços 4un.jpg","Lenços MMBB 16un",13.10,9.90,4,"infantil promocoes",""],
+            ["Kit PPBB Miniaturas 3un.jpg","Kit PPBB Miniaturas",69.90,39.90,3,"infantil promocoes",""],
 
             // ROSTO
             ["Fotoequilibrio Gel creme Facial 30.10.jpg","Fotoequilíbrio Gel Creme",96.90,96.90,0,"corpo-banho","limitado"],
 
             // EKOS 
-            ["Ekos Colonia 150 ml Cacau 1un.jpg","Ekos Frescor Cacau",129.90,129.90,1,"ekos feminina",""],
-            ["Ekos Colonia 150 ml Maracuja 1un.jpg","Ekos Frescor Maracujá",129.90,129.90,1,"ekos feminina",""],
-            ["Ekos Colonia 150 ml Maracuja noite 1un.jpg","Ekos Maracujá Noite",137.90,137.90,1,"ekos feminina",""],
+            ["Ekos Colonia 150 ml Cacau 1un.jpg","Ekos Frescor Cacau",129.90,99.90,1,"ekos feminina promocoes",""],
+            ["Ekos Colonia 150 ml Maracuja 1un.jpg","Ekos Frescor Maracujá",129.90,99.90,1,"ekos feminina promocoes",""],
+            ["Ekos Colonia 150 ml Maracuja noite 1un.jpg","Ekos Maracujá Noite",137.90,99.90,1,"ekos feminina promocoes",""],
             ["Ekos Colonia Rf 150 ml Maracuja 1un.jpg","Refil Ekos Maracujá",105.90,105.90,1,"ekos feminina",""],
-            ["Ekos Colonia 75 ml Maracuja 1un.jpg","Ekos Maracujá 75ml",97.90,97.90,1,"ekos feminina",""],
-            ["Ekos Ryo Chuva 1un.jpg","Ekos Ryos Chuva",199.90,199.90,1,"ekos feminina",""],
-            ["Ekos Ryo Vivo 2un.jpg","Ekos Ryos Vivo",199.90,199.90,2,"ekos feminina",""],
+            ["Ekos Colonia 75 ml Maracuja 1un.jpg","Ekos Maracujá 75ml",97.90,69.90,1,"ekos feminina promocoes",""],
+            ["Ekos Ryo Chuva 1un.jpg","Ekos Ryos Chuva",199.90,139.90,1,"ekos feminina promocoes",""],
+            ["Ekos Ryo Vivo 2un.jpg","Ekos Ryos Vivo",199.90,139.90,2,"ekos feminina promocoes",""],
             ["Ekos hidratante Maracujá 1un.jpg","Ekos Hid. Maracujá 400ml",88.90,88.90,1,"ekos corpo-banho hidratantes",""],
             ["Ekos hidratante Maracujá noite 1un.jpg","Ekos Hid. Maracujá Noite",88.90,88.90,1,"ekos corpo-banho hidratantes",""],
             ["Ekos hidratante Ucuuba 2un.jpg","Ekos Hidratante Ucuuba",88.90,88.90,2,"ekos corpo-banho hidratantes",""],
@@ -573,6 +573,7 @@
         };
 
         function filtrar(categoriaSelecionada, nomeTitulo) {
+            // Se nomeTitulo for vazio (como no Início), não mostra nada. Senão, mostra o título.
             document.getElementById('titulo-vitrine').innerText = nomeTitulo;
             document.getElementById('inputBusca').value = ""; 
             let secaoSobre = document.getElementById('secao-sobre');
@@ -594,7 +595,7 @@
                 document.getElementById('secao-sobre').style.display = 'none'; 
                 titulo.innerText = "Resultados da Pesquisa";
             } else {
-                titulo.innerText = "Catálogo de Produtos";
+                titulo.innerText = "";
             }
             produtos.forEach(produto => {
                 let nomeProduto = produto.querySelector('h3').innerText.toLowerCase();
