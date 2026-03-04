@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cestas Perfumadas - Especial 03/03</title>
+    <title>Cestas Perfumadas - Dia da Mulher</title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-83DRDPBV1F"></script>
     <script>
@@ -29,8 +29,8 @@
         .barra-nav a { display: block; color: white; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; padding: 18px 20px; transition: background-color 0.3s; cursor: pointer; letter-spacing: 0.5px;}
         .barra-nav a:hover { background-color: #c26543; color: white; }
         
-        /* Destaque para o botão 03/03 */
-        .btn-mega-oferta { background-color: #b54a2a !important; font-weight: 800 !important; font-size: 14px !important; letter-spacing: 1px !important;}
+        /* Destaque para o botão Dia da Mulher */
+        .btn-dia-mulher { background-color: #c94c65 !important; font-weight: 800 !important; font-size: 14px !important; letter-spacing: 1px !important;}
 
         .lista-suspensa { display: none; position: absolute; background-color: #ffffff; min-width: 220px; box-shadow: 0px 8px 20px rgba(0,0,0,0.1); z-index: 1; border-radius: 0 0 8px 8px; overflow: hidden; top: 100%; left: 0; }
         .lista-suspensa a { color: #555; padding: 14px 20px; text-transform: none; font-weight: 500; font-size: 14px; border-bottom: 1px solid #f5f5f5; }
@@ -117,7 +117,7 @@
     <nav class="barra-nav">
         <ul>
             <li><a onclick="filtrar('inicio', '')">Início</a></li>
-            <li><a class="btn-mega-oferta" onclick="filtrar('promocoes', 'MEGA OFERTAS 03/03 🚨')">🚨 Ofertas 03/03</a></li>
+            <li><a class="btn-dia-mulher" onclick="filtrar('promocoes', 'ESPECIAL DIA DA MULHER 🌹')">🌹 Dia da Mulher</a></li>
             <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
             <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
             <li><a href="javascript:void(0)">Maquiagem ▾</a><div class="lista-suspensa"><a onclick="filtrar('maquiagem', 'Maquiagem e Kits')">Ver Tudo</a></div></li>
@@ -206,7 +206,7 @@
             nextAttempt();
         }
 
-        // LISTA DE PRODUTOS COMPRIMIDA E ATUALIZADA - MEGA PROMO 03/03
+        // LISTA DE PRODUTOS COMPRIMIDA E ATUALIZADA
         const produtos = [
             // ================= VÍDEOS SHOWCASE (APENAS NA ABA INÍCIO) =================
             ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "destaque", "video_vitrine"],
@@ -528,7 +528,6 @@
             ["Rollon Luna 7un.png","Roll-on Luna",29.90,29.90,7,"corpo-banho desodorantes feminina destaque",""],
             ["Rollon Natura Homem 2un.png","Roll-on Natura Homem",29.90,29.90,2,"corpo-banho desodorantes masculina destaque",""],
             ["Rollon Macadamia 1un.png","Roll-on Macadâmia",29.90,29.90,0,"corpo-banho desodorantes destaque",""],
-            ["Rollon Alecrim 1un.png","Roll-on Alecrim",29.90,29.90,1,"corpo-banho desodorantes destaque",""],
             ["Rollon Amora Verm Jabuticaba 2un.png","Roll-on Amora e Jabuticaba",29.90,29.90,2,"corpo-banho desodorantes destaque",""],
             ["Rollon Aclarar 1un.png","Roll-on Aclarar",29.90,29.90,1,"corpo-banho desodorantes destaque",""],
             ["Rollon Tamara e Canela 1un.jpg.png","Roll-on Tâmara e Canela",29.90,29.90,1,"corpo-banho desodorantes destaque",""],
@@ -595,7 +594,7 @@
 
         window.onload = function() {
             renderizarVitrine(); 
-            filtrar('promocoes', 'MEGA OFERTAS 03/03 🚨'); 
+            filtrar('promocoes', 'ESPECIAL DIA DA MULHER 🌹'); 
         };
 
         function filtrar(categoriaSelecionada, nomeTitulo) {
@@ -649,7 +648,7 @@
         function fecharCarrinho() { document.getElementById('modalCarrinho').style.display = 'none'; }
         function finalizarCompra() {
             if (carrinho.length === 0) { alert("O seu carrinho está vazio! Adicione produtos antes de finalizar."); return; }
-            let textoWhatsApp = "Olá! Gostaria de fazer o seguinte pedido na sua loja online (Promoção 03/03):\n\n";
+            let textoWhatsApp = "Olá! Gostaria de fazer o seguinte pedido na sua loja online (Especial Dia da Mulher):\n\n";
             let total = 0;
             carrinho.forEach(item => { textoWhatsApp += `✅ 1x ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}\n`; total += item.preco; });
             
