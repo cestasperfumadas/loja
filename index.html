@@ -25,15 +25,13 @@
         .barra-nav { background-color: #d97a56; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
         .barra-nav ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; flex-wrap: wrap; }
         .barra-nav > ul > li { position: relative; }
-        .barra-nav a { display: block; color: white; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; padding: 18px 20px; transition: background-color 0.3s; cursor: pointer; letter-spacing: 0.5px;}
-        .barra-nav a:hover { background-color: #c26543; color: white; }
+        .barra-nav a { display: block; color: white; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; padding: 18px 20px; transition: 0.3s; cursor: pointer; letter-spacing: 0.5px;}
+        .barra-nav a:hover { background-color: #c26543; }
         
-        /* Destaque para o botão Mês do Consumidor */
         .btn-consumidor { background-color: #2c3e50 !important; font-weight: 800 !important; font-size: 14px !important; letter-spacing: 1px !important;}
 
-        .lista-suspensa { display: none; position: absolute; background-color: #ffffff; min-width: 220px; box-shadow: 0px 8px 20px rgba(0,0,0,0.1); z-index: 1; border-radius: 0 0 8px 8px; overflow: hidden; top: 100%; left: 0; }
+        .lista-suspensa { display: none; position: absolute; background-color: #ffffff; min-width: 220px; box-shadow: 0px 8px 20px rgba(0,0,0,0.1); z-index: 1; border-radius: 0 0 8px 8px; top: 100%; left: 0; }
         .lista-suspensa a { color: #555; padding: 14px 20px; text-transform: none; font-weight: 500; font-size: 14px; border-bottom: 1px solid #f5f5f5; }
-        .lista-suspensa a:hover { background-color: #fdf8f5; color: #d97a56; padding-left: 25px; transition: 0.2s; }
         .barra-nav li:hover .lista-suspensa { display: block; }
 
         /* CABEÇALHO */
@@ -42,7 +40,6 @@
         .logo-img { max-width: 100%; height: auto; max-height: 400px; display: block; margin: 0 auto; cursor: pointer; }
         .header-info-container { flex: 1.5; min-width: 300px; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; }
         .info-caixa { background: white; border: 1px solid #d97a56; border-radius: 8px; padding: 15px 20px; text-align: center; width: 100%; max-width: 380px; }
-        .info-caixa h3 { color: #d97a56; font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
         .info-caixa.destaque { background: #d97a56; color: white; border: none; box-shadow: 0 4px 10px rgba(217, 122, 86, 0.2);}
 
         /* BANNER */
@@ -64,38 +61,39 @@
         .preco-por { color: #d97a56; font-size: 1.5rem; font-weight: 700; margin: 2px 0; }
         
         .estoque { color: #888; font-size: 0.8rem; margin-top: auto; margin-bottom: 15px; background-color: #f9f9f9; padding: 6px 10px; border-radius: 4px; display: inline-block; align-self: center;}
-        .estoque strong { color: #d97a56;}
-        .destaque-combo { background-color: #fdf8f5; color: #d97a56; font-weight: 600; border: 1px solid #f2e1db; }
 
         .btn-whats { background-color: #d97a56; color: white; border: none; padding: 12px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: 0.3s; text-transform: uppercase; width: 100%;}
 
-        /* MODAL DE ZOOM DA IMAGEM */
-        #modalImagem { display: none; position: fixed; z-index: 2000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
-        #imgExpandida { margin: auto; display: block; max-width: 90%; max-height: 80vh; border-radius: 8px; }
-        #fecharZoom { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
+        /* MODAL DE ZOOM E DESCRIÇÃO */
+        #modalDetalhes { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px); justify-content: center; align-items: center; padding: 20px; }
+        .modal-conteudo { background: white; max-width: 500px; width: 100%; border-radius: 15px; padding: 25px; position: relative; text-align: center; max-height: 90vh; overflow-y: auto; }
+        #imgDetalhe { max-width: 100%; max-height: 350px; object-fit: contain; margin-bottom: 20px; border-radius: 10px; }
+        .modal-descricao { font-size: 1rem; line-height: 1.5; color: #555; background: #fff8f5; padding: 15px; border-radius: 10px; border-left: 5px solid #d97a56; text-align: left; }
+        #fecharDetalhe { position: absolute; top: 10px; right: 15px; font-size: 30px; cursor: pointer; color: #333; font-weight: bold; }
 
         /* CARRINHO */
         .carrinho-flutuante { position: fixed; bottom: 25px; right: 25px; background-color: #d97a56; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 26px; cursor: pointer; z-index: 1001; }
         .contador-carrinho { position: absolute; top: -5px; right: -5px; background-color: #111; color: white; border-radius: 50%; width: 24px; height: 24px; font-size: 12px; font-weight: bold; display: flex; justify-content: center; align-items: center; border: 2px solid #fdf8f5;}
 
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1002; justify-content: center; align-items: center; backdrop-filter: blur(3px);}
-        .modal-carrinho { background: white; width: 90%; max-width: 420px; border-radius: 16px; padding: 25px; max-height: 80vh; overflow-y: auto; position: relative; }
-        .btn-finalizar { background-color: #25d366; color: white; border: none; padding: 16px; border-radius: 30px; font-weight: 700; width: 100%; cursor: pointer; margin-top: 20px; text-transform: uppercase; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1002; justify-content: center; align-items: center; }
+        .modal-carrinho { background: white; width: 90%; max-width: 420px; border-radius: 16px; padding: 25px; max-height: 80vh; overflow-y: auto; }
 
         @media (max-width: 600px) {
             .vitrine { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 10px; }
             .card { padding: 12px; }
             .card img { height: 150px; }
-            .card h3 { font-size: 0.9rem; }
-            .preco-por { font-size: 1.3rem; }
         }
     </style>
 </head>
 <body>
 
-    <div id="modalImagem">
-        <span id="fecharZoom" onclick="fecharImagem()">&times;</span>
-        <img id="imgExpandida">
+    <div id="modalDetalhes" onclick="fecharDetalhes()">
+        <div class="modal-conteudo" onclick="event.stopPropagation()">
+            <span id="fecharDetalhe" onclick="fecharDetalhes()">&times;</span>
+            <img id="imgDetalhe">
+            <h2 id="tituloDetalhe" style="color:#d97a56; margin-bottom:10px;"></h2>
+            <div id="textoDescricao" class="modal-descricao"></div>
+        </div>
     </div>
 
     <nav class="barra-nav">
@@ -103,16 +101,15 @@
             <li><a onclick="filtrar('inicio', '')">Início</a></li>
             <li><a class="btn-consumidor" onclick="filtrar('promocoes', 'ESPECIAL MÊS DO CONSUMIDOR 🛒')">🛒 Mês do Consumidor</a></li>
             <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
-            <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
             <li><a href="javascript:void(0)">Maquiagem ▾</a><div class="lista-suspensa"><a onclick="filtrar('maquiagem', 'Maquiagem e Kits')">Ver Tudo</a></div></li>
-            <li><a href="javascript:void(0)">Corpo e Banho ▾</a><div class="lista-suspensa"><a onclick="filtrar('ekos', 'Natura Ekos')">Natura Ekos</a><a onclick="filtrar('hidratantes', 'Hidratantes e Óleos')">Hidratantes e Óleos</a><a onclick="filtrar('body-splash', 'Body Splash')">Body Splash</a><a onclick="filtrar('sabonetes', 'Sabonetes')">Sabonetes</a><a onclick="filtrar('desodorantes', 'Desodorantes')">Desodorantes</a></div></li>
+            <li><a href="javascript:void(0)">Corpo e Banho ▾</a><div class="lista-suspensa"><a onclick="filtrar('body-splash', 'Body Splash')">Body Splash</a><a onclick="filtrar('hidratantes', 'Hidratantes e Óleos')">Hidratantes e Óleos</a></div></li>
         </ul>
     </nav>
 
     <header>
         <div class="header-logo-container"><img src="SLOGAN.jpg" alt="Cestas Perfumadas" class="logo-img" onerror="this.src='SLOGAN.png'" onclick="filtrar('inicio', '')"></div>
         <div class="header-info-container">
-            <div class="info-caixa destaque"><h3>🛍️ Mês do Consumidor</h3><p>Ofertas exclusivas para você!</p></div>
+            <div class="info-caixa destaque"><h3>🛍️ Mês do Consumidor</h3><p>Clique nas fotos para ver detalhes dos Kits!</p></div>
         </div>
     </header>
 
@@ -120,7 +117,7 @@
         <h1>Cestas Perfumadas</h1><p class="pronta-entrega">Produtos a Pronta Entrega</p>
     </div>
 
-    <div class="busca-container"><input type="text" id="inputBusca" placeholder="O que você procura hoje?" onkeyup="buscarProdutos()"></div>
+    <div class="busca-container"><input type="text" id="inputBusca" placeholder="Pesquisar kits ou produtos..." onkeyup="buscarProdutos()"></div>
 
     <h2 id="titulo-vitrine" class="titulo-secao"></h2>
 
@@ -133,32 +130,28 @@
             <h2 style="text-align:center; color:#d97a56; margin-bottom:15px;">🛒 Seu Carrinho</h2>
             <div id="lista-itens"></div>
             <div style="font-size: 1.3rem; font-weight: 700; text-align: right; margin-top: 25px; color: #d97a56;">Total: R$ <span id="valor-total">0,00</span></div>
-            <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Pedido</button>
+            <button class="btn-finalizar" onclick="finalizarCompra()" style="background-color:#25d366; color:white; border:none; padding:15px; width:100%; border-radius:30px; font-weight:bold; cursor:pointer;">Finalizar no WhatsApp</button>
             <button style="width:100%; padding:10px; margin-top:10px; border:none; border-radius:30px; cursor:pointer;" onclick="fecharCarrinho()">Continuar Comprando</button>
         </div>
     </div>
 
     <script>
-        // FUNÇÃO PARA ZOOM NA IMAGEM
-        function abrirImagem(src) {
-            const modal = document.getElementById('modalImagem');
-            const img = document.getElementById('imgExpandida');
-            modal.style.display = "block";
-            img.src = src;
+        // FUNÇÃO PARA ZOOM E DESCRIÇÃO
+        function verDetalhes(img, titulo, descricao) {
+            document.getElementById('modalDetalhes').style.display = "flex";
+            document.getElementById('imgDetalhe').src = img;
+            document.getElementById('tituloDetalhe').innerText = titulo;
+            document.getElementById('textoDescricao').innerText = descricao || "Produto original Natura a pronta entrega.";
         }
 
-        function fecharImagem() {
-            document.getElementById('modalImagem').style.display = "none";
+        function fecharDetalhes() {
+            document.getElementById('modalDetalhes').style.display = "none";
         }
 
         function tentarFoto(imgElement, originalSrc) {
             let base = originalSrc.substring(0, originalSrc.lastIndexOf('.'));
             if(base === "") base = originalSrc;
-            let alt = [
-                encodeURI(originalSrc).replace(/\+/g, '%2B'),
-                encodeURI(base + '.png').replace(/\+/g, '%2B'),
-                encodeURI(base + '.jpg').replace(/\+/g, '%2B')
-            ];
+            let alt = [encodeURI(originalSrc).replace(/\+/g, '%2B'), encodeURI(base + '.png').replace(/\+/g, '%2B'), encodeURI(base + '.jpg').replace(/\+/g, '%2B')];
             let attempt = 0;
             function nextAttempt() {
                 if (attempt < alt.length) {
@@ -174,55 +167,30 @@
             nextAttempt();
         }
 
+        // LISTA DE PRODUTOS COM DESCRIÇÕES
         const produtos = [
-            ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "destaque", "video_vitrine"],
-            ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "destaque", "video_vitrine"],
-            ["Vídeo tigrão.mp4", "Cesta Pelúcia Tigrão", 0, 0, 0, "destaque", "video_vitrine"],
-
-            // BODY SPLASH
-            ["Body Splash Flores novo.png", "Body Splash Flores", 93.90, 65.00, 6, "corpo-banho body-splash destaque promocoes", ""],
-            ["Body Splash Morango e Baunilha.jpg", "Body Splash Morango e Baunilha", 93.90, 65.00, 10, "corpo-banho body-splash destaque promocoes", ""],
-            ["Body Cereja Negra 3un.jpg","Body Cereja Negra",93.90,60.00,3,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Algodão 4un.jpg","Body Algodão",93.90,60.00,4,"corpo-banho body-splash destaque promocoes",""],
-
-            // MAQUIAGEM
-            ["Kit Batom Faces vinho 540.png", "Kit Batom Vinho 540", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces rosa 200.png", "Kit Batom Rosa 200", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Una Vermelho 4C + Pincel olhos.png", "Kit Una Vermelho 4C", 59.90, 35.00, 1, "maquiagem destaque promocoes", "presente"],
-
-            // REFIL PERFUMARIA
-            ["Essencial Exclusivo Masc Refil.png", "Refil Essencial Exclusivo Masc", 213.90, 149.90, 1, "masculina destaque promocoes", ""],
-            ["Único Refil Masc.png", "Refil Essencial Único Masc", 228.90, 169.90, 1, "masculina destaque promocoes", ""],
-            ["Essencial Exclusivo Fem Refil 2un.png", "Refil Essencial Exclusivo Fem", 213.90, 149.90, 2, "feminina destaque promocoes", ""],
-
-            // CESTAS
-            ["Cesta Essencial Ato fem.png", "Cesta Essencial Ato", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Coração Essencial Exc Fem.jpeg","Cesta Coração Essencial",300.00,300.00,1,"cestas destaque promocoes","presente"],
-
-            // PERFUMARIA
-            ["KAIAK Masculino.png","Kaiak Masculino",189.90,99.90,5,"masculina destaque promocoes",""],
-            ["Luna Intensa.png","Luna Intensa",219.90,159.90,1,"feminina destaque promocoes",""]
+            ["Body Splash Flores novo.png", "Body Splash Flores", 93.90, 65.00, 6, "corpo-banho body-splash destaque promocoes", "Super lançamento floral refrescante! Contém 200ml de pura suavidade para o seu dia."],
+            ["Body Splash Morango e Baunilha.jpg", "Morango e Baunilha", 93.90, 65.00, 10, "corpo-banho body-splash destaque promocoes", "Fragrância adocicada irresistível de 200ml. O equilíbrio perfeito entre a fruta e o doce."],
+            ["Kit Batom Faces vinho 540.png", "Kit Batom Vinho 540", 49.90, 25.00, 1, "maquiagem destaque promocoes", "Combo Especial: 1 Batom Faces Vinho 540 + 1 Pincel Delineador profissional."],
+            ["Kit Batom Faces rosa 200.png", "Kit Batom Rosa 200", 49.90, 25.00, 1, "maquiagem destaque promocoes", "Combo Especial: 1 Batom Faces Rosa 200 + 1 Pincel Delineador profissional."],
+            ["Kit Batom Una Vermelho 4C + Pincel olhos.png", "Kit Una Vermelho 4C", 59.90, 35.00, 1, "maquiagem destaque promocoes", "Luxo e Precisão: 1 Batom Una Alta Cobertura + 1 Pincel para olhos premium."],
+            ["Essencial Exclusivo Masc Refil.png", "Refil Essencial Masc", 213.90, 149.90, 1, "masculina destaque promocoes", "Refil da fragrância clássica Essencial. Economia para você e sustentabilidade para o planeta."],
+            ["Cesta Essencial Ato fem.png", "Cesta Essencial Ato", 250.00, 250.00, 1, "cestas destaque promocoes", "Cesta completa para presente com perfume, hidratação e embalagem de luxo decorada."],
+            ["KAIAK Masculino.png","Kaiak Masculino",189.90,99.90,5,"masculina destaque promocoes","O frescor cítrico e vibrante que é sucesso absoluto da Natura."],
+            ["Luna Intensa.png","Luna Intensa",219.90,159.90,1,"feminina destaque promocoes","Uma fragrância chipre potente, ideal para ocasiões especiais."]
         ];
 
         function renderizarVitrine() {
             let html = "";
             produtos.forEach((p) => {
                 let img = p[0], nome = p[1], precoDe = p[2].toFixed(2).replace('.', ','), precoPor = p[3].toFixed(2).replace('.', ',');
-                let estoque = p[4], categoria = p[5], tag = p[6];
+                let estoque = p[4], categoria = p[5], desc = p[6];
                 let urlImagemSegura = encodeURI(img).replace(/\+/g, '%2B');
 
-                if (tag === 'video_vitrine') {
-                    html += `<div class="card" data-categoria="${categoria}" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
-                        <video src="${urlImagemSegura}" controls muted loop playsinline style="width: 100%; border-radius: 8px;"></video>
-                    </div>`;
-                    return; 
-                }
-
                 html += `<div class="card" data-categoria="${categoria}">
-                    <img loading="lazy" src="${urlImagemSegura}" alt="${nome}" onclick="abrirImagem('${urlImagemSegura}')" onerror="tentarFoto(this, '${img}')">
+                    <img loading="lazy" src="${urlImagemSegura}" alt="${nome}" onclick="verDetalhes('${urlImagemSegura}', '${nome}', '${desc}')" onerror="tentarFoto(this, '${img}')">
                     <h3>${nome}</h3>
-                    <div style="color:#ffb4a2; margin-bottom:10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    ${p[2] > 0 ? `<p class="preco-de">R$ ${precoDe}</p>` : ''}
+                    ${p[2] > p[3] ? `<p class="preco-de">R$ ${precoDe}</p>` : ''}
                     <p class="preco-por">R$ ${precoPor}</p>
                     <p class="estoque">${estoque > 0 ? `Apenas <strong>${estoque}</strong> disponível` : '<strong>Esgotado</strong>'}</p>
                     <button class="btn-whats" onclick="adicionarCarrinho('${nome}', ${p[3]})">🛒 Adicionar</button>
@@ -236,10 +204,8 @@
         function filtrar(categoriaSelecionada, nomeTitulo) {
             document.getElementById('titulo-vitrine').innerText = nomeTitulo;
             let catFiltro = (categoriaSelecionada === 'inicio') ? 'destaque' : categoriaSelecionada;
-            const todosOsProdutos = document.querySelectorAll('.card');
-            todosOsProdutos.forEach(produto => {
-                const categoriasDoProduto = produto.getAttribute('data-categoria');
-                produto.style.display = (categoriasDoProduto.includes(catFiltro)) ? 'flex' : 'none'; 
+            document.querySelectorAll('.card').forEach(produto => {
+                produto.style.display = (produto.getAttribute('data-categoria').includes(catFiltro)) ? 'flex' : 'none'; 
             });
         }
 
@@ -264,7 +230,7 @@
                 </div>`;
                 total += item.preco;
             });
-            document.getElementById('lista-itens').innerHTML = html || "<p>Vazio</p>";
+            document.getElementById('lista-itens').innerHTML = html || "<p style='text-align:center; padding:10px;'>Vazio</p>";
             document.getElementById('valor-total').innerText = total.toFixed(2).replace('.', ',');
         }
         function abrirCarrinho() { document.getElementById('modalCarrinho').style.display = 'flex'; }
