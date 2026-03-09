@@ -95,9 +95,9 @@
             <li><a onclick="filtrar('inicio', '')">Início</a></li>
             <li><a class="btn-consumidor" onclick="filtrar('promocoes', 'ESPECIAL MÊS DO CONSUMIDOR 🛒')">🛒 Mês do Consumidor</a></li>
             <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
-            <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
+            <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Feminina')">Feminina</a></div></li>
             <li><a href="javascript:void(0)">Maquiagem ▾</a><div class="lista-suspensa"><a onclick="filtrar('maquiagem', 'Maquiagem e Kits')">Kits e Batons</a></div></li>
-            <li><a href="javascript:void(0)">Infantil ▾</a><div class="lista-suspensa"><a onclick="filtrar('infantil', 'Linha Mamãe e Bebê')">Mamãe e Bebê</a></div></li>
+            <li><a href="javascript:void(0)">Infantil ▾</a><div class="lista-suspensa"><a onclick="filtrar('infantil', 'Linha Mamãe e Bebê')">Infantil</a></div></li>
             <li><a href="javascript:void(0)">Corpo e Banho ▾</a><div class="lista-suspensa"><a onclick="filtrar('ekos', 'Natura Ekos')">Natura Ekos</a><a onclick="filtrar('body-splash', 'Body Splash')">Body Splash</a><a onclick="filtrar('sabonetes', 'Sabonetes')">Sabonetes</a><a onclick="filtrar('hidratantes', 'Hidratantes e Óleos')">Hidratantes</a></div></li>
         </ul>
     </nav>
@@ -105,7 +105,7 @@
     <header>
         <div class="header-logo-container"><img src="SLOGAN.jpg" alt="Cestas Perfumadas" class="logo-img" onerror="this.src='SLOGAN.png'" onclick="filtrar('inicio', '')"></div>
         <div class="header-info-container">
-            <div class="info-caixa destaque"><h3>🛍️ Mês do Consumidor</h3><p>Clique nas fotos para ver o que vem nos kits!</p></div>
+            <div class="info-caixa destaque"><h3>🛍️ Mês do Consumidor</h3><p>Clique nas fotos para ver detalhes dos Kits e Produtos!</p></div>
         </div>
     </header>
 
@@ -136,7 +136,7 @@
             document.getElementById('modalDetalhes').style.display = "flex";
             document.getElementById('imgDetalhe').src = img;
             document.getElementById('tituloDetalhe').innerText = titulo;
-            document.getElementById('textoDescricao').innerText = descricao || "Produto original Natura disponível para entrega imediata.";
+            document.getElementById('textoDescricao').innerText = descricao || "Produto Natura original disponível para entrega imediata.";
         }
         function fecharDetalhes() { document.getElementById('modalDetalhes').style.display = "none"; }
 
@@ -158,47 +158,51 @@
         }
 
         const produtos = [
-            ["Vídeo cesta Flores.mp4", "Vitrine de Cestas", 0, 0, 0, "destaque", "video_vitrine", "Confira nossas montagens artesanais exclusivas."],
-
+            ["Vídeo cesta Flores.mp4", "Vitrine de Cestas", 0, 0, 0, "destaque", "video_vitrine", "Montagens exclusivas com flores naturais e perfumes premium."],
+            
             // CESTAS
-            ["Cesta Coração Essencial Exc Fem.jpeg", "Cesta Coração Essencial", 300.00, 300.00, 1, "cestas destaque promocoes", "presente", "A favorita! 1 Perfume Essencial Exclusivo Feminino + 1 Hidratante + Sabonetes em cesta coração decorada."],
-            ["Cesta Essencial Ato fem.png", "Cesta Essencial Ato", 250.00, 250.00, 1, "cestas destaque promocoes", "presente", "Luxo: 1 Deo Parfum Essencial Ato + 1 Creme para o Corpo + Embalagem exclusiva."],
-            ["Cesta Ilia.png", "Cesta Ilía Clássica", 200.00, 200.00, 1, "cestas destaque promocoes", "presente", "Contém: 1 Perfume Ilía + Sabonetes Natura + Cesta artesanal decorada."],
-            ["Cesta Humor Liberta.png", "Cesta Humor Liberta", 130.00, 130.00, 1, "cestas destaque promocoes", "presente", "Frescor: 1 Colônia Humor Liberta + 1 Hidratante + Cesta decorada."],
+            ["Cesta Coração Essencial Exc Fem.jpeg", "Cesta Coração Essencial", 300.00, 300.00, 1, "cestas destaque promocoes", "presente", "A mais desejada! 1 Perfume Essencial Exclusivo Feminino + 1 Hidratante + Sabonetes Natura em cesta luxo coração."],
+            ["Cesta Essencial Ato fem.png", "Cesta Essencial Ato", 250.00, 250.00, 1, "cestas destaque promocoes", "presente", "1 Perfume Essencial Ato + 1 Creme Corporal + Cesta decorada."],
+            ["Cesta Ilia.png", "Cesta Ilía Completa", 200.00, 200.00, 1, "cestas destaque promocoes", "presente", "1 Perfume Ilía + Sabonetes Natura + Cesta artesanal."],
+            ["Cesta Humor Liberta.png", "Cesta Humor Liberta", 130.00, 130.00, 1, "cestas destaque promocoes", "presente", "1 Colônia Humor Liberta + 1 Hidratante + Embalagem decorada."],
+            ["Cesta Luna.png", "Cesta Luna", 185.00, 185.00, 1, "cestas destaque promocoes", "presente", "1 Colônia Luna Tradicional + Sabonetes + Cesta decorada."],
+            ["Cesta Meu 1º Humor.png", "Cesta Meu Primeiro Humor", 200.00, 200.00, 1, "cestas destaque promocoes", "presente", "1 Colônia Meu 1º Humor + Hidratante + Cesta especial."],
 
-            // KITS MAQUIAGEM NAS CAIXAS
-            ["Kit Batom Faces vinho 540.png", "Kit Batom Vinho 540", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente", "Na caixinha: 1 Batom Faces Vinho 540 + 1 Pincel Delineador profissional."],
-            ["Kit Batom Faces Vemelho145.png", "Kit Batom Vermelho 145", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente", "Na caixinha: 1 Batom Faces Vermelho 145 + 1 Pincel Delineador profissional."],
-            ["Kit Batom Faces rosa 200.png", "Kit Batom Rosa 200", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente", "Na caixinha: 1 Batom Faces Rosa 200 + 1 Pincel Delineador profissional."],
-            ["Kit Batom Una Vermelho 4C + Pincel olhos.png", "Kit Una Vermelho 4C", 59.90, 35.00, 1, "maquiagem destaque promocoes", "presente", "Luxo na caixinha: 1 Batom Una Alta Cobertura + 1 Pincel Olhos Una profissional."],
-            ["Kit P.Stay Laranja.png", "Kit Power Stay Laranja", 75.90, 45.00, 1, "maquiagem destaque promocoes", "presente", "Longa duração: 1 Batom Líquido Power Stay Laranja + 1 Curvex profissional."],
+            // KITS MAQUIAGEM (NAS CAIXINHAS)
+            ["Kit Batom Faces vinho 540.png", "Kit Batom Vinho 540", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente", "Na caixa: 1 Batom Faces Vinho 540 + 1 Pincel Delineador profissional."],
+            ["Kit Batom Faces Vemelho145.png", "Kit Batom Vermelho 145", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente", "Na caixa: 1 Batom Faces Vermelho 145 + 1 Pincel Delineador profissional."],
+            ["Kit Batom Faces rosa 200.png", "Kit Batom Rosa 200", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente", "Na caixa: 1 Batom Faces Rosa 200 + 1 Pincel Delineador profissional."],
+            ["Kit Batom Una Vermelho 4C + Pincel olhos.png", "Kit Una Vermelho 4C", 59.90, 35.00, 1, "maquiagem destaque promocoes", "presente", "Na caixa: 1 Batom Una Alta Cobertura + 1 Pincel Olhos Una de luxo."],
+            ["Kit P.Stay Laranja.png", "Kit Power Stay Laranja", 75.90, 45.00, 1, "maquiagem destaque promocoes", "presente", "Na caixa: 1 Batom Líquido Power Stay Laranja (Longa Duração) + 1 Curvex profissional."],
 
             // PERFUMARIA MASCULINA
-            ["KAIAK Masculino.png", "Kaiak Masculino", 189.90, 99.90, 5, "masculina destaque promocoes", "", "O clássico frescor cítrico vibrante da Natura."],
-            ["Essencial Masc.png", "Essencial Masculino", 279.90, 209.90, 5, "masculina destaque promocoes", "", "Fragrância amadeirada intensa e sofisticada."],
-            ["Natura Homem.png", "Natura Homem Clássico", 209.90, 160.00, 1, "masculina destaque promocoes", "", "Notas amadeiradas e refrescantes para o dia a dia."],
-            ["Natura Homem Sagaz.png", "Homem Sagaz", 239.90, 170.00, 1, "masculina destaque promocoes", "", "Fragrância adocicada e sedutora com notas de sândalo."],
+            ["KAIAK Masculino.png", "Kaiak Masculino", 189.90, 99.90, 5, "masculina destaque promocoes", "", "Fragrância cítrica refrescante sucesso da Natura."],
+            ["Essencial Masc.png", "Essencial Masculino", 279.90, 209.90, 5, "masculina destaque promocoes", "", "Amadeirado intenso para homens marcantes."],
+            ["Natura Homem.png", "Natura Homem Clássico", 209.90, 160.00, 1, "masculina destaque promocoes", "", "Amadeirado moderado ideal para o cotidiano."],
+            ["Natura Homem Sagaz.png", "Homem Sagaz", 239.90, 170.00, 1, "masculina destaque promocoes", "", "Fragrância adocicada e sedutora."],
 
             // PERFUMARIA FEMININA
-            ["Luna Intensa.png", "Luna Intensa", 219.90, 159.90, 1, "feminina destaque promocoes", "", "Chipre potente: notas de patchouli e baunilha."],
-            ["Ilia Secreto.png", "Ilía Secreto", 199.90, 159.90, 1, "feminina destaque promocoes", "", "Misteriosa: notas de uva roxa e café arábico."],
-            ["Una Brilho.png", "Una Brilho 75ml", 319.90, 219.90, 1, "feminina destaque promocoes", "", "Luxo: floral intenso com notas de praliné."],
+            ["Luna Intensa.png", "Luna Intensa", 219.90, 159.90, 1, "feminina destaque promocoes", "", "Chipre potente com notas de patchouli."],
+            ["Ilia Secreto.png", "Ilía Secreto", 199.90, 159.90, 1, "feminina destaque promocoes", "", "Mistério e sofisticação com notas de café arábico."],
+            ["Una Brilho.png", "Una Brilho 75ml", 319.90, 219.90, 1, "feminina destaque promocoes", "", "Elegância floral intensa com notas adocicadas."],
+            ["Luna Tradicional.png", "Luna Tradicional", 169.90, 130.00, 1, "feminina destaque promocoes", "", "O chipre clássico e feminino da Natura."],
 
-            // REFIL PERFUMARIA
-            ["Essencial Exclusivo Masc Refil.png", "Refil Essencial Masc", 213.90, 149.90, 1, "masculina destaque promocoes", "", "100ml. Economia para repor seu frasco original."],
-            ["Único Refil Masc.png", "Refil Único Masculino", 228.90, 169.90, 1, "masculina destaque promocoes", "", "Refil premium da linha Essencial Único."],
-            ["Essencial Exclusivo Fem Refil 2un.png", "Refil Essencial Fem", 213.90, 149.90, 2, "feminina destaque promocoes", "", "Refil 100ml do Essencial Exclusivo Feminino."],
+            // EKOS
+            ["Ekos Colonia 150 ml Maracuja 1un.jpg", "Frescor Maracujá", 129.90, 99.90, 1, "ekos destaque promocoes", "", "Cítrico refrescante que acalma e perfuma."],
+            ["Ekos Colonia 150 ml Cacau 1un.jpg", "Frescor Cacau", 129.90, 99.90, 1, "ekos destaque promocoes", "", "Fragrância doce e aconchegante."],
 
-            // INFANTIL (MAMÃE E BEBÊ)
-            ["MMBB Colonia 10un.jpg", "Colônia Mamãe e Bebê", 106.90, 74.90, 7, "infantil destaque promocoes", "", "Clássica fragrância de 100ml. Carinho puro."],
-            ["MMBB Shampoo 2un.jpg", "Shampoo Mamãe e Bebê", 45.90, 35.90, 1, "infantil destaque promocoes", "", "200ml de limpeza suave que não irrita os olhos."],
+            // INFANTIL
+            ["MMBB Colonia 10un.jpg", "Colônia Mamãe e Bebê", 106.90, 74.90, 7, "infantil destaque promocoes", "", "100ml de puro carinho e cheirinho de bebê."],
+            ["MMBB Shampoo 2un.jpg", "Shampoo MMBB", 45.90, 35.90, 1, "infantil destaque promocoes", "", "Fórmula suave que não arde nos olhos."],
 
-            // EKOS E CORPO
-            ["Ekos Colonia 150 ml Maracuja 1un.jpg", "Frescor Ekos Maracujá", 129.90, 99.90, 1, "ekos destaque promocoes", "", "Fragrância cítrica refrescante para todo o dia."],
-            ["Body Splash Flores novo.png", "Body Splash Flores", 93.90, 65.00, 6, "body-splash destaque promocoes", "", "Lançamento floral leve 200ml."],
-            ["Body Splash Morango e Baunilha.jpg", "Morango e Baunilha", 93.90, 65.00, 10, "body-splash destaque promocoes", "", "Adocicado irresistível de 200ml."],
-            ["Oleo Seve Amendoas doces 2un.jpg", "Óleo Sève Amêndoas", 116.90, 79.90, 2, "hidratantes destaque promocoes", "", "Pele macia com enxágue. Clássico Natura."],
-            ["Sabonete Noz pecã 3un.png", "Sabonete Noz Pecã", 34.90, 24.90, 3, "sabonetes destaque promocoes", "", "Caixa com 5 unidades cremosas."]
+            // BODY SPLASH
+            ["Body Splash Flores novo.png", "Body Splash Flores", 93.90, 65.00, 6, "body-splash destaque promocoes", "", "Lançamento! Fragrância floral delicada 200ml."],
+            ["Body Splash Morango e Baunilha.jpg", "Morango e Baunilha", 93.90, 65.00, 10, "body-splash destaque promocoes", "", "Super adocicado e cremoso lançamento 200ml."],
+            ["Body Cereja Negra 3un.jpg", "Body Cereja Negra", 93.90, 60.00, 3, "body-splash destaque promocoes", "", "Aroma intenso e frutal 200ml."],
+
+            // SABONETES E HIDRATANTES
+            ["Sabonete Noz pecã 3un.png", "Sabonete Noz Pecã", 34.90, 24.90, 3, "sabonetes destaque promocoes", "", "Caixa com 5 unidades de 90g."],
+            ["Oleo Seve Amendoas doces 2un.jpg", "Óleo Sève Amêndoas", 116.90, 79.90, 2, "hidratantes destaque promocoes", "", "Clássico da hidratação com enxágue."]
         ];
 
         function renderizarVitrine() {
@@ -259,13 +263,13 @@
                 </div>`;
                 total += item.p;
             });
-            document.getElementById('lista-itens').innerHTML = html || "<p style='text-align:center;'>Carrinho vazio.</p>";
+            document.getElementById('lista-itens').innerHTML = html || "<p style='text-align:center;'>Vazio.</p>";
             document.getElementById('valor-total').innerText = total.toFixed(2).replace('.', ',');
         }
         function abrirCarrinho() { document.getElementById('modalCarrinho').style.display = 'flex'; }
         function fecharCarrinho() { document.getElementById('modalCarrinho').style.display = 'none'; }
         function finalizarCompra() {
-            let texto = "Olá! Gostaria de fazer o seguinte pedido no site (Mês do Consumidor):\n\n";
+            let texto = "Olá! Pedido Cestas Perfumadas:\n\n";
             carrinho.forEach(item => { texto += `✅ ${item.n} - R$ ${item.p.toFixed(2).replace('.', ',')}\n`; });
             texto += `\n💰 Total: R$ ${document.getElementById('valor-total').innerText}`;
             window.open("https://api.whatsapp.com/send?phone=5511962983022&text=" + encodeURIComponent(texto));
