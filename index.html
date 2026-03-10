@@ -77,21 +77,20 @@
             <li><a onclick="filtrar('inicio', '')">Início</a></li>
             <li><a class="btn-campanha" onclick="filtrar('promocoes', '🛒 MÊS DO CONSUMIDOR')">🛒 Mês do Consumidor</a></li>
             <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
-            <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
-            <li><a href="javascript:void(0)">Maquiagem ▾</a><div class="lista-suspensa"><a onclick="filtrar('maquiagem', 'Maquiagem e Kits')">Kits e Batons</a></div></li>
-            <li><a href="javascript:void(0)">Infantil ▾</a><div class="lista-suspensa"><a onclick="filtrar('infantil', 'Linha Mamãe e Bebê')">Infantil</a></div></li>
+            <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Feminina')">Feminina</a><a onclick="filtrar('masculina', 'Refis')">Refis</a></div></li>
             <li><a href="javascript:void(0)">Corpo e Banho ▾</a><div class="lista-suspensa"><a onclick="filtrar('ekos', 'Natura Ekos')">Natura Ekos</a><a onclick="filtrar('body-splash', 'Body Splash')">Body Splash</a><a onclick="filtrar('sabonetes', 'Sabonetes')">Sabonetes</a><a onclick="filtrar('desodorantes', 'Desodorantes')">Desodorantes</a><a onclick="filtrar('hidratantes', 'Hidratantes')">Hidratantes</a></div></li>
+            <li><a href="javascript:void(0)">Infantil ▾</a><div class="lista-suspensa"><a onclick="filtrar('infantil', 'Linha Mamãe e Bebê')">Infantil</a></div></li>
         </ul>
     </nav>
 
     <header>
         <div class="header-logo-container"><img src="SLOGAN.jpg" alt="Cestas Perfumadas" class="logo-img" onerror="this.src='SLOGAN.png'" onclick="filtrar('inicio', '')"></div>
         <div class="header-info-container">
-            <div class="info-caixa destaque"><h3>🛍️ Especial Mês do Consumidor</h3><p>Promoções imperdíveis em todo o site!</p></div>
+            <div class="info-caixa destaque"><h3>🛍️ Especial Mês do Consumidor</h3><p>O melhor em Natura e O Boticário!</p></div>
         </div>
     </header>
 
-    <div class="hero-banner"><h1>Cestas Perfumadas</h1><p>O presente ideal a um clique de distância.</p></div>
+    <div class="hero-banner"><h1>Cestas Perfumadas</h1><p>O seu presente ideal em um clique.</p></div>
 
     <div class="busca-container"><input type="text" id="inputBusca" placeholder="Pesquisar catálogo..." onkeyup="buscarProdutos()"></div>
     <h2 id="titulo-vitrine" class="titulo-secao"></h2>
@@ -131,120 +130,75 @@
         const produtos = [
             ["Vídeo cesta Flores.mp4", "Vitrine de Cestas", 0, 0, 0, "destaque", "video_vitrine"],
             ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "destaque", "video_vitrine"],
-            
-            // CESTAS
-            ["Cesta Coração Essencial Exc Fem.jpeg", "Cesta Coração Essencial", 300.00, 300.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Essencial Ato fem.png", "Cesta Essencial Ato", 250.00, 250.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Essencial Atrai fem.png", "Cesta Essencial Atraí", 250.00, 250.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Essencial Floral.png", "Cesta Essencial Floral", 250.00, 250.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Essencial fem.png", "Cesta Essencial Tradicional", 250.00, 250.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Homem Sagaz.png", "Cesta Homem Sagaz", 239.90, 239.90, 1, "cestas destaque promocoes", ""],
-            ["Cesta Humor Liberta.png", "Cesta Humor Liberta", 130.00, 130.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Ilia.png", "Cesta Ilía Completa", 200.00, 200.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Kaiak fem.png", "Cesta Kaiak Feminino", 180.00, 180.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Kriska Drama.png", "Cesta Kriska Drama", 170.00, 170.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Luna Fascinante.png", "Cesta Luna Fascinante", 185.00, 185.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Luna.png", "Cesta Luna Tradicional", 185.00, 185.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Luninha.png", "Cesta Luninha", 70.00, 70.00, 1, "cestas destaque promocoes infantil", ""],
-            ["Cesta Meu 1º Humor.png", "Cesta Meu Primeiro Humor", 200.00, 200.00, 1, "cestas destaque promocoes", ""],
-            ["Cesta Revelar.png", "Cesta Revelar", 200.00, 200.00, 1, "cestas destaque promocoes", ""],
-            ["Cestas Desodorantes.jpeg", "Cesta Desodorantes Mix", 150.00, 150.00, 1, "cestas destaque promocoes", ""],
 
-            // BODY SPLASH LANÇAMENTOS
-            ["Body Splash Flores novo.png", "Body Splash Flores (Lançamento)", 93.90, 65.00, 6, "body-splash destaque promocoes", ""],
+            // BODY SPLASH (RESTAURAÇÃO TOTAL)
+            ["Body Splash Flores novo.png", "Body Splash Flores", 93.90, 65.00, 6, "body-splash destaque promocoes", ""],
             ["Body Splash Morango e Baunilha.jpg", "Body Splash Morango e Baunilha", 93.90, 65.00, 10, "body-splash destaque promocoes", ""],
-            ["Body Acerola e Hibisco.png", "Body Acerola e Hibisco", 93.90, 60.00, 1, "body-splash destaque promocoes", ""],
-            ["Body Algodão 4un.jpg", "Body Splash Algodão", 93.90, 60.00, 4, "body-splash destaque promocoes", ""],
-            ["Body Ameixa e Flor de Baunilha 6un.jpg", "Body Ameixa e Baunilha", 93.90, 60.00, 6, "body-splash destaque promocoes", ""],
-            ["Body Ameixa e Gengibre Rosa 1un.png", "Body Ameixa e Gengibre", 93.90, 60.00, 1, "body-splash destaque promocoes", ""],
-            ["Body Amora Flor de Pessego.png", "Body Amora e Pêssego", 93.90, 60.00, 6, "body-splash destaque promocoes", ""],
-            ["Body Amora e Jabuticaba 1uni.png", "Body Amora e Jabuticaba", 93.90, 60.00, 1, "body-splash destaque promocoes", ""],
-            ["Body Cereja Negra 3un.jpg", "Body Cereja Negra", 93.90, 60.00, 3, "body-splash destaque promocoes", ""],
-            ["Body Cereja e Avelã 3un.jpg", "Body Cereja e Avelã", 93.90, 60.00, 3, "body-splash destaque promocoes", ""],
-            ["Body Chá de Camomila 4 uni.jpg", "Body Chá de Camomila", 93.90, 60.00, 4, "body-splash destaque promocoes", ""],
-            ["Body Flor de Gengibre e Tangerina 1un.png", "Body Flor de Gengibre", 93.90, 60.00, 1, "body-splash destaque promocoes", ""],
-            ["Body Flor de Maçã 3un.png", "Body Flor de Maçã", 93.90, 60.00, 3, "body-splash destaque promocoes", ""],
-            ["Body Flores Pessego e Jasmin.png", "Body Flores Pêssego/Jasmim", 93.90, 60.00, 2, "body-splash destaque promocoes", ""],
-            ["Body Framboesa e Pimenta Rosa 1uni.png", "Body Framboesa Pimenta Rosa", 93.90, 60.00, 1, "body-splash destaque promocoes", ""],
-            ["Body Framboesa e Pimenta Vermelha 1 un.png", "Body Framboesa Pimenta Verm.", 93.90, 60.00, 1, "body-splash destaque promocoes", ""],
-            ["Body Jambo Rosa e Caju.png", "Body Jambo Rosa e Caju", 93.90, 60.00, 2, "body-splash destaque promocoes", ""],
-            ["Body Limão Siciliano 5uni.png", "Body Limão Siciliano", 93.90, 60.00, 5, "body-splash destaque promocoes", ""],
-            ["Body Macadâmia 2uni.png", "Body Macadâmia", 93.90, 60.00, 2, "body-splash destaque promocoes", ""],
-            ["Body Maça Caramelada 4uni.png", "Body Maçã Caramelada", 93.90, 60.00, 4, "body-splash destaque promocoes", ""],
-            ["Body Romã e Amendoas Glaceadas.png", "Body Romã e Amêndoas", 93.90, 60.00, 3, "body-splash destaque promocoes", ""],
-            ["Body Uva Rosa E Romã 2un.png", "Body Uva Rosa e Romã", 93.90, 60.00, 2, "body-splash destaque promocoes", ""],
+            ["Body Acerola e Hibisco.png", "Body Acerola e Hibisco", 93.90, 60.00, 1, "body-splash promocoes", ""],
+            ["Body Algodão 4un.jpg", "Body Algodão", 93.90, 60.00, 4, "body-splash promocoes", ""],
+            ["Body Ameixa e Flor de Baunilha 6un.jpg", "Body Ameixa e Baunilha", 93.90, 60.00, 6, "body-splash promocoes", ""],
+            ["Body Amora Flor de Pessego.png", "Body Amora e Pêssego", 93.90, 60.00, 6, "body-splash promocoes", ""],
+            ["Body Cereja Negra 3un.jpg", "Body Cereja Negra", 93.90, 60.00, 3, "body-splash promocoes", ""],
+            ["Body Maça Caramelada 4uni.png", "Body Maçã Caramelada", 93.90, 60.00, 4, "body-splash promocoes", ""],
+
+            // CESTAS (RESTAURAÇÃO TOTAL)
+            ["Cesta Coração Essencial Exc Fem.jpeg", "Cesta Coração Essencial", 300.00, 300.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Essencial Ato fem.png", "Cesta Essencial Ato", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Ilia.png", "Cesta Ilía Completa", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Humor Liberta.png", "Cesta Humor Liberta", 130.00, 130.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Luna.png", "Cesta Luna", 185.00, 185.00, 1, "cestas destaque promocoes", "presente"],
 
             // PERFUMARIA MASCULINA
             ["Essencial Masc.png", "Essencial Masculino", 279.90, 209.90, 5, "masculina destaque promocoes", ""],
-            ["Essencial Exclusivo Masc..png", "Essencial Exclusivo Masc", 279.90, 209.90, 1, "masculina destaque promocoes", ""],
-            ["Essencial Intenso Masc.png", "Essencial Intenso Masc", 279.90, 209.90, 1, "masculina destaque promocoes", ""],
-            ["Essencial Mirra Masc.png", "Essencial Mirra Masc", 279.90, 209.90, 1, "masculina destaque promocoes", ""],
-            ["Essencial Ato Masc.png", "Essencial Ato Masculino", 279.90, 209.90, 1, "masculina destaque promocoes", ""],
-            ["Essencial Atrai Masc.png", "Essencial Atraí Masculino", 279.90, 209.90, 1, "masculina destaque promocoes", ""],
-            ["KAIAK Masculino.png", "Kaiak Masculino Tradicional", 189.90, 99.90, 5, "masculina destaque promocoes", ""],
-            ["Natura Homem.png", "Natura Homem Clássico", 209.90, 160.00, 1, "masculina destaque promocoes", ""],
+            ["KAIAK Masculino.png", "Kaiak Masculino", 189.90, 99.90, 5, "masculina destaque promocoes", ""],
             ["Natura Homem Sagaz.png", "Homem Sagaz", 239.90, 170.00, 1, "masculina destaque promocoes", ""],
             ["Natura Homem Essence.png", "Homem Essence", 239.90, 170.00, 1, "masculina destaque promocoes", ""],
-            ["Natura Homem Dom.png", "Homem Dom", 239.90, 170.00, 1, "masculina destaque promocoes", ""],
-            ["Natura Homem Tato.png", "Homem Tato", 239.90, 170.00, 1, "masculina destaque promocoes", ""],
-            ["Natura Homem Verum.png", "Homem Verum", 239.90, 170.00, 1, "masculina destaque promocoes", ""],
             ["Sintonia Maculino.png", "Sintonia Clássico", 139.90, 100.00, 1, "masculina destaque promocoes", ""],
-            ["Biografia Masc.png", "Biografia Masculino Tradicional", 164.90, 120.00, 1, "masculina destaque promocoes", ""],
-            ["Biografia Inspire Masc.png", "Biografia Inspire Masculino", 164.90, 120.00, 1, "masculina destaque promocoes", ""],
+            ["Essencial Exclusivo Masc Refil.png", "Refil Essencial Exclusivo", 213.90, 149.90, 1, "masculina promocoes", ""],
 
             // PERFUMARIA FEMININA
-            ["Essencial Feminino 2un.png", "Essencial Feminino", 279.90, 209.90, 2, "feminina destaque promocoes", ""],
-            ["Essencial Exclusivo Fem 2un.png", "Essencial Exclusivo Fem", 279.90, 209.90, 2, "feminina destaque promocoes", ""],
-            ["Essencial Floral 1un.png", "Essencial Floral", 279.90, 209.90, 1, "feminina destaque promocoes", ""],
-            ["Essencial Supreme Fem 1un.png", "Essencial Supreme Fem", 279.90, 209.90, 1, "feminina destaque promocoes", ""],
-            ["Essencial Sentir Fem 1un.png", "Essencial Sentir Fem", 279.90, 209.90, 1, "feminina destaque promocoes", ""],
-            ["Essencial Ato Fem 1un.png", "Essencial Ato Feminino", 279.90, 209.90, 1, "feminina destaque promocoes", ""],
-            ["Essencial Atrai Fem 3un.png", "Essencial Atraí Feminino", 279.90, 209.90, 3, "feminina destaque promocoes", ""],
-            ["Luna Tradicional.png", "Luna Tradicional", 169.90, 130.00, 1, "feminina destaque promocoes", ""],
             ["Luna Intensa.png", "Luna Intensa", 219.90, 159.90, 1, "feminina destaque promocoes", ""],
             ["Ilia Secreto.png", "Ilía Secreto", 199.90, 159.90, 1, "feminina destaque promocoes", ""],
-            ["Una Brilho.png", "Una Brilho 75ml", 319.90, 219.90, 1, "feminina destaque promocoes", ""],
-            ["Festival de Humor 1 un.png", "Festival de Humor Feminino", 164.90, 120.00, 1, "feminina destaque promocoes", ""],
+            ["Essencial Feminino 2un.png", "Essencial Feminino", 279.90, 209.90, 2, "feminina destaque promocoes", ""],
+            ["Luna 1un.png", "Luna Tradicional", 169.90, 130.00, 1, "feminina destaque promocoes", ""],
+            ["Esencial Único Fem. Refil 5un.png", "Refil Essencial Único Fem", 228.90, 169.90, 5, "feminina promocoes", ""],
 
-            // DESODORANTES SPRAY
-            ["Desodorante Biografia Assin masc 3un.jpg", "Desod. Biografia Assinatura Masc", 56.90, 29.90, 3, "desodorantes promocoes", ""],
-            ["Desodorante Essencial Ato masc 3un..jpg", "Desod. Essencial Ato Masc", 72.90, 29.90, 3, "desodorantes promocoes", ""],
-            ["Desodorante Kaiak Avent masc 3un.jpg", "Desod. Kaiak Aventura Masc", 56.90, 29.90, 3, "desodorantes promocoes", ""],
-            ["Desodorante Natura Homem 5un.jpg", "Desod. Natura Homem Tradic", 56.90, 29.90, 5, "desodorantes promocoes", ""],
-            ["Desodorante Meu 1º Humor 4un.jpg", "Desod. Meu Primeiro Humor", 56.90, 29.90, 4, "desodorantes promocoes", ""],
-            ["Desodorante Kriska Drama 4un.jpg", "Desod. Kriska Drama", 56.90, 29.90, 4, "desodorantes promocoes", ""],
+            // SABONETES (RESTAURAÇÃO TOTAL)
+            ["Sabonete Noz pecã 3un.png", "Sabonete Noz Pecã", 34.90, 24.90, 3, "sabonetes destaque promocoes", ""],
+            ["Sabonete Amora e Flor de Pessego 10un.png", "Sabonete Amora Pêssego", 34.90, 24.90, 10, "sabonetes destaque promocoes", ""],
+            ["Ekos sabonete castanha 6un.jpg", "Sabonete Ekos Castanha", 45.90, 34.90, 6, "sabonetes ekos promocoes", ""],
+            ["Sabonete Natura Homem 3un.png", "Sabonete Natura Homem", 37.90, 37.90, 3, "sabonetes", ""],
 
-            // SABONETES
-            ["Sabonete Noz pecã 3un.png", "Sabonete Noz Pecã", 34.90, 24.90, 3, "sabonetes promocoes", ""],
-            ["Sabonete Amora e Flor de Pessego 10un.png", "Sabonete Amora Pêssego", 34.90, 24.90, 10, "sabonetes promocoes", ""],
-            ["Sabonete Todanoite.png", "Sabonete Todanoite", 34.90, 24.90, 20, "sabonetes promocoes", ""],
-            ["Ekos sabonete castanha 6un.jpg", "Sabonete Ekos Castanha 6un", 45.90, 34.90, 6, "sabonetes promocoes", ""],
+            // DESODORANTES
+            ["Desodorante Kaiak Avent masc 3un.jpg", "Desod. Kaiak Aventura", 56.90, 29.90, 3, "desodorantes promocoes", ""],
+            ["Desodorante Natura Homem 5un.jpg", "Desod. Homem Tradicional", 56.90, 29.90, 5, "desodorantes promocoes", ""],
+            ["Desodorante em creme Macadamia 2un.png", "Desod. Creme Macadâmia", 30.90, 30.90, 2, "desodorantes", ""],
 
-            // MAQUIAGEM E REFIL
-            ["Kit Batom Faces vinho 540.png", "Kit Batom Vinho 540", 49.90, 25.00, 1, "maquiagem destaque promocoes", ""],
-            ["Essencial Exclusivo Masc Refil.png", "Refil Essencial Exclusivo Masc", 213.90, 149.90, 1, "masculina destaque promocoes", ""],
-            ["Esencial Único Fem. Refil 5un.png", "Refil Essencial Único Fem", 228.90, 169.90, 5, "feminina destaque promocoes", ""]
+            // INFANTIL
+            ["MMBB Colonia 10un.jpg", "Colônia Mamãe e Bebê", 106.90, 74.90, 7, "infantil destaque promocoes", ""],
+            ["MMBB Shampoo 2un.jpg", "Shampoo Mamãe e Bebê", 45.90, 35.90, 1, "infantil promocoes", ""],
+
+            // EKOS
+            ["Ekos hidratante Maracujá 1un.jpg", "Hidratante Ekos Maracujá", 88.90, 88.90, 1, "ekos hidratantes", ""],
+            ["Ekos hidratante mãos castanha 75g 2un.jpg", "Polpa Mãos Castanha", 59.90, 37.90, 2, "ekos promocoes", ""]
         ];
 
         function renderizarVitrine() {
             let html = "";
             produtos.forEach((p) => {
                 let img = p[0], nome = p[1], precoDe = p[2].toFixed(2).replace('.', ','), precoPor = p[3].toFixed(2).replace('.', ',');
-                let estoque = p[4], categoria = p[5], tag = p[6];
                 let urlImg = encodeURI(img).replace(/\+/g, '%2B');
-
-                if (tag === 'video_vitrine') {
-                    html += `<div class="card" data-categoria="${categoria}" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;"><video src="${urlImg}" controls muted loop playsinline style="width: 100%; border-radius: 8px;"></video></div>`;
-                    return; 
+                if (p[6] === 'video_vitrine') {
+                    html += `<div class="card" data-categoria="${p[5]}" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%; border: 1px solid #d97a56; background:#fdf8f5;"><h3 style="color:#d97a56;">${nome}</h3><video src="${urlImg}" controls muted loop playsinline style="width:100%; border-radius:8px;"></video></div>`;
+                    return;
                 }
-
-                html += `<div class="card" data-categoria="${categoria}">
+                html += `<div class="card" data-categoria="${p[5]}">
                     <img loading="lazy" src="${urlImg}" alt="${nome}" onerror="tentarFoto(this, '${img}')">
                     <h3>${nome}</h3>
-                    <div style="color:#ffb4a2; margin-bottom:10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     ${p[2] > p[3] ? `<p class="preco-de">R$ ${precoDe}</p>` : '<p class="preco-de" style="visibility:hidden;">-</p>'}
                     <p class="preco-por">R$ ${precoPor}</p>
-                    <p class="estoque">${estoque > 0 ? `Apenas <strong>${estoque}</strong> disponível` : '<strong>Esgotado</strong>'}</p>
+                    <p class="estoque">${p[4] > 0 ? `Apenas <strong>${p[4]}</strong> em estoque` : '<strong>Esgotado</strong>'}</p>
                     <button class="btn-whats" onclick="adicionarCarrinho('${nome}', ${p[3]})">🛒 Adicionar</button>
                 </div>`;
             });
@@ -276,10 +230,7 @@
             document.getElementById('contador').innerText = carrinho.length;
             let html = "", total = 0;
             carrinho.forEach((item, i) => {
-                html += `<div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px solid #eee; padding-bottom:5px;">
-                    <div>${item.n}<br><strong>R$ ${item.p.toFixed(2).replace('.', ',')}</strong></div>
-                    <div style="color:red; cursor:pointer;" onclick="removerCarrinho(${i})">✕</div>
-                </div>`;
+                html += `<div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px solid #eee; padding-bottom:5px;"><div>${item.n}<br><strong>R$ ${item.p.toFixed(2).replace('.', ',')}</strong></div><div style="color:red; cursor:pointer;" onclick="removerCarrinho(${i})">✕</div></div>`;
                 total += item.p;
             });
             document.getElementById('lista-itens').innerHTML = html || "<p style='text-align:center;'>Vazio.</p>";
