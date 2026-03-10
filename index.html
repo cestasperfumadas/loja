@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cestas Perfumadas - Especial Dia da Mulher</title>
+    <title>Cestas Perfumadas - Mês do Consumidor</title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-83DRDPBV1F"></script>
     <script>
@@ -19,110 +19,92 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        /* Fundo creme elegante e fonte moderna */
         body { font-family: 'Montserrat', sans-serif; background-color: #fdf8f5; padding-bottom: 80px; color: #333; }
 
         /* MENU DE CATEGORIAS */
         .barra-nav { background-color: #d97a56; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
         .barra-nav ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; flex-wrap: wrap; }
         .barra-nav > ul > li { position: relative; }
-        .barra-nav a { display: block; color: white; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; padding: 18px 20px; transition: background-color 0.3s; cursor: pointer; letter-spacing: 0.5px;}
-        .barra-nav a:hover { background-color: #c26543; color: white; }
+        .barra-nav a { display: block; color: white; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; padding: 18px 20px; transition: 0.3s; cursor: pointer; letter-spacing: 0.5px;}
+        .barra-nav a:hover { background-color: #c26543; }
         
-        /* Destaque para o botão Dia da Mulher */
-        .btn-dia-mulher { background-color: #c94c65 !important; font-weight: 800 !important; font-size: 14px !important; letter-spacing: 1px !important;}
+        /* Destaque para o botão Mês do Consumidor */
+        .btn-campanha { background-color: #2c3e50 !important; font-weight: 800 !important; font-size: 14px !important; letter-spacing: 1px !important;}
 
-        .lista-suspensa { display: none; position: absolute; background-color: #ffffff; min-width: 220px; box-shadow: 0px 8px 20px rgba(0,0,0,0.1); z-index: 1; border-radius: 0 0 8px 8px; overflow: hidden; top: 100%; left: 0; }
+        .lista-suspensa { display: none; position: absolute; background-color: #ffffff; min-width: 220px; box-shadow: 0px 8px 20px rgba(0,0,0,0.1); z-index: 1; border-radius: 0 0 8px 8px; top: 100%; left: 0; }
         .lista-suspensa a { color: #555; padding: 14px 20px; text-transform: none; font-weight: 500; font-size: 14px; border-bottom: 1px solid #f5f5f5; }
-        .lista-suspensa a:hover { background-color: #fdf8f5; color: #d97a56; padding-left: 25px; transition: 0.2s; }
         .barra-nav li:hover .lista-suspensa { display: block; }
 
-        /* CABEÇALHO E INFO DE PAGAMENTO */
+        /* CABEÇALHO */
         header { background: white; padding-top: 55px; width: 100%; display: flex; flex-wrap: wrap; align-items: center; border-bottom: 1px solid #eee; }
         .header-logo-container { flex: 1; min-width: 300px; padding: 20px; text-align: center; }
         .logo-img { max-width: 100%; height: auto; max-height: 400px; display: block; margin: 0 auto; cursor: pointer; }
         .header-info-container { flex: 1.5; min-width: 300px; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; }
         .info-caixa { background: white; border: 1px solid #d97a56; border-radius: 8px; padding: 15px 20px; text-align: center; width: 100%; max-width: 380px; }
-        .info-caixa h3 { color: #d97a56; font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
         .info-caixa.destaque { background: #d97a56; color: white; border: none; box-shadow: 0 4px 10px rgba(217, 122, 86, 0.2);}
-        .info-caixa.destaque h3 { color: white; }
-        .info-caixa.destaque p { font-weight: 500; font-size: 1rem; }
 
-        /* BANNER E BARRA DE BUSCA */
+        /* BANNER E BUSCA */
         .hero-banner { background: linear-gradient(135deg, #d97a56, #c26543); color: white; text-align: center; padding: 30px 15px; margin: 0 auto; }
-        .hero-banner h1 { font-size: 2.2rem; margin-bottom: 8px; font-weight: 700; letter-spacing: 1px; }
-        .hero-banner .frase-efeito { font-size: 1.1rem; margin-bottom: 15px; font-weight: 400; font-style: italic; }
+        .hero-banner h1 { font-size: 2.2rem; margin-bottom: 8px; font-weight: 700; }
         .hero-banner .pronta-entrega { background-color: #fdf8f5; color: #d97a56; display: inline-block; padding: 8px 25px; border-radius: 30px; font-weight: 700; font-size: 0.95rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-transform: uppercase;}
 
         .busca-container { text-align: center; margin: -25px auto 30px auto; max-width: 90%; width: 600px; position: relative; z-index: 10; }
         .busca-container input { width: 100%; padding: 16px 25px; border-radius: 30px; border: none; font-family: 'Montserrat', sans-serif; font-size: 1rem; outline: none; box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: 0.3s; color: #555;}
-        .busca-container input:focus { box-shadow: 0 8px 25px rgba(217, 122, 86, 0.25); border: 1px solid #d97a56;}
 
-        /* SEÇÃO MISSÃO E VISÃO */
-        .sobre-nos { background: white; padding: 30px; margin: 20px auto; max-width: 960px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; display: none; }
-        .sobre-nos h3 { color: #d97a56; font-size: 1.3rem; margin-bottom: 10px; text-transform: uppercase; font-weight: 700;}
-        .sobre-nos p { color: #666; font-size: 1rem; line-height: 1.6; margin-bottom: 20px; }
-        .sobre-nos p:last-child { margin-bottom: 0; }
-
-        /* TÍTULO E VITRINE */
         .titulo-secao { text-align: center; color: #d97a56; margin-top: 10px; font-size: 1.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;}
 
+        /* VITRINE */
         .vitrine { max-width: 1200px; margin: 30px auto 50px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 15px; }
         .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); text-align: center; position: relative; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s;}
-        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
-        .card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; }
-        .card h3 { font-size: 1.05rem; margin-bottom: 8px; color: #333; font-weight: 500; line-height: 1.3;}
+        .card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; cursor: zoom-in; }
+        .card h3 { font-size: 1.05rem; margin-bottom: 8px; color: #333; font-weight: 500; line-height: 1.3; min-height: 40px;}
         
         .estrelas { color: #ffb4a2; font-size: 1rem; margin-bottom: 10px; letter-spacing: 2px;}
-
         .preco-de { text-decoration: line-through; color: #999; font-size: 0.85rem; }
-        .preco-por { color: #111; font-size: 1.5rem; font-weight: 700; margin: 2px 0; color: #d97a56; }
-        
+        .preco-por { color: #d97a56; font-size: 1.5rem; font-weight: 700; margin: 2px 0; }
         .estoque { color: #888; font-size: 0.8rem; margin-top: auto; margin-bottom: 15px; background-color: #f9f9f9; padding: 6px 10px; border-radius: 4px; display: inline-block; align-self: center;}
-        .estoque strong { font-size: 0.85rem; color: #d97a56;}
-        .destaque-combo { background-color: #fdf8f5; color: #d97a56; font-weight: 600; border: 1px solid #f2e1db; }
 
-        .btn-whats { display: flex; align-items: center; justify-content: center; gap: 8px; background-color: #d97a56; color: white; border: none; padding: 12px; border-radius: 30px; font-weight: 600; margin-top: 5px; width: 100%; cursor: pointer; transition: 0.3s; font-size: 0.9rem; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px;}
-        .btn-whats:hover { background-color: #c26543; }
+        .btn-whats { display: flex; align-items: center; justify-content: center; gap: 8px; background-color: #d97a56; color: white; border: none; padding: 12px; border-radius: 30px; font-weight: 600; margin-top: 5px; width: 100%; cursor: pointer; transition: 0.3s; font-size: 0.9rem; font-family: 'Montserrat', sans-serif; text-transform: uppercase;}
 
-        /* CONFIGURAÇÃO CELULAR */
+        /* MODAL DE ZOOM DA IMAGEM */
+        #modalZoom { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: zoom-out; }
+        #imgZoomContainer { position: relative; max-width: 90%; max-height: 90%; }
+        #imgZoom { width: 100%; height: auto; max-height: 80vh; border-radius: 8px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        #fecharZoom { position: absolute; top: -40px; right: 0; color: white; font-size: 40px; font-weight: bold; cursor: pointer; }
+
+        /* CARRINHO */
+        .carrinho-flutuante { position: fixed; bottom: 25px; right: 25px; background-color: #d97a56; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 26px; cursor: pointer; z-index: 1001; }
+        .contador-carrinho { position: absolute; top: -5px; right: -5px; background-color: #111; color: white; border-radius: 50%; width: 24px; height: 24px; font-size: 12px; font-weight: bold; display: flex; justify-content: center; align-items: center; border: 2px solid #fdf8f5;}
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1002; justify-content: center; align-items: center; }
+        .modal-carrinho { background: white; width: 90%; max-width: 420px; border-radius: 16px; padding: 25px; max-height: 80vh; overflow-y: auto; }
+        .btn-finalizar { background-color: #25d366; color: white; border: none; padding: 16px; border-radius: 30px; font-weight: 700; width: 100%; cursor: pointer; margin-top: 20px; text-transform: uppercase; }
+
         @media (max-width: 600px) {
             .vitrine { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 10px; }
             .card { padding: 12px; }
             .card img { height: 150px; }
             .card h3 { font-size: 0.9rem; }
-            .preco-de { font-size: 0.75rem; }
-            .preco-por { font-size: 1.3rem; }
-            .btn-whats { font-size: 0.75rem; padding: 10px 5px; letter-spacing: 0; }
         }
-
-        /* CARRINHO DE COMPRAS */
-        .carrinho-flutuante { position: fixed; bottom: 25px; right: 25px; background-color: #d97a56; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 26px; cursor: pointer; box-shadow: 0 6px 15px rgba(217, 122, 86, 0.4); z-index: 1001; transition: transform 0.3s; }
-        .carrinho-flutuante:hover { transform: scale(1.1); }
-        .contador-carrinho { position: absolute; top: -5px; right: -5px; background-color: #111; color: white; border-radius: 50%; width: 24px; height: 24px; font-size: 12px; font-weight: bold; display: flex; justify-content: center; align-items: center; border: 2px solid #fdf8f5;}
-
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1002; justify-content: center; align-items: center; backdrop-filter: blur(3px);}
-        .modal-carrinho { background: white; width: 90%; max-width: 420px; border-radius: 16px; padding: 25px; max-height: 80vh; overflow-y: auto; position: relative; font-family: 'Montserrat', sans-serif;}
-        .modal-carrinho h2 { color: #d97a56; margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px; text-align: center; font-weight: 700;}
-        .item-carrinho { display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px solid #f9f9f9; padding-bottom: 15px; align-items: center;}
-        .item-detalhe { flex: 1; font-size: 0.95rem; color: #444; font-weight: 500;}
-        .item-remover { background: #ffebee; color: #d32f2f; cursor: pointer; font-weight: bold; font-size: 1rem; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px; transition: 0.2s;}
-        .carrinho-total { font-size: 1.3rem; font-weight: 700; text-align: right; margin-top: 25px; color: #d97a56; }
-        .btn-finalizar { background-color: #25d366; color: white; border: none; padding: 16px; border-radius: 30px; font-weight: 700; width: 100%; cursor: pointer; margin-top: 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);}
-        .btn-fechar { background-color: #f5f5f5; color: #666; border: none; padding: 14px; border-radius: 30px; font-weight: 600; width: 100%; cursor: pointer; margin-top: 10px; font-family: 'Montserrat', sans-serif;}
     </style>
 </head>
 <body>
 
+    <div id="modalZoom" onclick="fecharZoom()">
+        <div id="imgZoomContainer">
+            <span id="fecharZoom">&times;</span>
+            <img id="imgZoom">
+        </div>
+    </div>
+
     <nav class="barra-nav">
         <ul>
             <li><a onclick="filtrar('inicio', '')">Início</a></li>
-            <li><a class="btn-dia-mulher" onclick="filtrar('promocoes', 'ESPECIAL DIA DA MULHER 🌹')">🌹 Dia da Mulher</a></li>
+            <li><a class="btn-campanha" onclick="filtrar('promocoes', '🛒 MÊS DO CONSUMIDOR')">🛒 Consumidor</a></li>
             <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
             <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
-            <li><a href="javascript:void(0)">Maquiagem ▾</a><div class="lista-suspensa"><a onclick="filtrar('maquiagem', 'Maquiagem e Kits')">Ver Tudo</a></div></li>
-            <li><a href="javascript:void(0)">Infantil ▾</a><div class="lista-suspensa"><a onclick="filtrar('infantil', 'Linha Infantil')">Mamãe e Bebê</a></div></li>
-            <li><a href="javascript:void(0)">Corpo e Banho ▾</a><div class="lista-suspensa"><a onclick="filtrar('ekos', 'Natura Ekos')">Natura Ekos</a><a onclick="filtrar('hidratantes', 'Hidratantes e Óleos')">Hidratantes e Óleos</a><a onclick="filtrar('body-splash', 'Body Splash')">Body Splash</a><a onclick="filtrar('sabonetes', 'Sabonetes')">Sabonetes</a><a onclick="filtrar('desodorantes', 'Desodorantes')">Desodorantes</a></div></li>
+            <li><a href="javascript:void(0)">Maquiagem ▾</a><div class="lista-suspensa"><a onclick="filtrar('maquiagem', 'Maquiagem e Kits')">Kits e Batons</a></div></li>
+            <li><a href="javascript:void(0)">Infantil ▾</a><div class="lista-suspensa"><a onclick="filtrar('infantil', 'Linha Mamãe e Bebê')">Infantil</a></div></li>
+            <li><a href="javascript:void(0)">Corpo e Banho ▾</a><div class="lista-suspensa"><a onclick="filtrar('ekos', 'Natura Ekos')">Natura Ekos</a><a onclick="filtrar('body-splash', 'Body Splash')">Body Splash</a><a onclick="filtrar('sabonetes', 'Sabonetes')">Sabonetes</a><a onclick="filtrar('hidratantes', 'Hidratantes')">Hidratantes</a></div></li>
         </ul>
     </nav>
 
@@ -130,20 +112,15 @@
         <div class="header-logo-container"><img src="SLOGAN.jpg" alt="Cestas Perfumadas" class="logo-img" onerror="this.src='SLOGAN.png'" onclick="filtrar('inicio', '')"></div>
         <div class="header-info-container">
             <div class="info-caixa"><h3>💳 Aceitamos Cartões e Pix</h3></div>
-            <div class="info-caixa destaque"><h3>🛍️ Compras acima de R$ 300,00</h3><p>Parcelamos em até 3x</p><p style="font-size: 0.9rem; font-weight: 400; margin-top: 5px;">📍 Entregamos em Cotia, Osasco e região!</p></div>
+            <div class="info-caixa destaque"><h3>🛍️ Especial Mês do Consumidor</h3><p>Promoções imperdíveis em todo o site!</p></div>
         </div>
     </header>
 
     <div class="hero-banner">
-        <h1>Cestas Perfumadas</h1><p class="frase-efeito">Presentes inesquecíveis a um clique de distância.</p><p class="pronta-entrega">Produtos a Pronta Entrega</p>
+        <h1>Cestas Perfumadas</h1><p class="pronta-entrega">Produtos a Pronta Entrega</p>
     </div>
 
-    <div class="busca-container"><input type="text" id="inputBusca" placeholder="Pesquisar presentes, produtos, fragrâncias..." onkeyup="buscarProdutos()"></div>
-
-    <div id="secao-sobre" class="sobre-nos">
-        <h3>Nossa Missão</h3><p>Proporcionar momentos inesquecíveis de carinho e autocuidado, transformando a excelência dos produtos Natura em presentes únicos, montados com amor e dedicação.</p>
-        <h3>Nossa Visão</h3><p>Ser a principal referência em presentes afetivos na nossa região, reconhecida por conectar pessoas através da beleza e do bem-estar.</p>
-    </div>
+    <div class="busca-container"><input type="text" id="inputBusca" placeholder="Pesquisar perfumes, kits ou cestas..." onkeyup="buscarProdutos()"></div>
 
     <h2 id="titulo-vitrine" class="titulo-secao"></h2>
 
@@ -153,248 +130,101 @@
 
     <div class="modal-overlay" id="modalCarrinho">
         <div class="modal-carrinho">
-            <h2>🛒 O seu Carrinho</h2><div id="lista-itens"></div>
-            <div class="carrinho-total">Total: R$ <span id="valor-total">0,00</span></div>
+            <h2 style="text-align:center; color:#d97a56; margin-bottom:15px;">🛒 Seu Carrinho</h2>
+            <div id="lista-itens"></div>
+            <div style="font-size: 1.3rem; font-weight: 700; text-align: right; margin-top: 25px; color: #d97a56;">Total: R$ <span id="valor-total">0,00</span></div>
             <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar no WhatsApp</button>
-            <button class="btn-fechar" onclick="fecharCarrinho()">Continuar a Comprar</button>
+            <button style="width:100%; padding:10px; margin-top:10px; border:none; border-radius:30px; cursor:pointer;" onclick="fecharCarrinho()">Continuar Comprando</button>
         </div>
     </div>
 
     <script>
+        function abrirZoom(src) {
+            document.getElementById('modalZoom').style.display = "flex";
+            document.getElementById('imgZoom').src = src;
+        }
+        function fecharZoom() {
+            document.getElementById('modalZoom').style.display = "none";
+        }
+
         function tentarFoto(imgElement, originalSrc) {
             let base = originalSrc.substring(0, originalSrc.lastIndexOf('.'));
             if(base === "") base = originalSrc;
-            let ext = originalSrc.includes('.') ? originalSrc.substring(originalSrc.lastIndexOf('.')) : '';
-            
-            // MOTOR DE BUSCA DE FOTOS (Trata erros de espaço, símbolos +, letras maiúsculas e pontos duplos)
-            let alt = [
-                encodeURI(originalSrc).replace(/\+/g, '%2B'),
-                encodeURI(originalSrc.replace(/\+/g, ' ')).replace(/\+/g, '%2B'),
-                encodeURI(originalSrc.replace(' + ', '+')).replace(/\+/g, '%2B'),
-                encodeURI(originalSrc.replace('+', ' + ')).replace(/\+/g, '%2B'),
-                encodeURI(base + '.png').replace(/\+/g, '%2B'),
-                encodeURI(base + '.jpg').replace(/\+/g, '%2B'),
-                encodeURI(base + '.jpeg').replace(/\+/g, '%2B'),
-                encodeURI(base + '.PNG').replace(/\+/g, '%2B'),
-                encodeURI(base + '.JPG').replace(/\+/g, '%2B'),
-                encodeURI(base + '..png').replace(/\+/g, '%2B'),
-                encodeURI(base + '..jpg').replace(/\+/g, '%2B'),
-                encodeURI(originalSrc.replace('.', '') + '.png').replace(/\+/g, '%2B'),
-                encodeURI(originalSrc.replace(' + Pincel olhos', '')).replace(/\+/g, '%2B'),
-                encodeURI(originalSrc.replace(' + Pincel delineador', '')).replace(/\+/g, '%2B')
-            ];
-            
-            // Remove duplicatas para ser mais rápido
-            alt = [...new Set(alt)];
-            
+            let alt = [encodeURI(originalSrc).replace(/\+/g, '%2B'), encodeURI(base + '.png').replace(/\+/g, '%2B'), encodeURI(base + '.jpg').replace(/\+/g, '%2B'), encodeURI(base + '.jpeg').replace(/\+/g, '%2B')];
             let attempt = 0;
             function nextAttempt() {
                 if (attempt < alt.length) {
                     let trySrc = alt[attempt++];
                     let imgTeste = new Image();
-                    imgTeste.onload = function() { 
-                        imgElement.src = this.src; 
-                        imgElement.onerror = null; 
-                    };
+                    imgTeste.onload = function() { imgElement.src = this.src; };
                     imgTeste.onerror = nextAttempt;
                     imgTeste.src = trySrc;
-                } else {
-                    imgElement.src = 'https://via.placeholder.com/180x180/fdf8f5/d97a56?text=Sem+Foto'; 
-                    imgElement.onerror = null;
-                }
+                } else { imgElement.src = 'https://via.placeholder.com/180x180/fdf8f5/d97a56?text=Sem+Foto'; }
             }
             nextAttempt();
         }
 
-        // LISTA DE PRODUTOS COMPRIMIDA E ATUALIZADA - ESPECIAL DIA DA MULHER
+        // LISTA 100% COMPLETA RESTAURADA
         const produtos = [
-            // ================= VÍDEOS SHOWCASE (APENAS NA ABA INÍCIO) =================
-            ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "destaque", "video_vitrine"],
+            ["Vídeo cesta Flores.mp4", "Vitrine de Cestas", 0, 0, 0, "destaque", "video_vitrine"],
             ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "destaque", "video_vitrine"],
             ["Vídeo tigrão.mp4", "Cesta Pelúcia Tigrão", 0, 0, 0, "destaque", "video_vitrine"],
 
-            // ================= MAQUIAGEM (KITS BATOM + PINCEL) =================
-            // KITS FACES - R$ 25,00
-            ["Kit Batom Faces vinho 540.png", "Kit Batom Vinho 540", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces rosa 200.png", "Kit Batom Rosa 200", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces rosa 210.png", "Kit Batom Rosa 210", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces vinho 532.png", "Kit Batom Vinho 532", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces Vemelho145.png", "Kit Batom Vermelho 145", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces vermelho 117.png", "Kit Batom Vermelho 117", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces Hey Honey + Pincel olhos.png", "Kit Batom Hey Honey", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces Vinho in Love + Pincel olhos.png", "Kit Batom Vinho in Love", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces Purple Rain + Pincel olhos.png", "Kit Batom Purple Rain", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Faces Cookie Nude + Pincel olhos.png", "Kit Batom Cookie Nude", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            
-            // KITS UNA - R$ 35,00
-            ["Kit Batom Una Vermelho 4C + Pincel olhos.png", "Kit Una Vermelho 4C", 59.90, 35.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom Una Nude 10C + Pincel olhos.png", "Kit Una Nude 10C", 59.90, 35.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Batom liq. Rosé Destemido + pincel olhos.png", "Kit Batom Liq. Rosé", 59.90, 35.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Mascara de cilios + Curvex.png", "Kit Máscara + Curvex", 59.90, 35.00, 1, "maquiagem destaque promocoes", "presente"],
-
-            // KITS PÓ COMPACTO - R$ 40,00
-            ["Kit Pó compacto 432N + pincel duo fibras.png", "Kit Pó Compacto 432N", 69.90, 40.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Pó compacto 532N + pincel blush.png", "Kit Pó Compacto 532N", 69.90, 40.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Pó compacto 132Q + pincel blush Una.png", "Kit Pó Compacto 132Q", 69.90, 40.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Pó compacto 132Q + pincel duo fibras Una.png", "Kit Pó 132Q + Duo Fibras", 69.90, 40.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit Pó compacto 132Q + delineador.png", "Kit Pó 132Q + Delineador", 69.90, 40.00, 1, "maquiagem destaque promocoes", "presente"],
-
-            // KITS P.STAY (POWER STAY) - R$ 45,00
-            ["Kit P.Stay Batom liq Uva Rosada +Curvex.png", "Kit P.Stay Uva Rosada", 75.90, 45.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit P.Stay Batom liq Marsala +pincel olhos.png", "Kit P.Stay Marsala", 75.90, 45.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit P.Stay Laranja.png", "Kit P.Stay Laranja", 75.90, 45.00, 1, "maquiagem destaque promocoes", "presente"],
-            ["Kit P.Stay Vermelhaço +delineador.png", "Kit P.Stay Vermelhaço", 75.90, 45.00, 1, "maquiagem destaque promocoes", "presente"],
-
-            // ================= CESTAS =================
+            // CESTAS
+            ["Cesta Coração Essencial Exc Fem.jpeg", "Cesta Coração Essencial", 300.00, 300.00, 1, "cestas destaque promocoes", "presente"],
             ["Cesta Essencial Ato fem.png", "Cesta Essencial Ato", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Essencial Atrai fem.png", "Cesta Essencial Atraí", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Essencial fem.png", "Cesta Essencial", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Essencial Floral.png", "Cesta Essencial Floral", 250.00, 250.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Ilia.png", "Cesta Ilía Completa", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
             ["Cesta Humor Liberta.png", "Cesta Humor Liberta", 130.00, 130.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Ilia.png", "Cesta Ilía", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Kaiak fem.png", "Cesta Kaiak Feminino", 180.00, 180.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Luna Fascinante.png", "Cesta Luna Fascinante", 185.00, 185.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Luna.png", "Cesta Luna", 185.00, 185.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Luninha.png", "Cesta Luninha", 70.00, 70.00, 1, "cestas destaque promocoes infantil", "presente"],
-            ["Cesta Meu 1º Humor.png", "Cesta Meu 1º Humor", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Revelar.png", "Cesta Revelar", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Luna.png", "Cesta Luna Tradicional", 185.00, 185.00, 1, "cestas destaque promocoes", "presente"],
+            ["Cesta Meu 1º Humor.png", "Cesta Meu Primeiro Humor", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
 
-            // ================= KITS CORPO E BANHO =================
-            ["Kit Algodão.png", "Kit Algodão", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
-            ["Kit Ameixa e Flor de Baunilha.png", "Kit Ameixa e Baunilha", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
-            ["Kit Amora e flor de pessego.png", "Kit Amora e Pêssego", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
-            ["Kit Camomila e Lavanda.png", "Kit Camomila e Lavanda", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
-            ["Kit Flores.png", "Kit Flores", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
-            ["Kit Limão Siciliano.png", "Kit Limão Siciliano", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
-            ["Kit Maçã Caramelada.png", "Kit Maçã Caramelada", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
-            ["Kit Ilia e luna.png", "Kit Ilía e Luna", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
-            ["Kit Kaiak Aventura fem.png", "Kit Kaiak Aventura Fem", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
-            ["Kit Kriska drama.png", "Kit Kriska Drama", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
-            ["Kit Kriska.png", "Kit Kriska Clássico e Shock", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
-            ["Kit Luna.png", "Kit Luna e Deo", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
-            ["Kit Primeiro humor.png", "Kit Primeiro Humor", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
-            
-            ["Kit Essencial Atrai masc..png", "Kit Essencial Atraí Masc", 60.00, 60.00, 1, "cestas destaque promocoes masculina", "presente"],
-            ["Kit Essencial deo e shampoo.png", "Kit Essencial Deo Masc", 60.00, 60.00, 1, "cestas destaque promocoes masculina", "presente"],
-            ["Kit Humor liberta.png", "Kit Humor Liberta", 60.00, 60.00, 1, "cestas destaque promocoes feminina", "presente"],
-            ["Kit Kaiak Aventura masc.png", "Kit Kaiak Aventura Masc", 60.00, 60.00, 1, "cestas destaque promocoes masculina", "presente"],
-            ["Kit deo natura homem.png", "Kit Natura Homem Deo", 60.00, 60.00, 1, "cestas destaque promocoes masculina", "presente"],
-            ["Kit shampoo humor e essencial deo.png", "Kit Humor e Essencial", 60.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            
-            ["Kit Kaiak deo fem.png", "Kit Kaiak Deo Fem", 70.00, 70.00, 1, "cestas destaque promocoes feminina", "presente"],
-            ["Kit Luna Radiante.png", "Kit Luna Radiante", 150.00, 150.00, 1, "cestas destaque promocoes feminina", "presente"],
-            ["Kit Kriska flores.png", "Kit Kriska Flores", 170.00, 170.00, 1, "cestas destaque promocoes feminina", "presente"],
-            ["Kit Romã Glaceadas.png","Kit Romã Glaceadas",79.90,79.90,1,"cestas destaque promocoes corpo-banho","presente"],
-            ["Cesta Coração Essencial Exc Fem.jpeg","Cesta Coração Essencial",300.00,300.00,1,"cestas destaque promocoes","presente"],
-            ["cestaluna.png","Kit Presente Luna",349.90,349.90,1,"cestas destaque promocoes","presente"],
+            // KITS MAQUIAGEM (NAS CAIXINHAS)
+            ["Kit Batom Faces vinho 540.png", "Kit Batom Vinho 540", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
+            ["Kit Batom Faces Vemelho145.png", "Kit Batom Vermelho 145", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
+            ["Kit Batom Faces rosa 200.png", "Kit Batom Rosa 200", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
+            ["Kit Batom Una Vermelho 4C + Pincel olhos.png", "Kit Una Vermelho 4C", 59.90, 35.00, 1, "maquiagem destaque promocoes", "presente"],
+            ["Kit P.Stay Laranja.png", "Kit Power Stay Laranja", 75.90, 45.00, 1, "maquiagem destaque promocoes", "presente"],
 
-            // ================= PERFUMARIA =================
-            ["Essencial Masc.png","Essencial Masculino",279.90,209.90,5,"masculina destaque promocoes",""],
-            ["Natura Homem.png","Natura Homem Clássico",209.90,160.00,1,"masculina destaque promocoes",""],
-            ["KAIAK Masculino.png","Kaiak Masculino",189.90,99.90,5,"masculina destaque promocoes",""],
-            ["Natura Homem Sagaz.png","Homem Sagaz",239.90,170.00,1,"masculina destaque promocoes",""],
-            ["Natura Homem Essence.png","Homem Essence",239.90,170.00,1,"masculina destaque promocoes",""],
-            ["Natura Homem Dom.png","Homem Dom",239.90,170.00,1,"masculina destaque promocoes",""],
-            ["Natura Homem Tato.png","Homem Tato",239.90,170.00,1,"masculina destaque promocoes",""],
-            ["Natura Homem Verum.png","Homem Verum",239.90,170.00,1,"masculina destaque promocoes",""],
-            ["Essencial Exclusivo Masc..png","Essencial Exclusivo",279.90,209.90,1,"masculina destaque promocoes",""],
-            ["Essencial Intenso Masc.png","Essencial Intenso",279.90,209.90,1,"masculina destaque promocoes",""],
-            ["Kaiak Aventura Masc.png","Kaiak Aventura",189.90,120.00,1,"masculina destaque promocoes",""],
-            ["Kaiak Pulso Masc.png","Kaiak Pulso",189.90,120.00,1,"masculina destaque promocoes",""],
-            ["Kaiak Urbe.png","Kaiak Urbe",189.90,120.00,1,"masculina destaque promocoes",""],
-            ["Kaiak Oceano masc.png","Kaiak Oceano",189.90,120.00,1,"masculina destaque promocoes",""],
-            ["Sintonia Maculino.png","Sintonia Clássico",139.90,100.00,1,"masculina destaque promocoes",""],
+            // PERFUMARIA MASCULINA
+            ["KAIAK Masculino.png", "Kaiak Masculino", 189.90, 99.90, 5, "masculina destaque promocoes", ""],
+            ["Essencial Masc.png", "Essencial Masculino", 279.90, 209.90, 5, "masculina destaque promocoes", ""],
+            ["Natura Homem.png", "Natura Homem Clássico", 209.90, 160.00, 1, "masculina destaque promocoes", ""],
+            ["Natura Homem Sagaz.png", "Homem Sagaz", 239.90, 170.00, 1, "masculina destaque promocoes", ""],
+            ["Sintonia Maculino.png", "Sintonia Clássico", 139.90, 100.00, 1, "masculina destaque promocoes", ""],
 
-            ["Kaiak Feminino 4un.png","Kaiak Feminino",189.90,120.00,2,"feminina destaque promocoes",""],
-            ["Luna 1un.png","Luna Tradicional",169.90,130.00,1,"feminina destaque promocoes",""],
-            ["Luna Radiante 2un.png","Luna Radiante",169.90,130.00,2,"feminina destaque promocoes",""],
-            ["Luna Fascinante 1un.png","Luna Fascinante",169.90,130.00,1,"feminina destaque promocoes",""],
-            ["Luna Rosé 1un.png","Luna Rosé",169.90,130.00,1,"feminina destaque promocoes",""],
-            ["Luna Intensa.png","Luna Intensa",219.90,159.90,1,"feminina destaque promocoes",""],
-            ["Essencial Feminino 2un.png","Essencial Feminino",279.90,209.90,2,"feminina destaque promocoes",""],
-            ["Essencial Exclusivo Fem 2un.png","Essencial Exclus. Fem",279.90,209.90,2,"feminina destaque promocoes",""],
-            ["Essencial Floral 1un.png","Essencial Floral",279.90,209.90,1,"feminina destaque promocoes",""],
-            ["Essencial Supreme Fem 1un.png","Essencial Supreme",279.90,209.90,1,"feminina destaque promocoes",""],
-            ["Meu Primeiro Humor 4un.png","Meu Primeiro Humor",164.90,164.90,4,"feminina destaque",""],
-            ["Humor Próprio 1un.png","Humor Próprio",164.90,164.90,1,"feminina destaque",""],
-            ["Ilia Secreto.png","Ilía Secreto",199.90,159.90,1,"feminina destaque promocoes",""],
+            // PERFUMARIA FEMININA
+            ["Luna Intensa.png", "Luna Intensa", 219.90, 159.90, 1, "feminina destaque promocoes", ""],
+            ["Ilia Secreto.png", "Ilía Secreto", 199.90, 159.90, 1, "feminina destaque promocoes", ""],
+            ["Una Brilho.png", "Una Brilho 75ml", 319.90, 219.90, 1, "feminina destaque promocoes", ""],
+            ["Luna Tradicional.png", "Luna Tradicional", 169.90, 130.00, 1, "feminina destaque promocoes", ""],
+            ["Kaiak Feminino 4un.png", "Kaiak Feminino", 189.90, 120.00, 2, "feminina destaque promocoes", ""],
 
-            ["Una Brilho.png","Una Brilho 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
-            ["Una Blush.png","Una Blush 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
-            ["Una Somos.png","Una Somos 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
-            ["Una Artisan.png","Una Artisan 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
-            ["Una Senses.png","Una Senses 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
-            ["Una Celebrar.png","Una Celebrar 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
-
-            // ================= REFIL PERFUMARIA =================
-            ["Essencial Exclusivo Masc Refil.png", "Refil Essencial Exclusivo Masc", 213.90, 149.90, 1, "masculina destaque promocoes", ""],
+            // REFIL PERFUMARIA
+            ["Essencial Exclusivo Masc Refil.png", "Refil Essencial Masc", 213.90, 149.90, 1, "masculina destaque promocoes", ""],
             ["Único Refil Masc.png", "Refil Essencial Único Masc", 228.90, 169.90, 1, "masculina destaque promocoes", ""],
-            ["Essencial Exclusivo Fem Refil 2un.png", "Refil Essencial Exclusivo Fem", 213.90, 149.90, 2, "feminina destaque promocoes", ""],
-            ["Esencial Único Fem. Refil 5un.png", "Refil Essencial Único Fem", 228.90, 169.90, 5, "feminina destaque promocoes", ""],
+            ["Essencial Exclusivo Fem Refil 2un.png", "Refil Essencial Fem", 213.90, 149.90, 2, "feminina destaque promocoes", ""],
+            ["Esencial Único Fem. Refil 5un.png", "Refil Único Fem Refil", 228.90, 169.90, 5, "feminina destaque promocoes", ""],
 
-            // ================= INFANTIL =================
-            ["MMBB Colonia 10un.jpg","Colônia Mamãe e Bebê",106.90,74.90,7,"infantil destaque promocoes",""],
-            ["MMBB Colonia Rlaxante 1un.jpg","Colônia Relaxante",106.90,74.90,0,"infantil destaque promocoes",""],
-            ["MMBB Shampoo 2un.jpg","Shampoo Mamãe e Bebê",45.90,35.90,1,"infantil destaque promocoes",""],
-            ["MMBB Condicionador 3un.jpg","Condicionador MMBB",45.90,35.90,3,"infantil destaque promocoes",""],
-            ["MMBB Cachos Shampoo 1un.jpg","Shampoo MMBB Cachos",45.90,35.90,1,"infantil destaque promocoes",""],
-            ["MMBB Cachos Condicionador 2un.jpg","Condic. MMBB Cachos",45.90,35.90,2,"infantil destaque promocoes",""],
-            ["MMBB Cachos creme pentear 2un.jpg","Creme Pentear Cachos",49.50,39.90,2,"infantil destaque promocoes",""],
-            ["MMBB Hidratante 3un.jpg","Hidratante MMBB",69.90,49.90,3,"infantil destaque promocoes",""],
-            ["MMBB com 5 Sabonetes 2un.jpg","Sabonete MMBB c/ 5",51.90,34.90,2,"infantil destaque promocoes",""],
-            ["MMBB com 2 Sabonetes 3un.jpg","Sabonete MMBB c/ 2",31.40,19.90,3,"infantil destaque promocoes",""],
-            ["MMBB Sab. Liq. 50ml 2un.jpg","Sabonete Líq. 50ml",26.90,26.90,2,"infantil destaque",""],
-            ["MMBB 16 Lenços 4un.jpg","Lenços MMBB 16un",13.10,9.90,4,"infantil destaque promocoes",""],
-            ["Kit PPBB Miniaturas 3un.jpg","Kit PPBB Miniaturas",69.90,39.90,3,"infantil destaque promocoes",""],
+            // INFANTIL
+            ["MMBB Colonia 10un.jpg", "Colônia Mamãe e Bebê", 106.90, 74.90, 7, "infantil destaque promocoes", ""],
+            ["MMBB Shampoo 2un.jpg", "Shampoo Mamãe e Bebê", 45.90, 35.90, 1, "infantil destaque promocoes", ""],
+            ["MMBB Hidratante 3un.jpg", "Hidratante Mamãe e Bebê", 69.90, 49.90, 3, "infantil destaque promocoes", ""],
 
-            // ================= EKOS =================
-            ["Ekos Colonia 150 ml Cacau 1un.jpg","Ekos Frescor Cacau",129.90,99.90,1,"ekos feminina destaque promocoes",""],
-            ["Ekos Colonia 150 ml Maracuja 1un.jpg","Ekos Frescor Maracujá",129.90,99.90,1,"ekos feminina destaque promocoes",""],
-            ["Ekos Colonia 150 ml Maracuja noite 1un.jpg","Ekos Maracujá Noite",137.90,99.90,1,"ekos feminina destaque promocoes",""],
-            ["Ekos Colonia Rf 150 ml Maracuja 1un.jpg","Refil Ekos Maracujá",105.90,105.90,1,"ekos feminina destaque",""],
-            ["Ekos Colonia 75 ml Maracuja 1un.jpg","Ekos Maracujá 75ml",97.90,69.90,1,"ekos feminina destaque promocoes",""],
-            ["Ekos Ryo Chuva 1un.jpg","Ekos Ryos Chuva",199.90,139.90,1,"ekos feminina destaque promocoes",""],
-            ["Ekos Ryo Vivo 2un.jpg","Ekos Ryos Vivo",199.90,139.90,2,"ekos feminina destaque promocoes",""],
-            
-            // ================= HIDRATANTES E ÓLEOS =================
-            ["Oleo Seve Amendoas doces 2un.jpg","Óleo Sève Amêndoas",116.90,79.90,2,"corpo-banho hidratantes destaque promocoes",""],
-            ["Oleo Seve Amendoas e Cereja 1un.png","Óleo Sève Ame/Cereja",116.90,79.90,1,"corpo-banho hidratantes destaque promocoes",""],
-            ["Hidratante Tamara e Canela 2un.png","Hidratante Tâmara",78.90,54.90,2,"corpo-banho hidratantes destaque promocoes",""],
-            ["Hidratante Maçã Caramelada 4un.png","Hidratante Maçã Caram.",78.90,54.90,4,"corpo-banho hidratantes destaque promocoes",""],
-            ["Hidratante Cereja e Avelã 8un.png","Hidratante Cereja e Avelã",78.90,54.90,8,"corpo-banho hidratantes destaque promocoes",""],
-            ["Hidratante Ameixa e Flor de Baunilha 5un.png","Ameixa e Baunilha",78.90,54.90,4,"corpo-banho hidratantes destaque promocoes",""],
-            ["Hidratante Macadamia 10un.png","Hidratante Macadâmia",78.90,54.90,10,"corpo-banho hidratantes destaque promocoes",""],
+            // EKOS
+            ["Ekos Colonia 150 ml Maracuja 1un.jpg", "Frescor Ekos Maracujá", 129.90, 99.90, 1, "ekos destaque promocoes", ""],
+            ["Ekos Colonia 150 ml Cacau 1un.jpg", "Frescor Ekos Cacau", 129.90, 99.90, 1, "ekos destaque promocoes", ""],
 
-            // ================= BODY SPLASH =================
-            ["Body Splash Flores novo.png", "Body Splash Flores", 93.90, 65.00, 6, "corpo-banho body-splash destaque promocoes", ""],
-            ["Body Splash Morango e Baunilha.jpg", "Body Splash Morango e Baunilha", 93.90, 65.00, 10, "corpo-banho body-splash destaque promocoes", ""],
-            ["Body Cereja Negra 3un.jpg","Body Cereja Negra",93.90,60.00,3,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Algodão 4un.jpg","Body Algodão",93.90,60.00,4,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Maça Caramelada 4uni.png","Body Maçã Caramelada",93.90,60.00,7,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Amora Flor de Pessego.png","Body Amora e Pêssego",93.90,60.00,6,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Acerola e Hibisco.png","Body Acerola e Hibisco",93.90,60.00,1,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Jambo Rosa e Caju.png","Body Jambo Rosa e Caju",93.90,60.00,2,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Romã e Amendoas Glaceadas.png","Body Romã e Amêndoas",93.90,60.00,3,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Flores Pessego e Jasmin.png","Body Flores de Pêssego",93.90,60.00,2,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Chá de Camomila 4 uni.jpg","Body Chá de Camomila",93.90,60.00,4,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Limão Siciliano 5uni.png","Body Limão Siciliano",93.90,60.00,4,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Macadâmia 2uni.png","Body Macadâmia",93.90,60.00,2,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Uva Rosa E Romã 2un.png","Body Uva Rosa e Romã",93.90,60.00,2,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Ameixa e Flor de Baunilha 6un.jpg","Body Ameixa e Baunilha",93.90,60.00,5,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Flor de Maçã 3un.png","Body Flor de Maçã",93.90,60.00,3,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Cereja e Avelã 3un.jpg","Body Cereja e Avelã",93.90,60.00,3,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Amora e Jabuticaba 1uni.png","Body Amora e Jabuticaba",93.90,60.00,1,"corpo-banho body-splash destaque promocoes",""],
-            ["Body Framboesa e Pimenta Vermelha 1 un.png","Body Framboesa Pimenta",93.90,60.00,1,"corpo-banho body-splash destaque promocoes",""],
+            // BODY SPLASH
+            ["Body Splash Flores novo.png", "Body Splash Flores", 93.90, 65.00, 6, "body-splash destaque promocoes", ""],
+            ["Body Splash Morango e Baunilha.jpg", "Morango e Baunilha", 93.90, 65.00, 10, "body-splash destaque promocoes", ""],
+            ["Body Cereja Negra 3un.jpg", "Body Cereja Negra", 93.90, 60.00, 3, "body-splash destaque promocoes", ""],
+            ["Body Algodão 4un.jpg", "Body Splash Algodão", 93.90, 60.00, 4, "body-splash destaque promocoes", ""],
 
-            // ================= SABONETES =================
-            ["Sabonete Noz pecã 3un.png","Sabonete Noz Pecã",34.90,24.90,3,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Amora e Flor de Pessego 10un.png","Amora e Flor Pêssego",34.90,24.90,10,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Limão Siciliano 9un.png","Sabonete Limão Siciliano",34.90,24.90,7,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Alecrim 4un.png","Sabonete Alecrim",34.90,24.90,0,"sabonetes corpo-banho destaque promocoes",""],
-
-            // ================= DESODORANTES =================
-            ["Desodorante Kaiak Avent masc 3un.jpg","Desod. Kaiak Avent Masc",56.90,29.90,3,"corpo-banho desodorantes masculina destaque promocoes",""],
-            ["Rollon Macadamia 1un.png","Roll-on Macadâmia",29.90,29.90,0,"corpo-banho desodorantes destaque",""]
+            // SABONETES E HIDRATANTES
+            ["Sabonete Noz pecã 3un.png", "Sabonete Noz Pecã", 34.90, 24.90, 3, "sabonetes destaque promocoes", ""],
+            ["Sabonete Limão Siciliano 9un.png", "Sabonete Limão", 34.90, 24.90, 5, "sabonetes destaque promocoes", ""],
+            ["Oleo Seve Amendoas doces 2un.jpg", "Óleo Sève Amêndoas", 116.90, 79.90, 2, "hidratantes destaque promocoes", ""],
+            ["Hidratante Macadamia 10un.png", "Hidratante Macadâmia", 78.90, 54.90, 10, "hidratantes destaque promocoes", ""]
         ];
 
         function renderizarVitrine() {
@@ -402,110 +232,69 @@
             produtos.forEach((p) => {
                 let img = p[0], nome = p[1], precoDe = p[2].toFixed(2).replace('.', ','), precoPor = p[3].toFixed(2).replace('.', ',');
                 let estoque = p[4], categoria = p[5], tag = p[6];
-                
-                let htmlPrecoDe = (p[2] > p[3]) ? `<p class="preco-de">R$ ${precoDe}</p>` : `<p class="preco-de" style="visibility: hidden;">-</p>`;
-                let urlImagemSegura = encodeURI(img).replace(/\+/g, '%2B');
+                let urlImg = encodeURI(img).replace(/\+/g, '%2B');
 
                 if (tag === 'video_vitrine') {
-                    html += `
-                    <div class="card" data-categoria="${categoria}" style="border: 1px solid #d97a56; background-color: #fdf8f5; grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
-                        <h3 style="color: #d97a56; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">${nome}</h3>
-                        <video src="${urlImagemSegura}" controls muted loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); max-height: 400px; object-fit: cover;"></video>
-                        <p style="font-size: 1.1rem; font-weight: 600; color: #d97a56; margin-top: 15px;">✨ Conheça nossos trabalhos ✨</p>
+                    html += `<div class="card" data-categoria="${categoria}" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+                        <video src="${urlImg}" controls muted loop playsinline style="width: 100%; border-radius: 8px;"></video>
                     </div>`;
                     return; 
                 }
 
-                let textoEstoque = `Apenas <strong>${estoque}</strong> em estoque`;
-                let classeEstoque = "estoque";
-
-                if (tag === 'presente' && estoque > 0) {
-                    textoEstoque = `🎁 <strong>Apenas ${estoque} disponíveis!</strong>`; 
-                    classeEstoque = "estoque destaque-combo";
-                } else if (estoque === 0) {
-                    textoEstoque = `⏳ <strong>Esgotado!</strong>`;
-                    classeEstoque = "estoque";
-                } else if (tag === 'limitado') {
-                    textoEstoque = `⏳ <strong>Estoque Limitado!</strong>`;
-                }
-
-                let botaoAdicionar = estoque > 0 
-                    ? `<button class="btn-whats" onclick="adicionarCarrinho('${nome}', ${p[3]})">🛒 Adicionar</button>` 
-                    : `<button class="btn-whats" style="background-color: #ccc; cursor: not-allowed;">Indisponível</button>`;
-
-                html += `
-                <div class="card" data-categoria="${categoria}">
-                    <img loading="lazy" src="${urlImagemSegura}" alt="${nome}" onerror="tentarFoto(this, '${img}')">
+                html += `<div class="card" data-categoria="${categoria}">
+                    <img loading="lazy" src="${urlImg}" alt="${nome}" onclick="abrirZoom('${urlImg}')" onerror="tentarFoto(this, '${img}')">
                     <h3>${nome}</h3>
-                    <div class="estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    ${htmlPrecoDe}
+                    <div style="color:#ffb4a2; margin-bottom:10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    ${p[2] > p[3] ? `<p class="preco-de">R$ ${precoDe}</p>` : '<p class="preco-de" style="visibility:hidden;">-</p>'}
                     <p class="preco-por">R$ ${precoPor}</p>
-                    <p class="${classeEstoque}">${textoEstoque}</p>
-                    ${botaoAdicionar}
+                    <p class="estoque">${estoque > 0 ? `Apenas <strong>${estoque}</strong> disponível` : '<strong>Esgotado</strong>'}</p>
+                    <button class="btn-whats" onclick="adicionarCarrinho('${nome}', ${p[3]})">🛒 Adicionar</button>
                 </div>`;
             });
             document.getElementById('lista-produtos').innerHTML = html;
         }
 
-        window.onload = function() {
-            renderizarVitrine(); 
-            filtrar('promocoes', 'ESPECIAL DIA DA MULHER 🌹'); 
-        };
+        window.onload = function() { renderizarVitrine(); filtrar('promocoes', 'ESPECIAL MÊS DO CONSUMIDOR 🛒'); };
 
-        function filtrar(categoriaSelecionada, nomeTitulo) {
-            document.getElementById('titulo-vitrine').innerText = nomeTitulo;
-            document.getElementById('inputBusca').value = ""; 
-            let secaoSobre = document.getElementById('secao-sobre');
-            if(secaoSobre) { secaoSobre.style.display = (categoriaSelecionada === 'inicio') ? 'block' : 'none'; }
-            let catFiltro = (categoriaSelecionada === 'inicio') ? 'destaque' : categoriaSelecionada;
-            
-            const todosOsProdutos = document.querySelectorAll('.card');
-            todosOsProdutos.forEach(produto => {
-                const categoriasDoProduto = produto.getAttribute('data-categoria');
-                produto.style.display = (catFiltro === 'todas' || categoriasDoProduto.includes(catFiltro)) ? 'flex' : 'none'; 
+        function filtrar(cat, titulo) {
+            document.getElementById('titulo-vitrine').innerText = titulo;
+            let filtro = (cat === 'inicio') ? 'destaque' : cat;
+            document.querySelectorAll('.card').forEach(card => {
+                card.style.display = card.getAttribute('data-categoria').includes(filtro) ? 'flex' : 'none';
             });
         }
 
         function buscarProdutos() {
             let termo = document.getElementById('inputBusca').value.toLowerCase();
-            let produtos = document.querySelectorAll('.card');
-            let titulo = document.getElementById('titulo-vitrine');
-            if(termo.length > 0) {
-                document.getElementById('secao-sobre').style.display = 'none'; 
-                titulo.innerText = "Resultados da Pesquisa";
-            } else {
-                titulo.innerText = "";
-            }
-            produtos.forEach(produto => {
-                let nomeProduto = product.querySelector('h3').innerText.toLowerCase();
-                produto.style.display = (nomeProduto.includes(termo)) ? 'flex' : 'none';
+            document.querySelectorAll('.card').forEach(card => {
+                let nome = card.querySelector('h3').innerText.toLowerCase();
+                card.style.display = nome.includes(termo) ? 'flex' : 'none';
             });
         }
 
         let carrinho = [];
-        function adicionarCarrinho(nome, preco) { carrinho.push({ nome: nome, preco: preco }); atualizarCarrinho(); abrirCarrinho(); }
-        function removerCarrinho(index) { carrinho.splice(index, 1); atualizarCarrinho(); }
+        function adicionarCarrinho(n, p) { carrinho.push({n, p}); atualizarCarrinho(); abrirCarrinho(); }
+        function removerCarrinho(i) { carrinho.splice(i, 1); atualizarCarrinho(); }
         function atualizarCarrinho() {
             document.getElementById('contador').innerText = carrinho.length;
-            let listaHtml = "", total = 0;
-            carrinho.forEach((item, index) => {
-                listaHtml += `<div class="item-carrinho"><div class="item-detalhe">1x ${item.nome}<br><strong style="color:#d97a56;">R$ ${item.preco.toFixed(2).replace('.', ',')}</strong></div><div class="item-remover" onclick="removerCarrinho(${index})">✕</div></div>`;
-                total += item.preco;
+            let html = "", total = 0;
+            carrinho.forEach((item, i) => {
+                html += `<div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px solid #eee; padding-bottom:5px;">
+                    <div>${item.n}<br><strong>R$ ${item.p.toFixed(2).replace('.', ',')}</strong></div>
+                    <div style="color:red; cursor:pointer;" onclick="removerCarrinho(${i})">✕</div>
+                </div>`;
+                total += item.p;
             });
-            if (carrinho.length === 0) listaHtml = "<p style='text-align:center; color:#999; margin: 20px 0;'>O seu carrinho está vazio.</p>";
-            document.getElementById('lista-itens').innerHTML = listaHtml;
+            document.getElementById('lista-itens').innerHTML = html || "<p style='text-align:center;'>Vazio.</p>";
             document.getElementById('valor-total').innerText = total.toFixed(2).replace('.', ',');
         }
         function abrirCarrinho() { document.getElementById('modalCarrinho').style.display = 'flex'; }
         function fecharCarrinho() { document.getElementById('modalCarrinho').style.display = 'none'; }
         function finalizarCompra() {
-            if (carrinho.length === 0) { alert("O seu carrinho está vazio! Adicione produtos antes de finalizar."); return; }
-            let textoWhatsApp = "Olá! Gostaria de fazer o seguinte pedido na sua loja online (Especial Dia da Mulher):\n\n";
-            let total = 0;
-            carrinho.forEach(item => { textoWhatsApp += `✅ 1x ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}\n`; total += item.preco; });
-            textoWhatsApp += `\n💳 *Total da Compra:* R$ ${total.toFixed(2).replace('.', ',')}\n\n`;
-            textoWhatsApp += `Como faço para realizar o pagamento e combinar a entrega?`;
-            window.open("https://api.whatsapp.com/send?phone=5511962983022&text=" + encodeURIComponent(textoWhatsApp), "_blank");
+            let texto = "Olá! Gostaria de fazer o seguinte pedido (Mês do Consumidor):\n\n";
+            carrinho.forEach(item => { texto += `✅ ${item.n} - R$ ${item.p.toFixed(2).replace('.', ',')}\n`; });
+            texto += `\n💰 Total: R$ ${document.getElementById('valor-total').innerText}`;
+            window.open("https://api.whatsapp.com/send?phone=5511962983022&text=" + encodeURIComponent(texto));
         }
     </script>
 </body>
