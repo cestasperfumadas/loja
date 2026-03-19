@@ -117,7 +117,7 @@
     <nav class="barra-nav">
         <ul>
             <li><a onclick="filtrar('inicio', '')">Início</a></li>
-            <li><a class="btn-campanha" onclick="filtrar('promocoes', '🛒 MÊS DO CONSUMIDOR')">🛒 Mês do Consumidor</a></li>
+            <li><a class="btn-dia-mulher" onclick="filtrar('promocoes', 'ESPECIAL MÊS DO CONSUMIDOR 🛒')">🛒 Mês do Consumidor</a></li>
             <li><a href="javascript:void(0)">Cestas ▾</a><div class="lista-suspensa"><a onclick="filtrar('cestas', 'Cestas de Presente')">Ver Cestas</a></div></li>
             <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
             <li><a href="javascript:void(0)">Maquiagem ▾</a><div class="lista-suspensa"><a onclick="filtrar('maquiagem', 'Maquiagem e Kits')">Ver Tudo</a></div></li>
@@ -130,7 +130,7 @@
         <div class="header-logo-container"><img src="SLOGAN.jpg" alt="Cestas Perfumadas" class="logo-img" onerror="this.src='SLOGAN.png'" onclick="filtrar('inicio', '')"></div>
         <div class="header-info-container">
             <div class="info-caixa"><h3>💳 Aceitamos Cartões e Pix</h3></div>
-            <div class="info-caixa destaque"><h3>🛍️ Compras acima de R$ 200,00</h3><p>Parcelamos em até 3x</p><p style="font-size: 0.9rem; font-weight: 400; margin-top: 5px;">📍 Entregamos em Cotia, Osasco e região!</p></div>
+            <div class="info-caixa destaque"><h3>🛍️ Compras acima de R$ 300,00</h3><p>Parcelamos em até 3x</p><p style="font-size: 0.9rem; font-weight: 400; margin-top: 5px;">📍 Entregamos em Cotia, Osasco e região!</p></div>
         </div>
     </header>
 
@@ -206,20 +206,20 @@
             nextAttempt();
         }
 
-        // LISTA DE PRODUTOS COMPRIMIDA E ATUALIZADA - ESPECIAL MÊS DO CONSUMIDOR
+        // LISTA DE PRODUTOS COMPRIMIDA E ATUALIZADA
         const produtos = [
             // ================= VÍDEOS SHOWCASE (APENAS NA ABA INÍCIO) =================
             ["Vídeo cesta Flores.mp4", "Cestas com Flores", 0, 0, 0, "destaque", "video_vitrine"],
             ["Vídeo cestas namorados.mp4", "Cestas Românticas", 0, 0, 0, "destaque", "video_vitrine"],
             ["Vídeo tigrão.mp4", "Cesta Pelúcia Tigrão", 0, 0, 0, "destaque", "video_vitrine"],
 
-            // ================= MAQUIAGEM (S BATOM + PINCEL) =================
-            // S FACES - R$ 25,00
-            [" Batom Faces vinho 540.png", " Batom Vinho 540", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            [" Batom Faces rosa 200.png", " Batom Rosa 200", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            [" Batom Faces rosa 210.png", " Batom Rosa 210", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            [" Batom Faces vinho 532.png", " Batom Vinho 532", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
-            [" Batom Faces Vemelho145.png", "Kit Batom Vermelho 145", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
+            // ================= MAQUIAGEM (KITS BATOM + PINCEL) =================
+            // KITS FACES - R$ 25,00
+            ["Kit Batom Faces vinho 540.png", "Kit Batom Vinho 540", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
+            ["Kit Batom Faces rosa 200.png", "Kit Batom Rosa 200", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
+            ["Kit Batom Faces rosa 210.png", "Kit Batom Rosa 210", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
+            ["Kit Batom Faces vinho 532.png", "Kit Batom Vinho 532", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
+            ["Kit Batom Faces Vemelho145.png", "Kit Batom Vermelho 145", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
             ["Kit Batom Faces vermelho 117.png", "Kit Batom Vermelho 117", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
             ["Kit Batom Faces Hey Honey + Pincel olhos.png", "Kit Batom Hey Honey", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
             ["Kit Batom Faces Vinho in Love + Pincel olhos.png", "Kit Batom Vinho in Love", 49.90, 25.00, 1, "maquiagem destaque promocoes", "presente"],
@@ -258,52 +258,32 @@
             ["Cesta Luninha.png", "Cesta Luninha", 70.00, 70.00, 1, "cestas destaque promocoes infantil", "presente"],
             ["Cesta Meu 1º Humor.png", "Cesta Meu 1º Humor", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
             ["Cesta Revelar.png", "Cesta Revelar", 200.00, 200.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta MMBB Pelucia.jpeg", "Cesta MMBB", 350.00, 250.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta body flores.jpeg", "Cesta body flores", 130.00, 85.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta body limão siciliano.jpeg", "Cesta body limão siciliano", 130.00, 85.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta body Uva Rosada.jpeg", "Cesta body Uva Rosada", 130.00, 85.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta body Morango e Baunilha.jpeg", "Cesta body Morango e Baunilha", 130.00, 85.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta body romã amendoas glaceadas.jpeg", "Cesta body romã amendoas glaceadas", 130.00, 85.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta body Ilia.jpeg", "Cesta body Ilia", 130.00, 85.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta body noites de verão", "Cesta body noites de verão", 130.00, 85.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta body Macadamia.jpeg", "Cesta body Macadamia", 130.00, 85.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Luna absoluta colonia.jpeg", "Cesta Luna absoluta colonia", 300.00, 200.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Kriska Jeans.jpeg", "Cesta Kriska Jeans", 220.00, 140.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Kriska Flores.jpeg", "Cesta Kriska Flores", 260.00, 180.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta body e creme Pimenta vermelha.jpeg", "Cesta body e creme Pimenta vermelha", 150.00, 100.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Humor Liberta.jpeg", "Cesta Humor Liberta", 120.00, 75.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Madeira em Flor.jpeg", "Cesta Madeira em Flor", 160.00, 110.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Coração Una Artisan.jpeg", "Cesta Coração Una Artisan", 350.00, 280.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta body Cha de camomila.jpeg", "Cesta body Cha de camomila", 130.00, 85.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo Essencial floral.jpeg", "Cesta deo Essencial floral", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo biografia inspire.jpeg", "Cesta deo biografia inspire", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo Kriska drama.jpeg", "Cesta deo Kriska drama", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo Luna Fascinante.jpeg", "Cesta deo Luna Fascinante", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo Luna absoluta.jpeg", "Cesta deo Luna absoluta", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo kaiak aventura.jpeg", "Cesta deo kaiak aventura", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo primeiro humor.jpeg", "Cesta deo primeiro humor", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo Humor Envolve.jpeg", "Cesta deo Humor Envolve", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo Luna Radiante.jpeg", "Cesta deo Luna Radiante", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo Essencial atrai.jpeg", "Cesta deo Essencial atrai", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta deo Essencial tradicional.jpeg", "Cesta deo Essencial tradicional", 80.00, 60.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Maça do amor.jpeg", "Cesta Maça do amor", 300.00, 200.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta Flores Caneca.jpeg", "Cesta Flores Caneca", 300.00, 200.00, 1, "cestas destaque promocoes", "presente"],
-            ["Cesta coração Kriska.jpeg", "Cesta coração Kriska", 250.00, 185.00, 1, "cestas destaque promocoes", "presente"],
-            ["Coração Essencial Exc.jpeg", "Coração Essencial Exc", 350.00, 280.00, 1, "cestas destaque promocoes", "presente"],
-           
+
             // ================= KITS CORPO E BANHO =================
             ["Kit Algodão.png", "Kit Algodão", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
             ["Kit Ameixa e Flor de Baunilha.png", "Kit Ameixa e Baunilha", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
             ["Kit Amora e flor de pessego.png", "Kit Amora e Pêssego", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
             ["Kit Camomila e Lavanda.png", "Kit Camomila e Lavanda", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
+            ["Kit Flores.png", "Kit Flores", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
             ["Kit Limão Siciliano.png", "Kit Limão Siciliano", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
             ["Kit Maçã Caramelada.png", "Kit Maçã Caramelada", 80.00, 80.00, 1, "cestas destaque promocoes corpo-banho", "presente"],
+            ["Kit Ilia e luna.png", "Kit Ilía e Luna", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
+            ["Kit Kaiak Aventura fem.png", "Kit Kaiak Aventura Fem", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
+            ["Kit Kriska drama.png", "Kit Kriska Drama", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
+            ["Kit Kriska.png", "Kit Kriska Clássico e Shock", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
+            ["Kit Luna.png", "Kit Luna e Deo", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
+            ["Kit Primeiro humor.png", "Kit Primeiro Humor", 80.00, 80.00, 1, "cestas destaque promocoes feminina", "presente"],
+            
             ["Kit Essencial Atrai masc..png", "Kit Essencial Atraí Masc", 60.00, 60.00, 1, "cestas destaque promocoes masculina", "presente"],
             ["Kit Essencial deo e shampoo.png", "Kit Essencial Deo Masc", 60.00, 60.00, 1, "cestas destaque promocoes masculina", "presente"],
+            ["Kit Humor liberta.png", "Kit Humor Liberta", 60.00, 60.00, 1, "cestas destaque promocoes feminina", "presente"],
             ["Kit Kaiak Aventura masc.png", "Kit Kaiak Aventura Masc", 60.00, 60.00, 1, "cestas destaque promocoes masculina", "presente"],
             ["Kit deo natura homem.png", "Kit Natura Homem Deo", 60.00, 60.00, 1, "cestas destaque promocoes masculina", "presente"],
             ["Kit shampoo humor e essencial deo.png", "Kit Humor e Essencial", 60.00, 60.00, 1, "cestas destaque promocoes", "presente"],
+            
             ["Kit Kaiak deo fem.png", "Kit Kaiak Deo Fem", 70.00, 70.00, 1, "cestas destaque promocoes feminina", "presente"],
+            ["Kit Luna Radiante.png", "Kit Luna Radiante", 150.00, 150.00, 1, "cestas destaque promocoes feminina", "presente"],
+            ["Kit Kriska flores.png", "Kit Kriska Flores", 170.00, 170.00, 1, "cestas destaque promocoes feminina", "presente"],
             ["Kit Romã Glaceadas.png","Kit Romã Glaceadas",79.90,79.90,1,"cestas destaque promocoes corpo-banho","presente"],
             ["Cesta Coração Essencial Exc Fem.jpeg","Cesta Coração Essencial",300.00,300.00,1,"cestas destaque promocoes","presente"],
             ["cestaluna.png","Kit Presente Luna",349.90,349.90,1,"cestas destaque promocoes","presente"],
@@ -326,35 +306,35 @@
             ["Sintonia Maculino.png","Sintonia Clássico",139.90,100.00,1,"masculina destaque promocoes",""],
 
             ["Kaiak Feminino 4un.png","Kaiak Feminino",189.90,120.00,2,"feminina destaque promocoes",""],
-            ["Luna 1un.png","Luna Tradicional",185.90,160.00,1,"feminina destaque promocoes",""],
-            ["Luna Radiante 2un.png","Luna Radiante",185.90,160.00,1,"feminina destaque promocoes",""],
-            ["Luna Fascinante 1un.png","Luna Fascinante",185.90,160.00,1,"feminina destaque promocoes",""],
-            ["Luna Rosé 1un.png","Luna Rosé",185.90,160.00,1,"feminina destaque promocoes",""],
-            ["Luna Intensa.png","Luna Intensa",219.90,179.90,1,"feminina destaque promocoes",""],
+            ["Luna 1un.png","Luna Tradicional",169.90,130.00,1,"feminina destaque promocoes",""],
+            ["Luna Radiante 2un.png","Luna Radiante",169.90,130.00,2,"feminina destaque promocoes",""],
+            ["Luna Fascinante 1un.png","Luna Fascinante",169.90,130.00,1,"feminina destaque promocoes",""],
+            ["Luna Rosé 1un.png","Luna Rosé",169.90,130.00,1,"feminina destaque promocoes",""],
+            ["Luna Intensa.png","Luna Intensa",219.90,159.90,1,"feminina destaque promocoes",""],
             ["Essencial Feminino 2un.png","Essencial Feminino",279.90,209.90,2,"feminina destaque promocoes",""],
-            ["Essencial Exclusivo Fem 2un.png","Essencial Exclus. Fem",279.90,219.90,2,"feminina destaque promocoes",""],
-            ["Essencial Floral 1un.png","Essencial Floral",279.90,219.90,1,"feminina destaque promocoes",""],
-            ["Essencial Supreme Fem 1un.png","Essencial Supreme",279.90,219.90,1,"feminina destaque promocoes",""],
-            ["Meu Primeiro Humor 4un.png","Meu Primeiro Humor",164.90,129.90,4,"feminina destaque",""],
-            ["Humor Próprio 1un.png","Humor Próprio",164.90,129.90,1,"feminina destaque",""],
-            ["Ilia Secreto.png","Ilía Secreto",199.90,149.90,1,"feminina destaque promocoes",""],
+            ["Essencial Exclusivo Fem 2un.png","Essencial Exclus. Fem",279.90,209.90,2,"feminina destaque promocoes",""],
+            ["Essencial Floral 1un.png","Essencial Floral",279.90,209.90,1,"feminina destaque promocoes",""],
+            ["Essencial Supreme Fem 1un.png","Essencial Supreme",279.90,209.90,1,"feminina destaque promocoes",""],
+            ["Meu Primeiro Humor 4un.png","Meu Primeiro Humor",164.90,164.90,4,"feminina destaque",""],
+            ["Humor Próprio 1un.png","Humor Próprio",164.90,164.90,1,"feminina destaque",""],
+            ["Ilia Secreto.png","Ilía Secreto",199.90,159.90,1,"feminina destaque promocoes",""],
 
-            ["Una Brilho.png","Una Brilho 75ml",319.90,219.90,0,"feminina destaque promocoes",""],
+            ["Una Brilho.png","Una Brilho 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
             ["Una Blush.png","Una Blush 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
-            ["Una Somos.png","Una Somos 75ml",319.90,219.90,0,"feminina destaque promocoes",""],
-            ["Una Artisan.png","Una Artisan 75ml",319.90,219.90,0,"feminina destaque promocoes",""],
+            ["Una Somos.png","Una Somos 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
+            ["Una Artisan.png","Una Artisan 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
             ["Una Senses.png","Una Senses 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
-            ["Una Celebrar.png","Una Celebrar 75ml",319.90,219.90,0,"feminina destaque promocoes",""],
+            ["Una Celebrar.png","Una Celebrar 75ml",319.90,219.90,1,"feminina destaque promocoes",""],
 
             // ================= REFIL PERFUMARIA =================
             ["Essencial Exclusivo Masc Refil.png", "Refil Essencial Exclusivo Masc", 213.90, 149.90, 1, "masculina destaque promocoes", ""],
             ["Único Refil Masc.png", "Refil Essencial Único Masc", 228.90, 169.90, 1, "masculina destaque promocoes", ""],
-            ["Essencial Exclusivo Fem Refil 2un.png", "Refil Essencial Exclusivo Fem", 213.90, 149.90, 1, "feminina destaque promocoes", ""],
+            ["Essencial Exclusivo Fem Refil 2un.png", "Refil Essencial Exclusivo Fem", 213.90, 149.90, 2, "feminina destaque promocoes", ""],
             ["Esencial Único Fem. Refil 5un.png", "Refil Essencial Único Fem", 228.90, 169.90, 5, "feminina destaque promocoes", ""],
 
             // ================= INFANTIL =================
-            ["MMBB Colonia 10un.jpg","Colônia Mamãe e Bebê",106.90,84.90,7,"infantil destaque promocoes",""],
-            ["MMBB Colonia Rlaxante 1un.jpg","Colônia Relaxante",106.90,84.90,0,"infantil destaque promocoes",""],
+            ["MMBB Colonia 10un.jpg","Colônia Mamãe e Bebê",106.90,74.90,7,"infantil destaque promocoes",""],
+            ["MMBB Colonia Rlaxante 1un.jpg","Colônia Relaxante",106.90,74.90,0,"infantil destaque promocoes",""],
             ["MMBB Shampoo 2un.jpg","Shampoo Mamãe e Bebê",45.90,35.90,1,"infantil destaque promocoes",""],
             ["MMBB Condicionador 3un.jpg","Condicionador MMBB",45.90,35.90,3,"infantil destaque promocoes",""],
             ["MMBB Cachos Shampoo 1un.jpg","Shampoo MMBB Cachos",45.90,35.90,1,"infantil destaque promocoes",""],
@@ -371,38 +351,19 @@
             ["Ekos Colonia 150 ml Cacau 1un.jpg","Ekos Frescor Cacau",129.90,99.90,1,"ekos feminina destaque promocoes",""],
             ["Ekos Colonia 150 ml Maracuja 1un.jpg","Ekos Frescor Maracujá",129.90,99.90,1,"ekos feminina destaque promocoes",""],
             ["Ekos Colonia 150 ml Maracuja noite 1un.jpg","Ekos Maracujá Noite",137.90,99.90,1,"ekos feminina destaque promocoes",""],
-            ["Ekos Colonia Rf 150 ml Maracuja 1un.jpg","Refil Ekos Maracujá",105.90,79.90,1,"ekos feminina destaque",""],
+            ["Ekos Colonia Rf 150 ml Maracuja 1un.jpg","Refil Ekos Maracujá",105.90,105.90,1,"ekos feminina destaque",""],
             ["Ekos Colonia 75 ml Maracuja 1un.jpg","Ekos Maracujá 75ml",97.90,69.90,1,"ekos feminina destaque promocoes",""],
-            ["Ekos Ryo Chuva 1un.jpg","Ekos Ryos Chuva",199.90,109.90,1,"ekos feminina destaque promocoes",""],
-            ["Ekos Ryo Vivo 2un.jpg","Ekos Ryos Vivo",199.90,109.90,2,"ekos feminina destaque promocoes",""],
-            ["Ekos sabonete buriti 2un.jpg","Ekos sabonete buriti",45.90,34.90,2,"ekos feminina destaque promocoes",""],
-            ["Ekos sabonete açai 2un.jpg","Ekos sabonete açai",45.90,34.90,2,"ekos feminina destaque promocoes",""],
-            ["Ekos sabonete breu branco 2un.jpg","Ekos sabonete breu branco",45.90,34.90,2,"ekos feminina destaque promocoes",""],
-            ["Ekos sabonete castanha 6un.jpg","Ekos sabonete castanha",45.90,34.90,6,"ekos feminina destaque promocoes",""],
-            ["Ekos sabonete maracuja 2un.jpg","Ekos sabonete maracuja",45.90,34.90,2,"ekos feminina destaque promocoes",""],
-            ["Ekos sabonete maracuja noite 3un.jpg","Ekos sabonete maracuja noite",45.90,34.90,2,"ekos feminina destaque promocoes",""],
-            ["Ekos sabonete pitanga 1un.jpg","Ekos sabonete pitanga",45.90,34.90,1,"ekos feminina destaque promocoes",""],
-            ["Ekos sabonete sortido 2un.jpg","Ekos sabonete sortido",45.90,34.90,2,"ekos feminina destaque promocoes",""],
-            ["Ekos sabonete ucuuba 2un.jpg","Ekos sabonete ucuuba",45.90,34.90,2,"ekos feminina destaque promocoes",""],
+            ["Ekos Ryo Chuva 1un.jpg","Ekos Ryos Chuva",199.90,139.90,1,"ekos feminina destaque promocoes",""],
+            ["Ekos Ryo Vivo 2un.jpg","Ekos Ryos Vivo",199.90,139.90,2,"ekos feminina destaque promocoes",""],
             
             // ================= HIDRATANTES E ÓLEOS =================
             ["Oleo Seve Amendoas doces 2un.jpg","Óleo Sève Amêndoas",116.90,79.90,2,"corpo-banho hidratantes destaque promocoes",""],
             ["Oleo Seve Amendoas e Cereja 1un.png","Óleo Sève Ame/Cereja",116.90,79.90,1,"corpo-banho hidratantes destaque promocoes",""],
-            ["Hidratante Tamara e Canela 2un.png","Hidratante Tâmara",78.90,64.90,2,"corpo-banho hidratantes destaque promocoes",""],
-            ["Hidratante Maçã Caramelada 4un.png","Hidratante Maçã Caram.",78.90,64.90,4,"corpo-banho hidratantes destaque promocoes",""],
-            ["Hidratante Cereja e Avelã 8un.png","Hidratante Cereja e Avelã",78.90,64.90,8,"corpo-banho hidratantes destaque promocoes",""],
-            ["Hidratante Ameixa e Flor de Baunilha 5un.png","Ameixa e Baunilha",78.90,64.90,4,"corpo-banho hidratantes destaque promocoes",""],
-            ["Hidratante Macadamia 10un.png","Hidratante Macadâmia",78.90,64.90,10,"corpo-banho hidratantes destaque promocoes",""],
-            ["Refil Hidratante Algodão 3un.png","Refil Hidratante Algodão",58.90,41.90,3,"corpo-banho hidratantes destaque promocoes",""],
-            ["Refil Hidratante Ameixa e Flor de Baunilha 4un.png","Refil Hidratante Ameixa e Flor de Baunilha",58.90,41.90,4,"corpo-banho hidratantes destaque promocoes",""],
-            ["Refil Hidratante Cereja e Avelã 5un.png","Refil Hidratante Cereja e Avelã",58.90,41.90,5,"corpo-banho hidratantes destaque promocoes",""],
-            ["Refil Hidratante Cereja Negra 3un.png","Refil Hidratante Cereja Negra",58.90,41.90,3,"corpo-banho hidratantes destaque promocoes",""],
-            ["Refil Hidratante Jambo Rosa 5un.png","Refil Hidratante Jambo Rosa",58.90,41.90,5,"corpo-banho hidratantes destaque promocoes",""],
-            ["Refil Hidratante Limão Siciliano 4un.png","Refil Hidratante Limão Siciliano",58.90,41.90,4,"corpo-banho hidratantes destaque promocoes",""],
-            ["Refil Hidratante Macadamia 3un.png","Refil Hidratante Macadamia",58.90,41.90,3,"corpo-banho hidratantes destaque promocoes",""],
-            ["Refil Hidratante Manga Rosa 1un.png","Refil Hidratante Manga Rosa",58.90,41.90,1,"corpo-banho hidratantes destaque promocoes",""],
-            ["Refil Hidratante Amora e Flor de Pessego 2un.png","Refil Hidratante Amora e Flor de Pessego",58.90,41.90,2,"corpo-banho hidratantes destaque promocoes",""],
-            
+            ["Hidratante Tamara e Canela 2un.png","Hidratante Tâmara",78.90,54.90,2,"corpo-banho hidratantes destaque promocoes",""],
+            ["Hidratante Maçã Caramelada 4un.png","Hidratante Maçã Caram.",78.90,54.90,4,"corpo-banho hidratantes destaque promocoes",""],
+            ["Hidratante Cereja e Avelã 8un.png","Hidratante Cereja e Avelã",78.90,54.90,8,"corpo-banho hidratantes destaque promocoes",""],
+            ["Hidratante Ameixa e Flor de Baunilha 5un.png","Ameixa e Baunilha",78.90,54.90,4,"corpo-banho hidratantes destaque promocoes",""],
+            ["Hidratante Macadamia 10un.png","Hidratante Macadâmia",78.90,54.90,10,"corpo-banho hidratantes destaque promocoes",""],
 
             // ================= BODY SPLASH =================
             ["Body Splash Flores novo.png", "Body Splash Flores", 93.90, 65.00, 6, "corpo-banho body-splash destaque promocoes", ""],
@@ -426,34 +387,21 @@
             ["Body Framboesa e Pimenta Vermelha 1 un.png","Body Framboesa Pimenta",93.90,60.00,1,"corpo-banho body-splash destaque promocoes",""],
 
             // ================= SABONETES =================
-            ["Sabonete Noz pecã 3un.png","Sabonete Noz Pecã",34.90,24.90,0,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Amora e Flor de Pessego 10un.png","Amora e Flor Pêssego",34.90,24.90,4,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Limão Siciliano 9un.png","Sabonete Limão Siciliano",34.90,24.90,1,"sabonetes corpo-banho destaque promocoes",""],
+            ["Sabonete Noz pecã 3un.png","Sabonete Noz Pecã",34.90,24.90,3,"sabonetes corpo-banho destaque promocoes",""],
+            ["Sabonete Amora e Flor de Pessego 10un.png","Amora e Flor Pêssego",34.90,24.90,10,"sabonetes corpo-banho destaque promocoes",""],
+            ["Sabonete Limão Siciliano 9un.png","Sabonete Limão Siciliano",34.90,24.90,7,"sabonetes corpo-banho destaque promocoes",""],
             ["Sabonete Alecrim 4un.png","Sabonete Alecrim",34.90,24.90,0,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Algodão.png","Sabonete Algodão",34.90,24.90,5,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Ameixa e Flor de Baunilha 5un.png","Sabonete Ameixa e Flor de Baunilha",34.90,24.90,2,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Amora vermelha e jabuticaba 3un.png","Sabonete Amora vermelha e jabuticaba",34.90,24.90,1,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Tamara e canela 1un.png","Sabonete Tamara e canela",34.90,24.90,1,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Frutas Vermelhas 3un.png","Sabonete Frutas Vermelhas",34.90,24.90,1,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Macadamia 5un.png","Sabonete Macadamia",34.90,24.90,3,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Sortido vermelho e rosa 1un.png","Sabonete Sortido",34.90,24.90,2,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Sortido cor Laranja 20un.png","Sabonete Sortido",34.90,24.90,4,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Todanoite.png","Sabonete Todanoite",34.90,24.90,9,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Energia Flor de Gengibre 3un.png","Sabonete Energia",34.90,24.90,1,"sabonetes corpo-banho destaque promocoes",""],
-            ["Sabonete Sortido Celebre 4un.png","Sabonete Sortido Celebre",34.90,24.90,1,"sabonetes corpo-banho destaque promocoes",""],
-            
 
             // ================= DESODORANTES =================
             ["Desodorante Kaiak Avent masc 3un.jpg","Desod. Kaiak Avent Masc",56.90,29.90,3,"corpo-banho desodorantes masculina destaque promocoes",""],
-            ["Rollon Macadamia 1un.png","Roll-on Macadâmia",29.90,21.90,1,"corpo-banho desodorantes destaque",""]
-            ["Rollon Acerola e Hibisco1un.png","Rollon Acerola e Hibisco",29.90,21.90,1,"corpo-banho desodorantes destaque",""]
-            ["Rollon Aclarar 1un.png","Rollon Aclarar",29.90,21.90,1,"corpo-banho desodorantes destaque",""]
-            ["Rollon Alecrim 1un.png","Rollon Alecrim",29.90,21.90,1,"corpo-banho desodorantes destaque",""]
-            ["Rollon Luna 7un.png","Rollon Luna",29.90,21.90,1,"corpo-banho desodorantes destaque",""]
-            ["Rollon Amora Verm Jabuticaba 2un.png","Rollon Amora Verm Jabuticaba",29.90,21.90,1,"corpo-banho desodorantes destaque",""]
-            ["Rollon Natura Homem 2un.png","Rollon Natura Homem",29.90,21.90,1,"corpo-banho desodorantes destaque",""]
+            ["Rollon Macadamia 1un.png","Roll-on Macadâmia",29.90,21.90,1,"corpo-banho desodorantes destaque",""],
+            ["Rollon Acerola e Hibisco1un.png","Rollon Acerola e Hibisco",29.90,21.90,1,"corpo-banho desodorantes destaque",""],
+            ["Rollon Aclarar 1un.png","Rollon Aclarar",29.90,21.90,1,"corpo-banho desodorantes destaque",""],
+            ["Rollon Alecrim 1un.png","Rollon Alecrim",29.90,21.90,1,"corpo-banho desodorantes destaque",""],
+            ["Rollon Luna 7un.png","Rollon Luna",29.90,21.90,1,"corpo-banho desodorantes destaque",""],
+            ["Rollon Amora Verm Jabuticaba 2un.png","Rollon Amora Verm Jabuticaba",29.90,21.90,1,"corpo-banho desodorantes destaque",""],
+            ["Rollon Natura Homem 2un.png","Rollon Natura Homem",29.90,21.90,1,"corpo-banho desodorantes destaque",""],
             ["Rollon Tamara e Canela 1un.jpg.png","Rollon Tamara e Canela",29.90,21.90,1,"corpo-banho desodorantes destaque",""]
-            
         ];
 
         function renderizarVitrine() {
@@ -508,7 +456,7 @@
 
         window.onload = function() {
             renderizarVitrine(); 
-            filtrar('promocoes', 'ESPECIAL MÊS DO CONSUMIDOR 🛒 '); 
+            filtrar('promocoes', 'ESPECIAL MÊS DO CONSUMIDOR 🛒'); 
         };
 
         function filtrar(categoriaSelecionada, nomeTitulo) {
@@ -536,7 +484,7 @@
                 titulo.innerText = "";
             }
             produtos.forEach(produto => {
-                let nomeProduto = product.querySelector('h3').innerText.toLowerCase();
+                let nomeProduto = produto.querySelector('h3').innerText.toLowerCase();
                 produto.style.display = (nomeProduto.includes(termo)) ? 'flex' : 'none';
             });
         }
@@ -559,7 +507,7 @@
         function fecharCarrinho() { document.getElementById('modalCarrinho').style.display = 'none'; }
         function finalizarCompra() {
             if (carrinho.length === 0) { alert("O seu carrinho está vazio! Adicione produtos antes de finalizar."); return; }
-            let textoWhatsApp = "Olá! Gostaria de fazer o seguinte pedido na sua loja online (Especial Dia da Mulher):\n\n";
+            let textoWhatsApp = "Olá! Gostaria de fazer o seguinte pedido na sua loja online (Especial Mês do Consumidor):\n\n";
             let total = 0;
             carrinho.forEach(item => { textoWhatsApp += `✅ 1x ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}\n`; total += item.preco; });
             textoWhatsApp += `\n💳 *Total da Compra:* R$ ${total.toFixed(2).replace('.', ',')}\n\n`;
