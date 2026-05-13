@@ -135,8 +135,26 @@
         </div>
     </header>
 
-    <div class="hero-banner">
-        <h1>Cestas Perfumadas</h1><p class="frase-efeito">Presentes inesquecíveis a um clique de distância.</p><p class="pronta-entrega">Produtos a Pronta Entrega</p>
+   <div class="hero-banner">
+        <style>
+            @keyframes pulsa-coracao {
+                0% { transform: scale(1); }
+                100% { transform: scale(1.2); text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+            }
+            .coracao-gigante {
+                font-size: 70px;
+                margin-bottom: 15px;
+                display: inline-block;
+                animation: pulsa-coracao 1s infinite alternate;
+                cursor: default;
+            }
+        </style>
+        
+        <div class="coracao-gigante">❤️</div>
+        
+        <h1>Cestas Perfumadas</h1>
+        <p class="frase-efeito">O presente perfeito para o seu amor a um clique de distância.</p>
+        <p class="pronta-entrega">Produtos a Pronta Entrega</p>
     </div>
 
     <div class="busca-container"><input type="text" id="inputBusca" placeholder="Pesquisar presentes, produtos, fragrâncias..." onkeyup="buscarProdutos()"></div>
