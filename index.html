@@ -117,7 +117,7 @@
     <nav class="barra-nav">
         <ul>
             <li><a onclick="filtrar('inicio', '')">Início</a></li>
-            <li><a class="btn-dia-mulher" onclick="filtrar('promocoes', 'ESPECIAL DIA DOS Pais 🛒')">🛒 Dias dos Pais</a></li>
+            <li><a class="btn-dia-mulher" onclick="filtrar('masculina', 'ESPECIAL DIA DOS Pais 🛒')">🛒 Dias dos Pais</a></li>
             <li><a href="javascript:void(0)"> ▾</a><div class="lista-suspensa"><a onclick="filtrar('', ' de Presente')">Ver </a></div></li>
             <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
             <li><a href="javascript:void(0)">Maquiagem ▾</a><div class="lista-suspensa"><a onclick="filtrar('maquiagem', 'Maquiagem e Kits')">Ver Tudo</a></div></li>
@@ -195,6 +195,7 @@
                 if (attempt < alt.length) {
                     let trySrc = alt[attempt++];
                     let imgTeste = new Image();
+                    
                     imgTeste.onload = function() { 
                         imgElement.src = this.src; 
                         imgElement.onerror = null; 
@@ -527,7 +528,7 @@
 
         window.onload = function() {
             renderizarVitrine(); 
-            filtrar('promocoes', 'ESPECIAL DIA DOS Pais 🎁'); 
+            filtrar('masculina', 'ESPECIAL DIA DOS Pais 🎁'); 
         };
 
         function filtrar(categoriaSelecionada, nomeTitulo) {
