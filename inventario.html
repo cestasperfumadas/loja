@@ -12,14 +12,24 @@
     <style>
         body { font-family: 'Montserrat', sans-serif; background-color: #f0f5f9; color: #333; text-align: center; padding: 20px; }
         h1 { color: #1c4966; font-size: 1.8rem;}
-        #acoes-topo { margin-bottom: 20px; }
+        
+        /* Botões do Topo */
+        #acoes-topo { margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
         .btn-baixar { background-color: #4caf50; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
         .btn-baixar:active { background-color: #388e3c; }
+        .btn-zerar { background-color: #d32f2f; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
+        .btn-zerar:active { background-color: #b71c1c; }
+
+        /* Leitor e Status */
         #leitor-container { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
         #status-banco { margin: 15px 0; color: #666; font-size: 0.9rem; font-weight: bold; }
+        
+        /* Resultado da Leitura */
         #resultado { margin-top: 20px; padding: 20px; background: #e8f5e9; border: 2px solid #4caf50; border-radius: 12px; font-size: 1.1rem; display: none; max-width: 500px; margin: 20px auto; }
         .erro { background: #ffebee !important; border-color: #f44336 !important; color: #d32f2f; }
         .destaque-nome { font-size: 1.3rem; font-weight: bold; color: #1c4966; margin: 10px 0; }
+        
+        /* Controles de Quantidade */
         .controle-qtd { margin-top: 15px; background: white; padding: 15px; border-radius: 8px; }
         .input-qtd { width: 80px; text-align: center; font-size: 1.5rem; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-weight: bold; color: #333; }
         .btn-salvar { margin-top: 10px; background-color: #1c4966; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; }
@@ -32,6 +42,7 @@
 
     <div id="acoes-topo">
         <button class="btn-baixar" onclick="baixarPlanilha()">📥 Baixar Planilha de Contagem</button>
+        <button class="btn-zerar" onclick="zerarContagem()">🗑️ Iniciar Novo Inventário (Zerar)</button>
     </div>
 
     <div id="leitor-container">
@@ -47,7 +58,7 @@
         // Puxa a contagem salva na memória do celular (se houver)
         let estoqueContado = JSON.parse(localStorage.getItem('inventario_contagem')) || {};
 
-        // Carrega o banco de dados do Excel
+        // Carrega o banco de dados do arquivo CSV
         Papa.parse("estoque.csv", {
             download: true,
             header: false,
@@ -62,7 +73,7 @@
                         baseDeProdutos[String(eanProduto).trim()] = nomeProduto || "Produto sem nome";
                     }
                 });
-                document.getElementById('status-banco').innerText = `✅ Banco carregado: ${Object.keys(baseDeProdutos).length} produtos.`;
+                document.getElementById('status-banco').innerText = `✅ Banco carregado com sucesso!`;
                 document.getElementById('status-banco').style.color = "green";
             },
             error: function() {
@@ -95,7 +106,6 @@
                     </div>
                 `;
                 
-                // Toca um sonzinho ou vibra (funciona na maioria dos celulares)
                 if (navigator.vibrate) { navigator.vibrate(100); }
                 
             } else {
@@ -104,41 +114,33 @@
             }
         }
 
-        // Função para salvar a quantidade digitada
+        // Função para salvar a quantidade
         window.salvarQuantidade = function(ean) {
             let input = document.getElementById('inputQtd');
             let quantidade = parseInt(input.value) || 0;
             
-            // Salva no objeto e depois na memória do celular
             estoqueContado[ean] = quantidade;
             localStorage.setItem('inventario_contagem', JSON.stringify(estoqueContado));
             
-            // Mostra mensagem de sucesso
             let msg = document.getElementById('msg-sucesso');
             msg.style.display = "block";
             setTimeout(() => { msg.style.display = "none"; }, 2000);
         };
 
-        // Função para gerar o arquivo Excel (CSV)
+        // Função para gerar e baixar a planilha
         window.baixarPlanilha = function() {
-            // Se não contou nada ainda
             if (Object.keys(estoqueContado).length === 0) {
                 alert("Você ainda não salvou nenhuma quantidade!");
                 return;
             }
 
-            // Cria o cabeçalho da planilha
             let csvContent = "EAN,Produto,Quantidade Contada\n";
-            
-            // Preenche com os dados
             for (let ean in estoqueContado) {
                 let nome = baseDeProdutos[ean] || "Produto desconhecido";
                 let qtd = estoqueContado[ean];
-                // ="" força o Excel a manter os zeros do EAN sem transformar em fórmula científica
                 csvContent += `="${ean}","${nome}",${qtd}\n`; 
             }
 
-            // Gera o download do arquivo
             let blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
             let url = URL.createObjectURL(blob);
             let link = document.createElement("a");
@@ -147,6 +149,18 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+        };
+
+        // Função para zerar tudo e começar de novo
+        window.zerarContagem = function() {
+            let confirmacao = confirm("🚨 ATENÇÃO: Tem certeza que deseja apagar toda a contagem atual? \n\nIsso NÃO apagará sua lista de produtos, apenas as quantidades que você contou até agora. Esta ação não pode ser desfeita.");
+            
+            if (confirmacao) {
+                estoqueContado = {};
+                localStorage.removeItem('inventario_contagem');
+                document.getElementById('resultado').style.display = 'none';
+                alert("✅ Contagem zerada! Você pode iniciar um novo inventário.");
+            }
         };
 
         // Liga a câmera
