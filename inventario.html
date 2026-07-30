@@ -41,9 +41,12 @@
             skipEmptyLines: true,
             complete: function(results) {
                 results.data.forEach(linha => {
-                    // Puxa as colunas "EAN" e "Nome" que você configurou no Excel
-                    if (linha.EAN) {
-                        baseDeProdutos[linha.EAN.trim()] = linha.Nome || "Produto sem nome";
+                    // Agora o sistema é flexível: busca a coluna independente de como foi escrita!
+                    let eanProduto = linha.EAN || linha.ean || linha.Ean || linha["Código EAN"] || linha["CÓDIGO EAN"];
+                    let nomeProduto = linha.Nome || linha.NOME || linha.nome || linha["Descrição do material"] || linha["DESCRIÇÃO DO MATERIAL"] || linha.PRODUTO;
+                    
+                    if (eanProduto) {
+                        baseDeProdutos[String(eanProduto).trim()] = nomeProduto || "Produto sem nome";
                     }
                 });
                 document.getElementById('status-banco').innerText = `✅ Banco carregado com sucesso!`;
