@@ -4,61 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventário - Leitor EAN</title>
-    <!-- Leitor de Câmera -->
+    <!-- Bibliotecas -->
     <script src="https://unpkg.com/html5-qrcode"></script>
-    <!-- Leitor de Arquivo CSV -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Montserrat', sans-serif; background-color: #f0f5f9; color: #333; text-align: center; padding: 20px; }
         h1 { color: #1c4966; font-size: 1.8rem;}
+        #acoes-topo { margin-bottom: 20px; }
+        .btn-baixar { background-color: #4caf50; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
+        .btn-baixar:active { background-color: #388e3c; }
         #leitor-container { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
-        #status-banco { margin-bottom: 20px; color: #666; font-size: 0.9rem; font-weight: bold; }
-        #resultado { margin-top: 20px; padding: 15px; background: #e8f5e9; border: 1px solid #4caf50; border-radius: 8px; font-size: 1.1rem; display: none; text-align: center; max-width: 500px; margin: 20px auto;}
-        .erro { background: #ffebee !important; border-color: #f44336 !important; color: #d32f2f; text-align: center !important;}
-        .destaque-nome { font-size: 1.3rem; font-weight: bold; color: #1c4966; margin: 15px 0;}
+        #status-banco { margin: 15px 0; color: #666; font-size: 0.9rem; font-weight: bold; }
+        #resultado { margin-top: 20px; padding: 20px; background: #e8f5e9; border: 2px solid #4caf50; border-radius: 12px; font-size: 1.1rem; display: none; max-width: 500px; margin: 20px auto; }
+        .erro { background: #ffebee !important; border-color: #f44336 !important; color: #d32f2f; }
+        .destaque-nome { font-size: 1.3rem; font-weight: bold; color: #1c4966; margin: 10px 0; }
+        .controle-qtd { margin-top: 15px; background: white; padding: 15px; border-radius: 8px; }
+        .input-qtd { width: 80px; text-align: center; font-size: 1.5rem; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-weight: bold; color: #333; }
+        .btn-salvar { margin-top: 10px; background-color: #1c4966; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; }
+        .btn-salvar:active { background-color: #112d40; }
     </style>
 </head>
 <body>
 
     <h1>📦 Meu Inventário</h1>
-    <div id="status-banco">⏳ Carregando base de dados...</div>
+
+    <div id="acoes-topo">
+        <button class="btn-baixar" onclick="baixarPlanilha()">📥 Baixar Planilha de Contagem</button>
+    </div>
 
     <div id="leitor-container">
         <div id="reader"></div>
     </div>
+    
+    <div id="status-banco">⏳ Carregando base de dados...</div>
 
     <div id="resultado"></div>
 
     <script>
         let baseDeProdutos = {};
+        // Puxa a contagem salva na memória do celular (se houver)
+        let estoqueContado = JSON.parse(localStorage.getItem('inventario_contagem')) || {};
 
-        // Lendo o CSV pelas posições das colunas, sem depender de cabeçalhos!
+        // Carrega o banco de dados do Excel
         Papa.parse("estoque.csv", {
             download: true,
-            header: false, // <-- A MÁGICA: Ignora os nomes dos cabeçalhos
+            header: false,
             skipEmptyLines: true,
             complete: function(results) {
                 let primeiraLinha = true;
-                
                 results.data.forEach(linha => {
-                    // Pula a primeira linha (cabeçalho)
-                    if (primeiraLinha) {
-                        primeiraLinha = false;
-                        return;
-                    }
-                    
-                    // Coluna 0 é o EAN, Coluna 1 é o Nome do Produto
+                    if (primeiraLinha) { primeiraLinha = false; return; }
                     let eanProduto = linha[0];
                     let nomeProduto = linha[1];
-                    
-                    // Salva na base de dados
                     if (eanProduto) {
                         baseDeProdutos[String(eanProduto).trim()] = nomeProduto || "Produto sem nome";
                     }
                 });
-                document.getElementById('status-banco').innerText = `✅ Banco carregado com sucesso!`;
+                document.getElementById('status-banco').innerText = `✅ Banco carregado: ${Object.keys(baseDeProdutos).length} produtos.`;
                 document.getElementById('status-banco').style.color = "green";
             },
             error: function() {
@@ -69,21 +73,81 @@
 
         // Ação da câmera
         function aoEscanearComSucesso(codigoLido) {
+            let ean = String(codigoLido).trim();
             let areaResultado = document.getElementById('resultado');
             areaResultado.style.display = 'block';
 
-            if (baseDeProdutos[codigoLido]) {
+            if (baseDeProdutos[ean]) {
+                // Puxa a quantidade já contada antes ou começa do zero
+                let qtdAtual = estoqueContado[ean] || 0;
+
                 areaResultado.className = '';
                 areaResultado.innerHTML = `
                     <div>✅ <strong>Identificado:</strong></div>
-                    <div class="destaque-nome">${baseDeProdutos[codigoLido]}</div>
-                    <small style="color: #666;">EAN: ${codigoLido}</small>
+                    <div class="destaque-nome">${baseDeProdutos[ean]}</div>
+                    <small style="color: #666;">EAN: ${ean}</small>
+                    
+                    <div class="controle-qtd">
+                        <label style="display:block; margin-bottom: 8px; font-weight: 600;">Quantidade em Estoque:</label>
+                        <input type="number" id="inputQtd" class="input-qtd" value="${qtdAtual}" min="0">
+                        <button class="btn-salvar" onclick="salvarQuantidade('${ean}')">💾 Salvar Quantidade</button>
+                        <div id="msg-sucesso" style="color: green; font-weight: bold; margin-top: 10px; display: none;">✔️ Salvo com sucesso!</div>
+                    </div>
                 `;
+                
+                // Toca um sonzinho ou vibra (funciona na maioria dos celulares)
+                if (navigator.vibrate) { navigator.vibrate(100); }
+                
             } else {
                 areaResultado.className = 'erro';
-                areaResultado.innerHTML = `<strong>❌ Não encontrado!</strong><br>O código ${codigoLido} não está na planilha.`;
+                areaResultado.innerHTML = `<strong>❌ Não encontrado!</strong><br>O código ${ean} não está na planilha.`;
             }
         }
+
+        // Função para salvar a quantidade digitada
+        window.salvarQuantidade = function(ean) {
+            let input = document.getElementById('inputQtd');
+            let quantidade = parseInt(input.value) || 0;
+            
+            // Salva no objeto e depois na memória do celular
+            estoqueContado[ean] = quantidade;
+            localStorage.setItem('inventario_contagem', JSON.stringify(estoqueContado));
+            
+            // Mostra mensagem de sucesso
+            let msg = document.getElementById('msg-sucesso');
+            msg.style.display = "block";
+            setTimeout(() => { msg.style.display = "none"; }, 2000);
+        };
+
+        // Função para gerar o arquivo Excel (CSV)
+        window.baixarPlanilha = function() {
+            // Se não contou nada ainda
+            if (Object.keys(estoqueContado).length === 0) {
+                alert("Você ainda não salvou nenhuma quantidade!");
+                return;
+            }
+
+            // Cria o cabeçalho da planilha
+            let csvContent = "EAN,Produto,Quantidade Contada\n";
+            
+            // Preenche com os dados
+            for (let ean in estoqueContado) {
+                let nome = baseDeProdutos[ean] || "Produto desconhecido";
+                let qtd = estoqueContado[ean];
+                // ="" força o Excel a manter os zeros do EAN sem transformar em fórmula científica
+                csvContent += `="${ean}","${nome}",${qtd}\n`; 
+            }
+
+            // Gera o download do arquivo
+            let blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+            let url = URL.createObjectURL(blob);
+            let link = document.createElement("a");
+            link.href = url;
+            link.download = "contagem_final_estoque.csv";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
 
         // Liga a câmera
         let leitorHtml5 = new Html5QrcodeScanner(
