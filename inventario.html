@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário - Leitor EAN</title>
+    <!-- Biblioteca que transforma a câmera em leitor de código de barras -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #f0f5f9; color: #333; text-align: center; padding: 20px; }
+        h1 { color: #1c4966; }
+        #leitor-container { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
+        #resultado { margin-top: 20px; padding: 15px; background: #e8f5e9; border: 1px solid #4caf50; border-radius: 8px; font-size: 1.2rem; display: none; }
+        .erro { background: #ffebee !important; border-color: #f44336 !important; color: #d32f2f; }
+    </style>
+</head>
+<body>
+
+    <h1>📦 Meu Inventário</h1>
+    <p>Aponte a câmera para o código de barras do produto.</p>
+
+    <div id="leitor-container">
+        <div id="reader"></div>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        // === SUA BASE DE DADOS EAN VEM AQUI ===
+        // Substitua os números de exemplo pelos seus EANs e nomes de produtos
+        const baseDeProdutos = {
+            "7891234567890": "Natura Homem Essence",
+            "7890987654321": "Kaiak Aventura",
+            "1234567890123": "Cesta Especial Dia dos Pais"
+        };
+
+        // Função que roda quando a câmera lê um código com sucesso
+        function aoEscanearComSucesso(codigoLido) {
+            let areaResultado = document.getElementById('resultado');
+            areaResultado.style.display = 'block';
+
+            // Procura o código lido na sua base de dados
+            if (baseDeProdutos[codigoLido]) {
+                areaResultado.className = '';
+                areaResultado.innerHTML = `<strong>✅ Encontrado:</strong><br> ${baseDeProdutos[codigoLido]} <br><small>EAN: ${codigoLido}</small>`;
+            } else {
+                areaResultado.className = 'erro';
+                areaResultado.innerHTML = `<strong>❌ Não encontrado!</strong><br>O código ${codigoLido} não está na base.`;
+            }
+        }
+
+        // Configuração da câmera e do leitor
+        let leitorHtml5 = new Html5QrcodeScanner(
+            "reader", 
+            { fps: 10, qrbox: { width: 250, height: 100 } }, // Formato retangular para código de barras
+            false
+        );
+        leitorHtml5.render(aoEscanearComSucesso);
+    </script>
+</body>
+</html>
