@@ -34,17 +34,26 @@
     <script>
         let baseDeProdutos = {};
 
-        // 1. O sistema lê o seu arquivo CSV automaticamente
+        // Lendo o CSV pelas posições das colunas, sem depender de cabeçalhos!
         Papa.parse("estoque.csv", {
             download: true,
-            header: true,
+            header: false, // <-- A MÁGICA: Ignora os nomes dos cabeçalhos
             skipEmptyLines: true,
             complete: function(results) {
+                let primeiraLinha = true;
+                
                 results.data.forEach(linha => {
-                    // Agora o sistema é flexível: busca a coluna independente de como foi escrita!
-                    let eanProduto = linha.EAN || linha.ean || linha.Ean || linha["Código EAN"] || linha["CÓDIGO EAN"];
-                    let nomeProduto = linha.Nome || linha.NOME || linha.nome || linha["Descrição do material"] || linha["DESCRIÇÃO DO MATERIAL"] || linha.PRODUTO;
+                    // Pula a primeira linha (cabeçalho)
+                    if (primeiraLinha) {
+                        primeiraLinha = false;
+                        return;
+                    }
                     
+                    // Coluna 0 é o EAN, Coluna 1 é o Nome do Produto
+                    let eanProduto = linha[0];
+                    let nomeProduto = linha[1];
+                    
+                    // Salva na base de dados
                     if (eanProduto) {
                         baseDeProdutos[String(eanProduto).trim()] = nomeProduto || "Produto sem nome";
                     }
@@ -58,7 +67,7 @@
             }
         });
 
-        // 2. Ação da câmera
+        // Ação da câmera
         function aoEscanearComSucesso(codigoLido) {
             let areaResultado = document.getElementById('resultado');
             areaResultado.style.display = 'block';
@@ -76,7 +85,7 @@
             }
         }
 
-        // 3. Liga a câmera
+        // Liga a câmera
         let leitorHtml5 = new Html5QrcodeScanner(
             "reader", 
             { fps: 10, qrbox: { width: 250, height: 100 } },
