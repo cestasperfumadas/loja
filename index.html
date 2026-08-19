@@ -117,7 +117,7 @@
     <nav class="barra-nav">
         <ul>
             <li><a onclick="filtrar('inicio', '')">Início</a></li>
-            <li><a class="btn-dia-mulher" onclick="filtrar('masculina', 'ESPECIAL DIA DOS Pais 🛒')">🛒 Dias dos Pais</a></li>
+            <li><a class="btn-dia-mulher" onclick="filtrar('promocoes', 'OFERTAS ESPECIAIS 🛒')">🛒 Ofertas</a></li>
             <li><a href="javascript:void(0)"> ▾</a><div class="lista-suspensa"><a onclick="filtrar('', ' de Presente')">Ver </a></div></li>
             <li><a href="javascript:void(0)">Perfumaria ▾</a><div class="lista-suspensa"><a onclick="filtrar('masculina', 'Perfumaria Masculina')">Masculina</a><a onclick="filtrar('feminina', 'Perfumaria Feminina')">Feminina</a></div></li>
             <li><a href="javascript:void(0)">Maquiagem ▾</a><div class="lista-suspensa"><a onclick="filtrar('maquiagem', 'Maquiagem e Kits')">Ver Tudo</a></div></li>
@@ -130,15 +130,15 @@
         <div class="header-logo-container"><img src="SLOGAN.jpg" alt=" Perfumadas" class="logo-img" onerror="this.src='SLOGAN.png'" onclick="filtrar('inicio', '')"></div>
         <div class="header-info-container">
             <div class="info-caixa"><h3>💳 Aceitamos Cartões e Pix</h3></div>
-            <div class="info-caixa destaque"><h3>🛍️ Especial Dia dos Pais</h3><p>Promoções reais para você!</p></div>
+            <div class="info-caixa destaque"><h3>🛍️ Ofertas Especiais</h3><p>Promoções reais para você!</p></div>
         </div>
     </header>
 
-    <div class="hero-banner" id="banner-pais">
-        <div style="font-size: 60px; margin-bottom: 10px; cursor: default;">👔💙</div>
+    <div class="hero-banner" style="background: linear-gradient(135deg, #d97a56, #c26543);" id="banner-principal">
+        <div style="font-size: 60px; margin-bottom: 10px; cursor: default;">✨🎁</div>
         <h1>Cestas Perfumadas</h1>
-        <p class="frase-efeito">O presente perfeito para o seu pai a um clique de distância.</p>
-        <p class="pronta-entrega">Produtos a Pronta Entrega</p>
+        <p class="frase-efeito">O presente perfeito a um clique de distância.</p>
+        <p class="pronta-entrega" style="color: #c26543;">Produtos a Pronta Entrega</p>
     </div>
 
     <div class="busca-container"><input type="text" id="inputBusca" placeholder="Pesquisar presentes, produtos, fragrâncias..." onkeyup="buscarProdutos()"></div>
@@ -527,9 +527,9 @@
             document.getElementById('lista-produtos').innerHTML = html;
         }
 
-        window.onload = function() {
+       window.onload = function() {
             renderizarVitrine(); 
-            filtrar('masculina', 'ESPECIAL DIA DOS Pais 🎁'); 
+            filtrar('inicio', ''); 
         };
 
         function filtrar(categoriaSelecionada, nomeTitulo) {
@@ -605,7 +605,7 @@
         function fecharCarrinho() { document.getElementById('modalCarrinho').style.display = 'none'; }
         function finalizarCompra() {
             if (carrinho.length === 0) { alert("O seu carrinho está vazio! Adicione produtos antes de finalizar."); return; }
-            let textoWhatsApp = "Olá! Gostaria de fazer o seguinte pedido na sua loja online (Especial Dia dos Pais):\n\n";
+            let textoWhatsApp = "Olá! Gostaria de fazer o seguinte pedido na sua loja online:\n\n";
             let total = 0;
             carrinho.forEach(item => { textoWhatsApp += `✅ 1x ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}\n`; total += item.preco; });
             textoWhatsApp += `\n💳 *Total da Compra:* R$ ${total.toFixed(2).replace('.', ',')}\n\n`;
